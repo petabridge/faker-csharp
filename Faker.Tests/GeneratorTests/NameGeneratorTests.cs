@@ -13,21 +13,21 @@ namespace Faker.Tests.GeneratorTests
         [Test(Description = "Simple test to verify that we can extract a first name without error")]
         public void Can_Get_First_Name()
         {
-            var firstName = Name.First();
+            var firstName = Names.First();
             Assert.IsNotNullOrEmpty(firstName);
         }
 
         [Test(Description = "Simple test to verify that we can extract a last name without error")]
         public void Can_Get_Last_Name()
         {
-            var lastName = Name.Last();
+            var lastName = Names.Last();
             Assert.IsNotNullOrEmpty(lastName);
         }
         
         [Test(Description = "Test to verify that we can get a lexically correct full name")]
         public void Can_Get_Full_Name()
         {
-            var fullName = Name.FullName();
+            var fullName = Names.FullName();
             Assert.IsNotNullOrEmpty(fullName);
 
             //Should be able to break a full name apart into two components separated by a space
@@ -41,7 +41,7 @@ namespace Faker.Tests.GeneratorTests
 
             for(var i = 0;i < 100; i++)
             {
-                names.Add(Name.FullName());
+                names.Add(Names.FullName());
             }
 
             //Make sure not all of the names are equal (there is SOME variety)

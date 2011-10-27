@@ -9,7 +9,7 @@ namespace Faker.Generators
     /// <summary>
     /// Generator used for generating names
     /// </summary>
-    public static class Name
+    public static class Names
     {
         #region Name Data
         private static string[] first_names = {

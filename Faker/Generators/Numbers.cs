@@ -8,7 +8,7 @@ namespace Faker.Generators
     /// <summary>
     /// Generator used for numeric types
     /// </summary>
-    public static class Number
+    public static class Numbers
     {
         private static readonly Random R = new Random();
 
