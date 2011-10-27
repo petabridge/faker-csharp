@@ -33,5 +33,19 @@ namespace Faker.Tests.GeneratorTests
             //Should be able to break a full name apart into two components separated by a space
             Assert.IsTrue(fullName.Split(' ').Count() == 2);
         }
+
+        [Test(Description = "Ensures that we have some variety in our naming conventions")]
+        public void Names_Have_Variety()
+        {
+            var names = new List<string>();
+
+            for(var i = 0;i < 100; i++)
+            {
+                names.Add(Name.FullName());
+            }
+
+            //Make sure not all of the names are equal (there is SOME variety)
+            Assert.IsFalse(names.All(x => x.Equals(names[0])));
+        }
     }
 }
