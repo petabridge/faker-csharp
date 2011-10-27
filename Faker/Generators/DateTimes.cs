@@ -32,5 +32,41 @@ namespace Faker.Generators
         {
             return GetDateTime(DateTime.Now.AddYears(-70), DateTime.Now.AddYears(70));
         }
+
+        /// <summary>
+        /// Returns a timestamp for the specified DateTime
+        /// </summary>
+        /// <param name="when">The date to be converted to a timestamp</param>
+        /// <returns>A timestamp in long format</returns>
+        public static long GetTimeStamp(DateTime when)
+        {
+            //Calculate the TimeSpan since the UNIX epoch
+            var span = (when - new DateTime(1970, 1, 1, 0, 0, 0, 0).ToUniversalTime());
+
+            //Return the timestamp as a long measured in total seconds
+            return (long) span.TotalSeconds;
+        }
+
+        /// <summary>
+        /// Returns a timestamp within the specified DateTime range
+        /// </summary>
+        /// <param name="from">The beginning of the date range</param>
+        /// <param name="to">The end of the date range</param>
+        /// <returns>A timestamp between From and To</returns>
+        public static long GetTimeStamp(DateTime @from, DateTime to)
+        {
+            var dateTime = GetDateTime(from, to);
+            return GetTimeStamp(dateTime);
+        }
+
+        /// <summary>
+        /// Returns a random timestamp
+        /// </summary>
+        /// <returns>A timestamp in long format</returns>
+        public static long GetTimeStamp()
+        {
+            var dateTime = GetDateTime();
+            return GetTimeStamp(dateTime);
+        }
     }
 }
