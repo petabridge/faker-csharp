@@ -11,7 +11,7 @@ namespace Faker.Helpers
     /// </summary>
     public static class ArrayHelpers
     {
-        private static Random r = new Random();
+        private static readonly Random R = new Random();
 
         public static IEnumerable<T> GetRandomSelection<T>(this IEnumerable<T> array, int count = 1)
         {
@@ -23,7 +23,7 @@ namespace Faker.Helpers
 
             for(var i = 0; i < count; i++)
             {
-                var randomInterval = r.Next(0, maxLength);
+                var randomInterval = R.Next(0, maxLength);
                 randomSelection.Add(array.ElementAt(randomInterval));
             }
 
@@ -35,7 +35,7 @@ namespace Faker.Helpers
             //Determine the max length of our incoming array
             var maxLength = array.Count() - 1;
 
-            return array.ElementAt(r.Next(0, maxLength));
+            return array.ElementAt(R.Next(0, maxLength));
         }
     }
 }
