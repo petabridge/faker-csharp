@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="Fake.cs" />
     <Compile Include="Generators\DateTimes.cs" />
+    <Compile Include="Generators\Guids.cs" />
     <Compile Include="Generators\Names.cs" />
     <Compile Include="Generators\Numbers.cs" />
+    <Compile Include="Generators\Strings.cs" />
     <Compile Include="Helpers\ArrayHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
