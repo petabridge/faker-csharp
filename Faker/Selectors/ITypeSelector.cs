@@ -62,7 +62,8 @@ namespace Faker.Selectors
     {
         protected TypeSelectorBase()
         {
-            
+            //Set the targetType to the value of the type selector
+            TargetType = typeof (T);
         } 
 
         protected bool _can_be_null;
@@ -82,7 +83,7 @@ namespace Faker.Selectors
         public abstract bool CanBind(PropertyInfo field);
         public abstract void Generate(object targetObject, PropertyInfo property);
 
-        public Type TargetType { get; protected set; }
+        public Type TargetType { get; private set; }
 
         public T MinValue
         {

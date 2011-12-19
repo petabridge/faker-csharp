@@ -13,7 +13,7 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class FullNameSelector : TypeSelectorBase<string>
     {
-        private static Regex _regex = new Regex(SpecialFieldsRegex.FullNameRegex);
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FullNameRegex);
 
         public override bool CanBind(PropertyInfo field)
         {
