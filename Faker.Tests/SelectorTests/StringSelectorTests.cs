@@ -34,6 +34,18 @@ namespace Faker.Tests.SelectorTests
             public string first_name { get; set; }
             public string first_Name { get; set; }
         }
+
+        private class LastNameTestClass
+        {
+            public string lastname { get; set; }
+            public string lastName { get; set; }
+            public string Lastname { get; set; }
+            public string LastName { get; set; }
+            public string Last_name { get; set; }
+            public string Last_Name { get; set; }
+            public string last_name { get; set; }
+            public string last_Name { get; set; }
+        }
         #endregion
 
         [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
@@ -78,10 +90,10 @@ namespace Faker.Tests.SelectorTests
         public void First_Name_Variations_All_Match()
         {
             var nameSelector = new FirstNameSelector();
-            var fullNameClass = new FirstNameTestClass();
+            var firstNameTestClass = new FirstNameTestClass();
 
             //Iterate over all of the properties in the fullNameClass object...
-            foreach (var property in fullNameClass.GetType().GetProperties())
+            foreach (var property in firstNameTestClass.GetType().GetProperties())
             {
                 var nameSelectorResult = nameSelector.CanBind(property);
                 Assert.IsTrue(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
@@ -92,19 +104,57 @@ namespace Faker.Tests.SelectorTests
         public void First_Name_Variations_All_Injected()
         {
             var nameSelector = new FirstNameSelector();
-            var fullNameClass = new FirstNameTestClass();
+            var firstNameTestClass = new FirstNameTestClass();
 
             //Iterate over all of the properties in the fullNameClass object...
-            foreach (var property in fullNameClass.GetType().GetProperties())
+            foreach (var property in firstNameTestClass.GetType().GetProperties())
             {
                 //Inject the value into the property
-                nameSelector.Generate(fullNameClass, property);
+                nameSelector.Generate(firstNameTestClass, property);
             }
 
             //Iterate over all of the properties again
-            foreach (var property in fullNameClass.GetType().GetProperties())
+            foreach (var property in firstNameTestClass.GetType().GetProperties())
             {
-                var fieldValue = property.GetValue(fullNameClass, null) as string;
+                var fieldValue = property.GetValue(firstNameTestClass, null) as string;
+
+                Assert.IsNotNullOrEmpty(fieldValue);
+                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
+                Assert.That(fieldValue.Length > 0);
+            }
+        }
+
+        [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
+        public void Last_Name_Variations_All_Match()
+        {
+            var nameSelector = new LastNameSelector();
+            var lastNameTestClass = new LastNameTestClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in lastNameTestClass.GetType().GetProperties())
+            {
+                var nameSelectorResult = nameSelector.CanBind(property);
+                Assert.IsTrue(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+            }
+        }
+
+        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        public void Last_Name_Variations_All_Injected()
+        {
+            var nameSelector = new LastNameSelector();
+            var lastNameTestClass = new LastNameTestClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in lastNameTestClass.GetType().GetProperties())
+            {
+                //Inject the value into the property
+                nameSelector.Generate(lastNameTestClass, property);
+            }
+
+            //Iterate over all of the properties again
+            foreach (var property in lastNameTestClass.GetType().GetProperties())
+            {
+                var fieldValue = property.GetValue(lastNameTestClass, null) as string;
 
                 Assert.IsNotNullOrEmpty(fieldValue);
                 Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
