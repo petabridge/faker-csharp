@@ -13,6 +13,16 @@ namespace Faker.Selectors
         int Priority { get; set; }
 
         /// <summary>
+        /// Sets the floor for the minimum range of a type (if applicable)
+        /// </summary>
+        object MinSize { get; set; }
+
+        /// <summary>
+        /// Sets the roof for the maximum range of a type (if applicable)
+        /// </summary>
+       object MaxSize { get; set; }
+
+        /// <summary>
         /// Determines if we can allow nulls for a given type
         /// </summary>
         /// <param name="canBeNull">If true, we can set nulls - false by default</param>
@@ -38,27 +48,12 @@ namespace Faker.Selectors
         Type TargetType { get; }
     }
 
-    /// <summary>
-    /// Interface used to produce objects of a given type
-    /// </summary>
-    internal interface ITypeSelector<T>
-    {
-        /// <summary>
-        /// Sets the floor for the minimum range of a type (if applicable)
-        /// </summary>
-        T MinValue { get; set; }
-
-        /// <summary>
-        /// Sets the roof for the maximum range of a type (if applicable)
-        /// </summary>
-        T MaxValue { get; set; }
-    }
 
     /// <summary>
     /// Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
     /// <typeparam name="T">The type that this selector works for</typeparam>
-    public abstract class TypeSelectorBase<T> : ITypeSelector<T>, ITypeSelector
+    public abstract class TypeSelectorBase<T> : ITypeSelector
     {
         protected TypeSelectorBase()
         {
@@ -68,33 +63,24 @@ namespace Faker.Selectors
 
         protected bool _can_be_null;
 
-        private T _minValue;
-
-        private T _maxValue;
-
         public int Priority
         { get; set; }
+
+        public object MinSize { get; set; }
+        public object MaxSize { get; set; }
 
         public void BeNull(bool canBeNull = false)
         {
             _can_be_null = canBeNull;
         }
 
-        public abstract bool CanBind(PropertyInfo field);
+        public virtual bool CanBind(PropertyInfo field)
+        {
+            return field.PropertyType == TargetType;
+        }
+
         public abstract void Generate(object targetObject, PropertyInfo property);
 
         public Type TargetType { get; private set; }
-
-        public T MinValue
-        {
-            get { return _minValue; }
-            set { _minValue = value; }
-        }
-
-        public T MaxValue
-        {
-            get { return _maxValue; }
-            set { _maxValue = value; }
-        }
     }
 }

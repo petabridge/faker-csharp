@@ -10,6 +10,7 @@ namespace Faker.Tests.SelectorTests
     [TestFixture(Description = "Ensures that our string selectors inject valid results")]
     public class StringSelectorTests
     {
+        #region Test classes for use against our string selectors...
         private class FullNameTestClass
         {
             public string fullname { get; set; }
@@ -21,6 +22,7 @@ namespace Faker.Tests.SelectorTests
             public string full_name { get; set; }
             public string full_Name { get; set; }
         }
+        #endregion
 
         [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
         public void Full_Name_Variations_All_Match()
