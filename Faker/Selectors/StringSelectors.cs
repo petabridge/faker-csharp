@@ -27,7 +27,11 @@ namespace Faker.Selectors
 
         public override void Generate(object targetObject, PropertyInfo property)
         {
-            property.SetValue(targetObject, Names.First(), null);
+            var max = (int) MaxSize;
+            var min = (int) MinSize;
+
+
+            property.SetValue(targetObject, Strings.GenerateString(max), null);
         }
 
         #endregion

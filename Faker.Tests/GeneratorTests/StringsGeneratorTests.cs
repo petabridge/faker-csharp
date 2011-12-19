@@ -13,7 +13,7 @@ namespace Faker.Tests.GeneratorTests
         [Test(Description = "Can we generate strings of fixed length reliably?")]
         public void Can_Generate_String_Of_Fixed_Length()
         {
-            var sampleString = Strings.GenerateString(20);
+            var sampleString = Strings.GenerateString(20, 20);
 
             Assert.IsNotNullOrEmpty(sampleString);
             Assert.IsTrue(sampleString.Length == 20);
@@ -22,7 +22,7 @@ namespace Faker.Tests.GeneratorTests
         [Test(Description = "Can we generate a massive string in a short period of time (1 second)?"), Timeout(1000)]
         public void Can_Generate_Massive_String()
         {
-            var sampleString = Strings.GenerateString(40000); //Create a 40000 character string
+            var sampleString = Strings.GenerateString(40000, 40000); //Create a 40000 character string
             Assert.IsNotNullOrEmpty(sampleString);
             Assert.IsTrue(sampleString.Length == 40000);
         }
