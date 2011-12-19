@@ -1,10 +1,8 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 
 namespace Faker.Selectors
 {
-    /// <summary>
-    /// Interface used to produce objects of a given type
-    /// </summary>
     internal interface ITypeSelector
     {
         /// <summary>
@@ -13,6 +11,16 @@ namespace Faker.Selectors
         /// given type
         /// </summary>
         int Priority { get; set; }
+
+        /// <summary>
+        /// Sets the floor for the minimum range of a type (if applicable)
+        /// </summary>
+        object MinSize { get; set; }
+
+        /// <summary>
+        /// Sets the roof for the maximum range of a type (if applicable)
+        /// </summary>
+       object MaxSize { get; set; }
 
         /// <summary>
         /// Determines if we can allow nulls for a given type
@@ -30,60 +38,49 @@ namespace Faker.Selectors
         /// <summary>
         /// Injects the generator function into the property
         /// </summary>
-        /// <param name="property"></param>
-        void Generate(PropertyInfo property);
-    }
-
-    /// <summary>
-    /// Interface used to produce objects of a given type
-    /// </summary>
-    internal interface ITypeSelector<T>
-    {
-        /// <summary>
-        /// Sets the floor for the minimum range of a type (if applicable)
-        /// </summary>
-        T MinValue { get; set; }
+        /// <param name="targetObject">The target object designed for property injection</param>
+        /// <param name="property">The meta-data for the current property we're testing</param>
+        void Generate(object targetObject, PropertyInfo property);
 
         /// <summary>
-        /// Sets the roof for the maximum range of a type (if applicable)
+        /// The underlying Type used for this mapping
         /// </summary>
-        T MaxValue { get; set; }
+        Type TargetType { get; }
     }
+
 
     /// <summary>
     /// Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
     /// <typeparam name="T">The type that this selector works for</typeparam>
-    public abstract class TypeSelectorBase<T> : ITypeSelector<T>
+    public abstract class TypeSelectorBase<T> : ITypeSelector
     {
+        protected TypeSelectorBase()
+        {
+            //Set the targetType to the value of the type selector
+            TargetType = typeof (T);
+        } 
+
         protected bool _can_be_null;
-
-        private T _minValue;
-
-        private T _maxValue;
 
         public int Priority
         { get; set; }
+
+        public object MinSize { get; set; }
+        public object MaxSize { get; set; }
 
         public void BeNull(bool canBeNull = false)
         {
             _can_be_null = canBeNull;
         }
 
-        public abstract bool CanBind(PropertyInfo field);
-
-        public abstract void Generate(PropertyInfo property);
-
-        public T MinValue
+        public virtual bool CanBind(PropertyInfo field)
         {
-            get { return _minValue; }
-            set { _minValue = value; }
+            return field.PropertyType == TargetType;
         }
 
-        public T MaxValue
-        {
-            get { return _maxValue; }
-            set { _maxValue = value; }
-        }
+        public abstract void Generate(object targetObject, PropertyInfo property);
+
+        public Type TargetType { get; private set; }
     }
 }
