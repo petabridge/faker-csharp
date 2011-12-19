@@ -1,10 +1,8 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 
 namespace Faker.Selectors
 {
-    /// <summary>
-    /// Interface used to produce objects of a given type
-    /// </summary>
     internal interface ITypeSelector
     {
         /// <summary>
@@ -30,8 +28,14 @@ namespace Faker.Selectors
         /// <summary>
         /// Injects the generator function into the property
         /// </summary>
-        /// <param name="property"></param>
-        void Generate(PropertyInfo property);
+        /// <param name="targetObject">The target object designed for property injection</param>
+        /// <param name="property">The meta-data for the current property we're testing</param>
+        void Generate(object targetObject, PropertyInfo property);
+
+        /// <summary>
+        /// The underlying Type used for this mapping
+        /// </summary>
+        Type TargetType { get; }
     }
 
     /// <summary>
@@ -54,8 +58,13 @@ namespace Faker.Selectors
     /// Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
     /// <typeparam name="T">The type that this selector works for</typeparam>
-    public abstract class TypeSelectorBase<T> : ITypeSelector<T>
+    public abstract class TypeSelectorBase<T> : ITypeSelector<T>, ITypeSelector
     {
+        protected TypeSelectorBase()
+        {
+            
+        } 
+
         protected bool _can_be_null;
 
         private T _minValue;
@@ -71,8 +80,9 @@ namespace Faker.Selectors
         }
 
         public abstract bool CanBind(PropertyInfo field);
+        public abstract void Generate(object targetObject, PropertyInfo property);
 
-        public abstract void Generate(PropertyInfo property);
+        public Type TargetType { get; protected set; }
 
         public T MinValue
         {
