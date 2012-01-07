@@ -19,6 +19,18 @@ namespace Faker.Tests.SelectorTests
             public DateTime asdfsadfsadfsadfdsaf { get; set; }
         }
 
+        private class TimeStampTestClass
+        {
+            public long TimeStamp { get; set; }
+            public long timeStamp { get; set; }
+            public long Timestamp { get; set; }
+            public long TIMESTAMP { get; set; }
+            public long time_stamp { get; set; }
+            public long Time_Stamp { get; set; }
+            public long Time_stamp { get; set; }
+            public long time_Stamp { get; set; }
+        }
+
         #endregion
 
         #region Tests
@@ -43,6 +55,20 @@ namespace Faker.Tests.SelectorTests
 
                 Assert.IsAssignableFrom<DateTime>(fieldValue, "Should be type of DateTime...");
                 Assert.AreNotEqual(fieldValue, default(DateTime));
+            }
+        }
+
+        [Test(Description = "Does our timestamp selector match fields with valid names?")]
+        public void TimeStamp_Selector_Matches_Valid_Names()
+        {
+            var timeStampSelector = new TimeStampSelector();
+            var timeStampTestClass = new TimeStampTestClass();
+
+            //Iterate over all of the properties in the EmailTestClass object...
+            foreach (var property in timeStampTestClass.GetType().GetProperties())
+            {
+                var canBind = timeStampSelector.CanBind(property);
+                Assert.IsTrue(canBind, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
