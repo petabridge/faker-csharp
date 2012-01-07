@@ -10,26 +10,39 @@ namespace Faker.Generators
     /// </summary>
     public static class Strings
     {
+        #region String Data
+
+        private const string AlphaChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string EmailFriendlyChars = "%+-_.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        #endregion
+
         private static readonly Random R = new Random();
 
         /// <summary>
-        /// Generates a random string of the specified maxLength
+        /// Generates a random alpha numeric string of the specified maxLength
         /// </summary>
         /// <param name="minLength">The minimum lenght of the random string</param>
         /// <param name="maxLength">The maxLength of the random string</param>
         /// <returns>A string</returns>
-        public static string GenerateString(int minLength = 10, int maxLength = 40)
+        public static string GenerateAlphaNumericString(int minLength = 10, int maxLength = 40)
         {
-            var sb = new StringBuilder();
             var stringLength = R.Next(minLength, maxLength);
 
-            for(var i = 0; i < stringLength; i++)
-            {
-                var next = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * R.NextDouble() + 65)));
-                sb.Append(next);
-            }
+            return new string(Enumerable.Repeat(AlphaChars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
+        }
 
-            return sb.ToString();
+        /// <summary>
+        /// Generates a random email address-compatible string of the specified maxLength
+        /// </summary>
+        /// <param name="minLength">The minimum lenght of the random string</param>
+        /// <param name="maxLength">The maxLength of the random string</param>
+        /// <returns>A string</returns>
+        public static string GenerateEmailFriendlyString(int minLength = 10, int maxLength = 40)
+        {
+            var stringLength = R.Next(minLength, maxLength);
+
+            return new string(Enumerable.Repeat(EmailFriendlyChars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
         }
     }
 }
