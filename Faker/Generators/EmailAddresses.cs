@@ -57,8 +57,9 @@ namespace Faker.Generators
                 domainExtension = major_domain_extensions.GetRandom();
             }
 
-            return string.Format("{0}@{1}{2}",
-                Names.FullName(),
+            return string.Format("{0}.{1}@{2}{3}",
+                Names.First(),
+                Names.Last(),
                 domain_names.GetRandom(),
                 domainExtension);
         }
