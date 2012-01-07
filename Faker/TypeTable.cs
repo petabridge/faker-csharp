@@ -17,7 +17,7 @@ namespace Faker
     sealed class TypeTable
     {
         //Our internal map for all types and their selectors used within Faker
-        private Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
+        private readonly Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
 
         /// <summary>
         /// Default constructor
