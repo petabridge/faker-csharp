@@ -14,10 +14,10 @@ namespace Faker
     /// <summary>
     /// The repository which determines the order in which selectors are picked for any given type
     /// </summary>
-    sealed class TypeTable
+    public sealed class TypeTable
     {
         //Our internal map for all types and their selectors used within Faker
-        private Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
+        private readonly Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
 
         /// <summary>
         /// Default constructor

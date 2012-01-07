@@ -13,16 +13,6 @@ namespace Faker.Selectors
         int Priority { get; set; }
 
         /// <summary>
-        /// Sets the floor for the minimum range of a type (if applicable)
-        /// </summary>
-        object MinSize { get; set; }
-
-        /// <summary>
-        /// Sets the roof for the maximum range of a type (if applicable)
-        /// </summary>
-       object MaxSize { get; set; }
-
-        /// <summary>
         /// Determines if we can allow nulls for a given type
         /// </summary>
         /// <param name="canBeNull">If true, we can set nulls - false by default</param>
@@ -65,9 +55,6 @@ namespace Faker.Selectors
 
         public int Priority
         { get; set; }
-
-        public object MinSize { get; set; }
-        public object MaxSize { get; set; }
 
         public void BeNull(bool canBeNull = false)
         {

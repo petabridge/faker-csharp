@@ -14,5 +14,6 @@ namespace Faker.Selectors
         public const string FirstNameRegex = @"\b[fF]irst(_)?[nN]ame";
         public const string LastNameRegex = @"\b[lL]ast(_)?[nN]ame";
         public const string EmailRegex = @"\b[eE]mail(_)?[aA]ddress|\b[eE]mail";
+        public const string TimeStampRegex = @"\b[tT]ime(_)?[sS]tamp";
     }
 }

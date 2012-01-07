@@ -23,15 +23,14 @@ namespace Faker.Selectors
             MinSize = 10;
         }
 
+        public int MaxSize { get; set; }
+        public int MinSize { get; set; }
+
         #region Overrides of TypeSelectorBase<string>
 
         public override void Generate(object targetObject, PropertyInfo property)
         {
-            var max = (int) MaxSize;
-            var min = (int) MinSize;
-
-
-            property.SetValue(targetObject, Strings.GenerateAlphaNumericString(max), null);
+            property.SetValue(targetObject, Strings.GenerateAlphaNumericString(MinSize, MaxSize), null);
         }
 
         #endregion
