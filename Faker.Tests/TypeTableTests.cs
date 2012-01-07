@@ -100,6 +100,62 @@ namespace Faker.Tests
             Assert.IsInstanceOf<TimeStampSelector>(currentLongSelector);
         }
 
+        [Test(Description = "If a user wants to explicitly add a new type selector to the back of the processing order, they should be able to do it.")]
+        public void Should_Add_Selector_To_Back_Of_List()
+        {
+            //Create a new TypeTable
+            var table = new TypeTable();
+
+            //Create some selectors that we're going to add
+            var stringSelector1 = new StringSelector();
+            var stringSelector2 = new FullNameSelector();
+
+            Assert.AreEqual(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
+
+            //Add the first selector (our default string selector)
+            table.AddSelector<string>(stringSelector1);
+            Assert.AreEqual(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
+
+            var firstselector = table.GetSelectors<string>().First();
+            Assert.IsInstanceOf<StringSelector>(firstselector);
+
+            //Add the second selector (FullNameSelector) to the back of the processing queue
+            table.AddSelector(stringSelector2, SelectorPosition.Last);
+            Assert.AreEqual(2, table.CountSelectors<string>(), "should have TWO type selectors for type 'string'");
+
+            firstselector = table.GetSelectors<string>().First();
+            Assert.IsInstanceOf<StringSelector>(firstselector);
+
+            var lastselector = table.GetSelectors<string>().Last();
+            Assert.IsInstanceOf<FullNameSelector>(lastselector);
+        }
+
+        [Test(Description = "A user should be able to clear a list of typeselectors for a given type if they wish")]
+        public void Should_Clear_TypeSelector_List()
+        {
+            //Create a new TypeTable
+            var table = new TypeTable();
+
+            //Create some selectors that we're going to add
+            var stringSelector1 = new StringSelector();
+            var stringSelector2 = new FullNameSelector();
+
+            Assert.AreEqual(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
+
+            //Add some type selectors to our typetable
+            table.AddSelector(stringSelector1);
+            table.AddSelector(stringSelector2);
+
+            //Check to see that our table contains at least two items...
+            Assert.AreEqual(2, table.CountSelectors<string>(), "should have TWO type selectors for type 'string'");
+
+            //Clear all of the string selectors
+            table.ClearSelectors<string>(); 
+
+            //Count the new number of string selectors (should equal zero)
+            Assert.AreEqual(0, table.CountSelectors<string>());
+        }
+
         #endregion
     }
 }
