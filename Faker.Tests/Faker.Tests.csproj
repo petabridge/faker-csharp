@@ -58,6 +58,7 @@
     <Compile Include="GeneratorTests\NumberGeneratorTests.cs" />
     <Compile Include="GeneratorTests\StringsGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectorTests\DateTimeSelectorTests.cs" />
     <Compile Include="SelectorTests\StringSelectorTests.cs" />
     <Compile Include="TypeTableTests.cs" />
   </ItemGroup>
