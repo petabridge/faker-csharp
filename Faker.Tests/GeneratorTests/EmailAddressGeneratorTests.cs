@@ -9,11 +9,11 @@ using NUnit.Framework;
 namespace Faker.Tests.GeneratorTests
 {
     [TestFixture(Description = "Test fixture for ensuring that our generated email addresses work as expected")]
-    public class EmailGeneratorTests
+    public class EmailAddressGeneratorTests
     {
-        public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)|(\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\b)";
+        public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)";
 
-        public Regex _r = new Regex(ValidEmailRegex);
+        public Regex _r = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
 
         [Test(Description = "Can we generate valid emails using our fully-randomized method?")]
         public void Can_Generate_Valid_Random_Emails()
