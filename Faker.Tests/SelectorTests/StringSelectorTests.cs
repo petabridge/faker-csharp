@@ -64,6 +64,13 @@ namespace Faker.Tests.SelectorTests
             public string EMAIL { get; set; }
         }
 
+        private class RandomStringsClass
+        {
+            public string string1 { get; set; }
+            public string asdf4w5sfsdfsdf { get; set; }
+            public string __sdfsf__ { get; set; }
+        }
+
         #endregion
 
         [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
@@ -211,6 +218,30 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in emailTestClass.GetType().GetProperties())
             {
                 var fieldValue = property.GetValue(emailTestClass, null) as string;
+
+                Assert.IsNotNullOrEmpty(fieldValue);
+                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
+                Assert.That(fieldValue.Length > 0);
+            }
+        }
+
+        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        public void String_Selector_Injects_All_Strings()
+        {
+            var stringSelector = new StringSelector();
+            var randomStringsClass = new RandomStringsClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in randomStringsClass.GetType().GetProperties())
+            {
+                //Inject the value into the property
+                stringSelector.Generate(randomStringsClass, property);
+            }
+
+            //Iterate over all of the properties again
+            foreach (var property in randomStringsClass.GetType().GetProperties())
+            {
+                var fieldValue = property.GetValue(randomStringsClass, null) as string;
 
                 Assert.IsNotNullOrEmpty(fieldValue);
                 Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
