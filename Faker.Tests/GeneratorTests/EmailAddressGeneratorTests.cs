@@ -50,5 +50,16 @@ namespace Faker.Tests.GeneratorTests
 
             Assert.IsTrue(_major_domain_regex.IsMatch(extension));
         }
+
+        [Test(Description = "We should only include major domain extensions (.com, .net, .org, and .edu) for 'humanized' addresses when the flag is set correctly.")]
+        public void Should_Include_Only_Major_Domain_Extensions_When_Flag_Is_Set_For_Human_Addresses()
+        {
+            var email = EmailAddresses.Human(true);
+
+            var extensionPos = email.LastIndexOf('.');
+            var extension = email.Substring(extensionPos, email.Length - extensionPos);
+
+            Assert.IsTrue(_major_domain_regex.IsMatch(extension));
+        }
     }
 }
