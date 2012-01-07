@@ -51,4 +51,25 @@ namespace Faker.Selectors
 
         #endregion
     }
+
+    public sealed class LongSelector : TypeSelectorBase<long>
+    {
+        public LongSelector()
+        {
+            MinSize = Int64.MinValue;
+            MaxSize = Int64.MaxValue;
+        }
+
+        public long MaxSize { get; set; }
+        public long MinSize { get; set; }
+
+        #region Overrides of TypeSelectorBase<long>
+
+        public override void Generate(object targetObject, PropertyInfo property)
+        {
+            property.SetValue(targetObject, Numbers.Long(MinSize, MaxSize), null);
+        }
+
+        #endregion
+    }
 }
