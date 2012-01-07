@@ -31,7 +31,7 @@ namespace Faker.Selectors
             var min = (int) MinSize;
 
 
-            property.SetValue(targetObject, Strings.GenerateString(max), null);
+            property.SetValue(targetObject, Strings.GenerateAlphaNumericString(max), null);
         }
 
         #endregion
@@ -97,5 +97,24 @@ namespace Faker.Selectors
         {
             property.SetValue(targetObject, Names.FullName(), null);
         }
+    }
+
+    public sealed class EmailSelector : TypeSelectorBase<string>
+    {
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.EmailRegex, RegexOptions.IgnoreCase);
+
+        #region Overrides of TypeSelectorBase<string>
+
+        public override bool CanBind(PropertyInfo field)
+        {
+            return _regex.IsMatch(field.Name);
+        }
+
+        public override void Generate(object targetObject, PropertyInfo property)
+        {
+            property.SetValue(targetObject, EmailAddresses.Human(), null);
+        }
+
+        #endregion
     }
 }
