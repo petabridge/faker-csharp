@@ -49,6 +49,21 @@ namespace Faker.Tests.SelectorTests
             public string last_name { get; set; }
             public string last_Name { get; set; }
         }
+
+        private class EmailTestClass
+        {
+            public string emailaddress { get; set; }
+            public string email_address { get; set; }
+            public string Email_address { get; set; }
+            public string email_Address { get; set; }
+            public string emailAddress { get; set; }
+            public string EmailAddress { get; set; }
+            public string Emailaddress { get; set; }
+            public string email { get; set; }
+            public string Email { get; set; }
+            public string EMAIL { get; set; }
+        }
+
         #endregion
 
         [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
@@ -158,6 +173,44 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in lastNameTestClass.GetType().GetProperties())
             {
                 var fieldValue = property.GetValue(lastNameTestClass, null) as string;
+
+                Assert.IsNotNullOrEmpty(fieldValue);
+                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
+                Assert.That(fieldValue.Length > 0);
+            }
+        }
+
+        [Test(Description = "Tests to see if our regex can match all of the variations of the EmailAddress field")]
+        public void Email_Address_Variations_All_Match()
+        {
+            var emailSelector = new EmailSelector();
+            var emailTestClass = new EmailTestClass();
+
+            //Iterate over all of the properties in the EmailTestClass object...
+            foreach (var property in emailTestClass.GetType().GetProperties())
+            {
+                var emailSelectorResult = emailSelector.CanBind(property);
+                Assert.IsTrue(emailSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+            }
+        }
+
+        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        public void Email_Address_Variations_All_Injected()
+        {
+            var emailSelector = new EmailSelector();
+            var emailTestClass = new EmailTestClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in emailTestClass.GetType().GetProperties())
+            {
+                //Inject the value into the property
+                emailSelector.Generate(emailTestClass, property);
+            }
+
+            //Iterate over all of the properties again
+            foreach (var property in emailTestClass.GetType().GetProperties())
+            {
+                var fieldValue = property.GetValue(emailTestClass, null) as string;
 
                 Assert.IsNotNullOrEmpty(fieldValue);
                 Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
