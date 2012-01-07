@@ -12,8 +12,8 @@ namespace Faker.Generators
     {
         #region String Data
 
-        private const string alpha_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        private static string url_friendly_chars = "-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string AlphaChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string EmailFriendlyChars = "!#$%&'*+-/=?^_`{|}~.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         #endregion
 
@@ -29,7 +29,20 @@ namespace Faker.Generators
         {
             var stringLength = R.Next(minLength, maxLength);
 
-            return new string(Enumerable.Repeat(alpha_chars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
+            return new string(Enumerable.Repeat(AlphaChars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
+        }
+
+        /// <summary>
+        /// Generates a random email address-compatible string of the specified maxLength
+        /// </summary>
+        /// <param name="minLength">The minimum lenght of the random string</param>
+        /// <param name="maxLength">The maxLength of the random string</param>
+        /// <returns>A string</returns>
+        public static string GenerateEmailFriendlyString(int minLength = 10, int maxLength = 40)
+        {
+            var stringLength = R.Next(minLength, maxLength);
+
+            return new string(Enumerable.Repeat(EmailFriendlyChars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
         }
     }
 }

@@ -21,6 +21,13 @@ namespace Faker.Generators
 
         #endregion
 
+        /// <summary>
+        /// Returns a randomly generated email address
+        /// </summary>
+        /// <param name="majorDomainExtensionsOnly">If true, only uses major domain extensions (.com, .net, .org, and .edu) when it generates email address. Default is false.</param>
+        /// <param name="minLength">The minimum length of a generated email address</param>
+        /// <param name="maxLength">The maximum length of a generated email address</param>
+        /// <returns>a string containing a valid email address</returns>
         public static string Generate(bool majorDomainExtensionsOnly = false, int minLength = 10, int maxLength = 100)
         {
             var domainExtension = domain_extensions.GetRandom();
@@ -31,14 +38,29 @@ namespace Faker.Generators
             }
 
             return string.Format("{0}@{1}{2}", 
-                Strings.GenerateAlphaNumericString(minLength, maxLength), 
+                Strings.GenerateEmailFriendlyString(minLength, maxLength), 
                 domain_names.GetRandom(),
                 domainExtension);
         }
 
-        public static string Human()
+        /// <summary>
+        /// Returns a human-looking email address
+        /// </summary>
+        /// <param name="majorDomainExtensionsOnly">If true, only uses major domain extensions (.com, .net, .org, and .edu) when it generates email address. Default is false.</param>
+        /// <returns>a string containing a valid email address</returns>
+        public static string Human(bool majorDomainExtensionsOnly = false)
         {
-            throw new NotImplementedException();
+            var domainExtension = domain_extensions.GetRandom();
+
+            if (majorDomainExtensionsOnly)
+            {
+                domainExtension = major_domain_extensions.GetRandom();
+            }
+
+            return string.Format("{0}@{1}{2}",
+                Names.FullName(),
+                domain_names.GetRandom(),
+                domainExtension);
         }
     }
 }
