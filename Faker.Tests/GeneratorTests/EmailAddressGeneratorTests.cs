@@ -61,5 +61,17 @@ namespace Faker.Tests.GeneratorTests
 
             Assert.IsTrue(_major_domain_regex.IsMatch(extension));
         }
+
+        [Test(Description = "We should only generate email addresses within the specified length")]
+        public void Should_Generate_Emails_Within_Range()
+        {
+            for (var i = 0; i < 200; i++)
+            {
+                var email = EmailAddresses.Generate(maxLength:100, minLength:25);
+
+                Assert.IsTrue(email.Length >= 25);
+                Assert.IsTrue(email.Length <= 100);
+            }
+        }
     }
 }

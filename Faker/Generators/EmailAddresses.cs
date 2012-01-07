@@ -37,10 +37,19 @@ namespace Faker.Generators
                 domainExtension = major_domain_extensions.GetRandom();
             }
 
-            return string.Format("{0}@{1}{2}", 
-                Strings.GenerateEmailFriendlyString(minLength, maxLength), 
-                domain_names.GetRandom(),
+            var domain = string.Format("@{0}{1}", domain_names.GetRandom(),
                 domainExtension);
+
+            var newMax = maxLength - domain.Length;
+
+            if (newMax < minLength)
+                newMax += minLength; //Screw it, we're not getting OOR errors
+
+            var lowerPart = Strings.GenerateEmailFriendlyString(minLength, newMax);
+
+            return string.Format("{0}{1}",
+                                 lowerPart,
+                                 domain);
         }
 
         /// <summary>
