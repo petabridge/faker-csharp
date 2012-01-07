@@ -42,7 +42,7 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class LastNameSelector : TypeSelectorBase<string>
     {
-        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.LastNameRegex);
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.LastNameRegex, RegexOptions.IgnoreCase);
 
         #region Overrides of TypeSelectorBase<string>
 
@@ -64,7 +64,7 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class FirstNameSelector : TypeSelectorBase<string>
     {
-        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FirstNameRegex);
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FirstNameRegex, RegexOptions.IgnoreCase);
 
         #region Overrides of TypeSelectorBase<string>
 
@@ -86,7 +86,7 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class FullNameSelector : TypeSelectorBase<string>
     {
-        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FullNameRegex);
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FullNameRegex, RegexOptions.IgnoreCase);
 
         public override bool CanBind(PropertyInfo field)
         {

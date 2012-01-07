@@ -21,6 +21,9 @@ namespace Faker.Tests.SelectorTests
             public string Full_Name { get; set; }
             public string full_name { get; set; }
             public string full_Name { get; set; }
+            public string name { get; set; }
+            public string Name { get; set; }
+            public string NAME { get; set; }
         }
 
         private class FirstNameTestClass
