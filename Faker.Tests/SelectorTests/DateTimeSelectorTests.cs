@@ -72,6 +72,29 @@ namespace Faker.Tests.SelectorTests
             }
         }
 
+        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        public void TimeStamp_Selector_Injects_All_TimeStamp_Values()
+        {
+            var timeStampSelector = new TimeStampSelector();
+            var timeStampTestClass = new TimeStampTestClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in timeStampTestClass.GetType().GetProperties())
+            {
+                //Inject the value into the property
+                timeStampSelector.Generate(timeStampTestClass, property);
+            }
+
+            //Iterate over all of the properties again
+            foreach (var property in timeStampTestClass.GetType().GetProperties())
+            {
+                var fieldValue = (long)property.GetValue(timeStampTestClass, null);
+
+                Assert.IsAssignableFrom<long>(fieldValue, "Should be type of long...");
+                Assert.AreNotEqual(fieldValue, default(long));
+            }
+        }
+
         #endregion
     }
 }
