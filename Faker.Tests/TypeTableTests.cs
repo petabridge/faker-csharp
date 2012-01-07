@@ -50,6 +50,12 @@ namespace Faker.Tests
             Assert.IsInstanceOf<EmailSelector>(firstselector); //Oh snap, the new front of the line should be our full name selector!
         }
 
+        [Test(Description = "Should be able to add type selectors for multiple types to the table")]
+        public void Should_Add_Type_Selectors_For_Multiple_Types_To_TypeTable()
+        {
+            
+        }
+
         #endregion
     }
 }
