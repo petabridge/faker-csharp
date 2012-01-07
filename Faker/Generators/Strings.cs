@@ -13,7 +13,7 @@ namespace Faker.Generators
         #region String Data
 
         private const string AlphaChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        private const string EmailFriendlyChars = "!#$%&'*+-/=?^_`{|}~.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private const string EmailFriendlyChars = "%+-_.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         #endregion
 
