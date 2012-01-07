@@ -10,26 +10,26 @@ namespace Faker.Generators
     /// </summary>
     public static class Strings
     {
+        #region String Data
+
+        private const string alpha_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private static string url_friendly_chars = "-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        #endregion
+
         private static readonly Random R = new Random();
 
         /// <summary>
-        /// Generates a random string of the specified maxLength
+        /// Generates a random alpha numeric string of the specified maxLength
         /// </summary>
         /// <param name="minLength">The minimum lenght of the random string</param>
         /// <param name="maxLength">The maxLength of the random string</param>
         /// <returns>A string</returns>
-        public static string GenerateString(int minLength = 10, int maxLength = 40)
+        public static string GenerateAlphaNumericString(int minLength = 10, int maxLength = 40)
         {
-            var sb = new StringBuilder();
             var stringLength = R.Next(minLength, maxLength);
 
-            for(var i = 0; i < stringLength; i++)
-            {
-                var next = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * R.NextDouble() + 65)));
-                sb.Append(next);
-            }
-
-            return sb.ToString();
+            return new string(Enumerable.Repeat(alpha_chars, stringLength).Select(x => x[R.Next(x.Length)]).ToArray());
         }
     }
 }

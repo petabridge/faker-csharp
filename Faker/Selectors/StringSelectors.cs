@@ -31,7 +31,7 @@ namespace Faker.Selectors
             var min = (int) MinSize;
 
 
-            property.SetValue(targetObject, Strings.GenerateString(max), null);
+            property.SetValue(targetObject, Strings.GenerateAlphaNumericString(max), null);
         }
 
         #endregion
