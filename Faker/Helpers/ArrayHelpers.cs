@@ -13,6 +13,17 @@ namespace Faker.Helpers
     {
         private static readonly Random R = new Random();
 
+        public static T GetRandomSubSelection<T>(this IEnumerable<T> array, int start, int count)
+        {
+            //Get a sub-selection of the current array if the parameters are valid...
+            var subArray = array.ToList().GetRange(start, count);
+
+            //Determine the max length of our incoming array
+            var maxLength = subArray.Count - 1;
+
+            return subArray.ElementAt(R.Next(0, maxLength));
+        }
+
         public static IEnumerable<T> GetRandomSelection<T>(this IEnumerable<T> array, int count = 1)
         {
             //Determine the max length of our incoming array

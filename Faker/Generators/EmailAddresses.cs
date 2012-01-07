@@ -15,6 +15,7 @@ namespace Faker.Generators
         private static string[] domain_extensions = {".com", ".net", ".org", ".edu", "co.uk", ".ly", ".co", ".mobi", ".me", ".info", ".biz", ".us", ".ca", ".name"};
 
         private static string[] domain_names = {"gmail", "mail.google", "live", "mail.yahoo", "yahoo", "hotmail", "mindspring", "roadrunner", "aol", "vanderbilt", "web-co", "co.ram.web"};
+
         #endregion
 
         public static string Generate(bool majorDomainExtensionsOnly = false, int minLength = 10, int maxLength = 100)
