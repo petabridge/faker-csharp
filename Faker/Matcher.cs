@@ -86,7 +86,10 @@ namespace Faker
             }
 
             //Check to see if the type is a class and has a default constructor
-            if (propertyType.IsClass && propertyType.IsPublic && propertyType.GetConstructor(Type.EmptyTypes) != null)
+
+            var constructor = propertyType.GetConstructor(Type.EmptyTypes);
+
+            if (propertyType.IsClass && constructor != null)
             {
                 var subProperties = propertyType.GetProperties();
 
@@ -94,7 +97,7 @@ namespace Faker
                 var subClassInstance = Activator.CreateInstance(propertyType);
 
                 //Match all of the properties on the subclass 
-                Match(subClassInstance);
+                ProcessProperties(subProperties, subClassInstance);
 
                 //Bind the sub-class back onto the original target object
                 property.SetValue(targetObject, subClassInstance, null);
