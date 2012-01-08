@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Faker.Selectors;
 using NUnit.Framework;
 
 namespace Faker.Tests.MatcherTests
@@ -9,7 +10,7 @@ namespace Faker.Tests.MatcherTests
     [TestFixture(Description = "The matcher should be able to process simple POCO classes that don't have any arrays, IEnumerables, or or nested classes")]
     public class SimplePocoMatcherTests
     {
-        private Matcher matcher;
+        private Matcher _matcher;
 
         #region Simple POCO test classes...
 
@@ -26,6 +27,15 @@ namespace Faker.Tests.MatcherTests
             public long TestLong { get; set; }
         }
 
+        public class SpecialFieldsTestClass
+        {
+            public int UserID { get; set; }
+            public string Name { get; set; }
+            public string Email { get; set; }
+            public long Timestamp { get; set; }
+            public DateTime DateRegistered { get; set; }
+        }
+
         #endregion
 
         #region Setup / Teardown
@@ -33,7 +43,7 @@ namespace Faker.Tests.MatcherTests
         [SetUp]
         public void SetUp()
         {
-            matcher = new Matcher();
+            _matcher = new Matcher();
         }
 
         #endregion
@@ -47,7 +57,7 @@ namespace Faker.Tests.MatcherTests
             var testInstance = new DefaultValueTestClass();
 
             //Match all of the properties of the test instance...
-            matcher.Match(testInstance);
+            _matcher.Match(testInstance);
 
             //Test to see that proper values have been assigned to the DateTime properties
             Assert.AreNotEqual(testInstance.DateTime1, default(DateTime));
@@ -68,6 +78,43 @@ namespace Faker.Tests.MatcherTests
 
             //Test to see that proper values have been assigned ot the string properties
             Assert.IsNotNullOrEmpty(testInstance.RandomString);
+        }
+
+        [Test(Description = "For types without matching selectors, we should simply skip those.")]
+        public void Should_Skip_Types_with_Unbindable_Attributes()
+        {
+            //Create a new TypTable that doesn't use any of the default types
+            var typeTable = new TypeTable(false);
+
+            //Add just the Float and DateTime selectors
+            typeTable.AddSelector(new FloatSelector());
+            typeTable.AddSelector(new DateTimeSelector());
+
+            //Create a new matcher that users only the type selectors we've specified
+            var typlessMatcher = new Matcher(typeTable);
+
+            //Create a new instance of our test class
+            var testInstance = new DefaultValueTestClass();
+
+            //Match the properties for which we have selectors
+            typlessMatcher.Match(testInstance);
+
+            /* ASSERT THAT THE PROPERTIES FOR WHICH WE HAVE INJECTORS ARE ALL SET */
+
+            //Test to see that proper values have been assigned to the DateTime properties
+            Assert.AreNotEqual(testInstance.DateTime1, default(DateTime));
+            Assert.AreNotEqual(testInstance.DateTime2, default(DateTime));
+
+            //Test to see that the proper values have been assigned to the float properties
+            Assert.AreNotEqual(testInstance.TestFloat, default(float));
+            Assert.AreNotEqual(testInstance.TestFloat2, default(float));
+
+            /* ASSERT THAT THE PROPERTIES THAT DON'T HAVE ANY SELECTORS ARE NOT SET */
+
+            Assert.AreEqual(testInstance.TestInt, default(int));
+            Assert.AreEqual(testInstance.TestLong, default(long));
+            Assert.AreEqual(testInstance.TestGuid, default(Guid));
+            Assert.IsNullOrEmpty(testInstance.RandomString);
         }
 
         #endregion
