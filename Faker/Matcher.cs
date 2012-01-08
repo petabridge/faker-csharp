@@ -42,6 +42,9 @@ namespace Faker
             foreach(var property in properties)
             {
                 var selector = GetMatchingSelector(property);
+                //if the selector is a missing selector, break execution in this iteration of the for-loop and continue
+                if (selector is MissingSelector)
+                    continue;
             }
         }
 
@@ -63,9 +66,10 @@ namespace Faker
                 return EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
             }
 
-            //If the type is primitive
-            if (propertyType.IsPrimitive)
+            //Check to see if the type is a class and has a default constructor
+            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null)
             {
+                Match<>();
             }
 
             throw new NotImplementedException();
