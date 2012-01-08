@@ -118,7 +118,7 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNotNullOrEmpty(testInstance.SampleString);
         }
 
-        [Test(Description = "Matcher shouldn't throw any sort of bullshit exception errors by trying to access a private member")]
+        [Test(Description = "Matcher shouldn't throw any errors by trying to access a private member")]
         public void Should_Not_Populate_Fields_Of_Private_SubClass()
         {
             //Create a new instance of our test class
@@ -174,7 +174,7 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNotNullOrEmpty(testInstance.SampleString);
         }
 
-        [Test(Description = "Matcher shouldn't throw any sort of bullshit exception errors by trying to access a private member")]
+        [Test(Description = "Matcher shouldn't throw any errors by trying to access a private member (nested subclass)")]
         public void Should_Not_Populate_Fields_Of_Private_Nested_SubClass()
         {
             //Create a new instance of our test class
