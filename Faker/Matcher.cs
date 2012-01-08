@@ -79,9 +79,10 @@ namespace Faker
 
                 //We found a matching selector
                 if(!(selector is MissingSelector))
+                {
                     selector.Generate(targetObject, property); //Bind the property
-                return; //Exit
-
+                    return; //Exit
+                }
             }
 
             //Check to see if the type is a class and has a default constructor
