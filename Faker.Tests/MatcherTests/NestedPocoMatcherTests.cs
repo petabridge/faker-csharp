@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
 
 namespace Faker.Tests.MatcherTests
@@ -9,6 +10,10 @@ namespace Faker.Tests.MatcherTests
     [TestFixture(Description = "Tests to ensure that Matcher can work with nested POCO classes")]
     public class NestedPocoMatcherTests
     {
+        public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)";
+
+        public Regex _valid_email_regex = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
+
         private Matcher _matcher;
 
         #region Nested POCO Test Classes...
@@ -30,6 +35,7 @@ namespace Faker.Tests.MatcherTests
             public double Double1 { get; set; }
             public Guid Guid1 { get; set; }
             public SpecialFieldsTestClass SpecialClass { get; set; }
+            public string SampleString { get; set; }
         }
 
         public class NestedPocoTestClass
@@ -61,8 +67,22 @@ namespace Faker.Tests.MatcherTests
 
             /* ASSERTIONS */
 
-            //Assert that the subclass has been instantiated at least
+            //Assert that all of the fields on the sub-class have been injected and instantiated
             Assert.IsNotNull(testInstance.SpecialClass);
+            Assert.AreNotEqual(testInstance.SpecialClass.DateRegistered, default(DateTime));
+            Assert.AreNotEqual(testInstance.SpecialClass.UserID, default(int));
+            Assert.AreNotEqual(testInstance.SpecialClass.Timestamp, default(long));
+            Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Name);
+            Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Email);
+            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.SpecialClass.Email));
+
+            //Assert that all of the fields on the main class have been injected and instantiated
+            Assert.AreNotEqual(testInstance.Double1, default(double));
+            Assert.AreNotEqual(testInstance.Float1, default(float));
+            Assert.AreNotEqual(testInstance.Float2, default(float));
+            Assert.AreNotEqual(testInstance.Long1, default(long));
+            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
+            Assert.IsNotNullOrEmpty(testInstance.SampleString);
         }
 
         #endregion
