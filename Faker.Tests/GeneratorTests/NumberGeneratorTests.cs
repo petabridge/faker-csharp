@@ -86,11 +86,15 @@ namespace Faker.Tests.GeneratorTests
         [Test(Description = "Does our float generator create floats within a valid range?")]
         public void Should_Generate_Valid_Floats_Within_Range()
         {
-            var float1 = Numbers.Float(Single.MinValue);
-            
-            Assert.AreNotEqual(float1, default(float));
-            Assert.AreNotEqual(float1, float.NegativeInfinity);
-            Assert.AreNotEqual(float1, float.PositiveInfinity);
+            var floats = new List<float>();
+            for (var i = 0; i < 1000; i++)
+            {
+                floats.Add(Numbers.Float(Single.MinValue));
+            }
+
+            //All floats should be greater than or equal to zero
+            Assert.IsTrue(floats.All(x => !float.IsNegativeInfinity(x)));
+            Assert.IsTrue(floats.All(x => !float.IsPositiveInfinity(x)));
         }
     }
 }
