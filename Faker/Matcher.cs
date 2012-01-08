@@ -60,7 +60,7 @@ namespace Faker
             //We have some matching selectors, so we'll evaluate and return the best match
             if(selectorCount > 0)
             {
-                //return EvaluateSelectors(propertyType, TypeMap.GetSelectors<propertyType>());
+                return EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
             }
 
             //If the type is primitive
@@ -69,6 +69,28 @@ namespace Faker
             }
 
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Evaluates a set of selectors and grabs the first available match
+        /// </summary>
+        /// <param name="propertyType">The type for which we're trying to find a match</param>
+        /// <param name="selectors">A list of selectors from the TypeTable</param>
+        /// <returns>the first matching ITypeSelector instance we could find</returns>
+        protected virtual ITypeSelector EvaluateSelectors(PropertyInfo propertyType, IEnumerable<ITypeSelector> selectors)
+        {
+            foreach(var selector in selectors)
+            {
+                //If the selector can bind
+                if(selector.CanBind(propertyType))
+                {
+                    //Return it
+                    return selector;
+                }
+            }
+
+            //Otherwise, return a MissingSelector and let them know that we can't do it.
+            return new MissingSelector();
         }
     }
 }

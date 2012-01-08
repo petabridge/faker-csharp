@@ -54,10 +54,12 @@
     <Compile Include="Selectors\ITypeSelector.cs" />
     <Compile Include="Helpers\ArrayHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selectors\MissingSelector.cs" />
     <Compile Include="Selectors\NumberSelectorBase.cs" />
     <Compile Include="Selectors\NumberSelectors.cs" />
     <Compile Include="Selectors\SpecialFieldsRegex.cs" />
     <Compile Include="Selectors\StringSelectors.cs" />
+    <Compile Include="Selectors\TypeSelectorBase.cs" />
     <Compile Include="TypeTable.cs" />
   </ItemGroup>
   <ItemGroup />
