@@ -39,6 +39,27 @@ namespace Faker.Tests.MatcherTests
         #endregion
 
         #region Tests
+
+        [Test(Description = "Should bind the default (basetype) values to all of the properties on our DefaultValueTestClass")]
+        public void Should_Bind_All_Properties_with_Default_Values()
+        {
+            //Create a new instance of our test class
+            var testInstance = new DefaultValueTestClass();
+
+            //Match all of the properties of the test instance...
+            matcher.Match(testInstance);
+
+            var properties = testInstance.GetType().GetProperties();
+
+            //Iterate over the properties of the test class and ensure that each instance is populated
+            foreach(var property in properties)
+            {
+                //Get the value of the property
+                var fieldValue = property.GetValue(property, null);
+                Assert.IsNotNull(fieldValue);
+            }
+        }
+
         #endregion
     }
 }
