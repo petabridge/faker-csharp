@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace Faker.Selectors
 {
+    //Base class used to signify to the TypeTable that this is the option of last resort for any given type
+    public abstract class PrimitiveSelectorBase<T> : TypeSelectorBase<T>{}
+
     /// <summary>
     /// Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
@@ -33,6 +36,11 @@ namespace Faker.Selectors
         public void Generate(object targetObject, PropertyInfo property)
         {
             property.SetValue(targetObject, Generate(), null);
+        }
+
+        public void Generate(ref object propertyObject)
+        {
+            propertyObject = Generate();
         }
 
         public abstract T Generate();

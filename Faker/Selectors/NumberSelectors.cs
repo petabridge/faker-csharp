@@ -10,7 +10,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Injects doubles into double fields within a range
     /// </summary>
-    public sealed class DoubleSelector : NumberSelectorBase<double>
+    public sealed class DoubleSelector : NumberSelectorBaseBase<double>
     {
         public DoubleSelector()
         {
@@ -28,7 +28,7 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class IntSelector : NumberSelectorBase<int>
+    public sealed class IntSelector : NumberSelectorBaseBase<int>
     {
         public IntSelector()
         {
@@ -46,7 +46,7 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class LongSelector : NumberSelectorBase<long>
+    public sealed class LongSelector : NumberSelectorBaseBase<long>
     {
         public LongSelector()
         {
@@ -64,7 +64,7 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class DecimalSelector : NumberSelectorBase<decimal>
+    public sealed class DecimalSelector : NumberSelectorBaseBase<decimal>
     {
         public DecimalSelector()
         {
@@ -82,7 +82,7 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class FloatSelector : NumberSelectorBase<float>
+    public sealed class FloatSelector : NumberSelectorBaseBase<float>
     {
         public FloatSelector()
         {

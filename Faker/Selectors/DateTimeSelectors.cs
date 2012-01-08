@@ -11,7 +11,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Injects DateTime values between the specified To and From ranges...
     /// </summary>
-    public class DateTimeSelector : TypeSelectorBase<DateTime>
+    public class DateTimeSelector :PrimitiveSelectorBase<DateTime>
     {
         public DateTimeSelector()
         {

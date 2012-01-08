@@ -12,7 +12,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Type selector for generating standard strings
     /// </summary>
-    public sealed class StringSelector : TypeSelectorBase<string>
+    public sealed class StringSelector : PrimitiveSelectorBase<string>
     {
         /// <summary>
         /// By default, we constrain the length of the string to be between 10 and 40 characters
