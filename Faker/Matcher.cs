@@ -38,13 +38,23 @@ namespace Faker
             //Get all of the properties of the class
             var properties = typeof (T).GetProperties();
 
+            ProcessProperties(properties, targetObject);
+        }
+
+        /// <summary>
+        /// Method for iterating over all of the indivdual properties in for a given object
+        /// </summary>
+        /// <param name="properties">The set of properties available to an object instance</param>
+        /// <param name="targetObject">The object against which type selectors will inject values</param>
+        protected virtual void ProcessProperties(PropertyInfo[] properties, object targetObject)
+        {
             //Iterate over the properties
-            foreach(var property in properties)
+            foreach (var property in properties)
             {
-                var selector = GetMatchingSelector(property);
-                //if the selector is a missing selector, break execution in this iteration of the for-loop and continue
-                if (selector is MissingSelector)
+                if (!property.CanWrite) //Bail if we can't write to the property
                     continue;
+
+                ProcessProperty(property, targetObject);
             }
         }
 
@@ -52,7 +62,8 @@ namespace Faker
         /// Protected method used to implement our selector-matching strategy. Uses a greedy approach.
         /// </summary>
         /// <param name="property">The meta-data about the property for which we will be finding a match</param>
-        protected virtual ITypeSelector GetMatchingSelector(PropertyInfo property)
+        /// <param name="targetObject">The object which will receive the property injection</param>
+        protected virtual void ProcessProperty(PropertyInfo property, object targetObject)
         {
             //Get the type of the property
             var propertyType = property.PropertyType;
@@ -60,19 +71,27 @@ namespace Faker
             //Determine if we have a selector-on-hand for this data type
             var selectorCount = TypeMap.CountSelectors(propertyType);
 
+            ITypeSelector selector = null;
+
             //We have some matching selectors, so we'll evaluate and return the best match
             if(selectorCount > 0)
             {
-                return EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
+                //Evaluate all of the possible selectors and find the first available match
+                selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
+
+                //We found a matching selector
+                if(!(selector is MissingSelector))
+                    selector.Generate(targetObject, property); //Bind the property
+                return; //Exit
+
             }
 
-            //Check to see if the type is a class and has a default constructor
-            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null)
-            {
-                Match<>();
-            }
+            ////Check to see if the type is a class and has a default constructor
+            //if (propertyType.IsClass && propertyType.IsPublic && propertyType.GetConstructor(Type.EmptyTypes) != null)
+            //{
+            //    var subProperties = 
+            //}
 
-            throw new NotImplementedException();
         }
 
         /// <summary>
