@@ -34,6 +34,30 @@ namespace Faker
         }
 
         /// <summary>
+        /// Private internal method for loading all of the default TypeSelectors into the TypeTable
+        /// </summary>
+        private void LoadDefaults()
+        {
+            /* NUMERIC DEFAULT SELECTORS */
+            AddSelector(new IntSelector());
+            AddSelector(new LongSelector());
+            AddSelector(new TimeStampSelector()); //TimeStamp selector should get used before the long selector
+            AddSelector(new DoubleSelector());
+            AddSelector(new FloatSelector());
+            AddSelector(new DecimalSelector());
+
+            /* DATETIME SELECTORS */
+            AddSelector(new DateTimeSelector());
+
+            /* STRING SELECTORS */
+            AddSelector(new StringSelector()); //String selector is the very last one we want to try and use
+            AddSelector(new FirstNameSelector());
+            AddSelector(new LastNameSelector());
+            AddSelector(new FullNameSelector());
+            AddSelector(new EmailSelector());
+        }
+
+        /// <summary>
         /// Internal method for securely creating type rows where needed
         /// </summary>
         /// <param name="incomingType">The type to which we're mapping this object</param>
