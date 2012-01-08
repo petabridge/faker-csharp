@@ -113,8 +113,18 @@ namespace Faker
         public int CountSelectors<T>()
         {
             var activeType = typeof(T);
-            CreateTypeIfNotExists(activeType);
-            return _typeMap[activeType].Count;
+            return CountSelectors(activeType);
+        }
+
+        /// <summary>
+        /// Count all of the selectors for a given type
+        /// </summary>
+        /// <param name="t">A type object for which we want to know the number of available selectors</param>
+        /// <returns>The number of selectors we have available for this type</returns>
+        public int CountSelectors(Type t)
+        {
+            CreateTypeIfNotExists(t);
+            return _typeMap[t].Count;
         }
 
         /// <summary>
