@@ -40,7 +40,20 @@ namespace Faker.Tests.MatcherTests
 
         public class NestedPocoTestClass
         {
-            
+            public class NestedNestedClass
+            {
+                public string Email { get; set; }
+                public long Timestamp { get; set; }
+                public DateTime DateRegistered { get; set; }
+            }
+
+            public float Float1 { get; set; }
+            public float Float2 { get; set; }
+            public long Long1 { get; set; }
+            public double Double1 { get; set; }
+            public Guid Guid1 { get; set; }
+            public NestedNestedClass NestedClassInstance { get; set; }
+            public string SampleString { get; set; }
         }
 
         #endregion
@@ -75,6 +88,33 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Name);
             Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Email);
             Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.SpecialClass.Email));
+
+            //Assert that all of the fields on the main class have been injected and instantiated
+            Assert.AreNotEqual(testInstance.Double1, default(double));
+            Assert.AreNotEqual(testInstance.Float1, default(float));
+            Assert.AreNotEqual(testInstance.Float2, default(float));
+            Assert.AreNotEqual(testInstance.Long1, default(long));
+            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
+            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+        }
+
+        [Test(Description = "Should be able to populate the fields of a class defined within another class and included as an instance member")]
+        public void Should_Populate_Fields_Of_Nested_Subclass()
+        {
+            //Create a new instance of our test class
+            var testInstance = new NestedPocoTestClass();
+
+            //Match the fields...
+            _matcher.Match(testInstance);
+
+            /* ASSERTIONS */
+
+            //Assert that all of the fields on the sub-class have been injected and instantiated
+            Assert.IsNotNull(testInstance.NestedClassInstance);
+            Assert.AreNotEqual(testInstance.NestedClassInstance.DateRegistered, default(DateTime));
+            Assert.AreNotEqual(testInstance.NestedClassInstance.Timestamp, default(long));
+            Assert.IsNotNullOrEmpty(testInstance.NestedClassInstance.Email);
+            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.NestedClassInstance.Email));
 
             //Assert that all of the fields on the main class have been injected and instantiated
             Assert.AreNotEqual(testInstance.Double1, default(double));
