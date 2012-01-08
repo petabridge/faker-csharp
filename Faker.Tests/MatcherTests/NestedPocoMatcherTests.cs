@@ -38,6 +38,17 @@ namespace Faker.Tests.MatcherTests
             public string SampleString { get; set; }
         }
 
+        public class ComplexPrivatePocoTestClass
+        {
+            public float Float1 { get; set; }
+            public float Float2 { get; set; }
+            public long Long1 { get; set; }
+            public double Double1 { get; set; }
+            public Guid Guid1 { get; set; }
+            private SpecialFieldsTestClass SpecialClass { get; set; }
+            public string SampleString { get; set; }
+        }
+
         public class NestedPocoTestClass
         {
             public class NestedNestedClass
@@ -56,6 +67,24 @@ namespace Faker.Tests.MatcherTests
             public string SampleString { get; set; }
         }
 
+        public class PrivateNestedPocoTestClass
+        {
+            public class NestedNestedClass
+            {
+                public string Email { get; set; }
+                public long Timestamp { get; set; }
+                public DateTime DateRegistered { get; set; }
+            }
+
+            public float Float1 { get; set; }
+            public float Float2 { get; set; }
+            public long Long1 { get; set; }
+            public double Double1 { get; set; }
+            public Guid Guid1 { get; set; }
+            private NestedNestedClass NestedClassInstance { get; set; }
+            public string SampleString { get; set; }
+        }
+
         #endregion
 
         #region Setup / Teardown
@@ -71,6 +100,26 @@ namespace Faker.Tests.MatcherTests
 
         [Test(Description = "Matcher should inject the values of a subclass in addition to those of the parent class")]
         public void Should_Populate_Fields_Of_SubClass()
+        {
+            //Create a new instance of our test class
+            var testInstance = new ComplexPrivatePocoTestClass();
+
+            //Match the fields...
+            _matcher.Match(testInstance);
+
+            /* ASSERTIONS */
+
+            //Assert that all of the fields on the main class have been injected and instantiated
+            Assert.AreNotEqual(testInstance.Double1, default(double));
+            Assert.AreNotEqual(testInstance.Float1, default(float));
+            Assert.AreNotEqual(testInstance.Float2, default(float));
+            Assert.AreNotEqual(testInstance.Long1, default(long));
+            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
+            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+        }
+
+        [Test(Description = "Matcher shouldn't throw any sort of bullshit exception errors by trying to access a private member")]
+        public void Should_Not_Populate_Fields_Of_Private_SubClass()
         {
             //Create a new instance of our test class
             var testInstance = new ComplexPocoTestClass();
@@ -116,6 +165,25 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNotNullOrEmpty(testInstance.NestedClassInstance.Email);
             Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.NestedClassInstance.Email));
 
+            //Assert that all of the fields on the main class have been injected and instantiated
+            Assert.AreNotEqual(testInstance.Double1, default(double));
+            Assert.AreNotEqual(testInstance.Float1, default(float));
+            Assert.AreNotEqual(testInstance.Float2, default(float));
+            Assert.AreNotEqual(testInstance.Long1, default(long));
+            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
+            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+        }
+
+        [Test(Description = "Matcher shouldn't throw any sort of bullshit exception errors by trying to access a private member")]
+        public void Should_Not_Populate_Fields_Of_Private_Nested_SubClass()
+        {
+            //Create a new instance of our test class
+            var testInstance = new PrivateNestedPocoTestClass();
+
+            //Match the fields...
+            _matcher.Match(testInstance);
+
+            /* ASSERTIONS */
             //Assert that all of the fields on the main class have been injected and instantiated
             Assert.AreNotEqual(testInstance.Double1, default(double));
             Assert.AreNotEqual(testInstance.Float1, default(float));

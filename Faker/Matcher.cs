@@ -86,10 +86,7 @@ namespace Faker
             }
 
             //Check to see if the type is a class and has a default constructor
-
-            var constructor = propertyType.GetConstructor(Type.EmptyTypes);
-
-            if (propertyType.IsClass && constructor != null)
+            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null)
             {
                 var subProperties = propertyType.GetProperties();
 
