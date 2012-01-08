@@ -71,13 +71,11 @@ namespace Faker
             //Determine if we have a selector-on-hand for this data type
             var selectorCount = TypeMap.CountSelectors(propertyType);
 
-            ITypeSelector selector = null;
-
             //We have some matching selectors, so we'll evaluate and return the best match
             if(selectorCount > 0)
             {
                 //Evaluate all of the possible selectors and find the first available match
-                selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
+                var selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
 
                 //We found a matching selector
                 if(!(selector is MissingSelector))
@@ -86,11 +84,22 @@ namespace Faker
 
             }
 
-            ////Check to see if the type is a class and has a default constructor
-            //if (propertyType.IsClass && propertyType.IsPublic && propertyType.GetConstructor(Type.EmptyTypes) != null)
-            //{
-            //    var subProperties = 
-            //}
+            //Check to see if the type is a class and has a default constructor
+            if (propertyType.IsClass && propertyType.IsPublic && propertyType.GetConstructor(Type.EmptyTypes) != null)
+            {
+                var subProperties = propertyType.GetProperties();
+
+                //Create an instance of the underlying subclass
+                var subClassInstance = Activator.CreateInstance(propertyType);
+
+                //Match all of the properties on the subclass 
+                Match(subClassInstance);
+
+                //Bind the sub-class back onto the original target object
+                property.SetValue(targetObject, subClassInstance, null);
+
+                return; //Exit
+            }
 
         }
 
