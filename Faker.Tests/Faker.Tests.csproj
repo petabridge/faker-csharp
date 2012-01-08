@@ -60,6 +60,7 @@
     <Compile Include="MatcherTests\SimplePocoMatcherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectorTests\DateTimeSelectorTests.cs" />
+    <Compile Include="SelectorTests\NumberSelectorTests.cs" />
     <Compile Include="SelectorTests\StringSelectorTests.cs" />
     <Compile Include="TypeTableTests.cs" />
   </ItemGroup>

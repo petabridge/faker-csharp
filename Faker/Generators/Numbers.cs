@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Faker.Helpers;
 
 namespace Faker.Generators
 {
@@ -90,9 +91,7 @@ namespace Faker.Generators
         /// <returns>A decimal</returns>
         public static decimal Decimal(decimal min = 0.0m, decimal max = System.Decimal.MaxValue)
         {
-            var nextVal = (decimal)R.NextDouble();
-
-            return (nextVal * (max - min) + min);
+            return R.NextDecimal(min, max);
         }
 
         /// <summary>
