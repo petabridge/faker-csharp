@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Faker.Selectors;
 using NUnit.Framework;
 
@@ -10,6 +11,10 @@ namespace Faker.Tests.MatcherTests
     [TestFixture(Description = "The matcher should be able to process simple POCO classes that don't have any arrays, IEnumerables, or or nested classes")]
     public class SimplePocoMatcherTests
     {
+        public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)";
+
+        public Regex _valid_email_regex = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
+
         private Matcher _matcher;
 
         #region Simple POCO test classes...
@@ -115,6 +120,25 @@ namespace Faker.Tests.MatcherTests
             Assert.AreEqual(testInstance.TestLong, default(long));
             Assert.AreEqual(testInstance.TestGuid, default(Guid));
             Assert.IsNullOrEmpty(testInstance.RandomString);
+        }
+
+        [Test(Description = "Should bind and populate special fields on our test class")]
+        public void Should_Populate_Special_Fields()
+        {
+            //Create a new instance of our test class
+            var testInstance = new SpecialFieldsTestClass();
+
+            //Match all of the fields on our test instance
+            _matcher.Match(testInstance);
+
+            /* Assert to see that we have populated all of the fields on our test instance */
+            Assert.AreNotEqual(testInstance.UserID, default(int));
+            Assert.AreNotEqual(testInstance.Timestamp, default(long));
+            Assert.AreNotEqual(testInstance.DateRegistered, default(DateTime));
+
+            Assert.IsNotNullOrEmpty(testInstance.Name);
+            Assert.IsNotNullOrEmpty(testInstance.Email);
+            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.Email));
         }
 
         #endregion
