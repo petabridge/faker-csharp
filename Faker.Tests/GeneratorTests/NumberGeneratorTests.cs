@@ -82,5 +82,15 @@ namespace Faker.Tests.GeneratorTests
             //All integers should not be the same
             Assert.IsFalse(longs.All(x => x == longs[0]));
         }
+
+        [Test(Description = "Does our float generator create floats within a valid range?")]
+        public void Should_Generate_Valid_Floats_Within_Range()
+        {
+            var float1 = Numbers.Float(Single.MinValue);
+            
+            Assert.AreNotEqual(float1, default(float));
+            Assert.AreNotEqual(float1, float.NegativeInfinity);
+            Assert.AreNotEqual(float1, float.PositiveInfinity);
+        }
     }
 }
