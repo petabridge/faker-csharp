@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Faker.Selectors
 {
-    internal interface ITypeSelector
+    public interface ITypeSelector
     {
         /// <summary>
         /// Settable priority which indicates the priority of this TypeSelector relative to the

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Faker.Selectors;
 
@@ -32,7 +33,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
-        public void Match<T>(T targetObject) where T : new()
+        public virtual void Match<T>(T targetObject) where T : new()
         {
             //Get all of the properties of the class
             var properties = typeof (T).GetProperties();
@@ -40,16 +41,31 @@ namespace Faker
             //Iterate over the properties
             foreach(var property in properties)
             {
-                //Get the type of each property
-                var propertyType = property.PropertyType;
+                var selector = GetMatchingSelector(property);
+            }
+        }
 
-                //var selectorCount = TypeMap.CountSelectors<property.PropertyType>();
+        /// <summary>
+        /// Protected method used to implement our selector-matching strategy. Uses a greedy approach.
+        /// </summary>
+        /// <param name="property">The meta-data about the property for which we will be finding a match</param>
+        protected virtual ITypeSelector GetMatchingSelector(PropertyInfo property)
+        {
+            //Get the type of the property
+            var propertyType = property.PropertyType;
 
-                //If the type is primitive
-                if(propertyType.IsPrimitive)
-                {
-                    
-                }
+            //Determine if we have a selector-on-hand for this data type
+            var selectorCount = TypeMap.CountSelectors(propertyType);
+
+            //We have some matching selectors, so we'll evaluate and return the best match
+            if(selectorCount > 0)
+            {
+                return EvaluateSelectors(propertyType, TypeMap.GetSelectors<propertyType>());
+            }
+
+            //If the type is primitive
+            if (propertyType.IsPrimitive)
+            {
             }
         }
     }
