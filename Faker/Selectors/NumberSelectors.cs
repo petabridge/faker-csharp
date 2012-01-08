@@ -66,11 +66,35 @@ namespace Faker.Selectors
 
     public sealed class DecimalSelector : NumberSelectorBase<decimal>
     {
+        public DecimalSelector()
+        {
+            MinSize = Decimal.MinValue;
+            MaxSize = Decimal.MaxValue;
+        }
+
         #region Overrides of TypeSelectorBase<decimal>
 
         public override void Generate(object targetObject, PropertyInfo property)
         {
             property.SetValue(targetObject, Numbers.Decimal(MinSize, MaxSize), null);
+        }
+
+        #endregion
+    }
+
+    public sealed class FloatSelector : NumberSelectorBase<float>
+    {
+        public FloatSelector()
+        {
+            MinSize = float.MinValue;
+            MaxSize = float.MaxValue;
+        }
+
+        #region Overrides of TypeSelectorBase<float>
+
+        public override void Generate(object targetObject, PropertyInfo property)
+        {
+            property.SetValue(targetObject, Numbers.Float(MinSize, MaxSize), null);
         }
 
         #endregion
