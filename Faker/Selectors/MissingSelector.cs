@@ -31,6 +31,11 @@ namespace Faker.Selectors
             throw new NotImplementedException();
         }
 
+        public void Generate(ref object propertyObject)
+        {
+            throw new NotImplementedException();
+        }
+
         public Type TargetType
         {
             get { throw new NotImplementedException(); }

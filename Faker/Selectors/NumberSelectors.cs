@@ -10,7 +10,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Injects doubles into double fields within a range
     /// </summary>
-    public sealed class DoubleSelector : NumberSelectorBase<double>
+    public sealed class DoubleSelector : NumberSelectorBaseBase<double>
     {
         public DoubleSelector()
         {
@@ -20,15 +20,15 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<double>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override double Generate()
         {
-            property.SetValue(targetObject, Numbers.Double(MinSize, MaxSize), null);
+            return Numbers.Double(MinSize, MaxSize);
         }
 
         #endregion
     }
 
-    public sealed class IntSelector : NumberSelectorBase<int>
+    public sealed class IntSelector : NumberSelectorBaseBase<int>
     {
         public IntSelector()
         {
@@ -38,15 +38,15 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<int>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override int Generate()
         {
-            property.SetValue(targetObject, Numbers.Int(MinSize, MaxSize), null);
+            return Numbers.Int(MinSize, MaxSize);
         }
 
         #endregion
     }
 
-    public sealed class LongSelector : NumberSelectorBase<long>
+    public sealed class LongSelector : NumberSelectorBaseBase<long>
     {
         public LongSelector()
         {
@@ -56,15 +56,15 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<long>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override long Generate()
         {
-            property.SetValue(targetObject, Numbers.Long(MinSize, MaxSize), null);
+            return Numbers.Long(MinSize, MaxSize);
         }
 
         #endregion
     }
 
-    public sealed class DecimalSelector : NumberSelectorBase<decimal>
+    public sealed class DecimalSelector : NumberSelectorBaseBase<decimal>
     {
         public DecimalSelector()
         {
@@ -74,15 +74,15 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<decimal>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override decimal Generate()
         {
-            property.SetValue(targetObject, Numbers.Decimal(MinSize, MaxSize), null);
+            return Numbers.Decimal(MinSize, MaxSize);
         }
 
         #endregion
     }
 
-    public sealed class FloatSelector : NumberSelectorBase<float>
+    public sealed class FloatSelector : NumberSelectorBaseBase<float>
     {
         public FloatSelector()
         {
@@ -92,9 +92,9 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<float>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override float Generate()
         {
-            property.SetValue(targetObject, Numbers.Float(MinSize, MaxSize), null);
+            return Numbers.Float(MinSize, MaxSize);
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Faker.Helpers;
 using Faker.Selectors;
 
 namespace Faker
@@ -147,6 +148,18 @@ namespace Faker
         {
             CreateTypeIfNotExists(t);
             return _typeMap[t];
+        }
+
+        /// <summary>
+        /// Gets the base selector for a given datatype
+        /// </summary>
+        /// <param name="t">The type that we need to inject</param>
+        /// <returns>A matching selector, null otherwise</returns>
+        public ITypeSelector GetBaseSelector(Type t)
+        {
+            CreateTypeIfNotExists(t);
+            var baseType = GenericHelper.GetGenericType(typeof (PrimitiveSelectorBase<>), t);
+            return _typeMap[t].FirstOrDefault(x => baseType.IsAssignableFrom(x.GetType()));
         }
     }
 }

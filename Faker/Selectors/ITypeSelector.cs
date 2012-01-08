@@ -33,6 +33,12 @@ namespace Faker.Selectors
         void Generate(object targetObject, PropertyInfo property);
 
         /// <summary>
+        /// Injects the generator function into the property
+        /// </summary>
+        /// <param name="propertyObject">An instantiated property object to which we're assigning directly</param>
+        void Generate(ref object propertyObject);
+
+        /// <summary>
         /// The underlying Type used for this mapping
         /// </summary>
         Type TargetType { get; }

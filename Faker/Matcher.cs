@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Faker.Generators;
+using Faker.Helpers;
 using Faker.Selectors;
 
 namespace Faker
@@ -100,6 +103,61 @@ namespace Faker
                 property.SetValue(targetObject, subClassInstance, null);
 
                 return; //Exit
+            }
+
+            //Check to see if the type is an array or any other sort of collection
+            if(typeof(IList).IsAssignableFrom(propertyType))
+            {
+                //Get the underlying type used int he array
+                var elementType = propertyType.GetElementType();
+
+                //Get a number of elements we want to create 
+                //Note: (between 0 and 10 for now)
+                var elementCount = Numbers.Int(0, 10);
+                
+                //Create an instance of our target array
+                IList arrayInstance = null;
+
+                //If we're working with a generic list or any other sort of collection
+                if(propertyType.IsGenericType)
+                {
+                    arrayInstance = (IList)GenericHelper.CreateGeneric(propertyType, elementType);
+                }
+                else
+                {
+                    arrayInstance = (IList) GenericHelper.CreateGeneric(typeof (List<>), elementType);
+                }
+
+                //Determine if there's a selector available for this type
+                var hasSelector = TypeMap.CountSelectors(elementType) > 0;
+                ITypeSelector selector = null;
+
+                if(hasSelector)
+                {
+                    //selector = EvaluateSelectors(ele)
+                }
+
+                for(var i =0; i < elementCount; i++)
+                {
+                    //Create a new element instance
+                    var element = Activator.CreateInstance(elementType);
+
+                    if(hasSelector)
+                    {
+                        
+                    }
+
+                    //If the element type is a sub-class, then populate it recursively
+                    if(elementType.IsClass)
+                    {
+                        var subProperties = propertyType.GetProperties();
+
+                        //Populate all of the properties on this object
+                        ProcessProperties(subProperties, element);
+                    }
+
+                    arrayInstance.Add(element);
+                }
             }
 
         }

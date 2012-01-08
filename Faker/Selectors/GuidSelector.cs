@@ -10,13 +10,13 @@ namespace Faker.Selectors
     /// <summary>
     /// Type selector used for generating Guid values
     /// </summary>
-    public sealed class GuidSelector : TypeSelectorBase<Guid>
+    public sealed class GuidSelector : PrimitiveSelectorBase<Guid>
     {
         #region Overrides of TypeSelectorBase<Guid>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override Guid Generate()
         {
-            property.SetValue(targetObject, Guids.GetGuid(), null);
+            return Guids.GetGuid();
         }
 
         #endregion
