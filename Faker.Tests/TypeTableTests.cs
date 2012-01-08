@@ -19,7 +19,7 @@ namespace Faker.Tests
         public void Should_Add_Type_Selectors_For_Single_Type_To_TypeTable()
         {
             //Create a new TypeTable
-            var table = new TypeTable();
+            var table = new TypeTable(false);
 
             //Create some selectors that we're going to add
             var stringSelector1 = new StringSelector();
@@ -54,7 +54,7 @@ namespace Faker.Tests
         public void Should_Add_Type_Selectors_For_Multiple_Types_To_TypeTable()
         {
             //Create a new TypeTable
-            var table = new TypeTable();
+            var table = new TypeTable(false);
 
             //Create some string selectors that we're going to add
             var stringSelector1 = new StringSelector();
@@ -104,7 +104,7 @@ namespace Faker.Tests
         public void Should_Add_Selector_To_Back_Of_List()
         {
             //Create a new TypeTable
-            var table = new TypeTable();
+            var table = new TypeTable(false);
 
             //Create some selectors that we're going to add
             var stringSelector1 = new StringSelector();
@@ -134,7 +134,7 @@ namespace Faker.Tests
         public void Should_Clear_TypeSelector_List()
         {
             //Create a new TypeTable
-            var table = new TypeTable();
+            var table = new TypeTable(false);
 
             //Create some selectors that we're going to add
             var stringSelector1 = new StringSelector();

@@ -22,15 +22,18 @@ namespace Faker
         /// <summary>
         /// Default constructor
         /// </summary>
-        public TypeTable():this(new Dictionary<Type, LinkedList<ITypeSelector>>()){}
+        public TypeTable(bool useDefaults = true):this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>()){}
 
         /// <summary>
         /// Private constructor which accepts an inbound typemap as an argument
         /// </summary>
+        /// <param name="useDefaults">Determines if we should load all of our default selectors or not</param>
         /// <param name="typeMap">A typemap instance</param>
-        private TypeTable(Dictionary<Type, LinkedList<ITypeSelector>> typeMap)
+        private TypeTable(bool useDefaults, Dictionary<Type, LinkedList<ITypeSelector>> typeMap)
         {
             _typeMap = typeMap;
+            if(useDefaults) //Load defaults if the user requested it
+                LoadDefaults();
         }
 
         /// <summary>
