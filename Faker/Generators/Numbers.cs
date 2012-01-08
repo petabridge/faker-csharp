@@ -51,7 +51,7 @@ namespace Faker.Generators
         {
             var nextVal = (float)R.NextDouble();
 
-            return (nextVal*(max - min) + min);
+            return ((nextVal*(max - min)) + min);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Faker.Generators
         {
             var nextVal = R.NextDouble();
 
-            return (nextVal * (max - min) + min);
+            return ((nextVal * (max - min)) + min);
         }
 
         /// <summary>

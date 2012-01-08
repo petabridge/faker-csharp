@@ -112,7 +112,11 @@ namespace Faker.Tests.MatcherTests
 
             //Test to see that the proper values have been assigned to the float properties
             Assert.AreNotEqual(testInstance.TestFloat, default(float));
+            Assert.AreNotEqual(testInstance.TestFloat, float.PositiveInfinity);
+            Assert.AreNotEqual(testInstance.TestFloat, float.NegativeInfinity);
             Assert.AreNotEqual(testInstance.TestFloat2, default(float));
+            Assert.AreNotEqual(testInstance.TestFloat2, float.PositiveInfinity);
+            Assert.AreNotEqual(testInstance.TestFloat2, float.NegativeInfinity);
 
             /* ASSERT THAT THE PROPERTIES THAT DON'T HAVE ANY SELECTORS ARE NOT SET */
 
