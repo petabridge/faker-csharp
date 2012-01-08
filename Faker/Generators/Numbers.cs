@@ -49,9 +49,10 @@ namespace Faker.Generators
         /// <returns>A float</returns>
         public static float Float(float min = 0.0f, float max = Single.MaxValue)
         {
-            var nextVal = (float)R.NextDouble();
+            var nextVal = R.NextDouble();
+            var range = ((double)max - (double)min);
 
-            return ((nextVal*(max - min)) + min);
+            return (float)((nextVal * range) + min);
         }
 
         /// <summary>
