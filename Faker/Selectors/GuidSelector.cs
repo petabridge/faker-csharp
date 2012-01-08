@@ -14,9 +14,9 @@ namespace Faker.Selectors
     {
         #region Overrides of TypeSelectorBase<Guid>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override Guid Generate()
         {
-            property.SetValue(targetObject, Guids.GetGuid(), null);
+            return Guids.GetGuid();
         }
 
         #endregion

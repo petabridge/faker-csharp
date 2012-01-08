@@ -30,7 +30,12 @@ namespace Faker.Selectors
             return field.PropertyType == TargetType;
         }
 
-        public abstract void Generate(object targetObject, PropertyInfo property);
+        public void Generate(object targetObject, PropertyInfo property)
+        {
+            property.SetValue(targetObject, Generate(), null);
+        }
+
+        public abstract T Generate();
 
         public Type TargetType { get; private set; }
     }

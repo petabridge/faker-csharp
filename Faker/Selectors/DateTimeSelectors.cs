@@ -24,9 +24,9 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<DateTime>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override DateTime Generate()
         {
-            property.SetValue(targetObject, DateTimes.GetDateTime(From, To), null);
+            return DateTimes.GetDateTime(From, To);
         }
 
         #endregion
@@ -55,9 +55,9 @@ namespace Faker.Selectors
             return _regex.IsMatch(field.Name);
         }
         
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override long Generate()
         {
-            property.SetValue(targetObject, DateTimes.GetTimeStamp(From, To), null);
+            return DateTimes.GetTimeStamp(From, To);
         }
 
         #endregion

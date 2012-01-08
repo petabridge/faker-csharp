@@ -146,7 +146,7 @@ namespace Faker
 
                 if(hasSelector)
                 {
-                    selector = EvaluateSelectors(elementType.GetE)
+                    //selector = EvaluateSelectors(elementType.GetE)
                 }
 
                 for(var i =0; i < elementCount; i++)
@@ -166,10 +166,6 @@ namespace Faker
 
                         //Populate all of the properties on this object
                         ProcessProperties(subProperties, element);
-                    }
-                    else
-                    {
-                        
                     }
 
                     arrayInstance.Add(element);

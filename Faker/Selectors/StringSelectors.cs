@@ -28,9 +28,9 @@ namespace Faker.Selectors
 
         #region Overrides of TypeSelectorBase<string>
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override string Generate()
         {
-            property.SetValue(targetObject, Strings.GenerateAlphaNumericString(MinSize, MaxSize), null);
+            return Strings.GenerateAlphaNumericString(MinSize, MaxSize);
         }
 
         #endregion
@@ -50,9 +50,9 @@ namespace Faker.Selectors
             return _regex.IsMatch(field.Name);
         }
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override string Generate()
         {
-            property.SetValue(targetObject, Names.Last(), null);
+            return Names.Last();
         }
 
         #endregion
@@ -72,9 +72,9 @@ namespace Faker.Selectors
             return _regex.IsMatch(field.Name);
         }
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override string Generate()
         {
-            property.SetValue(targetObject, Names.First(), null);
+            return Names.First();
         }
 
         #endregion
@@ -92,9 +92,9 @@ namespace Faker.Selectors
             return _regex.IsMatch(field.Name);
         }
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override string Generate()
         {
-            property.SetValue(targetObject, Names.FullName(), null);
+            return Names.FullName();
         }
     }
 
@@ -109,9 +109,9 @@ namespace Faker.Selectors
             return _regex.IsMatch(field.Name);
         }
 
-        public override void Generate(object targetObject, PropertyInfo property)
+        public override string Generate()
         {
-            property.SetValue(targetObject, EmailAddresses.Human(), null);
+            return EmailAddresses.Human();
         }
 
         #endregion
