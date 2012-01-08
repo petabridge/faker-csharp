@@ -13,8 +13,19 @@ namespace Faker.Helpers
         /// <returns>An instantiated generic instance of generic{innerType}()</returns>
         public static object CreateGeneric(Type generic, Type innerType, params object[] args)
         {
-            var specificType = generic.MakeGenericType(new[] { innerType });
+            var specificType = GetGenericType(generic, innerType);
             return Activator.CreateInstance(specificType, args);
+        }
+
+        /// <summary>
+        /// Internal method for creating instances of generic objects
+        /// </summary>
+        /// <param name="generic">the Generic type</param>
+        /// <param name="innerType">the inner type</param>
+        /// <returns>The constructed generic type</returns>
+        public static Type GetGenericType(Type generic, Type innerType)
+        {
+            return generic.MakeGenericType(new[] {innerType});
         }
     }
 }

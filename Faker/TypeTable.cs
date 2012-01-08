@@ -158,8 +158,8 @@ namespace Faker
         public ITypeSelector GetBaseSelector(Type t)
         {
             CreateTypeIfNotExists(t);
-            var baseType = GenericHelper.CreateGeneric(typeof (PrimitiveSelectorBase<>), t);
-            return _typeMap[t].FirstOrDefault(x => x.GetType().IsInstanceOfType(baseType));
+            var baseType = GenericHelper.GetGenericType(typeof (PrimitiveSelectorBase<>), t);
+            return _typeMap[t].FirstOrDefault(x => baseType.IsAssignableFrom(x.GetType()));
         }
     }
 }

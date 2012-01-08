@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Faker.Helpers;
 using Faker.Selectors;
 using NUnit.Framework;
 
@@ -154,6 +155,37 @@ namespace Faker.Tests
 
             //Count the new number of string selectors (should equal zero)
             Assert.AreEqual(0, table.CountSelectors<string>());
+        }
+
+        [Test(Description = "We should be able to get ahold of the base selector for primitive types we're working with")]
+        public void Should_Get_Base_Selector_For_Primitive_Types()
+        {
+            //Create a new type table which uses all of the system defaults
+            var table = new TypeTable();
+
+            //Try to grab the integer selector...
+            var intSelector = table.GetBaseSelector(typeof (int));
+            Assert.IsInstanceOf<IntSelector>(intSelector);
+
+            //Try to grab the float selector
+            var floatSelector = table.GetBaseSelector(typeof (float));
+            Assert.IsInstanceOf<FloatSelector>(floatSelector);
+
+            //Try to grab the double selector
+            var doubleSelector = table.GetBaseSelector(typeof(double));
+            Assert.IsInstanceOf<DoubleSelector>(doubleSelector);
+
+            //Try to grab the string selector
+            var stringSelector = table.GetBaseSelector(typeof(string));
+            Assert.IsInstanceOf<StringSelector>(stringSelector);
+
+            //Try to grab the DateTime selector
+            var dateTimeSelector = table.GetBaseSelector(typeof(DateTime));
+            Assert.IsInstanceOf<DateTimeSelector>(dateTimeSelector);
+
+            //Try to grab the Guid selector
+            var guidSelector = table.GetBaseSelector(typeof(Guid));
+            Assert.IsInstanceOf<GuidSelector>(guidSelector);
         }
 
         #endregion
