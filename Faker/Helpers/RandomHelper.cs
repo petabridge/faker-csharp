@@ -40,9 +40,9 @@ namespace Faker.Helpers
         {
             var scale = (byte)rng.Next(29);
             var sign = rng.Next(2) == 1;
-            return new decimal(Decimal.ToInt32(min),
+            return new decimal(Convert.ToInt32(min),
                                rng.NextInt32(),
-                               Decimal.ToInt32(max),
+                               Convert.ToInt32(max),
                                sign,
                                scale);
         }

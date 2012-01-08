@@ -68,8 +68,8 @@ namespace Faker.Selectors
     {
         public DecimalSelector()
         {
-            MinSize = Decimal.MinValue;
-            MaxSize = Decimal.MaxValue;
+            MinSize = new decimal(Int32.MinValue);
+            MaxSize = new decimal(Int32.MaxValue);
         }
 
         #region Overrides of TypeSelectorBase<decimal>
