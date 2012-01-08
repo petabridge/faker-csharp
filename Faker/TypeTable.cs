@@ -135,8 +135,18 @@ namespace Faker
         public IEnumerable<TypeSelectorBase<T>> GetSelectors<T>()
         {
             var activeType = typeof(T);
-            CreateTypeIfNotExists(activeType);
-            return _typeMap[activeType].Cast<TypeSelectorBase<T>>();
+            var selectors = GetSelectors(activeType);
+            return selectors.Cast<TypeSelectorBase<T>>();
+        }
+
+        /// <summary>
+        /// Get all of the selectors for a given type
+        /// </summary>
+        /// <returns>An enumerable list of selectors</returns>
+        public IEnumerable<ITypeSelector> GetSelectors(Type t)
+        {
+            CreateTypeIfNotExists(t);
+            return _typeMap[t];
         }
     }
 }

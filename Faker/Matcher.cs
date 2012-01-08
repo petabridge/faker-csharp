@@ -60,13 +60,15 @@ namespace Faker
             //We have some matching selectors, so we'll evaluate and return the best match
             if(selectorCount > 0)
             {
-                return EvaluateSelectors(propertyType, TypeMap.GetSelectors<propertyType>());
+                //return EvaluateSelectors(propertyType, TypeMap.GetSelectors<propertyType>());
             }
 
             //If the type is primitive
             if (propertyType.IsPrimitive)
             {
             }
+
+            throw new NotImplementedException();
         }
     }
 }
