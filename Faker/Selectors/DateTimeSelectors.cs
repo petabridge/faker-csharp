@@ -32,6 +32,9 @@ namespace Faker.Selectors
         #endregion
     }
 
+    /// <summary>
+    /// Injects a timestamp value as a long integer between the specified To and From ranges (expressed as DateTimes)...
+    /// </summary>
     public class TimeStampSelector : TypeSelectorBase<long>
     {
         public TimeStampSelector()
