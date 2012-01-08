@@ -81,7 +81,7 @@ namespace Faker.Tests.MatcherTests
         }
 
         [Test(Description = "For types without matching selectors, we should simply skip those.")]
-        public void Should_Skip_Types_with_Unbindable_Attributes()
+        public void Should_Skip_Types_Without_Selectors()
         {
             //Create a new TypTable that doesn't use any of the default types
             var typeTable = new TypeTable(false);
