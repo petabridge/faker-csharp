@@ -10,16 +10,13 @@ namespace Faker.Selectors
     /// <summary>
     /// Injects doubles into double fields within a range
     /// </summary>
-    public sealed class DoubleSelector : TypeSelectorBase<double>
+    public sealed class DoubleSelector : NumberSelectorBase<double>
     {
         public DoubleSelector()
         {
             MinSize = Double.MinValue;
             MaxSize = Double.MaxValue;
         }
-
-        public double MaxSize { get; set; }
-        public double MinSize { get; set; }
 
         #region Overrides of TypeSelectorBase<double>
 
@@ -31,16 +28,13 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class IntSelector : TypeSelectorBase<int>
+    public sealed class IntSelector : NumberSelectorBase<int>
     {
         public IntSelector()
         {
             MinSize = Int32.MinValue;
             MaxSize = Int32.MaxValue;
         }
-
-        public int MaxSize { get; set; }
-        public int MinSize { get; set; }
 
         #region Overrides of TypeSelectorBase<int>
 
@@ -52,7 +46,7 @@ namespace Faker.Selectors
         #endregion
     }
 
-    public sealed class LongSelector : TypeSelectorBase<long>
+    public sealed class LongSelector : NumberSelectorBase<long>
     {
         public LongSelector()
         {
@@ -60,14 +54,23 @@ namespace Faker.Selectors
             MaxSize = Int64.MaxValue;
         }
 
-        public long MaxSize { get; set; }
-        public long MinSize { get; set; }
-
         #region Overrides of TypeSelectorBase<long>
 
         public override void Generate(object targetObject, PropertyInfo property)
         {
             property.SetValue(targetObject, Numbers.Long(MinSize, MaxSize), null);
+        }
+
+        #endregion
+    }
+
+    public sealed class DecimalSelector : NumberSelectorBase<decimal>
+    {
+        #region Overrides of TypeSelectorBase<decimal>
+
+        public override void Generate(object targetObject, PropertyInfo property)
+        {
+            property.SetValue(targetObject, Numbers.Decimal(MinSize, MaxSize), null);
         }
 
         #endregion
