@@ -58,6 +58,9 @@ namespace Faker
             AddSelector(new LastNameSelector());
             AddSelector(new FullNameSelector());
             AddSelector(new EmailSelector());
+
+            /* GUID SELECTORS */
+            AddSelector(new GuidSelector());
         }
 
         /// <summary>
