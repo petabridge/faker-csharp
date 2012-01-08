@@ -49,15 +49,25 @@ namespace Faker.Tests.MatcherTests
             //Match all of the properties of the test instance...
             matcher.Match(testInstance);
 
-            var properties = testInstance.GetType().GetProperties();
+            //Test to see that proper values have been assigned to the DateTime properties
+            Assert.AreNotEqual(testInstance.DateTime1, default(DateTime));
+            Assert.AreNotEqual(testInstance.DateTime2, default(DateTime));
 
-            //Iterate over the properties of the test class and ensure that each instance is populated
-            foreach(var property in properties)
-            {
-                //Get the value of the property
-                var fieldValue = property.GetValue(property, null);
-                Assert.IsNotNull(fieldValue);
-            }
+            //Test to see that the proper values have been assigned to the float properties
+            Assert.AreNotEqual(testInstance.TestFloat, default(float));
+            Assert.AreNotEqual(testInstance.TestFloat2, default(float));
+
+            //Test to see that proper values have been assigned to the integer properties
+            Assert.AreNotEqual(testInstance.TestInt, default(int));
+
+            //Test to see that proper values have been assigned to the long properties
+            Assert.AreNotEqual(testInstance.TestLong, default(long));
+
+            //Test to see that proper values have been assigned to the Guid properties
+            Assert.AreNotEqual(testInstance.TestGuid, default(Guid));
+
+            //Test to see that proper values have been assigned ot the string properties
+            Assert.IsNotNullOrEmpty(testInstance.RandomString);
         }
 
         #endregion
