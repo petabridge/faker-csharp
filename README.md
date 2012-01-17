@@ -1,0 +1,1 @@
+Faker reflects the properties of a class and inserts test data based on convention.
