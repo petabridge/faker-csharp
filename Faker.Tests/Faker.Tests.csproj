@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeTests\FakeTests.cs" />
     <Compile Include="GeneratorTests\DateTimeGeneratorTests.cs" />
     <Compile Include="GeneratorTests\EmailAddressGeneratorTests.cs" />
     <Compile Include="GeneratorTests\NameGeneratorTests.cs" />
