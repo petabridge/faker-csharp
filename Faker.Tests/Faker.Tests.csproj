@@ -57,6 +57,7 @@
     <Compile Include="GeneratorTests\NameGeneratorTests.cs" />
     <Compile Include="GeneratorTests\NumberGeneratorTests.cs" />
     <Compile Include="GeneratorTests\StringsGeneratorTests.cs" />
+    <Compile Include="MatcherTests\ListMatcherTests.cs" />
     <Compile Include="MatcherTests\NestedPocoMatcherTests.cs" />
     <Compile Include="MatcherTests\SimplePocoMatcherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

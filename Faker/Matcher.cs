@@ -20,7 +20,7 @@ namespace Faker
         /// <summary>
         /// Default constructor - uses the default TypeTable
         /// </summary>
-        public Matcher():this(new TypeTable()){}
+        public Matcher() : this(new TypeTable()) { }
 
         /// <summary>
         /// Constructor which accepts a TypeTable as an argument
@@ -39,7 +39,7 @@ namespace Faker
         public virtual void Match<T>(T targetObject) where T : new()
         {
             //Get all of the properties of the class
-            var properties = typeof (T).GetProperties();
+            var properties = typeof(T).GetProperties();
 
             ProcessProperties(properties, targetObject);
         }
@@ -75,13 +75,13 @@ namespace Faker
             var selectorCount = TypeMap.CountSelectors(propertyType);
 
             //We have some matching selectors, so we'll evaluate and return the best match
-            if(selectorCount > 0)
+            if (selectorCount > 0)
             {
                 //Evaluate all of the possible selectors and find the first available match
                 var selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
 
                 //We found a matching selector
-                if(!(selector is MissingSelector))
+                if (!(selector is MissingSelector))
                 {
                     selector.Generate(targetObject, property); //Bind the property
                     return; //Exit
@@ -89,7 +89,7 @@ namespace Faker
             }
 
             //Check to see if the type is a class and has a default constructor
-            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null)
+            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null && !IsArray(propertyType))
             {
                 var subProperties = propertyType.GetProperties();
 
@@ -106,51 +106,51 @@ namespace Faker
             }
 
             //Check to see if the type is an array or any other sort of collection
-            if(typeof(IList).IsAssignableFrom(propertyType))
+            if (IsArray(propertyType))
             {
                 //Get the underlying type used int he array
-                var elementType = propertyType.GetElementType();
+                //var elementType = propertyType.GetElementType(); //Works only for arrays
+                var elementType = propertyType.GetGenericArguments()[0]; //Works for IList<T> / IEnumerable<T>
 
                 //Get a number of elements we want to create 
-                //Note: (between 0 and 10 for now)
-                var elementCount = Numbers.Int(0, 10);
-                
+                //Note: (between 1 and 10 for now)
+                var elementCount = Numbers.Int(1, 10);
+
                 //Create an instance of our target array
                 IList arrayInstance = null;
 
                 //If we're working with a generic list or any other sort of collection
-                if(propertyType.IsGenericType)
+                if (propertyType.IsGenericTypeDefinition)
                 {
                     arrayInstance = (IList)GenericHelper.CreateGeneric(propertyType, elementType);
                 }
                 else
                 {
-                    arrayInstance = (IList) GenericHelper.CreateGeneric(typeof (List<>), elementType);
+                    arrayInstance = (IList)GenericHelper.CreateGeneric(typeof(List<>), elementType);
                 }
 
                 //Determine if there's a selector available for this type
                 var hasSelector = TypeMap.CountSelectors(elementType) > 0;
                 ITypeSelector selector = null;
 
-                if(hasSelector)
+                //So we have a type available for this selector..
+                if (hasSelector)
                 {
-                    //selector = EvaluateSelectors(ele)
+                    selector = TypeMap.GetBaseSelector(elementType);
                 }
 
-                for(var i =0; i < elementCount; i++)
+                for (var i = 0; i < elementCount; i++)
                 {
                     //Create a new element instance
-                    var element = Activator.CreateInstance(elementType);
+                    var element = SafeObjectCreate(elementType);
 
-                    if(hasSelector)
+                    if (hasSelector)
                     {
-                        
+                        selector.Generate(ref element);
                     }
-
-                    //If the element type is a sub-class, then populate it recursively
-                    if(elementType.IsClass)
+                    else if (elementType.IsClass) //If the element type is a sub-class, then populate it recursively
                     {
-                        var subProperties = propertyType.GetProperties();
+                        var subProperties = elementType.GetProperties();
 
                         //Populate all of the properties on this object
                         ProcessProperties(subProperties, element);
@@ -158,8 +158,38 @@ namespace Faker
 
                     arrayInstance.Add(element);
                 }
+
+                //Bind the sub-class back onto the original target object
+                property.SetValue(targetObject, arrayInstance, null);
             }
 
+        }
+
+        /// <summary>
+        /// Returns true if the targeted type is an array of some sort
+        /// </summary>
+        /// <param name="targetType">the type we want to test</param>
+        /// <returns>true if it's an array, false otherwise</returns>
+        protected virtual bool IsArray(Type targetType)
+        {
+            return typeof(IList).IsAssignableFrom(targetType);
+        }
+
+        /// <summary>
+        /// Method used for safely creating new instances of type objects; handles a few special cases
+        /// where activation has to be done carefully.
+        /// </summary>
+        /// <param name="t">The target type we want to instantiate</param>
+        /// <returns>an instance of the specified type</returns>
+        public static object SafeObjectCreate(Type t)
+        {
+            //If the object is a string (tricky)
+            if (t == typeof(string))
+            {
+                return string.Empty;
+            }
+
+            return Activator.CreateInstance(t);
         }
 
         /// <summary>
@@ -170,10 +200,10 @@ namespace Faker
         /// <returns>the first matching ITypeSelector instance we could find</returns>
         protected virtual ITypeSelector EvaluateSelectors(PropertyInfo propertyType, IEnumerable<ITypeSelector> selectors)
         {
-            foreach(var selector in selectors)
+            foreach (var selector in selectors)
             {
                 //If the selector can bind
-                if(selector.CanBind(propertyType))
+                if (selector.CanBind(propertyType))
                 {
                     //Return it
                     return selector;
