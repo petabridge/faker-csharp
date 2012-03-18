@@ -26,7 +26,7 @@ namespace Faker
         /// Generates a single fake value for a given type
         /// </summary>
         /// <returns>A populated instance of a given class</returns>
-        T Generate()
+        public T Generate()
         {
             //create a new instance of the type we want to Fake
             var instance = (T)Matcher.SafeObjectCreate(typeof(T));
@@ -42,7 +42,7 @@ namespace Faker
         /// Generates a list of fake values for a given type
         /// </summary>
         /// <returns>A list of populated instances with length [count] of a given class</returns>
-        IList<T> Generate(int count)
+        public IList<T> Generate(int count)
         {
             //Create a list to hold all of the fakes we want to return back to the caller
             var items = new List<T>();

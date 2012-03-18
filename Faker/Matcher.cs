@@ -172,7 +172,14 @@ namespace Faker
         /// <returns>true if it's an array, false otherwise</returns>
         protected virtual bool IsArray(Type targetType)
         {
-            return typeof(IList).IsAssignableFrom(targetType);
+            if (!targetType.IsGenericType)
+                return false;
+            var genericArguments = targetType.GetGenericArguments();
+            if (genericArguments.Length != 1)
+                return false;
+
+            var listType = typeof(IList<>).MakeGenericType(genericArguments);
+            return listType.IsAssignableFrom(targetType);
         }
 
         /// <summary>
