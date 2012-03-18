@@ -29,7 +29,7 @@ namespace Faker
         T Generate()
         {
             //create a new instance of the type we want to Fake
-            var instance = Activator.CreateInstance<T>();
+            var instance = (T)Matcher.SafeObjectCreate(typeof(T));
 
             //Match all of the properties of the object and come up with the most reasonable guess we can as to the type of data needed
             _matcher.Match(instance);

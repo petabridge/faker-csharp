@@ -150,7 +150,7 @@ namespace Faker
                     }
                     else if (elementType.IsClass) //If the element type is a sub-class, then populate it recursively
                     {
-                        var subProperties = propertyType.GetProperties();
+                        var subProperties = elementType.GetProperties();
 
                         //Populate all of the properties on this object
                         ProcessProperties(subProperties, element);
