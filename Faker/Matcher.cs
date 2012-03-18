@@ -132,9 +132,10 @@ namespace Faker
                 var hasSelector = TypeMap.CountSelectors(elementType) > 0;
                 ITypeSelector selector = null;
 
-                if(hasSelector)
+                //So we have a type available for this selector..
+                if(hasSelector && !elementType.IsClass)
                 {
-                    //selector = EvaluateSelectors(ele)
+                    selector = TypeMap.GetBaseSelector(elementType);
                 }
 
                 for(var i =0; i < elementCount; i++)
@@ -142,9 +143,9 @@ namespace Faker
                     //Create a new element instance
                     var element = Activator.CreateInstance(elementType);
 
-                    if(hasSelector)
+                    if (hasSelector && !elementType.IsClass)
                     {
-                        
+                        selector.Generate(ref element);
                     }
 
                     //If the element type is a sub-class, then populate it recursively
