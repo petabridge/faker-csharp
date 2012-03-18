@@ -1,14 +1,14 @@
-?<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>faker</id>
-    <version>0.1.1-alpha</version>
+    <id>faker-csharp</id>
+    <version>1.0.0-alpha</version>
     <authors>Aaron Stannard</authors>
     <owners>Aaron Stannard</owners>
     <description>Library-level Fakes for your favorite POCO classes. WARNING: this is a pre-release build. Lots of work left to do.</description>
     <language>en-US</language>
-    <projectUrl>https://github.com/Aaronontheweb/mvc-utilities</projectUrl>
-    <licenseUrl>https://github.com/Aaronontheweb/mvc-utilities/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/Aaronontheweb/faker-csharp</projectUrl>
+    <licenseUrl>https://github.com/Aaronontheweb/faker-csharp/blob/master/license.txt</licenseUrl>
     <tags>Fake Faker Fakes Mocks</tags>
   </metadata>
 </package>
