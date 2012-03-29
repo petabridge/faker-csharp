@@ -19,7 +19,7 @@ namespace Faker.Helpers
             var subArray = array.ToList().GetRange(start, count);
 
             //Determine the max length of our incoming array
-            var maxLength = subArray.Count - 1;
+            var maxLength = subArray.Count;
 
             return subArray.ElementAt(R.Next(0, maxLength));
         }
@@ -27,7 +27,7 @@ namespace Faker.Helpers
         public static IEnumerable<T> GetRandomSelection<T>(this IEnumerable<T> array, int count = 1)
         {
             //Determine the max length of our incoming array
-            var maxLength = array.Count() - 1;
+            var maxLength = array.Count();
 
             //Create a new list to contain our selection...
             var randomSelection = new List<T>();
@@ -44,7 +44,7 @@ namespace Faker.Helpers
         public static T GetRandom<T>(this IEnumerable<T> array)
         {
             //Determine the max length of our incoming array
-            var maxLength = array.Count() - 1;
+            var maxLength = array.Count();
 
             return array.ElementAt(R.Next(0, maxLength));
         }
