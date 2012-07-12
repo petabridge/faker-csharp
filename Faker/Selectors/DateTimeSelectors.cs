@@ -11,7 +11,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Injects DateTime values between the specified To and From ranges...
     /// </summary>
-    public class DateTimeSelector :PrimitiveSelectorBase<DateTime>
+    public class DateTimeSelector : PrimitiveSelectorBase<DateTime>
     {
         public DateTimeSelector()
         {
@@ -27,6 +27,30 @@ namespace Faker.Selectors
         public override DateTime Generate()
         {
             return DateTimes.GetDateTime(From, To);
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Injects DateTimeOffset values between the specified To and From ranges...
+    /// </summary>
+    public class DateTimeOffsetSelector : PrimitiveSelectorBase<DateTimeOffset>
+    {
+        public DateTimeOffsetSelector()
+        {
+            From = DateTime.UtcNow.AddDays(-5);
+            To = DateTime.UtcNow.AddDays(5); ;
+        }
+
+        public DateTime From { get; set; }
+        public DateTime To { get; set; }
+
+        #region Overrides of TypeSelectorBase<DateTimeOffset>
+
+        public override DateTimeOffset Generate()
+        {
+            return DateTimes.GetDateTimeOffset(From, To);
         }
 
         #endregion

@@ -25,6 +25,18 @@ namespace Faker.Generators
         }
 
         /// <summary>
+        /// Generates a random DateTimeOffset between the From and To times
+        /// </summary>
+        /// <param name="from">The beginning of the date range</param>
+        /// <param name="to">The end of the date range</param>
+        /// <returns>A DateTimeOffset between From and To</returns>
+        public static DateTimeOffset GetDateTimeOffset(DateTimeOffset @from, DateTimeOffset to)
+        {
+            var span = new TimeSpan(to.Ticks - from.Ticks);
+            return from + new TimeSpan((long)(span.Ticks * R.NextDouble()));
+        }
+
+        /// <summary>
         /// Generates a random DateTime sometime between now and +/- 70 years
         /// </summary>
         /// <returns>A valid DateTime</returns>
