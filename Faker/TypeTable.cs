@@ -52,6 +52,7 @@ namespace Faker
 
             /* DATETIME SELECTORS */
             AddSelector(new DateTimeSelector());
+            AddSelector(new DateTimeOffsetSelector());
 
             /* STRING SELECTORS */
             AddSelector(new StringSelector()); //String selector is the very last one we want to try and use
