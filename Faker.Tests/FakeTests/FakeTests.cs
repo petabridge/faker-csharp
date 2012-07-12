@@ -29,7 +29,7 @@ namespace Faker.Tests.FakeTests
 
             public DateTime DateCreated { get; set; }
 
-            public DateTime LastActivity { get; set; }
+            public DateTimeOffset LastActivity { get; set; }
 
             public ProjectType TargetOS { get; set; }
 
