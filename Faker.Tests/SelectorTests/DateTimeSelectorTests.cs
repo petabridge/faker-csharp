@@ -19,6 +19,12 @@ namespace Faker.Tests.SelectorTests
             public DateTime asdfsadfsadfsadfdsaf { get; set; }
         }
 
+        private class DateTimeOffsetTestClass
+        {
+            public DateTimeOffset offSet1 { get; set; }
+            public DateTimeOffset offSet2 { get; set; }
+        }
+
         private class TimeStampTestClass
         {
             public long TimeStamp { get; set; }
@@ -55,6 +61,29 @@ namespace Faker.Tests.SelectorTests
 
                 Assert.IsAssignableFrom<DateTime>(fieldValue, "Should be type of DateTime...");
                 Assert.AreNotEqual(fieldValue, default(DateTime));
+            }
+        }
+
+        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        public void DateTimeOffset_Selector_Injects_All_DateTime_Values()
+        {
+            var timeSelector = new DateTimeOffsetSelector();
+            var dateTimeTestClass = new DateTimeOffsetTestClass();
+
+            //Iterate over all of the properties in the fullNameClass object...
+            foreach (var property in dateTimeTestClass.GetType().GetProperties())
+            {
+                //Inject the value into the property
+                timeSelector.Generate(dateTimeTestClass, property);
+            }
+
+            //Iterate over all of the properties again
+            foreach (var property in dateTimeTestClass.GetType().GetProperties())
+            {
+                var fieldValue = (DateTimeOffset)property.GetValue(dateTimeTestClass, null);
+
+                Assert.IsAssignableFrom<DateTimeOffset>(fieldValue, "Should be type of DateTime...");
+                Assert.AreNotEqual(fieldValue, default(DateTimeOffset));
             }
         }
 
