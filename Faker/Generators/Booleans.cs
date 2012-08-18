@@ -18,7 +18,7 @@ namespace Faker.Generators
         /// <returns>true or false</returns>
         public static bool Bool()
         {
-            var num = R.Next(0, 2);
+            var num = (int)Math.Round(R.NextDouble());
 
             //in C any integer value other than 0 is true.
             return num != 0;
