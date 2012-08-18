@@ -18,10 +18,10 @@ namespace Faker.Generators
         /// <returns>true or false</returns>
         public static bool Bool()
         {
-            var num = R.Next(0, 1);
+            var num = R.Next(0, 2);
 
             //in C any integer value other than 0 is true.
-            return num == 1;
+            return num != 0;
         }
     }
 }
