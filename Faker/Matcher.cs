@@ -57,6 +57,9 @@ namespace Faker
                 if (!property.CanWrite) //Bail if we can't write to the property
                     continue;
 
+                if(property.PropertyType == targetObject.GetType()) //If the property is a tree structure, bail (causes infinite recursion otherwise)
+                    continue;
+
                 ProcessProperty(property, targetObject);
             }
         }

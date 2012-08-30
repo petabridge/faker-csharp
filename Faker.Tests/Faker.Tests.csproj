@@ -61,6 +61,7 @@
     <Compile Include="MatcherTests\ListMatcherTests.cs" />
     <Compile Include="MatcherTests\NestedPocoMatcherTests.cs" />
     <Compile Include="MatcherTests\SimplePocoMatcherTests.cs" />
+    <Compile Include="MatcherTests\TreeMatcherTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectorTests\DateTimeSelectorTests.cs" />
     <Compile Include="SelectorTests\NumberSelectorTests.cs" />
