@@ -55,8 +55,8 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNull(flatObjectTree.Parent, "Should only create one node (the root) in a tree structure");
         }
 
-        [Test(Description = "In an enviromment where a tree can support a list of child nodes, make sure the list only goes 1 tier deep")]
-        public void Should_Create_Tree_Structure_with_only_one_layer_of_children()
+        [Test(Description = "In an enviromment where a tree can support a list of child nodes, make sure the list gets created but don't populate it")]
+        public void Should_Create_Tree_Structure_with_No_Children()
         {
             var objectTreeWithMultipleChildren = new ObjectTreeWithMultipleChildren();
 
@@ -65,8 +65,8 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNotNullOrEmpty(objectTreeWithMultipleChildren.Id);
             Assert.IsNotNullOrEmpty(objectTreeWithMultipleChildren.Name);
             Assert.IsNull(objectTreeWithMultipleChildren.Parent, "Should only create one node (the root) in a tree structure");
-            Assert.IsNotNull(objectTreeWithMultipleChildren.Children);
-            Assert.IsTrue(objectTreeWithMultipleChildren.Children.All(x => x.Children == null));
+            Assert.IsNotNull(objectTreeWithMultipleChildren.Children, "Should have the child element array instantiated");
+            Assert.AreEqual(0, objectTreeWithMultipleChildren.Children.Count, "Should not have any children in the array");
         }
 
         #endregion

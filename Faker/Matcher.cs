@@ -142,24 +142,30 @@ namespace Faker
                     selector = TypeMap.GetBaseSelector(elementType);
                 }
 
-                for (var i = 0; i < elementCount; i++)
+                //If the element in the array isn't the same type as the parent object (recursive objects, like trees)
+                if (elementType != targetObject.GetType())
                 {
-                    //Create a new element instance
-                    var element = SafeObjectCreate(elementType);
-
-                    if (hasSelector)
+                    for (var i = 0; i < elementCount; i++)
                     {
-                        selector.Generate(ref element);
-                    }
-                    else if (elementType.IsClass) //If the element type is a sub-class, then populate it recursively
-                    {
-                        var subProperties = elementType.GetProperties();
+                        //Create a new element instance
+                        var element = SafeObjectCreate(elementType);
 
-                        //Populate all of the properties on this object
-                        ProcessProperties(subProperties, element);
-                    }
+                        if (hasSelector)
+                        {
+                            selector.Generate(ref element);
+                        }
 
-                    arrayInstance.Add(element);
+                        //If the element type is a class populate it recursively
+                        else if (elementType.IsClass)
+                        {
+                            var subProperties = elementType.GetProperties();
+
+                            //Populate all of the properties on this object
+                            ProcessProperties(subProperties, element);
+                        }
+
+                        arrayInstance.Add(element);
+                    }
                 }
 
                 //Bind the sub-class back onto the original target object
