@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>faker-csharp</id>
-    <version>1.0.3-alpha</version>
+    <version>1.0.4-alpha</version>
     <authors>Aaron Stannard</authors>
     <owners>Aaron Stannard</owners>
     <description>Library-level Fakes for your favorite POCO classes. WARNING: this is a pre-release build. Lots of work left to do.</description>
