@@ -86,13 +86,13 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Should not have any dates below the current date
-            Assert.IsFalse(dateTimes.Any(x => x < DateTimeOffset.Now));
+            Assert.IsFalse(dateTimes.Any(x => x.Ticks < DateTimeOffset.Now.Ticks));
 
             //All dates should be greater than the current date
-            Assert.IsTrue(dateTimes.All(x => x >= DateTimeOffset.Now));
+            Assert.IsTrue(dateTimes.All(x => x.Ticks >= DateTimeOffset.Now.Ticks));
 
             //All dates should be less than today's date one year from now
-            Assert.IsTrue(dateTimes.All(x => x <= DateTimeOffset.Now.AddYears(1)));
+            Assert.IsTrue(dateTimes.All(x => x.Ticks <= DateTimeOffset.Now.AddYears(1).Ticks));
 
             //All dates should not be the same
             Assert.IsFalse(dateTimes.All(x => x == dateTimes[0]));
