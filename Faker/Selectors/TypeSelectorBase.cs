@@ -17,9 +17,13 @@ namespace Faker.Selectors
             //Set the targetType to the value of the type selector
             TargetType = typeof(T);
             Priority = 1;
+            _setter = Generate;
         }
 
         protected bool _can_be_null;
+
+        protected Func<T> _setter;
+        public Func<T> Setter { get { return _setter; } set { _setter = value; } }
 
         public int Priority
         { get; set; }
@@ -41,12 +45,12 @@ namespace Faker.Selectors
 
         public void Generate(object targetObject, PropertyInfo property)
         {
-            property.SetValue(targetObject, Generate(), null);
+            property.SetValue(targetObject, Setter(), null);
         }
 
         public object Generate(ref object targetObject)
         {
-            targetObject = Generate();
+            targetObject = Setter();
             return targetObject;
         }
 
