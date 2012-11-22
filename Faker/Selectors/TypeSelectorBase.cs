@@ -43,14 +43,9 @@ namespace Faker.Selectors
             property.SetValue(targetObject, Generate(), null);
         }
 
-        public void Generate(object targetObject)
+        public void Generate(ref object targetObject)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Generate(ref object propertyObject)
-        {
-            propertyObject = Generate();
+            targetObject = Generate();
         }
 
         public abstract T Generate();

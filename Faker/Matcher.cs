@@ -217,7 +217,7 @@ namespace Faker
         /// <summary>
         /// Evaluates a set of selectors and grabs the first available match
         /// </summary>
-        /// <param name="propertyType">The type for which we're trying to find a match</param>
+        /// <param name="propertyType">The Property / Field for which we're trying to find a match</param>
         /// <param name="selectors">A list of selectors from the TypeTable</param>
         /// <returns>the first matching ITypeSelector instance we could find</returns>
         protected virtual ITypeSelector EvaluateSelectors(PropertyInfo propertyType, IEnumerable<ITypeSelector> selectors)
@@ -226,6 +226,28 @@ namespace Faker
             {
                 //If the selector can bind
                 if (selector.CanBind(propertyType))
+                {
+                    //Return it
+                    return selector;
+                }
+            }
+
+            //Otherwise, return a MissingSelector and let them know that we can't do it.
+            return new MissingSelector();
+        }
+
+        /// <summary>
+        /// Evaluates a set of selectors and grabs the first available match
+        /// </summary>
+        /// <param name="type">The type for which we're trying to find a match</param>
+        /// <param name="selectors">A list of selectors from the TypeTable</param>
+        /// <returns>the first matching ITypeSelector instance we could find</returns>
+        protected virtual ITypeSelector EvaluateSelectors(Type type, IEnumerable<ITypeSelector> selectors)
+        {
+            foreach (var selector in selectors)
+            {
+                //If the selector can bind
+                if (selector.CanBind(type))
                 {
                     //Return it
                     return selector;
