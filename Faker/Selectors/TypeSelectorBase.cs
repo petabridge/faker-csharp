@@ -30,12 +30,22 @@ namespace Faker.Selectors
 
         public virtual bool CanBind(PropertyInfo field)
         {
-            return field.PropertyType == TargetType;
+            return CanBind(field.PropertyType);
+        }
+
+        public virtual bool CanBind(Type type)
+        {
+            return type.IsAssignableFrom(TargetType);
         }
 
         public void Generate(object targetObject, PropertyInfo property)
         {
             property.SetValue(targetObject, Generate(), null);
+        }
+
+        public void Generate(object targetObject)
+        {
+            throw new NotImplementedException();
         }
 
         public void Generate(ref object propertyObject)

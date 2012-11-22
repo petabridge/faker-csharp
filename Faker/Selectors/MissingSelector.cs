@@ -26,7 +26,17 @@ namespace Faker.Selectors
             throw new NotImplementedException();
         }
 
+        public bool CanBind(Type type)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Generate(object targetObject, PropertyInfo property)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Generate(object targetObject)
         {
             throw new NotImplementedException();
         }

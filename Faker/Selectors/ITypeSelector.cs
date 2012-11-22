@@ -26,11 +26,24 @@ namespace Faker.Selectors
         bool CanBind(PropertyInfo field);
 
         /// <summary>
+        /// Determines if this strategy can be successfully executed for this type.
+        /// </summary>
+        /// <param name="type">The type of object to which we are attemping to bind.</param>
+        /// <returns>true if this selector can bind to the provided type. False otherwise.</returns>
+        bool CanBind(Type type);
+
+        /// <summary>
         /// Injects the generator function into the property
         /// </summary>
         /// <param name="targetObject">The target object designed for property injection</param>
         /// <param name="property">The meta-data for the current property we're testing</param>
         void Generate(object targetObject, PropertyInfo property);
+
+        /// <summary>
+        /// Directly assigns a generated value to the object itself, in the case of custom selectors
+        /// </summary>
+        /// <param name="targetObject">The object to be replaced with a generated value</param>
+        void Generate(object targetObject);
 
         /// <summary>
         /// Injects the generator function into the property
