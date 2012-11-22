@@ -15,7 +15,7 @@ namespace Faker.Extensions
         /// <param name="selector">The TypeSelector we're modifying</param>
         /// <param name="setter">The express used to set </param>
         /// <returns></returns>
-        public static ITypeSelector SetMax<T>(this IRangeSelector<T> selector, Func<T> setter)
+        public static IRangeSelector<T> SetMax<T>(this IRangeSelector<T> selector, Func<T> setter)
         {
             ValidateExpression(selector, setter);
 
@@ -30,7 +30,7 @@ namespace Faker.Extensions
         /// <param name="selector">The TypeSelector we're modifying</param>
         /// <param name="setter">The express used to set </param>
         /// <returns></returns>
-        public static ITypeSelector SetMin<T>(this IRangeSelector<T> selector, Func<T> setter)
+        public static IRangeSelector<T> SetMin<T>(this IRangeSelector<T> selector, Func<T> setter)
         {
             ValidateExpression(selector, setter);
 
