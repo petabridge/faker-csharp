@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ExpressionValidator.cs" />
+    <Compile Include="Extensions\FakeExtensions.cs" />
     <Compile Include="Extensions\TypeSelectorExtensions.cs" />
     <Compile Include="Fake.cs" />
     <Compile Include="Generators\Booleans.cs" />

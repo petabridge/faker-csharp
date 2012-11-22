@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using Faker.Selectors;
 
@@ -36,6 +39,28 @@ namespace Faker.Extensions
             {
                 throw new ArgumentNullException("selector");
             }
+        }
+
+        /// <summary>
+        /// Used to extract property information from an Expression. Necessary for generating user-defined TypeSelectors.
+        /// </summary>
+        /// <param name="expression">The expression used to access a property of a class</param>
+        /// <returns>A PropertyInfo object</returns>
+        public static PropertyInfo ToPropertyInfo(this LambdaExpression expression)
+        {
+            var memberExpression = expression.Body as MemberExpression;
+
+            //If this is a member expression
+            if (memberExpression != null)
+            {
+                var propertyInfo = memberExpression.Member as PropertyInfo;
+                if (propertyInfo != null)
+                {
+                    return propertyInfo;
+                }
+            }
+
+            throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, string.Format("{0} is not a property", expression.ToString())));
         }
     }
 }
