@@ -37,7 +37,7 @@ namespace Faker.Tests.MatcherTests
         [Test(Description = "Matcher should be able to match simple DateTime structs if needed")]
         public void Should_Bind_DateTime()
         {
-            object dateTimeTest = new DateTime();
+            var dateTimeTest = new DateTime();
 
             _matcher.MatchStruct<DateTime>(ref dateTimeTest);
 
@@ -49,7 +49,7 @@ namespace Faker.Tests.MatcherTests
         [Test(Description = "Matcher should be able to match user-defined structs if needed")]
         public void Should_Bind_CustomStruct()
         {
-            object dateTimeTest = new TestStruct();
+            var dateTimeTest = new TestStruct();
 
             _matcher.MatchStruct<TestStruct>(ref dateTimeTest);
 

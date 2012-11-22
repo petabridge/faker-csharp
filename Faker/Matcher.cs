@@ -54,7 +54,7 @@ namespace Faker
         }
 
 
-        public virtual object MatchStruct<S>(ref object targetStruct) where S : struct
+        public virtual object MatchStruct<S>(ref S targetStruct) where S : struct
         {
             //Evaluate all of the possible selectors and find the first available match
             var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
@@ -62,13 +62,18 @@ namespace Faker
             //We found a matching selector
             if (!(selector is MissingSelector))
             {
-                selector.Generate(ref targetStruct); //Bind the object's value directly
+                var structObject = (object) targetStruct;
+                selector.Generate(ref structObject); //Bind the object's value directly
+                targetStruct = (S) structObject;
             }
+            else
+            {
+                //Get all of the properties of the class
+                var properties = typeof(S).GetProperties();
 
-            //Get all of the properties of the class
-            var properties = typeof(S).GetProperties();
-
-            ProcessProperties(properties, targetStruct);
+                targetStruct = (S)ProcessProperties(properties, targetStruct);
+            }
+            
 
             return targetStruct;
         }
@@ -78,7 +83,7 @@ namespace Faker
         /// </summary>
         /// <param name="properties">The set of properties available to an object instance</param>
         /// <param name="targetObject">The object against which type selectors will inject values</param>
-        protected virtual void ProcessProperties(PropertyInfo[] properties, object targetObject)
+        protected virtual object ProcessProperties(PropertyInfo[] properties, object targetObject)
         {
             //Iterate over the properties
             foreach (var property in properties)
@@ -91,6 +96,8 @@ namespace Faker
 
                 ProcessProperty(property, targetObject);
             }
+
+            return targetObject;
         }
 
         /// <summary>

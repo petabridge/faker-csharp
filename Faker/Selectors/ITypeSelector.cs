@@ -43,7 +43,7 @@ namespace Faker.Selectors
         /// Directly assigns a generated value to the object itself, in the case of custom selectors
         /// </summary>
         /// <param name="targetObject">The object to be replaced with a generated value</param>
-        void Generate(ref object targetObject);
+        object Generate(ref object targetObject);
 
         /// <summary>
         /// The underlying Type used for this mapping
