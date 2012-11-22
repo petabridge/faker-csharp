@@ -55,6 +55,8 @@
     <Compile Include="Helpers\GenericHelper.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Matcher.cs" />
+    <Compile Include="Selectors\CustomDerivedPropertySelector.cs" />
+    <Compile Include="Selectors\CustomPropertySelector.cs" />
     <Compile Include="Selectors\DateTimeSelectors.cs" />
     <Compile Include="Selectors\GuidSelector.cs" />
     <Compile Include="Selectors\IRangeSelector.cs" />

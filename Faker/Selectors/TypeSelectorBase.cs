@@ -23,7 +23,7 @@ namespace Faker.Selectors
         protected bool _can_be_null;
 
         protected Func<T> _setter;
-        public Func<T> Setter { get { return _setter; } set { _setter = value; } }
+        public virtual Func<T> Setter { get { return _setter; } set { _setter = value; } }
 
         public int Priority
         { get; set; }

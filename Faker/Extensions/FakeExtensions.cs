@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using Faker.Selectors;
 
 namespace Faker.Extensions
 {
@@ -13,12 +14,22 @@ namespace Faker.Extensions
     /// </summary>
     public static class FakeExtensions
     {
-        public static Fake<T> SetupSelector<T, TProperty>(Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter) where T : new()
+        public static TypeSelectorBase<TProperty> SetupSelector<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter) where T : new() where TProperty:new()
         {
+            ExpressionValidator.IsNotNull(() => setter, setter);
+
             var prop = expression.ToPropertyInfo();
             ThrowIfCantWrite(prop);
 
-            return fake;
+            var matchingSelector = fake.GetSelector(prop);
+            if (matchingSelector is MissingSelector || !(matchingSelector is TypeSelectorBase<TProperty>))
+            {
+                return new CustomPropertySelector<TProperty>(prop, setter.Compile());
+            }
+
+            var baseSelector = matchingSelector as TypeSelectorBase<TProperty>;
+
+            return new CustomDerivedPropertySelector<TProperty>(baseSelector, prop);
         }
 
         /// <summary>
