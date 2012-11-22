@@ -57,6 +57,13 @@ namespace Faker.Tests.FakeTests
             public string VersionName { get; set; }
         }
 
+        public struct TestStruct
+        {
+            public string Id { get; set; }
+            public DateTime Date { get; set; }
+            public int SomeNumber { get; set; }
+        }
+
 
         #endregion
 
@@ -74,6 +81,29 @@ namespace Faker.Tests.FakeTests
 
             Assert.IsNotNull(projectInstance);
             Assert.IsTrue(projectInstance.Versions.Count > 0);
+        }
+
+        [Test(Description = "Should be able to fake a single instance of DateTime, a built-in struct that has a full matching selector")]
+        public void Should_Fake_Single_Instance_of_DateTime()
+        {
+            var fake = new Fake<DateTime>();
+
+            var dateInstance = fake.Generate();
+
+            Assert.AreNotEqual(DateTime.MinValue, dateInstance);
+            Assert.IsTrue(dateInstance.Year > 1);
+        }
+
+        [Test(Description = "Should be able to fake a single instance of a custom struct that has to be constructed component-wise")]
+        public void Should_Fake_Single_Instance_of_CustomStruct()
+        {
+            var fake = new Fake<TestStruct>();
+
+            var customStructInstance = fake.Generate();
+
+            Assert.AreNotEqual(DateTime.MinValue, customStructInstance.Date);
+            Assert.IsTrue(default(int) != customStructInstance.SomeNumber);
+            Assert.IsNotNullOrEmpty(customStructInstance.Id);
         }
 
         #endregion

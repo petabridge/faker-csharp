@@ -56,7 +56,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="S">A value type parameter</typeparam>
         /// <param name="targetStruct">The value type instance</param>
-        public virtual void MatchStruct<S>(ref S targetStruct) where S : struct
+        public virtual void MatchStruct<S>(ref S targetStruct)
         {
             //Evaluate all of the possible selectors and find the first available match
             var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
