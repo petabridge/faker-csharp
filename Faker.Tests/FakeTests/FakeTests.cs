@@ -64,6 +64,12 @@ namespace Faker.Tests.FakeTests
             public int SomeNumber { get; set; }
         }
 
+        public class ClassWithStruct
+        {
+            public TestStruct Struct { get; set; }
+            public string Name { get; set; }
+        }
+
 
         #endregion
 
@@ -104,6 +110,19 @@ namespace Faker.Tests.FakeTests
             Assert.AreNotEqual(DateTime.MinValue, customStructInstance.Date);
             Assert.IsTrue(default(int) != customStructInstance.SomeNumber);
             Assert.IsNotNullOrEmpty(customStructInstance.Id);
+        }
+
+        [Test(Description = "Should be able to fake a single instance of a class that constains another custom struct")]
+        public void Should_Fake_Single_Instance_of_ClassThatContainsStruct()
+        {
+            var fake = new Fake<ClassWithStruct>();
+
+            var classWithStructInstance = fake.Generate();
+
+            Assert.AreNotEqual(DateTime.MinValue, classWithStructInstance.Struct.Date);
+            Assert.IsTrue(default(int) != classWithStructInstance.Struct.SomeNumber);
+            Assert.IsNotNullOrEmpty(classWithStructInstance.Struct.Id);
+            Assert.IsNotNullOrEmpty(classWithStructInstance.Name);
         }
 
         #endregion

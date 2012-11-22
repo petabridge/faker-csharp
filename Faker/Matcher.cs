@@ -112,7 +112,7 @@ namespace Faker
             if (MapFromSelector(property, targetObject, propertyType)) return; //Exit
 
             //Check to see if the type is a class and has a default constructor
-            if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null && !IsArray(propertyType))
+            if (((propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null) || propertyType.IsValueType) && !IsArray(propertyType))
             {
                 var subProperties = propertyType.GetProperties();
 
