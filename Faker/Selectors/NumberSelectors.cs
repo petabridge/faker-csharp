@@ -22,7 +22,7 @@ namespace Faker.Selectors
 
         public override double Generate()
         {
-            return Numbers.Double(MinSize, MaxSize);
+            return Numbers.Double(Min(), Max());
         }
 
         #endregion
@@ -40,7 +40,7 @@ namespace Faker.Selectors
 
         public override int Generate()
         {
-            return Numbers.Int(MinSize, MaxSize);
+            return Numbers.Int(Min(), Max());
         }
 
         #endregion
@@ -58,7 +58,7 @@ namespace Faker.Selectors
 
         public override long Generate()
         {
-            return Numbers.Long(MinSize, MaxSize);
+            return Numbers.Long(Min(), Max());
         }
 
         #endregion
@@ -76,7 +76,7 @@ namespace Faker.Selectors
 
         public override decimal Generate()
         {
-            return Numbers.Decimal(MinSize, MaxSize);
+            return Numbers.Decimal(Min(), Max());
         }
 
         #endregion
@@ -94,7 +94,7 @@ namespace Faker.Selectors
 
         public override float Generate()
         {
-            return Numbers.Float(MinSize, MaxSize);
+            return Numbers.Float(Min(), Max());
         }
 
         #endregion

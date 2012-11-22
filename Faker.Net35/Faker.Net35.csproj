@@ -82,6 +82,9 @@
     <Compile Include="..\Faker\Selectors\GuidSelector.cs">
       <Link>Selectors\GuidSelector.cs</Link>
     </Compile>
+    <Compile Include="..\Faker\Selectors\IRangeSelector.cs">
+      <Link>Selectors\IRangeSelector.cs</Link>
+    </Compile>
     <Compile Include="..\Faker\Selectors\ITypeSelector.cs">
       <Link>Selectors\ITypeSelector.cs</Link>
     </Compile>

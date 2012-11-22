@@ -12,7 +12,7 @@ namespace Faker.Selectors
     /// <summary>
     /// Type selector for generating standard strings
     /// </summary>
-    public sealed class StringSelector : PrimitiveSelectorBase<string>
+    public sealed class StringSelector : PrimitiveSelectorBase<string>, IRangeSelector<int>
     {
         /// <summary>
         /// By default, we constrain the length of the string to be between 10 and 40 characters
@@ -21,19 +21,26 @@ namespace Faker.Selectors
         {
             MaxSize = 40;
             MinSize = 10;
+            Min = () => MinSize;
+            Max = () => MaxSize;
         }
 
         public int MaxSize { get; set; }
         public int MinSize { get; set; }
 
+
+        public Func<int> Max { get; set; }
+        public Func<int> Min { get; set; }
+
         #region Overrides of TypeSelectorBase<string>
 
         public override string Generate()
         {
-            return Strings.GenerateAlphaNumericString(MinSize, MaxSize);
+            return Strings.GenerateAlphaNumericString(Min(), Max());
         }
 
         #endregion
+
     }
 
     /// <summary>
