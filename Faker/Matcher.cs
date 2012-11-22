@@ -74,22 +74,7 @@ namespace Faker
             //Get the type of the property
             var propertyType = property.PropertyType;
 
-            //Determine if we have a selector-on-hand for this data type
-            var selectorCount = TypeMap.CountSelectors(propertyType);
-
-            //We have some matching selectors, so we'll evaluate and return the best match
-            if (selectorCount > 0)
-            {
-                //Evaluate all of the possible selectors and find the first available match
-                var selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
-
-                //We found a matching selector
-                if (!(selector is MissingSelector))
-                {
-                    selector.Generate(targetObject, property); //Bind the property
-                    return; //Exit
-                }
-            }
+            if (MapFromSelector(property, targetObject, propertyType)) return; //Exit
 
             //Check to see if the type is a class and has a default constructor
             if (propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null && !IsArray(propertyType))
@@ -172,6 +157,27 @@ namespace Faker
                 property.SetValue(targetObject, arrayInstance, null);
             }
 
+        }
+
+        private bool MapFromSelector(PropertyInfo property, object targetObject, Type propertyType)
+        {
+            //Determine if we have a selector-on-hand for this data type
+            var selectorCount = TypeMap.CountSelectors(propertyType);
+
+            //We have some matching selectors, so we'll evaluate and return the best match
+            if (selectorCount > 0)
+            {
+                //Evaluate all of the possible selectors and find the first available match
+                var selector = EvaluateSelectors(property, TypeMap.GetSelectors(propertyType));
+
+                //We found a matching selector
+                if (!(selector is MissingSelector))
+                {
+                    selector.Generate(targetObject, property); //Bind the property
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
