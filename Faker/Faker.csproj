@@ -66,6 +66,7 @@
     <Compile Include="Selectors\MissingSelector.cs" />
     <Compile Include="Selectors\NumberSelectorBase.cs" />
     <Compile Include="Selectors\NumberSelectors.cs" />
+    <Compile Include="Selectors\SelectorPriorityConstants.cs" />
     <Compile Include="Selectors\SpecialFieldsRegex.cs" />
     <Compile Include="Selectors\StringSelectors.cs" />
     <Compile Include="Selectors\TypeSelectorBase.cs" />

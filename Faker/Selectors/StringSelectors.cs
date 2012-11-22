@@ -50,6 +50,11 @@ namespace Faker.Selectors
     {
         private static readonly Regex _regex = new Regex(SpecialFieldsRegex.LastNameRegex, RegexOptions.IgnoreCase);
 
+        public LastNameSelector()
+        {
+            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+        }
+
         #region Overrides of TypeSelectorBase<string>
 
         public override bool CanBind(PropertyInfo field)
@@ -72,6 +77,11 @@ namespace Faker.Selectors
     {
         private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FirstNameRegex, RegexOptions.IgnoreCase);
 
+        public FirstNameSelector()
+        {
+            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+        }
+
         #region Overrides of TypeSelectorBase<string>
 
         public override bool CanBind(PropertyInfo field)
@@ -92,6 +102,11 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class FullNameSelector : TypeSelectorBase<string>
     {
+        public FullNameSelector()
+        {
+            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+        }
+
         private static readonly Regex _regex = new Regex(SpecialFieldsRegex.FullNameRegex, RegexOptions.IgnoreCase);
 
         public override bool CanBind(PropertyInfo field)
@@ -107,6 +122,11 @@ namespace Faker.Selectors
 
     public sealed class EmailSelector : TypeSelectorBase<string>
     {
+        public EmailSelector()
+        {
+            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+        }
+
         private static readonly Regex _regex = new Regex(SpecialFieldsRegex.EmailRegex, RegexOptions.IgnoreCase);
 
         #region Overrides of TypeSelectorBase<string>

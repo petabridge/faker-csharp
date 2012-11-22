@@ -43,6 +43,9 @@
     <Compile Include="..\Faker\Extensions\ExpressionValidator.cs">
       <Link>Extensions\ExpressionValidator.cs</Link>
     </Compile>
+    <Compile Include="..\Faker\Extensions\FakeExtensions.cs">
+      <Link>Extensions\FakeExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Faker\Extensions\TypeSelectorExtensions.cs">
       <Link>Extensions\TypeSelectorExtensions.cs</Link>
     </Compile>
@@ -82,6 +85,12 @@
     <Compile Include="..\Faker\Matcher.cs">
       <Link>Matcher.cs</Link>
     </Compile>
+    <Compile Include="..\Faker\Selectors\CustomDerivedPropertySelector.cs">
+      <Link>Selectors\CustomDerivedPropertySelector.cs</Link>
+    </Compile>
+    <Compile Include="..\Faker\Selectors\CustomPropertySelector.cs">
+      <Link>Selectors\CustomPropertySelector.cs</Link>
+    </Compile>
     <Compile Include="..\Faker\Selectors\DateTimeSelectors.cs">
       <Link>Selectors\DateTimeSelectors.cs</Link>
     </Compile>
@@ -102,6 +111,9 @@
     </Compile>
     <Compile Include="..\Faker\Selectors\NumberSelectors.cs">
       <Link>Selectors\NumberSelectors.cs</Link>
+    </Compile>
+    <Compile Include="..\Faker\Selectors\SelectorPriorityConstants.cs">
+      <Link>Selectors\SelectorPriorityConstants.cs</Link>
     </Compile>
     <Compile Include="..\Faker\Selectors\SpecialFieldsRegex.cs">
       <Link>Selectors\SpecialFieldsRegex.cs</Link>
