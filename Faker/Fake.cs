@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using Faker.Selectors;
 
@@ -63,6 +64,16 @@ namespace Faker
 
             //Return the list to the caller
             return items;
+        }
+
+        /// <summary>
+        /// Adds a selector to the TypeTable; User-defined selectors always take precedence over the built-in ones.
+        /// </summary>
+        /// <typeparam name="TS">The type that matches the selector</typeparam>
+        /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
+        public void AddSelector<TS>(TypeSelectorBase<TS> selector)
+        {
+            _matcher.TypeMap.AddSelector(selector, SelectorPosition.First);
         }
     }
 }
