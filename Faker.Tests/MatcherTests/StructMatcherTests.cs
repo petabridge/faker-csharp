@@ -11,6 +11,17 @@ namespace Faker.Tests.MatcherTests
     {
         private Matcher _matcher;
 
+        #region Custom structs
+
+        public struct TestStruct
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public DateTime When { get; set; }
+        }
+
+        #endregion
+
         #region Setup / Teardown
 
         [SetUp]
@@ -26,9 +37,9 @@ namespace Faker.Tests.MatcherTests
         [Test(Description = "Matcher should be able to match simple DateTime structs if needed")]
         public void Should_Bind_DateTime()
         {
-            var dateTimeTest = new DateTime();
+            object dateTimeTest = new DateTime();
 
-            _matcher.Match(dateTimeTest);
+            _matcher.MatchStruct<DateTime>(ref dateTimeTest);
 
             /* Assert that we populated all of the fields of the DateTime object */
             Assert.AreNotEqual(DateTime.MinValue, dateTimeTest);

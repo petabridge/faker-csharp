@@ -54,9 +54,18 @@ namespace Faker
         }
 
 
-        public virtual S MatchStruct<S>(S targetStruct) where S : struct
+        public virtual object MatchStruct<S>(ref object targetStruct) where S : struct
         {
-            
+            //Evaluate all of the possible selectors and find the first available match
+            var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
+
+            //We found a matching selector
+            if (!(selector is MissingSelector))
+            {
+                selector.Generate(ref targetStruct); //Bind the object's value directly
+            }
+
+            return targetStruct;
         }
 
         /// <summary>
