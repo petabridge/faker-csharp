@@ -36,7 +36,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
-        public virtual T Match<T>(T targetObject) where T : new()
+        public virtual void Match<T>(T targetObject) where T : new()
         {
             //Check to see if we have a TypeSelector that matches the entire object wholesale first
 
@@ -49,12 +49,14 @@ namespace Faker
                 ProcessProperties(properties, targetObject);
 
             }
-           
-            return targetObject;
         }
 
-
-        public virtual object MatchStruct<S>(ref S targetStruct) where S : struct
+        /// <summary>
+        /// Used for matching value types
+        /// </summary>
+        /// <typeparam name="S">A value type parameter</typeparam>
+        /// <param name="targetStruct">The value type instance</param>
+        public virtual void MatchStruct<S>(ref S targetStruct) where S : struct
         {
             //Evaluate all of the possible selectors and find the first available match
             var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
@@ -73,9 +75,6 @@ namespace Faker
 
                 targetStruct = (S)ProcessProperties(properties, targetStruct);
             }
-            
-
-            return targetStruct;
         }
 
         /// <summary>
