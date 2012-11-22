@@ -65,6 +65,11 @@ namespace Faker
                 selector.Generate(ref targetStruct); //Bind the object's value directly
             }
 
+            //Get all of the properties of the class
+            var properties = typeof(S).GetProperties();
+
+            ProcessProperties(properties, targetStruct);
+
             return targetStruct;
         }
 

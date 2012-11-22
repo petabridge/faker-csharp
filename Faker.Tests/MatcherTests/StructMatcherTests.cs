@@ -46,6 +46,17 @@ namespace Faker.Tests.MatcherTests
             Assert.AreNotEqual(DateTime.MaxValue, dateTimeTest);
         }
 
+        [Test(Description = "Matcher should be able to match user-defined structs if needed")]
+        public void Should_Bind_CustomStruct()
+        {
+            object dateTimeTest = new TestStruct();
+
+            _matcher.MatchStruct<TestStruct>(ref dateTimeTest);
+
+            /* Assert that we populated all of the fields of the DateTime object */
+           Assert.IsNotNull(((TestStruct)dateTimeTest).Name);
+        }
+
         #endregion
     }
 }
