@@ -289,7 +289,7 @@ namespace Faker
         /// <param name="propertyType">The Property / Field for which we're trying to find a match</param>
         /// <param name="selectors">A list of selectors from the TypeTable</param>
         /// <returns>the first matching ITypeSelector instance we could find</returns>
-        protected virtual ITypeSelector EvaluateSelectors(PropertyInfo propertyType, IEnumerable<ITypeSelector> selectors)
+        internal virtual ITypeSelector EvaluateSelectors(PropertyInfo propertyType, IEnumerable<ITypeSelector> selectors)
         {
             foreach (var selector in selectors)
             {
@@ -311,7 +311,7 @@ namespace Faker
         /// <param name="type">The type for which we're trying to find a match</param>
         /// <param name="selectors">A list of selectors from the TypeTable</param>
         /// <returns>the first matching ITypeSelector instance we could find</returns>
-        protected virtual ITypeSelector EvaluateSelectors(Type type, IEnumerable<ITypeSelector> selectors)
+        internal virtual ITypeSelector EvaluateSelectors(Type type, IEnumerable<ITypeSelector> selectors)
         {
             foreach (var selector in selectors)
             {

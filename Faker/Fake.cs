@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using Faker.Selectors;
 
@@ -74,6 +75,34 @@ namespace Faker
         public void AddSelector<TS>(TypeSelectorBase<TS> selector)
         {
             _matcher.TypeMap.AddSelector(selector, SelectorPosition.First);
+        }
+
+        /// <summary>
+        /// Returns the first matching selector for the appropriate type
+        /// </summary>
+        /// <typeparam name="TS">The Type that we're evaluating</typeparam>
+        /// <returns>A selector for the appropriate matching type</returns>
+        public ITypeSelector GetSelector<TS>()
+        {
+            return GetSelector(typeof (TS));
+        }
+
+        /// <summary>
+        /// Returns the first matching selector for the appropriate type
+        /// </summary>
+        /// <returns>A selector for the appropriate matching type</returns>
+        public ITypeSelector GetSelector(Type ts)
+        {
+            return _matcher.EvaluateSelectors(ts, _matcher.TypeMap.GetSelectors(ts));
+        }
+
+        /// <summary>
+        /// Returns the first matching selector for the appropriate type for a given property
+        /// </summary>
+        /// <returns>A selector for the appropriate matching type</returns>
+        public ITypeSelector GetSelector(PropertyInfo  propertyInfo)
+        {
+            return _matcher.EvaluateSelectors(propertyInfo, _matcher.TypeMap.GetSelectors(propertyInfo.PropertyType));
         }
     }
 }
