@@ -16,6 +16,7 @@ namespace Faker.Selectors
         {
             InternalSelector = baseSelector;
             CustomProperty = property;
+            Priority = SelectorPriorityConstants.CustomSelectorPriorty;
         }
 
         public override Func<T> Setter
