@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Faker\Extensions\ExpressionValidator.cs">
+      <Link>Extensions\ExpressionValidator.cs</Link>
+    </Compile>
+    <Compile Include="..\Faker\Extensions\TypeSelectorExtensions.cs">
+      <Link>Extensions\TypeSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Faker\Fake.cs">
       <Link>Fake.cs</Link>
     </Compile>

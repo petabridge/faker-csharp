@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ExpressionValidator.cs" />
+    <Compile Include="Extensions\TypeSelectorExtensions.cs" />
     <Compile Include="Fake.cs" />
     <Compile Include="Generators\Booleans.cs" />
     <Compile Include="Generators\DateTimes.cs" />
@@ -66,9 +68,7 @@
     <Compile Include="Selectors\TypeSelectorBase.cs" />
     <Compile Include="TypeTable.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
