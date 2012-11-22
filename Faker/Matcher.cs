@@ -36,12 +36,27 @@ namespace Faker
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
-        public virtual void Match<T>(T targetObject) where T : new()
+        public virtual T Match<T>(T targetObject) where T : new()
         {
-            //Get all of the properties of the class
-            var properties = typeof(T).GetProperties();
+            //Check to see if we have a TypeSelector that matches the entire object wholesale first
 
-            ProcessProperties(properties, targetObject);
+            //If we don't have a mapper for the wholesale class, map the properties and bind them individually
+            if (!MapFromSelector(targetObject, typeof (T)))
+            {
+                //Get all of the properties of the class
+                var properties = typeof(T).GetProperties();
+
+                ProcessProperties(properties, targetObject);
+
+            }
+           
+            return targetObject;
+        }
+
+
+        public virtual S MatchStruct<S>(S targetStruct) where S : struct
+        {
+            
         }
 
         /// <summary>
@@ -159,7 +174,14 @@ namespace Faker
 
         }
 
-        private bool MapFromSelector(PropertyInfo property, object targetObject, Type propertyType)
+        /// <summary>
+        /// Attempt to map the object directly based on the availability of selectors
+        /// </summary>
+        /// <param name="property">The property that needs a match</param>
+        /// <param name="targetObject">The object to which the property belongs</param>
+        /// <param name="propertyType">The type of the property</param>
+        /// <returns>True if a match was found and made; false otherwise</returns>
+        protected virtual bool MapFromSelector(PropertyInfo property, object targetObject, Type propertyType)
         {
             //Determine if we have a selector-on-hand for this data type
             var selectorCount = TypeMap.CountSelectors(propertyType);
@@ -174,6 +196,33 @@ namespace Faker
                 if (!(selector is MissingSelector))
                 {
                     selector.Generate(targetObject, property); //Bind the property
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Selector-based mapping for when we need to apply it directly to objects wholesale
+        /// </summary>
+        /// <param name="targetObject">The target object who's value will be replaced</param>
+        /// <param name="propertyType">The type of the object</param>
+        /// <returns>true if a match was made and bound successfully; false otherwise</returns>
+        protected virtual bool MapFromSelector(object targetObject, Type propertyType)
+        {
+            //Determine if we have a selector-on-hand for this data type
+            var selectorCount = TypeMap.CountSelectors(propertyType);
+
+            //We have some matching selectors, so we'll evaluate and return the best match
+            if (selectorCount > 0)
+            {
+                //Evaluate all of the possible selectors and find the first available match
+                var selector = EvaluateSelectors(propertyType, TypeMap.GetSelectors(propertyType));
+
+                //We found a matching selector
+                if (!(selector is MissingSelector))
+                {
+                    selector.Generate(ref targetObject); //Bind the object's value directly
                     return true;
                 }
             }
