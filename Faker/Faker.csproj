@@ -54,6 +54,7 @@
     <Compile Include="Matcher.cs" />
     <Compile Include="Selectors\DateTimeSelectors.cs" />
     <Compile Include="Selectors\GuidSelector.cs" />
+    <Compile Include="Selectors\IRangeSelector.cs" />
     <Compile Include="Selectors\ITypeSelector.cs" />
     <Compile Include="Helpers\ArrayHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
