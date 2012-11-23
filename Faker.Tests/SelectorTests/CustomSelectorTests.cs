@@ -19,6 +19,7 @@ namespace Faker.Tests.SelectorTests
         {
             public CustomMember Member { get; set; }
             public string Name { get; set; }
+            public string OtherName { get; set; }
         }
 
         #endregion
@@ -82,6 +83,7 @@ namespace Faker.Tests.SelectorTests
             var customFakeInstance = fake.Generate();
 
             Assert.AreEqual(nameConst, customFakeInstance.Name);
+            Assert.AreNotEqual(nameConst, customFakeInstance.OtherName);
         }
 
         #endregion

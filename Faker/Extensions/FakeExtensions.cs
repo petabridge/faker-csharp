@@ -26,7 +26,7 @@ namespace Faker.Extensions
                 return customSelector;
             }
 
-            var baseSelector = matchingSelector as TypeSelectorBase<TProperty>;
+            var baseSelector = Activator.CreateInstance(matchingSelector.GetType()) as TypeSelectorBase<TProperty>;
             var customDerivedSelector = new CustomDerivedPropertySelector<TProperty>(baseSelector.Set(setter.Compile()), prop);
             fake.AddSelector(customDerivedSelector);
 
