@@ -91,6 +91,9 @@
     <Compile Include="..\Faker\Selectors\CustomPropertySelector.cs">
       <Link>Selectors\CustomPropertySelector.cs</Link>
     </Compile>
+    <Compile Include="..\Faker\Selectors\CustomTypeSelector.cs">
+      <Link>Selectors\CustomTypeSelector.cs</Link>
+    </Compile>
     <Compile Include="..\Faker\Selectors\DateTimeSelectors.cs">
       <Link>Selectors\DateTimeSelectors.cs</Link>
     </Compile>

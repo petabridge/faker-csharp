@@ -11,7 +11,16 @@ namespace Faker.Extensions
     /// </summary>
     public static class FakeExtensions
     {
-        public static TypeSelectorBase<TProperty> SetupSelector<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter) 
+        /// <summary>
+        /// Creates a custom Faker rule for a specific property on an object
+        /// </summary>
+        /// <typeparam name="T">The type of the parent object</typeparam>
+        /// <typeparam name="TProperty">The type of the property</typeparam>
+        /// <param name="fake">The Fake object for which we're creating this rule</param>
+        /// <param name="expression">The expression for retreiving the property</param>
+        /// <param name="setter">The expression for setting the value of the property</param>
+        /// <returns>A TypeSelectorBase instance used for managing the property</returns>
+        public static TypeSelectorBase<TProperty> SetProperty<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter)
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
 
@@ -21,7 +30,7 @@ namespace Faker.Extensions
             var matchingSelector = fake.GetBaseSelector(prop.PropertyType);
             if (matchingSelector is MissingSelector || !(matchingSelector is TypeSelectorBase<TProperty>))
             {
-                var customSelector =  new CustomPropertySelector<TProperty>(prop, setter.Compile());
+                var customSelector = new CustomPropertySelector<TProperty>(prop, setter.Compile());
                 fake.AddSelector(customSelector);
                 return customSelector;
             }
@@ -31,6 +40,24 @@ namespace Faker.Extensions
             fake.AddSelector(customDerivedSelector);
 
             return customDerivedSelector;
+        }
+
+        /// <summary>
+        /// Creates a custom Faker rule for all properties of a single type on an object
+        /// </summary>
+        /// <typeparam name="T">The type of the parent object</typeparam>
+        /// <typeparam name="TS">The type for which this rule will be applied</typeparam>
+        /// <param name="fake">The Faker instance to be modified</param>
+        /// <param name="setter">The expression for which we should be setting a value to</param>
+        /// <returns>A TypeSelectorBase object for type TS</returns>
+        public static TypeSelectorBase<TS> SetType<T, TS>(this Fake<T> fake, Expression<Func<TS>> setter)
+        {
+            ExpressionValidator.IsNotNull(() => setter, setter);
+            var targetType = typeof(TS);
+
+            var selector = new CustomTypeSelector<TS>(setter.Compile());
+            fake.AddSelector(selector);
+            return selector;
         }
 
         /// <summary>
