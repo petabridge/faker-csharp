@@ -21,12 +21,17 @@ namespace Faker.Extensions
             var matchingSelector = fake.GetSelector(prop);
             if (matchingSelector is MissingSelector || !(matchingSelector is TypeSelectorBase<TProperty>))
             {
-                return new CustomPropertySelector<TProperty>(prop, setter.Compile());
+                var customSelector =  new CustomPropertySelector<TProperty>(prop, setter.Compile());
+                fake.AddSelector(customSelector);
+                return customSelector;
             }
 
             var baseSelector = matchingSelector as TypeSelectorBase<TProperty>;
 
-            return new CustomDerivedPropertySelector<TProperty>(baseSelector, prop);
+            var customDerivedSelector = new CustomDerivedPropertySelector<TProperty>(baseSelector, prop);
+            fake.AddSelector(customDerivedSelector);
+
+            return customDerivedSelector;
         }
 
         /// <summary>

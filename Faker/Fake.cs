@@ -82,7 +82,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="TS">The Type that we're evaluating</typeparam>
         /// <returns>A selector for the appropriate matching type</returns>
-        public ITypeSelector GetSelector<TS>()
+        internal ITypeSelector GetSelector<TS>()
         {
             return GetSelector(typeof (TS));
         }
@@ -91,7 +91,7 @@ namespace Faker
         /// Returns the first matching selector for the appropriate type
         /// </summary>
         /// <returns>A selector for the appropriate matching type</returns>
-        public ITypeSelector GetSelector(Type ts)
+        internal ITypeSelector GetSelector(Type ts)
         {
             return _matcher.EvaluateSelectors(ts, _matcher.TypeMap.GetSelectors(ts));
         }
