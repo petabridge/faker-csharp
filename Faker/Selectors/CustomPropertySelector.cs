@@ -7,7 +7,7 @@ namespace Faker.Selectors
     /// Selector created for many user-defined queries
     /// </summary>
     /// <typeparam name="T">The Type for which we are selecting</typeparam>
-    public class CustomPropertySelector<T> : TypeSelectorBase<T> where T : new()
+    public class CustomPropertySelector<T> : TypeSelectorBase<T>
     {
         protected PropertyInfo CustomProperty;
 

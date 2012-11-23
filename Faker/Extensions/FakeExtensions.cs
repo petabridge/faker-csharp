@@ -11,14 +11,14 @@ namespace Faker.Extensions
     /// </summary>
     public static class FakeExtensions
     {
-        public static TypeSelectorBase<TProperty> SetupSelector<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter) where T : new() where TProperty:new()
+        public static TypeSelectorBase<TProperty> SetupSelector<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression, Expression<Func<TProperty>> setter) 
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
 
             var prop = expression.ToPropertyInfo();
             ThrowIfCantWrite(prop);
 
-            var matchingSelector = fake.GetSelector(prop);
+            var matchingSelector = fake.GetBaseSelector(prop.PropertyType);
             if (matchingSelector is MissingSelector || !(matchingSelector is TypeSelectorBase<TProperty>))
             {
                 var customSelector =  new CustomPropertySelector<TProperty>(prop, setter.Compile());
@@ -27,8 +27,7 @@ namespace Faker.Extensions
             }
 
             var baseSelector = matchingSelector as TypeSelectorBase<TProperty>;
-
-            var customDerivedSelector = new CustomDerivedPropertySelector<TProperty>(baseSelector, prop);
+            var customDerivedSelector = new CustomDerivedPropertySelector<TProperty>(baseSelector.Set(setter.Compile()), prop);
             fake.AddSelector(customDerivedSelector);
 
             return customDerivedSelector;

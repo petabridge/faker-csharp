@@ -12,7 +12,7 @@ namespace Faker
     /// <summary>
     /// Used for dynamically generating fakes of simple POCO objects
     /// </summary>
-    public class Fake<T> where T : new()
+    public class Fake<T>
     {
         /// <summary>
         /// Engine used to power our fakes
@@ -100,9 +100,19 @@ namespace Faker
         /// Returns the first matching selector for the appropriate type for a given property
         /// </summary>
         /// <returns>A selector for the appropriate matching type</returns>
-        public ITypeSelector GetSelector(PropertyInfo  propertyInfo)
+        internal ITypeSelector GetSelector(PropertyInfo  propertyInfo)
         {
             return _matcher.EvaluateSelectors(propertyInfo, _matcher.TypeMap.GetSelectors(propertyInfo.PropertyType));
+        }
+
+        /// <summary>
+        /// Returns the base-level selector for the appropriate type for a given property
+        /// </summary>
+        /// <param name="ts">A selector appropriate for the matching type</param>
+        /// <returns>The base-level selector that can bind to type TS</returns>
+        internal ITypeSelector GetBaseSelector(Type ts)
+        {
+            return _matcher.TypeMap.GetBaseSelector(ts);
         }
     }
 }

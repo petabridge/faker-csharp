@@ -38,7 +38,7 @@ namespace Faker.Extensions
             return selector;
         }
 
-        public static ITypeSelector Set<T>(this TypeSelectorBase<T> selector, Func<T> setter)
+        public static TypeSelectorBase<T> Set<T>(this TypeSelectorBase<T> selector, Func<T> setter)
         {
             ValidateExpression(selector, setter);
 

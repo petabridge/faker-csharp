@@ -36,7 +36,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
-        public virtual void Match<T>(T targetObject) where T : new()
+        public virtual void Match<T>(T targetObject)
         {
             //Check to see if we have a TypeSelector that matches the entire object wholesale first
 

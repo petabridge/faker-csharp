@@ -54,8 +54,34 @@ namespace Faker.Tests.SelectorTests
             //Generate a new fake with the custom selector implemented
             var customFakeInstance = fake.Generate();
 
-            Assert.AreEqual(measureConst, standardFakeInstance.Member.Measure);
-            Assert.AreEqual(nameConst, standardFakeInstance.Member.Name);
+            Assert.AreEqual(measureConst, customFakeInstance.Member.Measure);
+            Assert.AreEqual(nameConst, customFakeInstance.Member.Name);
+        }
+
+        [Test(Description = "Should be able to match a simple built-in property using a custom selector")]
+        public void Should_Match_BuiltIn_Property_with_CustomSelector()
+        {
+            //Create an instance of our test class
+            var testInstance = new ContainerClass();
+
+            var nameConst = "AaronConst";
+
+            var fake = new Fake<ContainerClass>();
+
+            //Run some tests before we add the custom selector
+            var standardFakeInstance = fake.Generate();
+
+            Assert.AreNotEqual(nameConst, standardFakeInstance.Name);
+
+            //Add the custom selector for the Member field
+            var selector = fake.SetupSelector(x => x.Name, () => nameConst);
+
+            Assert.IsTrue(selector.CanBind(typeof(string)));
+
+            //Generate a new fake with the custom selector implemented
+            var customFakeInstance = fake.Generate();
+
+            Assert.AreEqual(nameConst, customFakeInstance.Name);
         }
 
         #endregion
