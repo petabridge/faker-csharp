@@ -36,12 +36,15 @@ namespace Faker
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
-        public virtual void Match<T>(T targetObject)
+        /// <returns>The instance whose value has replaced.</returns>
+        public virtual T Match<T>(T targetObject)
         {
             //Check to see if we have a TypeSelector that matches the entire object wholesale first
 
             //If we don't have a mapper for the wholesale class, map the properties and bind them individually
-            if (!MapFromSelector(targetObject, typeof (T)))
+            bool isMatched = false;
+            T generatedObject = (T)MapFromSelector(targetObject, typeof(T), out isMatched);
+            if (!isMatched)
             {
                 //Get all of the properties of the class
                 var properties = typeof(T).GetProperties();
@@ -49,6 +52,8 @@ namespace Faker
                 ProcessProperties(properties, targetObject);
 
             }
+
+            return generatedObject;
         }
 
         /// <summary>
@@ -227,8 +232,9 @@ namespace Faker
         /// </summary>
         /// <param name="targetObject">The target object who's value will be replaced</param>
         /// <param name="propertyType">The type of the object</param>
-        /// <returns>true if a match was made and bound successfully; false otherwise</returns>
-        protected virtual bool MapFromSelector(object targetObject, Type propertyType)
+        /// <param name="isMached">true if a match was made and bound successfully; false otherwise</param>
+        /// <returns>The instance whose value has replaced.</returns>
+        protected virtual object MapFromSelector(object targetObject, Type propertyType, out bool isMached)
         {
             //Determine if we have a selector-on-hand for this data type
             var selectorCount = TypeMap.CountSelectors(propertyType);
@@ -243,10 +249,12 @@ namespace Faker
                 if (!(selector is MissingSelector))
                 {
                     selector.Generate(ref targetObject); //Bind the object's value directly
-                    return true;
+                    isMached = true;
+                    return targetObject;
                 }
             }
-            return false;
+            isMached = false;
+            return targetObject;
         }
 
         /// <summary>
