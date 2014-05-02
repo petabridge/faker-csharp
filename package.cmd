@@ -7,7 +7,10 @@ if not exist Download\packages\Faker\lib\net35 mkdir Download\packages\Faker\lib
 
 copy LICENSE.txt Download\packages\Faker
 
-copy Faker\bin\Release\Faker.dll Download\packages\Faker\lib\net4
-copy Faker.Net35\bin\Release\Faker.Net35.dll Download\packages\Faker\lib\net35
+echo %CD%\Faker.sln
+
+msbuild "%CD%\Faker.sln" "/p:Configuration=Release;"
+copy %CD%\Faker\bin\Release\Faker.dll Download\packages\Faker\lib\net4
+copy %CD%\Faker.Net35\bin\Release\Faker.Net35.dll Download\packages\Faker\lib\net35
 
 nuget.exe pack Faker.nuspec -BasePath Download\packages\Faker -OutputDirectory Download
