@@ -41,7 +41,7 @@ namespace Faker
             else
             {
                 //Match all of the properties of the object and come up with the most reasonable guess we can as to the type of data needed
-                _matcher.Match(instance);
+                instance = _matcher.Match(instance);
             }
 
             //Return the instance once matching is complete

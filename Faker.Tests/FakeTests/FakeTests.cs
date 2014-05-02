@@ -125,6 +125,16 @@ namespace Faker.Tests.FakeTests
             Assert.IsNotNullOrEmpty(classWithStructInstance.Name);
         }
 
+        [Test(Description = "Should be able to fake a single instance of string which has matching selectors.")]
+        public void Should_Fake_Single_Instance_of_String()
+        {
+            var fake = new Fake<string>();
+
+            var stringInstance = fake.Generate();
+
+            Assert.IsNotNullOrEmpty(stringInstance);
+        }
+
         #endregion
     }
 }
