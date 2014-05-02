@@ -114,5 +114,17 @@ namespace Faker
         {
             return _matcher.TypeMap.GetBaseSelector(ts);
         }
+
+        #region Static members
+
+        /// <summary>
+        /// Static method for creating new Faker instances, designed to make it less arduous to work with the FluentInterface
+        /// </summary>
+        public static Fake<T> Create()
+        {
+            return new Fake<T>();
+        }
+
+        #endregion
     }
 }
