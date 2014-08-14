@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeTests\BugCheckTests.cs" />
     <Compile Include="FakeTests\FakeTests.cs" />
     <Compile Include="GeneratorTests\DateTimeGeneratorTests.cs" />
     <Compile Include="GeneratorTests\EmailAddressGeneratorTests.cs" />
@@ -82,9 +83,7 @@
       <Name>Faker</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ExtensionTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
