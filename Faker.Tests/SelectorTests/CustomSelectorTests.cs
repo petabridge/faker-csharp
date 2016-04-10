@@ -1,6 +1,5 @@
 ﻿using Faker.Selectors;
 using NUnit.Framework;
-using Faker.Extensions;
 
 namespace Faker.Tests.SelectorTests
 {
