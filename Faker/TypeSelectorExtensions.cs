@@ -4,12 +4,12 @@ using Faker.Selectors;
 namespace Faker
 {
     /// <summary>
-    /// Fluent interface definition designed to make it easy to customize user-defined TypeSelectors
+    ///     Fluent interface definition designed to make it easy to customize user-defined TypeSelectors
     /// </summary>
     public static class TypeSelectorExtensions
     {
         /// <summary>
-        /// Extension method for setting maximum bounds on a setter if it supports range selection
+        ///     Extension method for setting maximum bounds on a setter if it supports range selection
         /// </summary>
         /// <typeparam name="T">The type used in the range</typeparam>
         /// <param name="selector">The TypeSelector we're modifying</param>
@@ -24,7 +24,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Extension method for setting minimum bounds on a setter if it supports range selection
+        ///     Extension method for setting minimum bounds on a setter if it supports range selection
         /// </summary>
         /// <typeparam name="T">The type used in the range</typeparam>
         /// <param name="selector">The TypeSelector we're modifying</param>

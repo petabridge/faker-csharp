@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Faker.Selectors
+﻿namespace Faker.Selectors
 {
     /// <summary>
-    /// Class which contains all of the special field regular expressions
+    ///     Class which contains all of the special field regular expressions
     /// </summary>
     public static class SpecialFieldsRegex
     {

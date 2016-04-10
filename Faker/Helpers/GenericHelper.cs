@@ -5,7 +5,7 @@ namespace Faker.Helpers
     public static class GenericHelper
     {
         /// <summary>
-        /// Internal method for creating instances of generic objects
+        ///     Internal method for creating instances of generic objects
         /// </summary>
         /// <param name="generic">the Generic type</param>
         /// <param name="innerType">the inner type</param>
@@ -18,14 +18,14 @@ namespace Faker.Helpers
         }
 
         /// <summary>
-        /// Internal method for creating instances of generic objects
+        ///     Internal method for creating instances of generic objects
         /// </summary>
         /// <param name="generic">the Generic type</param>
         /// <param name="innerType">the inner type</param>
         /// <returns>The constructed generic type</returns>
         public static Type GetGenericType(Type generic, Type innerType)
         {
-            return generic.MakeGenericType(new[] {innerType});
+            return generic.MakeGenericType(innerType);
         }
     }
 }

@@ -4,29 +4,35 @@ using System.Reflection;
 namespace Faker.Selectors
 {
     //Base class used to signify to the TypeTable that this is the option of last resort for any given type
-    public abstract class PrimitiveSelectorBase<T> : TypeSelectorBase<T>{}
+    public abstract class PrimitiveSelectorBase<T> : TypeSelectorBase<T>
+    {
+    }
 
     /// <summary>
-    /// Abstract base class used to enforce some constraints on how we manage TypeSelectors
+    ///     Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
     /// <typeparam name="T">The type that this selector works for</typeparam>
     public abstract class TypeSelectorBase<T> : ITypeSelector
     {
+        protected bool _can_be_null;
+
+        protected Func<T> _setter;
+
         protected TypeSelectorBase()
         {
             //Set the targetType to the value of the type selector
-            TargetType = typeof(T);
+            TargetType = typeof (T);
             Priority = SelectorPriorityConstants.PrimitiveSelectorPriority;
             _setter = Generate;
         }
 
-        protected bool _can_be_null;
+        public virtual Func<T> Setter
+        {
+            get { return _setter; }
+            set { _setter = value; }
+        }
 
-        protected Func<T> _setter;
-        public virtual Func<T> Setter { get { return _setter; } set { _setter = value; } }
-
-        public int Priority
-        { get; set; }
+        public int Priority { get; set; }
 
         public void BeNull(bool canBeNull = false)
         {
@@ -54,8 +60,8 @@ namespace Faker.Selectors
             return targetObject;
         }
 
-        public abstract T Generate();
+        public Type TargetType { get; }
 
-        public Type TargetType { get; private set; }
+        public abstract T Generate();
     }
 }

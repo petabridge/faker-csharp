@@ -13,7 +13,7 @@ namespace Faker
     }
 
     /// <summary>
-    /// The repository which determines the order in which selectors are picked for any given type
+    ///     The repository which determines the order in which selectors are picked for any given type
     /// </summary>
     public sealed class TypeTable
     {
@@ -21,24 +21,26 @@ namespace Faker
         private readonly Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
 
         /// <summary>
-        /// Default constructor
+        ///     Default constructor
         /// </summary>
-        public TypeTable(bool useDefaults = true):this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>()){}
+        public TypeTable(bool useDefaults = true) : this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>())
+        {
+        }
 
         /// <summary>
-        /// Private constructor which accepts an inbound typemap as an argument
+        ///     Private constructor which accepts an inbound typemap as an argument
         /// </summary>
         /// <param name="useDefaults">Determines if we should load all of our default selectors or not</param>
         /// <param name="typeMap">A typemap instance</param>
         private TypeTable(bool useDefaults, Dictionary<Type, LinkedList<ITypeSelector>> typeMap)
         {
             _typeMap = typeMap;
-            if(useDefaults) //Load defaults if the user requested it
+            if (useDefaults) //Load defaults if the user requested it
                 LoadDefaults();
         }
 
         /// <summary>
-        /// Private internal method for loading all of the default TypeSelectors into the TypeTable
+        ///     Private internal method for loading all of the default TypeSelectors into the TypeTable
         /// </summary>
         private void LoadDefaults()
         {
@@ -66,7 +68,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Internal method for securely creating type rows where needed
+        ///     Internal method for securely creating type rows where needed
         /// </summary>
         /// <param name="incomingType">The type to which we're mapping this object</param>
         private void CreateTypeIfNotExists(Type incomingType)
@@ -80,24 +82,28 @@ namespace Faker
         }
 
         /// <summary>
-        /// Add a strongly typed selector to the 
+        ///     Add a strongly typed selector to the
         /// </summary>
         /// <typeparam name="T">The type for which this selector is used</typeparam>
         /// <param name="selector">A TypeSelectorBase implementation for Type T</param>
-        /// <param name="position">Optional parameter - indicates whether you want this type selector to be used first or last in the sequence of available selectors for this type</param>
+        /// <param name="position">
+        ///     Optional parameter - indicates whether you want this type selector to be used first or last in
+        ///     the sequence of available selectors for this type
+        /// </param>
         public void AddSelector<T>(TypeSelectorBase<T> selector, SelectorPosition position = SelectorPosition.First)
         {
             var activeType = typeof (T);
             CreateTypeIfNotExists(activeType);
 
-            if (position == SelectorPosition.First) //If the user wants to add this selector to the front of the list (default), do that
+            if (position == SelectorPosition.First)
+                //If the user wants to add this selector to the front of the list (default), do that
                 _typeMap[activeType].AddFirst(selector);
             else //Otherwise, add this type to the back of the list
                 _typeMap[activeType].AddLast(selector);
         }
 
         /// <summary>
-        /// Remove all of the selectors for a given type
+        ///     Remove all of the selectors for a given type
         /// </summary>
         /// <typeparam name="T">The type for which we want to clear all of the selectors</typeparam>
         public void ClearSelectors<T>()
@@ -108,18 +114,18 @@ namespace Faker
         }
 
         /// <summary>
-        /// Count all of the selectors for a given type
+        ///     Count all of the selectors for a given type
         /// </summary>
         /// <typeparam name="T">The type for which we need value selectors</typeparam>
         /// <returns>The number of selectors we have available for this type</returns>
         public int CountSelectors<T>()
         {
-            var activeType = typeof(T);
+            var activeType = typeof (T);
             return CountSelectors(activeType);
         }
 
         /// <summary>
-        /// Count all of the selectors for a given type
+        ///     Count all of the selectors for a given type
         /// </summary>
         /// <param name="t">A type object for which we want to know the number of available selectors</param>
         /// <returns>The number of selectors we have available for this type</returns>
@@ -130,19 +136,19 @@ namespace Faker
         }
 
         /// <summary>
-        /// Get all of the selectors for a given type
+        ///     Get all of the selectors for a given type
         /// </summary>
         /// <typeparam name="T">The type for which we need value selectors</typeparam>
         /// <returns>An enumerable list of selectors</returns>
         public IEnumerable<TypeSelectorBase<T>> GetSelectors<T>()
         {
-            var activeType = typeof(T);
+            var activeType = typeof (T);
             var selectors = GetSelectors(activeType);
             return selectors.Cast<TypeSelectorBase<T>>();
         }
 
         /// <summary>
-        /// Get all of the selectors for a given type
+        ///     Get all of the selectors for a given type
         /// </summary>
         /// <returns>An enumerable list of selectors</returns>
         public IEnumerable<ITypeSelector> GetSelectors(Type t)
@@ -152,7 +158,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Gets the base selector for a given datatype
+        ///     Gets the base selector for a given datatype
         /// </summary>
         /// <param name="t">The type that we need to inject</param>
         /// <returns>A matching selector, null otherwise</returns>
@@ -161,6 +167,19 @@ namespace Faker
             CreateTypeIfNotExists(t);
             var baseType = GenericHelper.GetGenericType(typeof (PrimitiveSelectorBase<>), t);
             return _typeMap[t].FirstOrDefault(x => baseType.IsAssignableFrom(x.GetType()));
+        }
+
+        /// <summary>
+        /// Clone a deep copy of <see cref="TypeTable"/> with the same settings as this instance.
+        /// 
+        /// Any modifications made to the new instance returned should not affect the parent instance.
+        /// </summary>
+        /// <returns>A deep copy of the current <see cref="TypeTable"/>.</returns>
+        public TypeTable Clone()
+        {
+            // create a deep copy
+            var typeTable = new TypeTable(false, _typeMap.ToDictionary(d => d.Key, d => new LinkedList<ITypeSelector>(d.Value.ToList())));
+            return typeTable;
         }
     }
 }

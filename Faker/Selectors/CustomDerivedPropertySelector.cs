@@ -4,13 +4,13 @@ using System.Reflection;
 namespace Faker.Selectors
 {
     /// <summary>
-    /// Selector created for many user-defined queries
+    ///     Selector created for many user-defined queries
     /// </summary>
     /// <typeparam name="T">The Type for which we are selecting</typeparam>
     public class CustomDerivedPropertySelector<T> : TypeSelectorBase<T>
     {
+        protected PropertyInfo CustomProperty;
         protected TypeSelectorBase<T> InternalSelector;
-        protected PropertyInfo CustomProperty; 
 
         public CustomDerivedPropertySelector(TypeSelectorBase<T> baseSelector, PropertyInfo property)
         {
@@ -21,14 +21,8 @@ namespace Faker.Selectors
 
         public override Func<T> Setter
         {
-            get
-            {
-                return InternalSelector.Setter;
-            }
-            set
-            {
-                InternalSelector.Setter = value;
-            }
+            get { return InternalSelector.Setter; }
+            set { InternalSelector.Setter = value; }
         }
 
         public override bool CanBind(PropertyInfo field)

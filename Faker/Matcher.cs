@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using Faker.Generators;
 using Faker.Helpers;
 using Faker.Selectors;
@@ -11,19 +9,19 @@ using Faker.Selectors;
 namespace Faker
 {
     /// <summary>
-    /// Class used to match a type selector from the TypeTable with the properties of an object
+    ///     Class used to match a type selector from the TypeTable with the properties of an object
     /// </summary>
     public class Matcher
     {
-        public TypeTable TypeMap { get; protected set; }
-
         /// <summary>
-        /// Default constructor - uses the default TypeTable
+        ///     Default constructor - uses the default TypeTable
         /// </summary>
-        public Matcher() : this(new TypeTable()) { }
+        public Matcher() : this(new TypeTable())
+        {
+        }
 
         /// <summary>
-        /// Constructor which accepts a TypeTable as an argument
+        ///     Constructor which accepts a TypeTable as an argument
         /// </summary>
         /// <param name="table">an instantiated type table that can be accessed via the TypeMap property later</param>
         public Matcher(TypeTable table)
@@ -31,8 +29,10 @@ namespace Faker
             TypeMap = table;
         }
 
+        public TypeTable TypeMap { get; protected set; }
+
         /// <summary>
-        /// Method matches all properties on a given class with a 
+        ///     Method matches all properties on a given class with a
         /// </summary>
         /// <typeparam name="T">a class with a parameterless constructor (POCO class)</typeparam>
         /// <param name="targetObject">an instance of the class</param>
@@ -42,29 +42,28 @@ namespace Faker
             //Check to see if we have a TypeSelector that matches the entire object wholesale first
 
             //If we don't have a mapper for the wholesale class, map the properties and bind them individually
-            bool isMatched = false;
-            T generatedObject = (T)MapFromSelector(targetObject, typeof(T), out isMatched);
+            var isMatched = false;
+            var generatedObject = (T) MapFromSelector(targetObject, typeof (T), out isMatched);
             if (!isMatched)
             {
                 //Get all of the properties of the class
-                var properties = typeof(T).GetProperties();
+                var properties = typeof (T).GetProperties();
 
                 ProcessProperties(properties, targetObject);
-
             }
 
             return generatedObject;
         }
 
         /// <summary>
-        /// Used for matching value types
+        ///     Used for matching value types
         /// </summary>
         /// <typeparam name="S">A value type parameter</typeparam>
         /// <param name="targetStruct">The value type instance</param>
         public virtual void MatchStruct<S>(ref S targetStruct)
         {
             //Evaluate all of the possible selectors and find the first available match
-            var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
+            var selector = EvaluateSelectors(typeof (S), TypeMap.GetSelectors(typeof (S)));
 
             //We found a matching selector
             if (!(selector is MissingSelector))
@@ -76,14 +75,14 @@ namespace Faker
             else
             {
                 //Get all of the properties of the class
-                var properties = typeof(S).GetProperties();
+                var properties = typeof (S).GetProperties();
 
-                targetStruct = (S)ProcessProperties(properties, targetStruct);
+                targetStruct = (S) ProcessProperties(properties, targetStruct);
             }
         }
 
         /// <summary>
-        /// Method for iterating over all of the indivdual properties in for a given object
+        ///     Method for iterating over all of the indivdual properties in for a given object
         /// </summary>
         /// <param name="properties">The set of properties available to an object instance</param>
         /// <param name="targetObject">The object against which type selectors will inject values</param>
@@ -95,7 +94,8 @@ namespace Faker
                 if (!property.CanWrite) //Bail if we can't write to the property
                     continue;
 
-                if(property.PropertyType == targetObject.GetType()) //If the property is a tree structure, bail (causes infinite recursion otherwise)
+                if (property.PropertyType == targetObject.GetType())
+                    //If the property is a tree structure, bail (causes infinite recursion otherwise)
                     continue;
 
                 ProcessProperty(property, targetObject);
@@ -105,7 +105,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Protected method used to implement our selector-matching strategy. Uses a greedy approach.
+        ///     Protected method used to implement our selector-matching strategy. Uses a greedy approach.
         /// </summary>
         /// <param name="property">The meta-data about the property for which we will be finding a match</param>
         /// <param name="targetObject">The object which will receive the property injection</param>
@@ -117,7 +117,8 @@ namespace Faker
             if (MapFromSelector(property, targetObject, propertyType)) return; //Exit
 
             //Check to see if the type is a class and has a default constructor
-            if (((propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null) || propertyType.IsValueType) && !IsArray(propertyType))
+            if (((propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null) ||
+                 propertyType.IsValueType) && !IsArray(propertyType))
             {
                 var subProperties = propertyType.GetProperties();
 
@@ -150,11 +151,11 @@ namespace Faker
                 //If we're working with a generic list or any other sort of collection
                 if (propertyType.IsGenericTypeDefinition)
                 {
-                    arrayInstance = (IList)GenericHelper.CreateGeneric(propertyType, elementType);
+                    arrayInstance = (IList) GenericHelper.CreateGeneric(propertyType, elementType);
                 }
                 else
                 {
-                    arrayInstance = (IList)GenericHelper.CreateGeneric(typeof(List<>), elementType);
+                    arrayInstance = (IList) GenericHelper.CreateGeneric(typeof (List<>), elementType);
                 }
 
                 //Determine if there's a selector available for this type
@@ -196,11 +197,10 @@ namespace Faker
                 //Bind the sub-class back onto the original target object
                 property.SetValue(targetObject, arrayInstance, null);
             }
-
         }
 
         /// <summary>
-        /// Attempt to map the object directly based on the availability of selectors
+        ///     Attempt to map the object directly based on the availability of selectors
         /// </summary>
         /// <param name="property">The property that needs a match</param>
         /// <param name="targetObject">The object to which the property belongs</param>
@@ -228,7 +228,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Selector-based mapping for when we need to apply it directly to objects wholesale
+        ///     Selector-based mapping for when we need to apply it directly to objects wholesale
         /// </summary>
         /// <param name="targetObject">The target object who's value will be replaced</param>
         /// <param name="propertyType">The type of the object</param>
@@ -258,7 +258,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Returns true if the targeted type is an array of some sort
+        ///     Returns true if the targeted type is an array of some sort
         /// </summary>
         /// <param name="targetType">the type we want to test</param>
         /// <returns>true if it's an array, false otherwise</returns>
@@ -270,20 +270,20 @@ namespace Faker
             if (genericArguments.Length != 1)
                 return false;
 
-            var listType = typeof(IList<>).MakeGenericType(genericArguments);
+            var listType = typeof (IList<>).MakeGenericType(genericArguments);
             return listType.IsAssignableFrom(targetType);
         }
 
         /// <summary>
-        /// Method used for safely creating new instances of type objects; handles a few special cases
-        /// where activation has to be done carefully.
+        ///     Method used for safely creating new instances of type objects; handles a few special cases
+        ///     where activation has to be done carefully.
         /// </summary>
         /// <param name="t">The target type we want to instantiate</param>
         /// <returns>an instance of the specified type</returns>
         public static object SafeObjectCreate(Type t)
         {
             //If the object is a string (tricky)
-            if (t == typeof(string))
+            if (t == typeof (string))
             {
                 return string.Empty;
             }
@@ -292,7 +292,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Evaluates a set of selectors and grabs the first available match
+        ///     Evaluates a set of selectors and grabs the first available match
         /// </summary>
         /// <param name="propertyType">The Property / Field for which we're trying to find a match</param>
         /// <param name="selectors">A list of selectors from the TypeTable</param>
@@ -314,7 +314,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Evaluates a set of selectors and grabs the first available match
+        ///     Evaluates a set of selectors and grabs the first available match
         /// </summary>
         /// <param name="type">The type for which we're trying to find a match</param>
         /// <param name="selectors">A list of selectors from the TypeTable</param>

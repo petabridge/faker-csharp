@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 using Faker.Selectors;
 
 namespace Faker
 {
     /// <summary>
-    /// Used for dynamically generating fakes of simple POCO objects
+    ///     Used for dynamically generating fakes of simple POCO objects
     /// </summary>
     public class Fake<T>
     {
         /// <summary>
-        /// Engine used to power our fakes
+        ///     Engine used to power our fakes
         /// </summary>
         private readonly Matcher _matcher;
 
@@ -25,13 +21,13 @@ namespace Faker
         }
 
         /// <summary>
-        /// Generates a single fake value for a given type
+        ///     Generates a single fake value for a given type
         /// </summary>
         /// <returns>A populated instance of a given class</returns>
         public T Generate()
         {
             //create a new instance of the type we want to Fake
-            var instance = (T)Matcher.SafeObjectCreate(typeof(T));
+            var instance = (T) Matcher.SafeObjectCreate(typeof (T));
 
             //Check to see if T is a value type and attempt to match that
             if (typeof (T).IsValueType)
@@ -45,11 +41,11 @@ namespace Faker
             }
 
             //Return the instance once matching is complete
-            return instance; 
+            return instance;
         }
 
         /// <summary>
-        /// Generates a list of fake values for a given type
+        ///     Generates a list of fake values for a given type
         /// </summary>
         /// <returns>A list of populated instances with length [count] of a given class</returns>
         public IList<T> Generate(int count)
@@ -58,9 +54,9 @@ namespace Faker
             var items = new List<T>();
 
             //Build the list of objects
-            for(var i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                items.Add(this.Generate());
+                items.Add(Generate());
             }
 
             //Return the list to the caller
@@ -68,7 +64,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Adds a selector to the TypeTable; User-defined selectors always take precedence over the built-in ones.
+        ///     Adds a selector to the TypeTable; User-defined selectors always take precedence over the built-in ones.
         /// </summary>
         /// <typeparam name="TS">The type that matches the selector</typeparam>
         /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
@@ -78,7 +74,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Returns the first matching selector for the appropriate type
+        ///     Returns the first matching selector for the appropriate type
         /// </summary>
         /// <typeparam name="TS">The Type that we're evaluating</typeparam>
         /// <returns>A selector for the appropriate matching type</returns>
@@ -88,7 +84,7 @@ namespace Faker
         }
 
         /// <summary>
-        /// Returns the first matching selector for the appropriate type
+        ///     Returns the first matching selector for the appropriate type
         /// </summary>
         /// <returns>A selector for the appropriate matching type</returns>
         internal ITypeSelector GetSelector(Type ts)
@@ -97,16 +93,16 @@ namespace Faker
         }
 
         /// <summary>
-        /// Returns the first matching selector for the appropriate type for a given property
+        ///     Returns the first matching selector for the appropriate type for a given property
         /// </summary>
         /// <returns>A selector for the appropriate matching type</returns>
-        internal ITypeSelector GetSelector(PropertyInfo  propertyInfo)
+        internal ITypeSelector GetSelector(PropertyInfo propertyInfo)
         {
             return _matcher.EvaluateSelectors(propertyInfo, _matcher.TypeMap.GetSelectors(propertyInfo.PropertyType));
         }
 
         /// <summary>
-        /// Returns the base-level selector for the appropriate type for a given property
+        ///     Returns the base-level selector for the appropriate type for a given property
         /// </summary>
         /// <param name="ts">A selector appropriate for the matching type</param>
         /// <returns>The base-level selector that can bind to type TS</returns>
@@ -118,7 +114,7 @@ namespace Faker
         #region Static members
 
         /// <summary>
-        /// Static method for creating new Faker instances, designed to make it less arduous to work with the FluentInterface
+        ///     Static method for creating new Faker instances, designed to make it less arduous to work with the FluentInterface
         /// </summary>
         public static Fake<T> Create()
         {

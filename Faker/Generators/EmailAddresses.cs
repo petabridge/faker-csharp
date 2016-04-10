@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Faker.Helpers;
+﻿using Faker.Helpers;
 
 namespace Faker.Generators
 {
     /// <summary>
-    /// Value generator for creating fake email addresses
+    ///     Value generator for creating fake email addresses
     /// </summary>
     public static class EmailAddresses
     {
-        #region Email Address Data
-
-        private static string[] major_domain_extensions = { ".com", ".net", ".org", ".edu" };
-
-        private static string[] domain_extensions = {".com", ".net", ".org", ".edu", "co.uk", ".ly", ".co", ".mobi", ".me", ".info", ".biz", ".us", ".ca", ".name"};
-
-        private static string[] domain_names = {"gmail", "mail.google", "live", "mail.yahoo", "yahoo", "hotmail", "mindspring", "roadrunner", "aol", "vanderbilt", "web-co", "co.ram.web"};
-
-        #endregion
-
         /// <summary>
-        /// Returns a randomly generated email address
+        ///     Returns a randomly generated email address
         /// </summary>
-        /// <param name="majorDomainExtensionsOnly">If true, only uses major domain extensions (.com, .net, .org, and .edu) when it generates email address. Default is false.</param>
+        /// <param name="majorDomainExtensionsOnly">
+        ///     If true, only uses major domain extensions (.com, .net, .org, and .edu) when it
+        ///     generates email address. Default is false.
+        /// </param>
         /// <param name="minLength">The minimum length of a generated email address</param>
         /// <param name="maxLength">The maximum length of a generated email address</param>
         /// <returns>a string containing a valid email address</returns>
@@ -32,7 +21,7 @@ namespace Faker.Generators
         {
             var domainExtension = domain_extensions.GetRandom();
 
-            if(majorDomainExtensionsOnly)
+            if (majorDomainExtensionsOnly)
             {
                 domainExtension = major_domain_extensions.GetRandom();
             }
@@ -48,14 +37,17 @@ namespace Faker.Generators
             var lowerPart = Strings.GenerateEmailFriendlyString(minLength, newMax);
 
             return string.Format("{0}{1}",
-                                 lowerPart,
-                                 domain);
+                lowerPart,
+                domain);
         }
 
         /// <summary>
-        /// Returns a human-looking email address
+        ///     Returns a human-looking email address
         /// </summary>
-        /// <param name="majorDomainExtensionsOnly">If true, only uses major domain extensions (.com, .net, .org, and .edu) when it generates email address. Default is false.</param>
+        /// <param name="majorDomainExtensionsOnly">
+        ///     If true, only uses major domain extensions (.com, .net, .org, and .edu) when it
+        ///     generates email address. Default is false.
+        /// </param>
         /// <returns>a string containing a valid email address</returns>
         public static string Human(bool majorDomainExtensionsOnly = false)
         {
@@ -72,5 +64,23 @@ namespace Faker.Generators
                 domain_names.GetRandom(),
                 domainExtension);
         }
+
+        #region Email Address Data
+
+        private static readonly string[] major_domain_extensions = {".com", ".net", ".org", ".edu"};
+
+        private static readonly string[] domain_extensions =
+        {
+            ".com", ".net", ".org", ".edu", "co.uk", ".ly", ".co",
+            ".mobi", ".me", ".info", ".biz", ".us", ".ca", ".name"
+        };
+
+        private static readonly string[] domain_names =
+        {
+            "gmail", "mail.google", "live", "mail.yahoo", "yahoo",
+            "hotmail", "mindspring", "roadrunner", "aol", "vanderbilt", "web-co", "co.ram.web"
+        };
+
+        #endregion
     }
 }

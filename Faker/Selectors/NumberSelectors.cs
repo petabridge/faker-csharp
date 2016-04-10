@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Faker.Generators;
+﻿using Faker.Generators;
 
 namespace Faker.Selectors
 {
     /// <summary>
-    /// Injects doubles into double fields within a range
+    ///     Injects doubles into double fields within a range
     /// </summary>
     public sealed class DoubleSelector : NumberSelectorBaseBase<double>
     {
         public DoubleSelector()
         {
-            MinSize = Double.MinValue;
-            MaxSize = Double.MaxValue;
+            MinSize = double.MinValue;
+            MaxSize = double.MaxValue;
         }
 
         #region Overrides of TypeSelectorBase<double>
@@ -32,8 +27,8 @@ namespace Faker.Selectors
     {
         public IntSelector()
         {
-            MinSize = Int32.MinValue;
-            MaxSize = Int32.MaxValue;
+            MinSize = int.MinValue;
+            MaxSize = int.MaxValue;
         }
 
         #region Overrides of TypeSelectorBase<int>
@@ -50,8 +45,8 @@ namespace Faker.Selectors
     {
         public LongSelector()
         {
-            MinSize = Int64.MinValue;
-            MaxSize = Int64.MaxValue;
+            MinSize = long.MinValue;
+            MaxSize = long.MaxValue;
         }
 
         #region Overrides of TypeSelectorBase<long>
@@ -68,8 +63,8 @@ namespace Faker.Selectors
     {
         public DecimalSelector()
         {
-            MinSize = new decimal(Int32.MinValue);
-            MaxSize = new decimal(Int32.MaxValue);
+            MinSize = new decimal(int.MinValue);
+            MaxSize = new decimal(int.MaxValue);
         }
 
         #region Overrides of TypeSelectorBase<decimal>

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace Faker.Helpers
 {
     /// <summary>
-    /// Extension methods for working with arrays
+    ///     Extension methods for working with arrays
     /// </summary>
     public static class ArrayHelpers
     {
@@ -32,7 +30,7 @@ namespace Faker.Helpers
             //Create a new list to contain our selection...
             var randomSelection = new List<T>();
 
-            for(var i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
                 var randomInterval = R.Next(0, maxLength);
                 randomSelection.Add(array.ElementAt(randomInterval));

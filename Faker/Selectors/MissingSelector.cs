@@ -4,7 +4,7 @@ using System.Reflection;
 namespace Faker.Selectors
 {
     /// <summary>
-    /// Special case which lets the caller know that we were unable to find a selector for a given type
+    ///     Special case which lets the caller know that we were unable to find a selector for a given type
     /// </summary>
     public class MissingSelector : ITypeSelector
     {

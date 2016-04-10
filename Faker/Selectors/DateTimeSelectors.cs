@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
 using Faker.Generators;
 
 namespace Faker.Selectors
 {
     /// <summary>
-    /// Injects DateTime values between the specified To and From ranges...
+    ///     Injects DateTime values between the specified To and From ranges...
     /// </summary>
     public class DateTimeSelector : PrimitiveSelectorBase<DateTime>, IRangeSelector<DateTime>
     {
@@ -35,12 +32,10 @@ namespace Faker.Selectors
         }
 
         #endregion
-
-        
     }
 
     /// <summary>
-    /// Injects DateTimeOffset values between the specified To and From ranges...
+    ///     Injects DateTimeOffset values between the specified To and From ranges...
     /// </summary>
     public class DateTimeOffsetSelector : PrimitiveSelectorBase<DateTimeOffset>, IRangeSelector<DateTimeOffset>
     {
@@ -66,15 +61,15 @@ namespace Faker.Selectors
         }
 
         #endregion
-
-       
     }
 
     /// <summary>
-    /// Injects a timestamp value as a long integer between the specified To and From ranges (expressed as DateTimes)...
+    ///     Injects a timestamp value as a long integer between the specified To and From ranges (expressed as DateTimes)...
     /// </summary>
     public class TimeStampSelector : TypeSelectorBase<long>, IRangeSelector<DateTime>
     {
+        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.TimeStampRegex, RegexOptions.IgnoreCase);
+
         public TimeStampSelector()
         {
             From = DateTime.UtcNow.AddDays(-5);
@@ -89,15 +84,13 @@ namespace Faker.Selectors
         public Func<DateTime> Max { get; set; }
         public Func<DateTime> Min { get; set; }
 
-        private static readonly Regex _regex = new Regex(SpecialFieldsRegex.TimeStampRegex, RegexOptions.IgnoreCase);
-
         #region Overrides of TypeSelectorBase<long>
 
         public override bool CanBind(PropertyInfo field)
         {
             return _regex.IsMatch(field.Name);
         }
-        
+
         public override long Generate()
         {
             return DateTimes.GetTimeStamp(Min(), Max());

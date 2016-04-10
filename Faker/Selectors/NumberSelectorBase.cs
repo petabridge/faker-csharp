@@ -3,7 +3,7 @@ using System;
 namespace Faker.Selectors
 {
     /// <summary>
-    /// All numeric selectors should have the ability to support a range
+    ///     All numeric selectors should have the ability to support a range
     /// </summary>
     /// <typeparam name="T">a numeric type</typeparam>
     public abstract class NumberSelectorBaseBase<T> : PrimitiveSelectorBase<T>, IRangeSelector<T>

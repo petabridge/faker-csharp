@@ -1,0 +1,2486 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Xml.Linq.4.0.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:System.Xml.Linq.Fakes.ShimExtensions">
+            <summary>Shim type of System.Xml.Linq.Extensions</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.AncestorsAndSelfIEnumerableOfXElement">
+            <summary>Sets the shim of Extensions.AncestorsAndSelf(IEnumerable`1&lt;XElement&gt; source)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.AncestorsAndSelfIEnumerableOfXElementXName">
+            <summary>Sets the shim of Extensions.AncestorsAndSelf(IEnumerable`1&lt;XElement&gt; source, XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.AncestorsOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Ancestors(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.AncestorsOf1IEnumerableOfM0XName``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName,System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Ancestors(IEnumerable`1&lt;!!0&gt; source, XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.AttributesIEnumerableOfXElement">
+            <summary>Sets the shim of Extensions.Attributes(IEnumerable`1&lt;XElement&gt; source)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.AttributesIEnumerableOfXElementXName">
+            <summary>Sets the shim of Extensions.Attributes(IEnumerable`1&lt;XElement&gt; source, XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.DescendantNodesAndSelfIEnumerableOfXElement">
+            <summary>Sets the shim of Extensions.DescendantNodesAndSelf(IEnumerable`1&lt;XElement&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.DescendantNodesOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}})">
+            <summary>Sets the shim of Extensions.DescendantNodes(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.DescendantsAndSelfIEnumerableOfXElement">
+            <summary>Sets the shim of Extensions.DescendantsAndSelf(IEnumerable`1&lt;XElement&gt; source)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.DescendantsAndSelfIEnumerableOfXElementXName">
+            <summary>Sets the shim of Extensions.DescendantsAndSelf(IEnumerable`1&lt;XElement&gt; source, XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.DescendantsOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Descendants(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.DescendantsOf1IEnumerableOfM0XName``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName,System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Descendants(IEnumerable`1&lt;!!0&gt; source, XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.ElementsOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Elements(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.ElementsOf1IEnumerableOfM0XName``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName,System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement}})">
+            <summary>Sets the shim of Extensions.Elements(IEnumerable`1&lt;!!0&gt; source, XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.InDocumentOrderOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the shim of Extensions.InDocumentOrder(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.NodesOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Xml.Linq.XNode}})">
+            <summary>Sets the shim of Extensions.Nodes(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimExtensions.RemoveIEnumerableOfXAttribute">
+            <summary>Sets the shim of Extensions.Remove(IEnumerable`1&lt;XAttribute&gt; source)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimExtensions.RemoveOf1IEnumerableOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the shim of Extensions.Remove(IEnumerable`1&lt;!!0&gt; source)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXAttribute">
+            <summary>Shim type of System.Xml.Linq.XAttribute</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXAttribute.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXAttribute.#ctor(System.Xml.Linq.XAttribute)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.IsNamespaceDeclarationGet">
+            <summary>Sets the shim of XAttribute.get_IsNamespaceDeclaration()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.NameGet">
+            <summary>Sets the shim of XAttribute.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.NextAttributeGet">
+            <summary>Sets the shim of XAttribute.get_NextAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XAttribute.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.PreviousAttributeGet">
+            <summary>Sets the shim of XAttribute.get_PreviousAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.Remove">
+            <summary>Sets the shim of XAttribute.Remove()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.SetValueObject">
+            <summary>Sets the shim of XAttribute.SetValue(Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.ToString01">
+            <summary>Sets the shim of XAttribute.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.ValueGet">
+            <summary>Sets the shim of XAttribute.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.AllInstances.ValueSetString">
+            <summary>Sets the shim of XAttribute.set_Value(String value)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXAttribute.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXAttribute.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXAttribute.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ConstructorXAttribute">
+            <summary>Sets the shim of XAttribute.XAttribute(XAttribute other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ConstructorXNameObject">
+            <summary>Sets the shim of XAttribute.XAttribute(XName name, Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.EmptySequenceGet">
+            <summary>Sets the shim of XAttribute.get_EmptySequence()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeBoolean">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeDateTime">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeDateTimeOffset">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeDecimal">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeDouble">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeGuid">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeInt32">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeInt64">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfBoolean">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfDateTime">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfDateTimeOffset">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfDecimal">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfDouble">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfGuid">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfInt32">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfInt64">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfSingle">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfTimeSpan">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfUInt32">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeNullableOfUInt64">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeSingle">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeString">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeTimeSpan">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeUInt32">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ExplicitOpXAttributeUInt64">
+            <summary>Sets the shim of XAttribute.op_Explicit(XAttribute attribute)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.IsNamespaceDeclarationGet">
+            <summary>Sets the shim of XAttribute.get_IsNamespaceDeclaration()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.NameGet">
+            <summary>Sets the shim of XAttribute.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.NextAttributeGet">
+            <summary>Sets the shim of XAttribute.get_NextAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.NodeTypeGet">
+            <summary>Sets the shim of XAttribute.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.PreviousAttributeGet">
+            <summary>Sets the shim of XAttribute.get_PreviousAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.Remove">
+            <summary>Sets the shim of XAttribute.Remove()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.SetValueObject">
+            <summary>Sets the shim of XAttribute.SetValue(Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ToString">
+            <summary>Sets the shim of XAttribute.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ValueGet">
+            <summary>Sets the shim of XAttribute.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXAttribute.ValueSetString">
+            <summary>Sets the shim of XAttribute.set_Value(String value)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXCData">
+            <summary>Shim type of System.Xml.Linq.XCData</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXCData.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXCData.#ctor(System.Xml.Linq.XCData)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXCData.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XCData.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XCData.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXCData.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXCData.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXCData.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.ConstructorString">
+            <summary>Sets the shim of XCData.XCData(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.ConstructorXCData">
+            <summary>Sets the shim of XCData.XCData(XCData other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.NodeTypeGet">
+            <summary>Sets the shim of XCData.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXCData.WriteToXmlWriter">
+            <summary>Sets the shim of XCData.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXComment">
+            <summary>Shim type of System.Xml.Linq.XComment</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXComment.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXComment.#ctor(System.Xml.Linq.XComment)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXComment.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XComment.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.AllInstances.ValueGet">
+            <summary>Sets the shim of XComment.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.AllInstances.ValueSetString">
+            <summary>Sets the shim of XComment.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XComment.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXComment.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXComment.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXComment.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.ConstructorString">
+            <summary>Sets the shim of XComment.XComment(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.ConstructorXComment">
+            <summary>Sets the shim of XComment.XComment(XComment other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.NodeTypeGet">
+            <summary>Sets the shim of XComment.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.ValueGet">
+            <summary>Sets the shim of XComment.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.ValueSetString">
+            <summary>Sets the shim of XComment.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXComment.WriteToXmlWriter">
+            <summary>Sets the shim of XComment.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXContainer">
+            <summary>Shim type of System.Xml.Linq.XContainer</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXContainer.#ctor(System.Xml.Linq.XContainer)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AddFirstObject">
+            <summary>Sets the shim of XContainer.AddFirst(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AddFirstObjectArray">
+            <summary>Sets the shim of XContainer.AddFirst(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AddObject">
+            <summary>Sets the shim of XContainer.Add(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AddObjectArray">
+            <summary>Sets the shim of XContainer.Add(Object[] content)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXContainer.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.AddFirstObject">
+            <summary>Sets the shim of XContainer.AddFirst(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.AddFirstObjectArray">
+            <summary>Sets the shim of XContainer.AddFirst(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.AddObject">
+            <summary>Sets the shim of XContainer.Add(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.AddObjectArray">
+            <summary>Sets the shim of XContainer.Add(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.CreateWriter">
+            <summary>Sets the shim of XContainer.CreateWriter()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.DescendantNodes">
+            <summary>Sets the shim of XContainer.DescendantNodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.Descendants">
+            <summary>Sets the shim of XContainer.Descendants()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.DescendantsXName">
+            <summary>Sets the shim of XContainer.Descendants(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.ElementXName">
+            <summary>Sets the shim of XContainer.Element(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.Elements">
+            <summary>Sets the shim of XContainer.Elements()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.ElementsXName">
+            <summary>Sets the shim of XContainer.Elements(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.FirstNodeGet">
+            <summary>Sets the shim of XContainer.get_FirstNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.LastNodeGet">
+            <summary>Sets the shim of XContainer.get_LastNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.Nodes">
+            <summary>Sets the shim of XContainer.Nodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.RemoveNodes">
+            <summary>Sets the shim of XContainer.RemoveNodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.ReplaceNodesObject">
+            <summary>Sets the shim of XContainer.ReplaceNodes(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.AllInstances.ReplaceNodesObjectArray">
+            <summary>Sets the shim of XContainer.ReplaceNodes(Object[] content)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXContainer.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXContainer.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXContainer.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.Constructor">
+            <summary>Sets the shim of XContainer.XContainer()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.CreateWriter">
+            <summary>Sets the shim of XContainer.CreateWriter()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.DescendantNodes">
+            <summary>Sets the shim of XContainer.DescendantNodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.Descendants">
+            <summary>Sets the shim of XContainer.Descendants()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.DescendantsXName">
+            <summary>Sets the shim of XContainer.Descendants(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.ElementXName">
+            <summary>Sets the shim of XContainer.Element(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.Elements">
+            <summary>Sets the shim of XContainer.Elements()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.ElementsXName">
+            <summary>Sets the shim of XContainer.Elements(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.FirstNodeGet">
+            <summary>Sets the shim of XContainer.get_FirstNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.LastNodeGet">
+            <summary>Sets the shim of XContainer.get_LastNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.Nodes">
+            <summary>Sets the shim of XContainer.Nodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.RemoveNodes">
+            <summary>Sets the shim of XContainer.RemoveNodes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.ReplaceNodesObject">
+            <summary>Sets the shim of XContainer.ReplaceNodes(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXContainer.ReplaceNodesObjectArray">
+            <summary>Sets the shim of XContainer.ReplaceNodes(Object[] content)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDeclaration">
+            <summary>Shim type of System.Xml.Linq.XDeclaration</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDeclaration.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDeclaration.#ctor(System.Xml.Linq.XDeclaration)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.EncodingGet">
+            <summary>Sets the shim of XDeclaration.get_Encoding()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.EncodingSetString">
+            <summary>Sets the shim of XDeclaration.set_Encoding(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.StandaloneGet">
+            <summary>Sets the shim of XDeclaration.get_Standalone()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.StandaloneSetString">
+            <summary>Sets the shim of XDeclaration.set_Standalone(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.ToString01">
+            <summary>Sets the shim of XDeclaration.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.VersionGet">
+            <summary>Sets the shim of XDeclaration.get_Version()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.AllInstances.VersionSetString">
+            <summary>Sets the shim of XDeclaration.set_Version(String value)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDeclaration.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDeclaration.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.ConstructorStringStringString">
+            <summary>Sets the shim of XDeclaration.XDeclaration(String version, String encoding, String standalone)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.ConstructorXDeclaration">
+            <summary>Sets the shim of XDeclaration.XDeclaration(XDeclaration other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.EncodingGet">
+            <summary>Sets the shim of XDeclaration.get_Encoding()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.EncodingSetString">
+            <summary>Sets the shim of XDeclaration.set_Encoding(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.StandaloneGet">
+            <summary>Sets the shim of XDeclaration.get_Standalone()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.StandaloneSetString">
+            <summary>Sets the shim of XDeclaration.set_Standalone(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.ToString">
+            <summary>Sets the shim of XDeclaration.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.VersionGet">
+            <summary>Sets the shim of XDeclaration.get_Version()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDeclaration.VersionSetString">
+            <summary>Sets the shim of XDeclaration.set_Version(String value)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDocument">
+            <summary>Shim type of System.Xml.Linq.XDocument</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocument.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocument.#ctor(System.Xml.Linq.XDocument)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDocument.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.DeclarationGet">
+            <summary>Sets the shim of XDocument.get_Declaration()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.DeclarationSetXDeclaration">
+            <summary>Sets the shim of XDocument.set_Declaration(XDeclaration value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.DocumentTypeGet">
+            <summary>Sets the shim of XDocument.get_DocumentType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XDocument.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.RootGet">
+            <summary>Sets the shim of XDocument.get_Root()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveStream">
+            <summary>Sets the shim of XDocument.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveStreamSaveOptions">
+            <summary>Sets the shim of XDocument.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveString">
+            <summary>Sets the shim of XDocument.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveStringSaveOptions">
+            <summary>Sets the shim of XDocument.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveTextWriter">
+            <summary>Sets the shim of XDocument.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XDocument.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.SaveXmlWriter">
+            <summary>Sets the shim of XDocument.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XDocument.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocument.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocument.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocument.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.Constructor">
+            <summary>Sets the shim of XDocument.XDocument()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.ConstructorObjectArray">
+            <summary>Sets the shim of XDocument.XDocument(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.ConstructorXDeclarationObjectArray">
+            <summary>Sets the shim of XDocument.XDocument(XDeclaration declaration, Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.ConstructorXDocument">
+            <summary>Sets the shim of XDocument.XDocument(XDocument other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.DeclarationGet">
+            <summary>Sets the shim of XDocument.get_Declaration()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.DeclarationSetXDeclaration">
+            <summary>Sets the shim of XDocument.set_Declaration(XDeclaration value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.DocumentTypeGet">
+            <summary>Sets the shim of XDocument.get_DocumentType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadStream">
+            <summary>Sets the shim of XDocument.Load(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadStreamLoadOptions">
+            <summary>Sets the shim of XDocument.Load(Stream stream, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadString">
+            <summary>Sets the shim of XDocument.Load(String uri)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadStringLoadOptions">
+            <summary>Sets the shim of XDocument.Load(String uri, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadTextReader">
+            <summary>Sets the shim of XDocument.Load(TextReader textReader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadTextReaderLoadOptions">
+            <summary>Sets the shim of XDocument.Load(TextReader textReader, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadXmlReader">
+            <summary>Sets the shim of XDocument.Load(XmlReader reader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.LoadXmlReaderLoadOptions">
+            <summary>Sets the shim of XDocument.Load(XmlReader reader, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.NodeTypeGet">
+            <summary>Sets the shim of XDocument.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.ParseString">
+            <summary>Sets the shim of XDocument.Parse(String text)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.ParseStringLoadOptions">
+            <summary>Sets the shim of XDocument.Parse(String text, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.RootGet">
+            <summary>Sets the shim of XDocument.get_Root()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveStream">
+            <summary>Sets the shim of XDocument.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveStreamSaveOptions">
+            <summary>Sets the shim of XDocument.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveString">
+            <summary>Sets the shim of XDocument.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveStringSaveOptions">
+            <summary>Sets the shim of XDocument.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveTextWriter">
+            <summary>Sets the shim of XDocument.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XDocument.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.SaveXmlWriter">
+            <summary>Sets the shim of XDocument.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocument.WriteToXmlWriter">
+            <summary>Sets the shim of XDocument.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDocumentType">
+            <summary>Shim type of System.Xml.Linq.XDocumentType</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocumentType.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocumentType.#ctor(System.Xml.Linq.XDocumentType)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.InternalSubsetGet">
+            <summary>Sets the shim of XDocumentType.get_InternalSubset()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.InternalSubsetSetString">
+            <summary>Sets the shim of XDocumentType.set_InternalSubset(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.NameGet">
+            <summary>Sets the shim of XDocumentType.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.NameSetString">
+            <summary>Sets the shim of XDocumentType.set_Name(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XDocumentType.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.PublicIdGet">
+            <summary>Sets the shim of XDocumentType.get_PublicId()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.PublicIdSetString">
+            <summary>Sets the shim of XDocumentType.set_PublicId(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.SystemIdGet">
+            <summary>Sets the shim of XDocumentType.get_SystemId()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.SystemIdSetString">
+            <summary>Sets the shim of XDocumentType.set_SystemId(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XDocumentType.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocumentType.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocumentType.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXDocumentType.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.ConstructorStringStringStringString">
+            <summary>Sets the shim of XDocumentType.XDocumentType(String name, String publicId, String systemId, String internalSubset)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.ConstructorXDocumentType">
+            <summary>Sets the shim of XDocumentType.XDocumentType(XDocumentType other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.InternalSubsetGet">
+            <summary>Sets the shim of XDocumentType.get_InternalSubset()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.InternalSubsetSetString">
+            <summary>Sets the shim of XDocumentType.set_InternalSubset(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.NameGet">
+            <summary>Sets the shim of XDocumentType.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.NameSetString">
+            <summary>Sets the shim of XDocumentType.set_Name(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.NodeTypeGet">
+            <summary>Sets the shim of XDocumentType.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.PublicIdGet">
+            <summary>Sets the shim of XDocumentType.get_PublicId()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.PublicIdSetString">
+            <summary>Sets the shim of XDocumentType.set_PublicId(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.SystemIdGet">
+            <summary>Sets the shim of XDocumentType.get_SystemId()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.SystemIdSetString">
+            <summary>Sets the shim of XDocumentType.set_SystemId(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXDocumentType.WriteToXmlWriter">
+            <summary>Sets the shim of XDocumentType.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXElement">
+            <summary>Shim type of System.Xml.Linq.XElement</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.#ctor(System.Xml.Linq.XElement)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXElement.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.AncestorsAndSelf">
+            <summary>Sets the shim of XElement.AncestorsAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.AncestorsAndSelfXName">
+            <summary>Sets the shim of XElement.AncestorsAndSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.AttributeXName">
+            <summary>Sets the shim of XElement.Attribute(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.Attributes">
+            <summary>Sets the shim of XElement.Attributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.AttributesXName">
+            <summary>Sets the shim of XElement.Attributes(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.DescendantNodesAndSelf">
+            <summary>Sets the shim of XElement.DescendantNodesAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.DescendantsAndSelf">
+            <summary>Sets the shim of XElement.DescendantsAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.DescendantsAndSelfXName">
+            <summary>Sets the shim of XElement.DescendantsAndSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.FirstAttributeGet">
+            <summary>Sets the shim of XElement.get_FirstAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.GetDefaultNamespace">
+            <summary>Sets the shim of XElement.GetDefaultNamespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.GetNamespaceOfPrefixString">
+            <summary>Sets the shim of XElement.GetNamespaceOfPrefix(String prefix)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.GetPrefixOfNamespaceXNamespace">
+            <summary>Sets the shim of XElement.GetPrefixOfNamespace(XNamespace ns)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.HasAttributesGet">
+            <summary>Sets the shim of XElement.get_HasAttributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.HasElementsGet">
+            <summary>Sets the shim of XElement.get_HasElements()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.IsEmptyGet">
+            <summary>Sets the shim of XElement.get_IsEmpty()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.LastAttributeGet">
+            <summary>Sets the shim of XElement.get_LastAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.NameGet">
+            <summary>Sets the shim of XElement.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.NameSetXName">
+            <summary>Sets the shim of XElement.set_Name(XName value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XElement.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.RemoveAll">
+            <summary>Sets the shim of XElement.RemoveAll()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.RemoveAttributes">
+            <summary>Sets the shim of XElement.RemoveAttributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ReplaceAllObject">
+            <summary>Sets the shim of XElement.ReplaceAll(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ReplaceAllObjectArray">
+            <summary>Sets the shim of XElement.ReplaceAll(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ReplaceAttributesObject">
+            <summary>Sets the shim of XElement.ReplaceAttributes(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ReplaceAttributesObjectArray">
+            <summary>Sets the shim of XElement.ReplaceAttributes(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveStream">
+            <summary>Sets the shim of XElement.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveStreamSaveOptions">
+            <summary>Sets the shim of XElement.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveString">
+            <summary>Sets the shim of XElement.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveStringSaveOptions">
+            <summary>Sets the shim of XElement.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveTextWriter">
+            <summary>Sets the shim of XElement.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XElement.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SaveXmlWriter">
+            <summary>Sets the shim of XElement.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SetAttributeValueXNameObject">
+            <summary>Sets the shim of XElement.SetAttributeValue(XName name, Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SetElementValueXNameObject">
+            <summary>Sets the shim of XElement.SetElementValue(XName name, Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SetValueObject">
+            <summary>Sets the shim of XElement.SetValue(Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SystemXmlSerializationIXmlSerializableGetSchema">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.GetSchema()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SystemXmlSerializationIXmlSerializableReadXmlXmlReader">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.ReadXml(XmlReader reader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.SystemXmlSerializationIXmlSerializableWriteXmlXmlWriter">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.WriteXml(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ValueGet">
+            <summary>Sets the shim of XElement.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.ValueSetString">
+            <summary>Sets the shim of XElement.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AncestorsAndSelf">
+            <summary>Sets the shim of XElement.AncestorsAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AncestorsAndSelfXName">
+            <summary>Sets the shim of XElement.AncestorsAndSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AttributeXName">
+            <summary>Sets the shim of XElement.Attribute(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.Attributes">
+            <summary>Sets the shim of XElement.Attributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.AttributesXName">
+            <summary>Sets the shim of XElement.Attributes(XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXElement.Bind(System.Xml.Serialization.IXmlSerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.Constructor">
+            <summary>Sets the shim of XElement.XElement()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ConstructorXElement">
+            <summary>Sets the shim of XElement.XElement(XElement other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ConstructorXName">
+            <summary>Sets the shim of XElement.XElement(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ConstructorXNameObject">
+            <summary>Sets the shim of XElement.XElement(XName name, Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ConstructorXNameObjectArray">
+            <summary>Sets the shim of XElement.XElement(XName name, Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ConstructorXStreamingElement">
+            <summary>Sets the shim of XElement.XElement(XStreamingElement other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.DescendantNodesAndSelf">
+            <summary>Sets the shim of XElement.DescendantNodesAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.DescendantsAndSelf">
+            <summary>Sets the shim of XElement.DescendantsAndSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.DescendantsAndSelfXName">
+            <summary>Sets the shim of XElement.DescendantsAndSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.EmptySequenceGet">
+            <summary>Sets the shim of XElement.get_EmptySequence()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementBoolean">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementDateTime">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementDateTimeOffset">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementDecimal">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementDouble">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementGuid">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementInt32">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementInt64">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfBoolean">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfDateTime">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfDateTimeOffset">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfDecimal">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfDouble">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfGuid">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfInt32">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfInt64">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfSingle">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfTimeSpan">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfUInt32">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementNullableOfUInt64">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementSingle">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementString">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementTimeSpan">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementUInt32">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ExplicitOpXElementUInt64">
+            <summary>Sets the shim of XElement.op_Explicit(XElement element)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.FirstAttributeGet">
+            <summary>Sets the shim of XElement.get_FirstAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.GetDefaultNamespace">
+            <summary>Sets the shim of XElement.GetDefaultNamespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.GetNamespaceOfPrefixString">
+            <summary>Sets the shim of XElement.GetNamespaceOfPrefix(String prefix)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.GetPrefixOfNamespaceXNamespace">
+            <summary>Sets the shim of XElement.GetPrefixOfNamespace(XNamespace ns)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.HasAttributesGet">
+            <summary>Sets the shim of XElement.get_HasAttributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.HasElementsGet">
+            <summary>Sets the shim of XElement.get_HasElements()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.IsEmptyGet">
+            <summary>Sets the shim of XElement.get_IsEmpty()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LastAttributeGet">
+            <summary>Sets the shim of XElement.get_LastAttribute()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadStream">
+            <summary>Sets the shim of XElement.Load(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadStreamLoadOptions">
+            <summary>Sets the shim of XElement.Load(Stream stream, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadString">
+            <summary>Sets the shim of XElement.Load(String uri)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadStringLoadOptions">
+            <summary>Sets the shim of XElement.Load(String uri, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadTextReader">
+            <summary>Sets the shim of XElement.Load(TextReader textReader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadTextReaderLoadOptions">
+            <summary>Sets the shim of XElement.Load(TextReader textReader, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadXmlReader">
+            <summary>Sets the shim of XElement.Load(XmlReader reader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.LoadXmlReaderLoadOptions">
+            <summary>Sets the shim of XElement.Load(XmlReader reader, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.NameGet">
+            <summary>Sets the shim of XElement.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.NameSetXName">
+            <summary>Sets the shim of XElement.set_Name(XName value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.NodeTypeGet">
+            <summary>Sets the shim of XElement.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ParseString">
+            <summary>Sets the shim of XElement.Parse(String text)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ParseStringLoadOptions">
+            <summary>Sets the shim of XElement.Parse(String text, LoadOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.RemoveAll">
+            <summary>Sets the shim of XElement.RemoveAll()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.RemoveAttributes">
+            <summary>Sets the shim of XElement.RemoveAttributes()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ReplaceAllObject">
+            <summary>Sets the shim of XElement.ReplaceAll(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ReplaceAllObjectArray">
+            <summary>Sets the shim of XElement.ReplaceAll(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ReplaceAttributesObject">
+            <summary>Sets the shim of XElement.ReplaceAttributes(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ReplaceAttributesObjectArray">
+            <summary>Sets the shim of XElement.ReplaceAttributes(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveStream">
+            <summary>Sets the shim of XElement.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveStreamSaveOptions">
+            <summary>Sets the shim of XElement.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveString">
+            <summary>Sets the shim of XElement.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveStringSaveOptions">
+            <summary>Sets the shim of XElement.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveTextWriter">
+            <summary>Sets the shim of XElement.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XElement.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SaveXmlWriter">
+            <summary>Sets the shim of XElement.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SetAttributeValueXNameObject">
+            <summary>Sets the shim of XElement.SetAttributeValue(XName name, Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SetElementValueXNameObject">
+            <summary>Sets the shim of XElement.SetElementValue(XName name, Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SetValueObject">
+            <summary>Sets the shim of XElement.SetValue(Object value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SystemXmlSerializationIXmlSerializableGetSchema">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.GetSchema()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SystemXmlSerializationIXmlSerializableReadXmlXmlReader">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.ReadXml(XmlReader reader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.SystemXmlSerializationIXmlSerializableWriteXmlXmlWriter">
+            <summary>Sets the shim of XElement.System.Xml.Serialization.IXmlSerializable.WriteXml(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ValueGet">
+            <summary>Sets the shim of XElement.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.ValueSetString">
+            <summary>Sets the shim of XElement.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXElement.WriteToXmlWriter">
+            <summary>Sets the shim of XElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXName">
+            <summary>Shim type of System.Xml.Linq.XName</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.#ctor(System.Xml.Linq.XName)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXName.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.Constructor">
+            <summary>Sets the shim of XName.XName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.EqualsObject">
+            <summary>Sets the shim of XName.Equals(Object obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.GetHashCode01">
+            <summary>Sets the shim of XName.GetHashCode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.LocalNameGet">
+            <summary>Sets the shim of XName.get_LocalName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.NamespaceGet">
+            <summary>Sets the shim of XName.get_Namespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.NamespaceNameGet">
+            <summary>Sets the shim of XName.get_NamespaceName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.SystemIEquatableSystemXmlLinqXNameEqualsXName">
+            <summary>Sets the shim of XName.System.IEquatable&lt;System.Xml.Linq.XName&gt;.Equals(XName other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.SystemRuntimeSerializationISerializableGetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the shim of XName.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.AllInstances.ToString01">
+            <summary>Sets the shim of XName.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.Bind(System.IEquatable{System.Xml.Linq.XName})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXName.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.Constructor">
+            <summary>Sets the shim of XName.XName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.EqualityOpXNameXName">
+            <summary>Sets the shim of XName.op_Equality(XName left, XName right)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.EqualsObject">
+            <summary>Sets the shim of XName.Equals(Object obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.GetHashCode">
+            <summary>Sets the shim of XName.GetHashCode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.GetString">
+            <summary>Sets the shim of XName.Get(String expandedName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.GetStringString">
+            <summary>Sets the shim of XName.Get(String localName, String namespaceName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.ImplicitOpStringXName">
+            <summary>Sets the shim of XName.op_Implicit(String expandedName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.InequalityOpXNameXName">
+            <summary>Sets the shim of XName.op_Inequality(XName left, XName right)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.LocalNameGet">
+            <summary>Sets the shim of XName.get_LocalName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.NamespaceGet">
+            <summary>Sets the shim of XName.get_Namespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.NamespaceNameGet">
+            <summary>Sets the shim of XName.get_NamespaceName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.SystemIEquatableSystemXmlLinqXNameEqualsXName">
+            <summary>Sets the shim of XName.System.IEquatable&lt;System.Xml.Linq.XName&gt;.Equals(XName other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.SystemRuntimeSerializationISerializableGetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the shim of XName.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXName.ToString">
+            <summary>Sets the shim of XName.ToString()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNamespace">
+            <summary>Shim type of System.Xml.Linq.XNamespace</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNamespace.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNamespace.#ctor(System.Xml.Linq.XNamespace)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AdditionOpXNamespaceString">
+            <summary>Sets the shim of XNamespace.op_Addition(XNamespace ns, String localName)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.Constructor">
+            <summary>Sets the shim of XNamespace.XNamespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.EqualsObject">
+            <summary>Sets the shim of XNamespace.Equals(Object obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.GetHashCode01">
+            <summary>Sets the shim of XNamespace.GetHashCode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.GetNameString">
+            <summary>Sets the shim of XNamespace.GetName(String localName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.NamespaceNameGet">
+            <summary>Sets the shim of XNamespace.get_NamespaceName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.AllInstances.ToString01">
+            <summary>Sets the shim of XNamespace.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNamespace.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNamespace.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.Constructor">
+            <summary>Sets the shim of XNamespace.XNamespace()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.EqualityOpXNamespaceXNamespace">
+            <summary>Sets the shim of XNamespace.op_Equality(XNamespace left, XNamespace right)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.EqualsObject">
+            <summary>Sets the shim of XNamespace.Equals(Object obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.GetHashCode">
+            <summary>Sets the shim of XNamespace.GetHashCode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.GetNameString">
+            <summary>Sets the shim of XNamespace.GetName(String localName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.GetString">
+            <summary>Sets the shim of XNamespace.Get(String namespaceName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.ImplicitOpStringXNamespace">
+            <summary>Sets the shim of XNamespace.op_Implicit(String namespaceName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.InequalityOpXNamespaceXNamespace">
+            <summary>Sets the shim of XNamespace.op_Inequality(XNamespace left, XNamespace right)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.NamespaceNameGet">
+            <summary>Sets the shim of XNamespace.get_NamespaceName()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.NoneGet">
+            <summary>Sets the shim of XNamespace.get_None()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.ToString">
+            <summary>Sets the shim of XNamespace.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.XmlGet">
+            <summary>Sets the shim of XNamespace.get_Xml()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNamespace.XmlnsGet">
+            <summary>Sets the shim of XNamespace.get_Xmlns()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNode">
+            <summary>Shim type of System.Xml.Linq.XNode</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNode.#ctor(System.Xml.Linq.XNode)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AddAfterSelfObject">
+            <summary>Sets the shim of XNode.AddAfterSelf(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AddAfterSelfObjectArray">
+            <summary>Sets the shim of XNode.AddAfterSelf(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AddBeforeSelfObject">
+            <summary>Sets the shim of XNode.AddBeforeSelf(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AddBeforeSelfObjectArray">
+            <summary>Sets the shim of XNode.AddBeforeSelf(Object[] content)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNode.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.AddAfterSelfObject">
+            <summary>Sets the shim of XNode.AddAfterSelf(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.AddAfterSelfObjectArray">
+            <summary>Sets the shim of XNode.AddAfterSelf(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.AddBeforeSelfObject">
+            <summary>Sets the shim of XNode.AddBeforeSelf(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.AddBeforeSelfObjectArray">
+            <summary>Sets the shim of XNode.AddBeforeSelf(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.Ancestors">
+            <summary>Sets the shim of XNode.Ancestors()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.AncestorsXName">
+            <summary>Sets the shim of XNode.Ancestors(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.CreateReader">
+            <summary>Sets the shim of XNode.CreateReader()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.CreateReaderReaderOptions">
+            <summary>Sets the shim of XNode.CreateReader(ReaderOptions readerOptions)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ElementsAfterSelf">
+            <summary>Sets the shim of XNode.ElementsAfterSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ElementsAfterSelfXName">
+            <summary>Sets the shim of XNode.ElementsAfterSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ElementsBeforeSelf">
+            <summary>Sets the shim of XNode.ElementsBeforeSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ElementsBeforeSelfXName">
+            <summary>Sets the shim of XNode.ElementsBeforeSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.IsAfterXNode">
+            <summary>Sets the shim of XNode.IsAfter(XNode node)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.IsBeforeXNode">
+            <summary>Sets the shim of XNode.IsBefore(XNode node)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.NextNodeGet">
+            <summary>Sets the shim of XNode.get_NextNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.NodesAfterSelf">
+            <summary>Sets the shim of XNode.NodesAfterSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.NodesBeforeSelf">
+            <summary>Sets the shim of XNode.NodesBeforeSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.PreviousNodeGet">
+            <summary>Sets the shim of XNode.get_PreviousNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.Remove">
+            <summary>Sets the shim of XNode.Remove()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ReplaceWithObject">
+            <summary>Sets the shim of XNode.ReplaceWith(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ReplaceWithObjectArray">
+            <summary>Sets the shim of XNode.ReplaceWith(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ToString01">
+            <summary>Sets the shim of XNode.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AllInstances.ToStringSaveOptions">
+            <summary>Sets the shim of XNode.ToString(SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.Ancestors">
+            <summary>Sets the shim of XNode.Ancestors()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.AncestorsXName">
+            <summary>Sets the shim of XNode.Ancestors(XName name)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNode.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNode.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNode.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.CompareDocumentOrderXNodeXNode">
+            <summary>Sets the shim of XNode.CompareDocumentOrder(XNode n1, XNode n2)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.Constructor">
+            <summary>Sets the shim of XNode.XNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.CreateReader">
+            <summary>Sets the shim of XNode.CreateReader()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.CreateReaderReaderOptions">
+            <summary>Sets the shim of XNode.CreateReader(ReaderOptions readerOptions)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.DeepEqualsXNodeXNode">
+            <summary>Sets the shim of XNode.DeepEquals(XNode n1, XNode n2)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.DocumentOrderComparerGet">
+            <summary>Sets the shim of XNode.get_DocumentOrderComparer()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ElementsAfterSelf">
+            <summary>Sets the shim of XNode.ElementsAfterSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ElementsAfterSelfXName">
+            <summary>Sets the shim of XNode.ElementsAfterSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ElementsBeforeSelf">
+            <summary>Sets the shim of XNode.ElementsBeforeSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ElementsBeforeSelfXName">
+            <summary>Sets the shim of XNode.ElementsBeforeSelf(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.EqualityComparerGet">
+            <summary>Sets the shim of XNode.get_EqualityComparer()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.IsAfterXNode">
+            <summary>Sets the shim of XNode.IsAfter(XNode node)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.IsBeforeXNode">
+            <summary>Sets the shim of XNode.IsBefore(XNode node)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.NextNodeGet">
+            <summary>Sets the shim of XNode.get_NextNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.NodesAfterSelf">
+            <summary>Sets the shim of XNode.NodesAfterSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.NodesBeforeSelf">
+            <summary>Sets the shim of XNode.NodesBeforeSelf()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.PreviousNodeGet">
+            <summary>Sets the shim of XNode.get_PreviousNode()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ReadFromXmlReader">
+            <summary>Sets the shim of XNode.ReadFrom(XmlReader reader)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.Remove">
+            <summary>Sets the shim of XNode.Remove()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ReplaceWithObject">
+            <summary>Sets the shim of XNode.ReplaceWith(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ReplaceWithObjectArray">
+            <summary>Sets the shim of XNode.ReplaceWith(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ToString">
+            <summary>Sets the shim of XNode.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNode.ToStringSaveOptions">
+            <summary>Sets the shim of XNode.ToString(SaveOptions options)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer">
+            <summary>Shim type of System.Xml.Linq.XNodeDocumentOrderComparer</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.#ctor(System.Xml.Linq.XNodeDocumentOrderComparer)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.AllInstances.CompareXNodeXNode">
+            <summary>Sets the shim of XNodeDocumentOrderComparer.Compare(XNode x, XNode y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.AllInstances.SystemCollectionsIComparerCompareObjectObject">
+            <summary>Sets the shim of XNodeDocumentOrderComparer.System.Collections.IComparer.Compare(Object x, Object y)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.Bind(System.Collections.IComparer)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.Bind(System.Collections.Generic.IComparer{System.Xml.Linq.XNode})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.CompareXNodeXNode">
+            <summary>Sets the shim of XNodeDocumentOrderComparer.Compare(XNode x, XNode y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.Constructor">
+            <summary>Sets the shim of XNodeDocumentOrderComparer.XNodeDocumentOrderComparer()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeDocumentOrderComparer.SystemCollectionsIComparerCompareObjectObject">
+            <summary>Sets the shim of XNodeDocumentOrderComparer.System.Collections.IComparer.Compare(Object x, Object y)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer">
+            <summary>Shim type of System.Xml.Linq.XNodeEqualityComparer</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.#ctor(System.Xml.Linq.XNodeEqualityComparer)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.AllInstances.EqualsXNodeXNode">
+            <summary>Sets the shim of XNodeEqualityComparer.Equals(XNode x, XNode y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.AllInstances.GetHashCodeXNode">
+            <summary>Sets the shim of XNodeEqualityComparer.GetHashCode(XNode obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.AllInstances.SystemCollectionsIEqualityComparerEqualsObjectObject">
+            <summary>Sets the shim of XNodeEqualityComparer.System.Collections.IEqualityComparer.Equals(Object x, Object y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.AllInstances.SystemCollectionsIEqualityComparerGetHashCodeObject">
+            <summary>Sets the shim of XNodeEqualityComparer.System.Collections.IEqualityComparer.GetHashCode(Object obj)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.Bind(System.Collections.IEqualityComparer)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.Bind(System.Collections.Generic.IEqualityComparer{System.Xml.Linq.XNode})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.Constructor">
+            <summary>Sets the shim of XNodeEqualityComparer.XNodeEqualityComparer()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.EqualsXNodeXNode">
+            <summary>Sets the shim of XNodeEqualityComparer.Equals(XNode x, XNode y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.GetHashCodeXNode">
+            <summary>Sets the shim of XNodeEqualityComparer.GetHashCode(XNode obj)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.SystemCollectionsIEqualityComparerEqualsObjectObject">
+            <summary>Sets the shim of XNodeEqualityComparer.System.Collections.IEqualityComparer.Equals(Object x, Object y)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXNodeEqualityComparer.SystemCollectionsIEqualityComparerGetHashCodeObject">
+            <summary>Sets the shim of XNodeEqualityComparer.System.Collections.IEqualityComparer.GetHashCode(Object obj)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXObject">
+            <summary>Shim type of System.Xml.Linq.XObject</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.#ctor(System.Xml.Linq.XObject)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AddAnnotationObject">
+            <summary>Sets the shim of XObject.AddAnnotation(Object annotation)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXObject.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.AddAnnotationObject">
+            <summary>Sets the shim of XObject.AddAnnotation(Object annotation)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.AllInstances.AnnotationOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Xml.Linq.XObject,``0})">
+            <summary>Sets the shim of XObject.Annotation()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.AnnotationType">
+            <summary>Sets the shim of XObject.Annotation(Type type)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.AllInstances.AnnotationsOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Xml.Linq.XObject,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the shim of XObject.Annotations()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.AnnotationsType">
+            <summary>Sets the shim of XObject.Annotations(Type type)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.BaseUriGet">
+            <summary>Sets the shim of XObject.get_BaseUri()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.ChangedAddEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.add_Changed(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.ChangedRemoveEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.remove_Changed(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.ChangingAddEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.add_Changing(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.ChangingRemoveEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.remove_Changing(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.DocumentGet">
+            <summary>Sets the shim of XObject.get_Document()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.LineNumberSystemXmlIXmlLineInfoget">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.get_LineNumber()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.LinePositionSystemXmlIXmlLineInfoget">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.get_LinePosition()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.ParentGet">
+            <summary>Sets the shim of XObject.get_Parent()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.AllInstances.RemoveAnnotationsOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{System.Xml.Linq.XObject})">
+            <summary>Sets the shim of XObject.RemoveAnnotations()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.RemoveAnnotationsType">
+            <summary>Sets the shim of XObject.RemoveAnnotations(Type type)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AllInstances.SystemXmlIXmlLineInfoHasLineInfo">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.HasLineInfo()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.AnnotationOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{``0})">
+            <summary>Sets the shim of XObject.Annotation()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AnnotationType">
+            <summary>Sets the shim of XObject.Annotation(Type type)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.AnnotationsOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>Sets the shim of XObject.Annotations()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.AnnotationsType">
+            <summary>Sets the shim of XObject.Annotations(Type type)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.BaseUriGet">
+            <summary>Sets the shim of XObject.get_BaseUri()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.ChangedAddEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.add_Changed(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.ChangedRemoveEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.remove_Changed(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.ChangingAddEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.add_Changing(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.ChangingRemoveEventHandlerOfXObjectChangeEventArgs">
+            <summary>Sets the shim of XObject.remove_Changing(EventHandler`1&lt;XObjectChangeEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.Constructor">
+            <summary>Sets the shim of XObject.XObject()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.DocumentGet">
+            <summary>Sets the shim of XObject.get_Document()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.LineNumberSystemXmlIXmlLineInfoget">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.get_LineNumber()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.LinePositionSystemXmlIXmlLineInfoget">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.get_LinePosition()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.ParentGet">
+            <summary>Sets the shim of XObject.get_Parent()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObject.RemoveAnnotationsOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action)">
+            <summary>Sets the shim of XObject.RemoveAnnotations()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.RemoveAnnotationsType">
+            <summary>Sets the shim of XObject.RemoveAnnotations(Type type)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObject.SystemXmlIXmlLineInfoHasLineInfo">
+            <summary>Sets the shim of XObject.System.Xml.IXmlLineInfo.HasLineInfo()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs">
+            <summary>Shim type of System.Xml.Linq.XObjectChangeEventArgs</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.#ctor(System.Xml.Linq.XObjectChangeEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.AllInstances.ObjectChangeGet">
+            <summary>Sets the shim of XObjectChangeEventArgs.get_ObjectChange()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.ConstructorXObjectChange">
+            <summary>Sets the shim of XObjectChangeEventArgs.XObjectChangeEventArgs(XObjectChange objectChange)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.ObjectChangeGet">
+            <summary>Sets the shim of XObjectChangeEventArgs.get_ObjectChange()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXObjectChangeEventArgs.StaticConstructor">
+            <summary>Sets the shim of XObjectChangeEventArgs.XObjectChangeEventArgs()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXProcessingInstruction">
+            <summary>Shim type of System.Xml.Linq.XProcessingInstruction</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXProcessingInstruction.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXProcessingInstruction.#ctor(System.Xml.Linq.XProcessingInstruction)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.DataGet">
+            <summary>Sets the shim of XProcessingInstruction.get_Data()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.DataSetString">
+            <summary>Sets the shim of XProcessingInstruction.set_Data(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XProcessingInstruction.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.TargetGet">
+            <summary>Sets the shim of XProcessingInstruction.get_Target()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.TargetSetString">
+            <summary>Sets the shim of XProcessingInstruction.set_Target(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XProcessingInstruction.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXProcessingInstruction.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXProcessingInstruction.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXProcessingInstruction.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.ConstructorStringString">
+            <summary>Sets the shim of XProcessingInstruction.XProcessingInstruction(String target, String data)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.ConstructorXProcessingInstruction">
+            <summary>Sets the shim of XProcessingInstruction.XProcessingInstruction(XProcessingInstruction other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.DataGet">
+            <summary>Sets the shim of XProcessingInstruction.get_Data()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.DataSetString">
+            <summary>Sets the shim of XProcessingInstruction.set_Data(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.NodeTypeGet">
+            <summary>Sets the shim of XProcessingInstruction.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.TargetGet">
+            <summary>Sets the shim of XProcessingInstruction.get_Target()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.TargetSetString">
+            <summary>Sets the shim of XProcessingInstruction.set_Target(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXProcessingInstruction.WriteToXmlWriter">
+            <summary>Sets the shim of XProcessingInstruction.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXStreamingElement">
+            <summary>Shim type of System.Xml.Linq.XStreamingElement</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXStreamingElement.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXStreamingElement.#ctor(System.Xml.Linq.XStreamingElement)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AddObject">
+            <summary>Sets the shim of XStreamingElement.Add(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AddObjectArray">
+            <summary>Sets the shim of XStreamingElement.Add(Object[] content)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.AddObject">
+            <summary>Sets the shim of XStreamingElement.Add(Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.AddObjectArray">
+            <summary>Sets the shim of XStreamingElement.Add(Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.NameGet">
+            <summary>Sets the shim of XStreamingElement.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.NameSetXName">
+            <summary>Sets the shim of XStreamingElement.set_Name(XName value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveStream">
+            <summary>Sets the shim of XStreamingElement.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveStreamSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveString">
+            <summary>Sets the shim of XStreamingElement.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveStringSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveTextWriter">
+            <summary>Sets the shim of XStreamingElement.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.SaveXmlWriter">
+            <summary>Sets the shim of XStreamingElement.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.ToString01">
+            <summary>Sets the shim of XStreamingElement.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.ToStringSaveOptions">
+            <summary>Sets the shim of XStreamingElement.ToString(SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XStreamingElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXStreamingElement.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXStreamingElement.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.ConstructorXName">
+            <summary>Sets the shim of XStreamingElement.XStreamingElement(XName name)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.ConstructorXNameObject">
+            <summary>Sets the shim of XStreamingElement.XStreamingElement(XName name, Object content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.ConstructorXNameObjectArray">
+            <summary>Sets the shim of XStreamingElement.XStreamingElement(XName name, Object[] content)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.NameGet">
+            <summary>Sets the shim of XStreamingElement.get_Name()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.NameSetXName">
+            <summary>Sets the shim of XStreamingElement.set_Name(XName value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveStream">
+            <summary>Sets the shim of XStreamingElement.Save(Stream stream)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveStreamSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(Stream stream, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveString">
+            <summary>Sets the shim of XStreamingElement.Save(String fileName)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveStringSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(String fileName, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveTextWriter">
+            <summary>Sets the shim of XStreamingElement.Save(TextWriter textWriter)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveTextWriterSaveOptions">
+            <summary>Sets the shim of XStreamingElement.Save(TextWriter textWriter, SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.SaveXmlWriter">
+            <summary>Sets the shim of XStreamingElement.Save(XmlWriter writer)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.ToString">
+            <summary>Sets the shim of XStreamingElement.ToString()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.ToStringSaveOptions">
+            <summary>Sets the shim of XStreamingElement.ToString(SaveOptions options)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXStreamingElement.WriteToXmlWriter">
+            <summary>Sets the shim of XStreamingElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXText">
+            <summary>Shim type of System.Xml.Linq.XText</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXText.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXText.#ctor(System.Xml.Linq.XText)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.ShimXText.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.AllInstances.NodeTypeGet">
+            <summary>Sets the shim of XText.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.AllInstances.ValueGet">
+            <summary>Sets the shim of XText.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.AllInstances.ValueSetString">
+            <summary>Sets the shim of XText.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.AllInstances.WriteToXmlWriter">
+            <summary>Sets the shim of XText.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXText.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXText.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.ShimXText.Bind(System.Xml.IXmlLineInfo)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.ConstructorString">
+            <summary>Sets the shim of XText.XText(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.ConstructorXText">
+            <summary>Sets the shim of XText.XText(XText other)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.NodeTypeGet">
+            <summary>Sets the shim of XText.get_NodeType()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.ValueGet">
+            <summary>Sets the shim of XText.get_Value()</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.ValueSetString">
+            <summary>Sets the shim of XText.set_Value(String value)</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.ShimXText.WriteToXmlWriter">
+            <summary>Sets the shim of XText.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXAttribute">
+            <summary>Stub type of System.Xml.Linq.XAttribute</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXAttribute.#ctor(System.Xml.Linq.XAttribute)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXAttribute.#ctor(System.Xml.Linq.XName,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXAttribute.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXAttribute.InitializeStub">
+            <summary>Initializes a new instance of type StubXAttribute</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXAttribute.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXAttribute.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXAttribute.NodeType">
+            <summary>Sets the stub of XAttribute.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXAttribute.NodeTypeGet">
+            <summary>Sets the stub of XAttribute.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXAttribute.ToString">
+            <summary>Sets the stub of XAttribute.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXAttribute.ToString01">
+            <summary>Sets the stub of XAttribute.ToString()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXCData">
+            <summary>Stub type of System.Xml.Linq.XCData</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXCData.#ctor(System.Xml.Linq.XCData)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXCData.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXCData.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXCData.InitializeStub">
+            <summary>Initializes a new instance of type StubXCData</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXCData.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXCData.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXCData.NodeType">
+            <summary>Sets the stub of XCData.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXCData.NodeTypeGet">
+            <summary>Sets the stub of XCData.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXCData.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXCData.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXCData.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XCData.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXCData.WriteToXmlWriter">
+            <summary>Sets the stub of XCData.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXComment">
+            <summary>Stub type of System.Xml.Linq.XComment</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXComment.#ctor(System.Xml.Linq.XComment)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXComment.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXComment.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXComment.InitializeStub">
+            <summary>Initializes a new instance of type StubXComment</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXComment.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXComment.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXComment.NodeType">
+            <summary>Sets the stub of XComment.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXComment.NodeTypeGet">
+            <summary>Sets the stub of XComment.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXComment.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXComment.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXComment.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XComment.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXComment.WriteToXmlWriter">
+            <summary>Sets the stub of XComment.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXDeclaration">
+            <summary>Stub type of System.Xml.Linq.XDeclaration</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDeclaration.#ctor(System.Xml.Linq.XDeclaration)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDeclaration.#ctor(System.String,System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDeclaration.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDeclaration.InitializeStub">
+            <summary>Initializes a new instance of type StubXDeclaration</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDeclaration.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDeclaration.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDeclaration.ToString">
+            <summary>Sets the stub of XDeclaration.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDeclaration.ToString01">
+            <summary>Sets the stub of XDeclaration.ToString()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXDocument">
+            <summary>Stub type of System.Xml.Linq.XDocument</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.#ctor(System.Xml.Linq.XDocument)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.#ctor(System.Object[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.#ctor(System.Xml.Linq.XDeclaration,System.Object[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocument.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.InitializeStub">
+            <summary>Initializes a new instance of type StubXDocument</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocument.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocument.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocument.NodeType">
+            <summary>Sets the stub of XDocument.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocument.NodeTypeGet">
+            <summary>Sets the stub of XDocument.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocument.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocument.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XDocument.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocument.WriteToXmlWriter">
+            <summary>Sets the stub of XDocument.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXDocumentType">
+            <summary>Stub type of System.Xml.Linq.XDocumentType</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocumentType.#ctor(System.Xml.Linq.XDocumentType)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocumentType.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocumentType.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocumentType.InitializeStub">
+            <summary>Initializes a new instance of type StubXDocumentType</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocumentType.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocumentType.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXDocumentType.NodeType">
+            <summary>Sets the stub of XDocumentType.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocumentType.NodeTypeGet">
+            <summary>Sets the stub of XDocumentType.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocumentType.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocumentType.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXDocumentType.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XDocumentType.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXDocumentType.WriteToXmlWriter">
+            <summary>Sets the stub of XDocumentType.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXElement">
+            <summary>Stub type of System.Xml.Linq.XElement</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.#ctor(System.Xml.Linq.XElement)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.#ctor(System.Xml.Linq.XName)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.#ctor(System.Xml.Linq.XStreamingElement)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.#ctor(System.Xml.Linq.XName,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.#ctor(System.Xml.Linq.XName,System.Object[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXElement.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.InitializeStub">
+            <summary>Initializes a new instance of type StubXElement</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXElement.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXElement.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXElement.NodeType">
+            <summary>Sets the stub of XElement.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXElement.NodeTypeGet">
+            <summary>Sets the stub of XElement.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXElement.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXElement.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXElement.WriteToXmlWriter">
+            <summary>Sets the stub of XElement.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs">
+            <summary>Stub type of System.Xml.Linq.XObjectChangeEventArgs</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs.#ctor(System.Xml.Linq.XObjectChange)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs.InitializeStub">
+            <summary>Initializes a new instance of type StubXObjectChangeEventArgs</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXObjectChangeEventArgs.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXProcessingInstruction">
+            <summary>Stub type of System.Xml.Linq.XProcessingInstruction</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXProcessingInstruction.#ctor(System.Xml.Linq.XProcessingInstruction)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXProcessingInstruction.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXProcessingInstruction.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXProcessingInstruction.InitializeStub">
+            <summary>Initializes a new instance of type StubXProcessingInstruction</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXProcessingInstruction.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXProcessingInstruction.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXProcessingInstruction.NodeType">
+            <summary>Sets the stub of XProcessingInstruction.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXProcessingInstruction.NodeTypeGet">
+            <summary>Sets the stub of XProcessingInstruction.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXProcessingInstruction.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXProcessingInstruction.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXProcessingInstruction.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XProcessingInstruction.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXProcessingInstruction.WriteToXmlWriter">
+            <summary>Sets the stub of XProcessingInstruction.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXStreamingElement">
+            <summary>Stub type of System.Xml.Linq.XStreamingElement</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXStreamingElement.#ctor(System.Xml.Linq.XName)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXStreamingElement.#ctor(System.Xml.Linq.XName,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXStreamingElement.#ctor(System.Xml.Linq.XName,System.Object[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXStreamingElement.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXStreamingElement.InitializeStub">
+            <summary>Initializes a new instance of type StubXStreamingElement</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXStreamingElement.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXStreamingElement.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXStreamingElement.ToString">
+            <summary>Sets the stub of XStreamingElement.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXStreamingElement.ToString01">
+            <summary>Sets the stub of XStreamingElement.ToString()</summary>
+        </member>
+        <member name="T:System.Xml.Linq.Fakes.StubXText">
+            <summary>Stub type of System.Xml.Linq.XText</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXText.#ctor(System.Xml.Linq.XText)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXText.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXText.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXText.InitializeStub">
+            <summary>Initializes a new instance of type StubXText</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXText.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXText.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Xml.Linq.Fakes.StubXText.NodeType">
+            <summary>Sets the stub of XText.get_NodeType()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXText.NodeTypeGet">
+            <summary>Sets the stub of XText.get_NodeType()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXText.ToString">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXText.ToString01">
+            <summary>Sets the stub of XNode.ToString()</summary>
+        </member>
+        <member name="M:System.Xml.Linq.Fakes.StubXText.WriteTo(System.Xml.XmlWriter)">
+            <summary>Sets the stub of XText.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="F:System.Xml.Linq.Fakes.StubXText.WriteToXmlWriter">
+            <summary>Sets the stub of XText.WriteTo(XmlWriter writer)</summary>
+        </member>
+        <member name="T:System.Xml.Schema.Fakes.ShimExtensions">
+            <summary>Shim type of System.Xml.Schema.Extensions</summary>
+        </member>
+        <member name="M:System.Xml.Schema.Fakes.ShimExtensions.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.Schema.Fakes.ShimExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.Schema.Fakes.ShimExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.GetSchemaInfoXAttribute">
+            <summary>Sets the shim of Extensions.GetSchemaInfo(XAttribute source)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.GetSchemaInfoXElement">
+            <summary>Sets the shim of Extensions.GetSchemaInfo(XElement source)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXAttributeXmlSchemaObjectXmlSchemaSetValidationEventHandler">
+            <summary>Sets the shim of Extensions.Validate(XAttribute source, XmlSchemaObject partialValidationType, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXAttributeXmlSchemaObjectXmlSchemaSetValidationEventHandlerBoolean">
+            <summary>Sets the shim of Extensions.Validate(XAttribute source, XmlSchemaObject partialValidationType, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler, Boolean addSchemaInfo)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXDocumentXmlSchemaSetValidationEventHandler">
+            <summary>Sets the shim of Extensions.Validate(XDocument source, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXDocumentXmlSchemaSetValidationEventHandlerBoolean">
+            <summary>Sets the shim of Extensions.Validate(XDocument source, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler, Boolean addSchemaInfo)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXElementXmlSchemaObjectXmlSchemaSetValidationEventHandler">
+            <summary>Sets the shim of Extensions.Validate(XElement source, XmlSchemaObject partialValidationType, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler)</summary>
+        </member>
+        <member name="P:System.Xml.Schema.Fakes.ShimExtensions.ValidateXElementXmlSchemaObjectXmlSchemaSetValidationEventHandlerBoolean">
+            <summary>Sets the shim of Extensions.Validate(XElement source, XmlSchemaObject partialValidationType, XmlSchemaSet schemas, ValidationEventHandler validationEventHandler, Boolean addSchemaInfo)</summary>
+        </member>
+        <member name="T:System.Xml.XPath.Fakes.ShimExtensions">
+            <summary>Shim type of System.Xml.XPath.Extensions</summary>
+        </member>
+        <member name="M:System.Xml.XPath.Fakes.ShimExtensions.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Xml.XPath.Fakes.ShimExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Xml.XPath.Fakes.ShimExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.CreateNavigatorXNode">
+            <summary>Sets the shim of Extensions.CreateNavigator(XNode node)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.CreateNavigatorXNodeXmlNameTable">
+            <summary>Sets the shim of Extensions.CreateNavigator(XNode node, XmlNameTable nameTable)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathEvaluateXNodeString">
+            <summary>Sets the shim of Extensions.XPathEvaluate(XNode node, String expression)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathEvaluateXNodeStringIXmlNamespaceResolver">
+            <summary>Sets the shim of Extensions.XPathEvaluate(XNode node, String expression, IXmlNamespaceResolver resolver)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathSelectElementXNodeString">
+            <summary>Sets the shim of Extensions.XPathSelectElement(XNode node, String expression)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathSelectElementXNodeStringIXmlNamespaceResolver">
+            <summary>Sets the shim of Extensions.XPathSelectElement(XNode node, String expression, IXmlNamespaceResolver resolver)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathSelectElementsXNodeString">
+            <summary>Sets the shim of Extensions.XPathSelectElements(XNode node, String expression)</summary>
+        </member>
+        <member name="P:System.Xml.XPath.Fakes.ShimExtensions.XPathSelectElementsXNodeStringIXmlNamespaceResolver">
+            <summary>Sets the shim of Extensions.XPathSelectElements(XNode node, String expression, IXmlNamespaceResolver resolver)</summary>
+        </member>
+    </members>
+</doc>

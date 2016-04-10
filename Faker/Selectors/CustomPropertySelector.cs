@@ -4,7 +4,7 @@ using System.Reflection;
 namespace Faker.Selectors
 {
     /// <summary>
-    /// Selector created for many user-defined queries
+    ///     Selector created for many user-defined queries
     /// </summary>
     /// <typeparam name="T">The Type for which we are selecting</typeparam>
     public class CustomPropertySelector<T> : TypeSelectorBase<T>

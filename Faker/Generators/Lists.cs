@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Faker.Generators
+﻿namespace Faker.Generators
 {
     public static class Lists<T>
     {
-
     }
 }
