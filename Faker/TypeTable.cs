@@ -21,6 +21,11 @@ namespace Faker
         private readonly Dictionary<Type, LinkedList<ITypeSelector>> _typeMap;
 
         /// <summary>
+        /// For testing purposes - exposes the underlying typemap
+        /// </summary>
+        internal IDictionary<Type, LinkedList<ITypeSelector>> TypeMap => _typeMap;
+
+        /// <summary>
         ///     Default constructor
         /// </summary>
         public TypeTable(bool useDefaults = true) : this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>())
@@ -84,15 +89,14 @@ namespace Faker
         /// <summary>
         ///     Add a strongly typed selector to the
         /// </summary>
-        /// <typeparam name="T">The type for which this selector is used</typeparam>
-        /// <param name="selector">A TypeSelectorBase implementation for Type T</param>
+        /// <param name="selector">A ITypeSelector implementation for Type T</param>
         /// <param name="position">
         ///     Optional parameter - indicates whether you want this type selector to be used first or last in
         ///     the sequence of available selectors for this type
         /// </param>
-        public void AddSelector<T>(TypeSelectorBase<T> selector, SelectorPosition position = SelectorPosition.First)
+        public void AddSelector(ITypeSelector selector, SelectorPosition position = SelectorPosition.First)
         {
-            var activeType = typeof (T);
+            var activeType = selector.TargetType;
             CreateTypeIfNotExists(activeType);
 
             if (position == SelectorPosition.First)
@@ -103,12 +107,26 @@ namespace Faker
         }
 
         /// <summary>
+        ///     Add a strongly typed selector to the
+        /// </summary>
+        /// <typeparam name="T">The type for which this selector is used</typeparam>
+        /// <param name="selector">A TypeSelectorBase implementation for Type T</param>
+        /// <param name="position">
+        ///     Optional parameter - indicates whether you want this type selector to be used first or last in
+        ///     the sequence of available selectors for this type
+        /// </param>
+        public void AddSelector<T>(TypeSelectorBase<T> selector, SelectorPosition position = SelectorPosition.First)
+        {
+            AddSelector((ITypeSelector) selector, position);
+        }
+
+        /// <summary>
         ///     Remove all of the selectors for a given type
         /// </summary>
         /// <typeparam name="T">The type for which we want to clear all of the selectors</typeparam>
         public void ClearSelectors<T>()
         {
-            var activeType = typeof (T);
+            var activeType = typeof(T);
             if (_typeMap.ContainsKey(activeType)) //Reassign the value to a new list
                 _typeMap[activeType] = new LinkedList<ITypeSelector>();
         }
@@ -120,7 +138,7 @@ namespace Faker
         /// <returns>The number of selectors we have available for this type</returns>
         public int CountSelectors<T>()
         {
-            var activeType = typeof (T);
+            var activeType = typeof(T);
             return CountSelectors(activeType);
         }
 
@@ -142,7 +160,7 @@ namespace Faker
         /// <returns>An enumerable list of selectors</returns>
         public IEnumerable<TypeSelectorBase<T>> GetSelectors<T>()
         {
-            var activeType = typeof (T);
+            var activeType = typeof(T);
             var selectors = GetSelectors(activeType);
             return selectors.Cast<TypeSelectorBase<T>>();
         }
@@ -165,7 +183,7 @@ namespace Faker
         public ITypeSelector GetBaseSelector(Type t)
         {
             CreateTypeIfNotExists(t);
-            var baseType = GenericHelper.GetGenericType(typeof (PrimitiveSelectorBase<>), t);
+            var baseType = GenericHelper.GetGenericType(typeof(PrimitiveSelectorBase<>), t);
             return _typeMap[t].FirstOrDefault(x => baseType.IsAssignableFrom(x.GetType()));
         }
 
@@ -178,8 +196,14 @@ namespace Faker
         public TypeTable Clone()
         {
             // create a deep copy
-            var typeTable = new TypeTable(false, _typeMap.ToDictionary(d => d.Key, d => new LinkedList<ITypeSelector>(d.Value.ToList())));
-            return typeTable;
+            var newTypeMap = new Dictionary<Type, LinkedList<ITypeSelector>>();
+            foreach (var pair in _typeMap)
+            {
+                var newList = new ITypeSelector[pair.Value.Count];
+                pair.Value.CopyTo(newList, 0);
+                newTypeMap.Add(pair.Key, new LinkedList<ITypeSelector>(newList));
+            }
+            return new TypeTable(false, newTypeMap);
         }
     }
 }
