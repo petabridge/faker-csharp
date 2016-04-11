@@ -1,14 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Reflection;
 using Faker.Selectors;
 
 namespace Faker
 {
     /// <summary>
+    /// A convenience class for creating quick Fakes
+    /// </summary>
+    public static class Fake
+    {
+        public static Fake<T> Create<T>()
+        {
+            return new Fake<T>();
+        }
+
+        public static Fake<T> Create<T>(params IFake[] otherFakes)
+        {
+            return new Fake<T>(otherFakes);
+        }
+    }
+
+    /// <summary>
     ///     Used for dynamically generating fakes of simple POCO objects
     /// </summary>
-    public class Fake<T>
+    public class Fake<T> : IFake<T>
     {
         /// <summary>
         ///     Engine used to power our fakes
@@ -18,6 +36,17 @@ namespace Faker
         public Fake()
         {
             _matcher = new Matcher();
+        }
+
+        /// <summary>
+        /// Constructor that takes multiple internal fakes to use for internal properties.
+        /// </summary>
+        /// <param name="fakes">A list of one or more fakes to use</param>
+        public Fake(params IFake[] fakes) : this()
+        {
+            Contract.Requires(fakes != null);
+            foreach(var fake in fakes)
+                AddSelector(fake);
         }
 
         /// <summary>
@@ -42,6 +71,16 @@ namespace Faker
 
             //Return the instance once matching is complete
             return instance;
+        }
+
+        IList<object> IFake.Generate(int count)
+        {
+            return Generate(count).Cast<object>().ToList();
+        }
+
+        object IFake.Generate()
+        {
+            return Generate();
         }
 
         /// <summary>
@@ -70,7 +109,27 @@ namespace Faker
         /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
         public void AddSelector<TS>(TypeSelectorBase<TS> selector)
         {
+            AddSelector((ITypeSelector)selector);
+        }
+
+        /// <summary>
+        ///     Adds a selector to the TypeTable; User-defined selectors always take precedence over the built-in ones.
+        /// </summary>
+        /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
+        public void AddSelector(ITypeSelector selector)
+        {
             _matcher.TypeMap.AddSelector(selector, SelectorPosition.First);
+        }
+
+        /// <summary>
+        /// Adds another <see cref="IFake"/> instance to use as an internal selector for a type.
+        /// </summary>
+        /// <param name="fake">Another fake instance</param>
+        public void AddSelector(IFake fake)
+        {
+            Contract.Requires(fake != null);
+            Contract.Assert(fake.SupportedType != this.SupportedType);
+            AddSelector(new FakeSelector(fake));
         }
 
         /// <summary>
@@ -122,5 +181,7 @@ namespace Faker
         }
 
         #endregion
+
+        public Type SupportedType => typeof (T);
     }
 }
