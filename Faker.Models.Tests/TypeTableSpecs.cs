@@ -32,8 +32,7 @@ namespace Faker.Models.Tests
             foreach (var type in table.TypeMap)
             {
                 var otherTypes = table.GetSelectors(type.Key).ToList();
-                var sameElements =
-                    type.Value.OrderBy(x => x.GetType()).SequenceEqual(otherTypes.OrderBy(x => x.GetType()), SelectorComparer);
+                var sameElements = type.Value.TypeSelectorListsEqual(otherTypes);
                 if (!sameElements) return false;
             }
             return true;
@@ -53,23 +52,28 @@ namespace Faker.Models.Tests
         {
             Arb.Register<FakerGenerators>();
         }
-  
-       [Test]
+
+        [Test]
         public void IdenticalTypeSelector_list_should_be_equivalent_in_any_order()
         {
             Prop.ForAll<ITypeSelector[]>(selectors =>
             {
                 var shuffled = selectors.Shuffle();
-                return selectors.TypeSelectorListsEqual(shuffled);
+                return selectors.TypeSelectorListsEqual(shuffled).When(selectors.Length > 1 && selectors.Distinct().Count() > 1);
             }).QuickCheckThrowOnFailure();
         }
 
+        [Test]
+        public void TypeTable_unmodified_clones_should_be_equivalent()
+        {
+            Prop.ForAll<TypeTable>(
+                (table) =>
+                {
+                    var clone = table.Clone();
+                    return clone.TypeTablesEqual(table);
+                }).QuickCheckThrowOnFailure();
+        }
 
-        //public Property TypeTable_unmodified_clones_should_be_equivalent()
-        //{
-            
-        //}
-        
 
         [Test(Description = "TypeTable.Clone() should produce an immutable object")]
         public void TypeTable_clones_should_be_immutable()
@@ -91,14 +95,16 @@ namespace Faker.Models.Tests
                         clone.AddSelector(selector);
                     }
 
-                    return !clone.TypeTablesEqual(table);
+                    return (!clone.TypeTablesEqual(table))
+                    .When(!originalSelectors.TypeSelectorListsEqual(cloneSelectors) // can't have the same list
+                        && (originalSelectors.Length >= 1 || cloneSelectors.Length >= 1)); // need at least 1 selector
                 }).QuickCheckThrowOnFailure();
         }
     }
 
     public class TypeTableState
     {
-        public IDictionary<Type, LinkedList<ITypeSelector>> Selectors => Original.TypeMap; 
+        public IDictionary<Type, LinkedList<ITypeSelector>> Selectors => Original.TypeMap;
         public TypeTable Original;
         public bool Copied;
         public int OriginalMutations;
