@@ -56,10 +56,9 @@ namespace Faker
         public T Generate()
         {
             //create a new instance of the type we want to Fake
-            var instance = (T) Matcher.SafeObjectCreate(typeof (T));
+            var instance = (T) _matcher.SafeObjectCreate(typeof (T));
 
-            //Check to see if T is a value type and attempt to match that
-            if (typeof (T).IsValueType)
+            if (typeof(T).IsValueType)
             {
                 _matcher.MatchStruct(ref instance);
             }

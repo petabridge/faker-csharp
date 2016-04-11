@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Faker.Generators;
 using Faker.Helpers;
@@ -43,11 +44,11 @@ namespace Faker
 
             //If we don't have a mapper for the wholesale class, map the properties and bind them individually
             var isMatched = false;
-            var generatedObject = (T) MapFromSelector(targetObject, typeof (T), out isMatched);
+            var generatedObject = (T)MapFromSelector(targetObject, typeof(T), out isMatched);
             if (!isMatched)
             {
                 //Get all of the properties of the class
-                var properties = typeof (T).GetProperties();
+                var properties = typeof(T).GetProperties();
 
                 ProcessProperties(properties, targetObject);
             }
@@ -63,21 +64,21 @@ namespace Faker
         public virtual void MatchStruct<S>(ref S targetStruct)
         {
             //Evaluate all of the possible selectors and find the first available match
-            var selector = EvaluateSelectors(typeof (S), TypeMap.GetSelectors(typeof (S)));
+            var selector = EvaluateSelectors(typeof(S), TypeMap.GetSelectors(typeof(S)));
 
             //We found a matching selector
             if (!(selector is MissingSelector))
             {
-                var structObject = (object) targetStruct;
+                var structObject = (object)targetStruct;
                 selector.Generate(ref structObject); //Bind the object's value directly
-                targetStruct = (S) structObject;
+                targetStruct = (S)structObject;
             }
             else
             {
                 //Get all of the properties of the class
-                var properties = typeof (S).GetProperties();
+                var properties = typeof(S).GetProperties();
 
-                targetStruct = (S) ProcessProperties(properties, targetStruct);
+                targetStruct = (S)ProcessProperties(properties, targetStruct);
             }
         }
 
@@ -105,6 +106,17 @@ namespace Faker
         }
 
         /// <summary>
+        /// Going to use the simplest (fewest arguments) constructor to create the underlying object - so long as it's public.
+        /// </summary>
+        /// <param name="objectType">The type of object we need to create</param>
+        /// <returns>The constructor we're going to use, or NULL if none are found.</returns>
+        internal static ConstructorInfo GetSimplestConstructor(Type objectType)
+        {
+            var publicConstructors = objectType.GetConstructors();
+            return publicConstructors.Length == 0 ? publicConstructors.FirstOrDefault() : publicConstructors.OrderBy(x => x.GetParameters().Length).First();
+        }
+
+        /// <summary>
         ///     Protected method used to implement our selector-matching strategy. Uses a greedy approach.
         /// </summary>
         /// <param name="property">The meta-data about the property for which we will be finding a match</param>
@@ -116,14 +128,14 @@ namespace Faker
 
             if (MapFromSelector(property, targetObject, propertyType)) return; //Exit
 
-            //Check to see if the type is a class and has a default constructor
-            if (((propertyType.IsClass && propertyType.GetConstructor(Type.EmptyTypes) != null) ||
+            //Check to see if the type is a class or struct (no generic type definitions or arrays)
+            if (((propertyType.IsClass) ||
                  propertyType.IsValueType) && !IsArray(propertyType))
             {
                 var subProperties = propertyType.GetProperties();
 
                 //Create an instance of the underlying subclass
-                var subClassInstance = Activator.CreateInstance(propertyType);
+                var subClassInstance = SafeObjectCreate(propertyType);
 
                 //Match all of the properties on the subclass 
                 ProcessProperties(subProperties, subClassInstance);
@@ -137,66 +149,72 @@ namespace Faker
             //Check to see if the type is an array or any other sort of collection
             if (IsArray(propertyType))
             {
-                //Get the underlying type used int he array
-                //var elementType = propertyType.GetElementType(); //Works only for arrays
-                var elementType = propertyType.GetGenericArguments()[0]; //Works for IList<T> / IEnumerable<T>
-
-                //Get a number of elements we want to create 
-                //Note: (between 1 and 10 for now)
-                var elementCount = Numbers.Int(1, 10);
-
-                //Create an instance of our target array
-                IList arrayInstance = null;
-
-                //If we're working with a generic list or any other sort of collection
-                if (propertyType.IsGenericTypeDefinition)
-                {
-                    arrayInstance = (IList) GenericHelper.CreateGeneric(propertyType, elementType);
-                }
-                else
-                {
-                    arrayInstance = (IList) GenericHelper.CreateGeneric(typeof (List<>), elementType);
-                }
-
-                //Determine if there's a selector available for this type
-                var hasSelector = TypeMap.CountSelectors(elementType) > 0;
-                ITypeSelector selector = null;
-
-                //So we have a type available for this selector..
-                if (hasSelector)
-                {
-                    selector = TypeMap.GetBaseSelector(elementType);
-                }
-
-                //If the element in the array isn't the same type as the parent object (recursive objects, like trees)
-                if (elementType != targetObject.GetType())
-                {
-                    for (var i = 0; i < elementCount; i++)
-                    {
-                        //Create a new element instance
-                        var element = SafeObjectCreate(elementType);
-
-                        if (hasSelector)
-                        {
-                            selector.Generate(ref element);
-                        }
-
-                        //If the element type is a class populate it recursively
-                        else if (elementType.IsClass)
-                        {
-                            var subProperties = elementType.GetProperties();
-
-                            //Populate all of the properties on this object
-                            ProcessProperties(subProperties, element);
-                        }
-
-                        arrayInstance.Add(element);
-                    }
-                }
+                var arrayInstance = CreateaArrayInstance(propertyType, targetObject.GetType());
 
                 //Bind the sub-class back onto the original target object
                 property.SetValue(targetObject, arrayInstance, null);
             }
+        }
+
+        private IList CreateaArrayInstance(Type propertyType, Type targetType = null)
+        {
+            //Get the underlying type used int he array
+            //var elementType = propertyType.GetElementType(); //Works only for arrays
+            var elementType = propertyType.IsGenericType ? propertyType.GetGenericArguments()[0] : propertyType.GetElementType(); //Works for IList<T> / IEnumerable<T>
+
+            //Get a number of elements we want to create 
+            //Note: (between 1 and 10 for now)
+            var elementCount = Numbers.Int(1, 10);
+
+            //Create an instance of our target array
+            IList arrayInstance = null;
+
+            //If we're working with a generic list or any other sort of collection
+            if (propertyType.IsGenericTypeDefinition)
+            {
+                arrayInstance = (IList)GenericHelper.CreateGeneric(propertyType, elementType);
+            }
+            else
+            {
+                arrayInstance = (IList)GenericHelper.CreateGeneric(typeof(List<>), elementType);
+            }
+
+            //Determine if there's a selector available for this type
+            var hasSelector = TypeMap.CountSelectors(elementType) > 0;
+            ITypeSelector selector = null;
+
+            //So we have a type available for this selector..
+            if (hasSelector)
+            {
+                selector = TypeMap.GetBaseSelector(elementType);
+            }
+
+            //If the element in the array isn't the same type as the parent object (recursive objects, like trees)
+            if (elementType != targetType)
+            {
+                for (var i = 0; i < elementCount; i++)
+                {
+                    //Create a new element instance
+                    var element = SafeObjectCreate(elementType);
+
+                    if (hasSelector)
+                    {
+                        selector.Generate(ref element);
+                    }
+
+                    //If the element type is a class populate it recursively
+                    else if (elementType.IsClass)
+                    {
+                        var subProperties = elementType.GetProperties();
+
+                        //Populate all of the properties on this object
+                        ProcessProperties(subProperties, element);
+                    }
+
+                    arrayInstance.Add(element);
+                }
+            }
+            return arrayInstance;
         }
 
         /// <summary>
@@ -264,13 +282,14 @@ namespace Faker
         /// <returns>true if it's an array, false otherwise</returns>
         protected virtual bool IsArray(Type targetType)
         {
+            if (targetType.IsArray) return true;
             if (!targetType.IsGenericType)
                 return false;
             var genericArguments = targetType.GetGenericArguments();
             if (genericArguments.Length != 1)
                 return false;
 
-            var listType = typeof (IList<>).MakeGenericType(genericArguments);
+            var listType = typeof(IList<>).MakeGenericType(genericArguments);
             return listType.IsAssignableFrom(targetType);
         }
 
@@ -280,15 +299,65 @@ namespace Faker
         /// </summary>
         /// <param name="t">The target type we want to instantiate</param>
         /// <returns>an instance of the specified type</returns>
-        public static object SafeObjectCreate(Type t)
+        public object SafeObjectCreate(Type t)
         {
             //If the object is a string (tricky)
-            if (t == typeof (string))
+            if (t == typeof(string))
             {
                 return string.Empty;
             }
 
-            return Activator.CreateInstance(t);
+            // Guids are also tricky
+            if (t == typeof (Guid))
+                return default(Guid);
+
+            if (IsArray(t))
+            {
+                return CreateaArrayInstance(t);
+            }
+
+            object instance = null;
+            var constructor = GetSimplestConstructor(t);
+            var parameters = constructor?.GetParameters();
+            if (constructor == null || parameters.Length == 0)
+                instance = Activator.CreateInstance(t);
+            else // if we have constructor arguments, recursively create the objects that have them
+            {
+                var paramInstances = new object[parameters.Length];
+                for (var i = 0; i < paramInstances.Length; i++)
+                {
+                    var paramType = parameters[i];
+                    if (paramType.HasDefaultValue) //use the default value if one is defined
+                    {
+                        paramInstances[i] = paramType.DefaultValue;
+                        continue;
+                    }
+
+                    var paramInstance = SafeObjectCreate(paramType.ParameterType);
+                    //Check to see if T is a value type and attempt to match that
+                    if (paramType.ParameterType.IsValueType)
+                    {
+                        MatchStruct(ref paramInstance);
+                    }
+                    else
+                    {
+                        //Match all of the properties of the object and come up with the most reasonable guess we can as to the type of data needed
+                        paramInstance = Match(paramInstance);
+                    }
+                    paramInstances[i] = paramInstance;
+                }
+
+                try
+                {
+                    instance = Activator.CreateInstance(t, paramInstances);
+                }
+                catch // had an exception - recovering from it and returning a default
+                {
+                    instance = t.IsValueType ? Activator.CreateInstance(t) : null;
+                }
+            }
+
+            return instance;
         }
 
         /// <summary>
