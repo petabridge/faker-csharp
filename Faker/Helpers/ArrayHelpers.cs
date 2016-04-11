@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,6 +46,35 @@ namespace Faker.Helpers
             var maxLength = array.Count();
 
             return array.ElementAt(R.Next(0, maxLength));
+        }
+
+        /// <summary>
+        /// Produces the exact same content as the input array, but in different orders.
+        /// 
+        /// IMMUTABLE.
+        /// </summary>
+        /// <typeparam name="T">The type of entity in the array</typeparam>
+        /// <param name="array">The target input</param>
+        /// <returns>A randomized, shuffled copy of the original array</returns>
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> array)
+        {
+            var original = array.ToList();
+            if (original.Count <= 1) // can't shuffle an array with 1 or fewer elements
+                return original;
+
+            /*
+             * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+             */
+            var newList = new T[original.Count];
+
+            for (var i = 0; i < original.Count;i++)
+            {
+                var j = Faker.Generators.Numbers.Int(0, i);
+                if (j != i)
+                    newList[i] = newList[j];
+                newList[j] = original[i];
+            }
+            return newList;
         }
     }
 }

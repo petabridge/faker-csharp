@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayHelperTests.cs" />
     <Compile Include="FakeTests\BugCheckTests.cs" />
     <Compile Include="FakeTests\FakeTests.cs" />
     <Compile Include="GeneratorTests\DateTimeGeneratorTests.cs" />

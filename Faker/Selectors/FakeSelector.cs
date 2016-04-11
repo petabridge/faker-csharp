@@ -56,5 +56,35 @@ namespace Faker.Selectors
         {
             return _internalFake.Generate();
         }
+
+        private bool Equals(FakeSelector other)
+        {
+            return Priority == other.Priority && TargetType == other.TargetType;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            return obj is FakeSelector && Equals((FakeSelector) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (TargetType.GetHashCode()*397) ^ Priority;
+            }
+        }
+
+        public static bool operator ==(FakeSelector left, FakeSelector right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(FakeSelector left, FakeSelector right)
+        {
+            return !Equals(left, right);
+        }
     }
 }

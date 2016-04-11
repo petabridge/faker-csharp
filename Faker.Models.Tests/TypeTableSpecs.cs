@@ -1,30 +1,123 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Faker.Helpers;
 using Faker.Selectors;
 using FsCheck;
+using FsCheck.Experimental;
 using NUnit.Framework;
 
 namespace Faker.Models.Tests
 {
+    public static class TypeTableExtensions
+    {
+
+        private class TypeSelectorComparer : IEqualityComparer<ITypeSelector>
+        {
+            public bool Equals(ITypeSelector x, ITypeSelector y)
+            {
+                return x.Equals(y);
+            }
+
+            public int GetHashCode(ITypeSelector obj)
+            {
+                return obj.GetHashCode();
+            }
+        }
+
+        public static readonly IEqualityComparer<ITypeSelector> SelectorComparer = new TypeSelectorComparer();
+
+        public static bool TypeTablesEqual(this TypeTable table, TypeTable other)
+        {
+            foreach (var type in table.TypeMap)
+            {
+                var otherTypes = table.GetSelectors(type.Key).ToList();
+                var sameElements =
+                    type.Value.OrderBy(x => x.GetType()).SequenceEqual(otherTypes.OrderBy(x => x.GetType()), SelectorComparer);
+                if (!sameElements) return false;
+            }
+            return true;
+        }
+
+        public static bool TypeSelectorListsEqual(this IEnumerable<ITypeSelector> set1, IEnumerable<ITypeSelector> set2)
+        {
+            return ReferenceEquals(set1, set2) || set1.OrderBy(x => x.GetHashCode()).SequenceEqual(set2.OrderBy(x => x.GetHashCode()), SelectorComparer);
+        }
+    }
+
     [TestFixture]
     public class TypeTableSpecs
     {
-        //[Test()] //skip = FsCheck is horribly broken with model-based tests
-        public void TypeTable_should_pass()
+        [TestFixtureSetUp]
+        public void SetUp()
         {
-            var tests = new TypeTableModel();
-            tests.ToProperty().VerboseCheckThrowOnFailure();
+            Arb.Register<FakerGenerators>();
+        }
+  
+       [Test]
+        public void IdenticalTypeSelector_list_should_be_equivalent_in_any_order()
+        {
+            Prop.ForAll<ITypeSelector[]>(selectors =>
+            {
+                var shuffled = selectors.Shuffle();
+                return selectors.TypeSelectorListsEqual(shuffled);
+            }).QuickCheckThrowOnFailure();
+        }
+
+
+        //public Property TypeTable_unmodified_clones_should_be_equivalent()
+        //{
+            
+        //}
+        
+
+        [Test(Description = "TypeTable.Clone() should produce an immutable object")]
+        public void TypeTable_clones_should_be_immutable()
+        {
+            Prop.ForAll<TypeTable, ITypeSelector[], ITypeSelector[]>(
+                (table, originalSelectors, cloneSelectors) =>
+                {
+                    var clone = table.Clone();
+
+                    // add selectors to our original
+                    foreach (var selector in originalSelectors)
+                    {
+                        table.AddSelector(selector);
+                    }
+
+                    // add selectors to our clone
+                    foreach (var selector in cloneSelectors)
+                    {
+                        clone.AddSelector(selector);
+                    }
+
+                    return !clone.TypeTablesEqual(table);
+                }).QuickCheckThrowOnFailure();
         }
     }
 
     public class TypeTableState
     {
-        public IDictionary<Type, LinkedList<ITypeSelector>> Selectors => Original.TypeMap;
+        public IDictionary<Type, LinkedList<ITypeSelector>> Selectors => Original.TypeMap; 
         public TypeTable Original;
         public bool Copied;
         public int OriginalMutations;
     }
+
+    //public class TypeTableModelExperimental : FsCheck.Experimental.Machine<TypeTable, TypeTableState> {
+    //    public override Gen<Operation<TypeTable, TypeTableState>> Next(TypeTableState obj0)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+
+    //    public override Arbitrary<Setup<TypeTable, TypeTableState>> Setup
+    //    {
+    //        get
+    //        {
+    //            Arbitrary<Setup<TypeTable, TypeTableState>>
+    //        }
+    //    }
+    //}
 
     public class TypeTableModel : ICommandGenerator<TypeTable, TypeTableState>
     {

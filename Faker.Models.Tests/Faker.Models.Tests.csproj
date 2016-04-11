@@ -61,6 +61,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayHelperSpecs.cs" />
+    <Compile Include="FakerGenerators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeTableSpecs.cs" />
   </ItemGroup>

@@ -52,5 +52,33 @@ namespace Faker.Selectors
         }
 
         #endregion
+
+        protected bool Equals(MissingSelector other)
+        {
+            return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((MissingSelector) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+        public static bool operator ==(MissingSelector left, MissingSelector right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(MissingSelector left, MissingSelector right)
+        {
+            return !Equals(left, right);
+        }
     }
 }

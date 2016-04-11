@@ -68,5 +68,38 @@ namespace Faker.Selectors
         public Type TargetType { get; }
 
         public abstract T Generate();
+
+        protected bool Equals(TypeSelectorBase<T> other)
+        {
+            return Priority == other.Priority && TargetType == other.TargetType;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((TypeSelectorBase<T>) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = (Priority*397) ^ TargetType.GetHashCode();
+                hash = (hash*397) ^ GetType().GetHashCode();
+                return hash;
+            }
+        }
+
+        public static bool operator ==(TypeSelectorBase<T> left, TypeSelectorBase<T> right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(TypeSelectorBase<T> left, TypeSelectorBase<T> right)
+        {
+            return !Equals(left, right);
+        }
     }
 }
