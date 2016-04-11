@@ -301,6 +301,10 @@ namespace Faker
         /// <returns>an instance of the specified type</returns>
         public object SafeObjectCreate(Type t)
         {
+
+            if (TypeMap.CountSelectors(t) > 0)
+                return TypeMap.GetSelectors(t).First().GenerateInstance();
+
             //If the object is a string (tricky)
             if (t == typeof(string))
             {

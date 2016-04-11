@@ -60,6 +60,11 @@ namespace Faker.Selectors
             return targetObject;
         }
 
+        public object GenerateInstance()
+        {
+            return Generate();
+        }
+
         public Type TargetType { get; }
 
         public abstract T Generate();

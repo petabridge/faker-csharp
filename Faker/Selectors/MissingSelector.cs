@@ -41,6 +41,11 @@ namespace Faker.Selectors
             throw new NotImplementedException();
         }
 
+        public object GenerateInstance()
+        {
+            throw new NotImplementedException();
+        }
+
         public Type TargetType
         {
             get { throw new NotImplementedException(); }

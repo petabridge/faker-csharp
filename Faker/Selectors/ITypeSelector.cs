@@ -49,5 +49,11 @@ namespace Faker.Selectors
         /// </summary>
         /// <param name="targetObject">The object to be replaced with a generated value</param>
         object Generate(ref object targetObject);
+
+        /// <summary>
+        /// Generate an instance of the underlying selector.
+        /// </summary>
+        /// <returns>An object instance.</returns>
+        object GenerateInstance();
     }
 }

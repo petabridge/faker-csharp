@@ -51,5 +51,10 @@ namespace Faker.Selectors
             targetObject = _internalFake.Generate();
             return targetObject;
         }
+
+        public object GenerateInstance()
+        {
+            return _internalFake.Generate();
+        }
     }
 }
