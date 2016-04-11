@@ -29,10 +29,10 @@ namespace Faker.Models.Tests
 
         public static bool TypeTablesEqual(this TypeTable table, TypeTable other)
         {
-            foreach (var type in table.TypeMap)
+            foreach (var type in table.TypeMap.Keys.Concat(other.TypeMap.Keys).Distinct())
             {
-                var otherTypes = table.GetSelectors(type.Key).ToList();
-                var sameElements = type.Value.TypeSelectorListsEqual(otherTypes);
+                var otherTypes = other.GetSelectors(type).ToList();
+                var sameElements = table.GetSelectors(type).TypeSelectorListsEqual(otherTypes);
                 if (!sameElements) return false;
             }
             return true;

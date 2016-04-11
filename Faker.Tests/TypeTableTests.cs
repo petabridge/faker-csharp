@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using Faker.Helpers;
 using Faker.Selectors;
@@ -186,6 +187,48 @@ namespace Faker.Tests
             //Try to grab the Guid selector
             var guidSelector = table.GetBaseSelector(typeof(Guid));
             Assert.IsInstanceOf<GuidSelector>(guidSelector);
+        }
+
+        [Test]
+        public void TypeTable_changes_to_clone_should_not_modify_original()
+        {
+            var typeTable = new TypeTable();
+            var typeTableIntSelectorCount = typeTable.CountSelectors(typeof (int));
+            var clone = typeTable.Clone();
+            var oldCloneTableIntSelectorCount = clone.CountSelectors(typeof(int));
+            clone.AddSelector(new IntSelector());
+            var newCloneTableSelectorCount = clone.CountSelectors(typeof (int));
+
+            // sanity check to make sure we added the new type selector
+            Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
+            Assert.AreNotEqual(oldCloneTableIntSelectorCount, newCloneTableSelectorCount);
+            Assert.True(newCloneTableSelectorCount > oldCloneTableIntSelectorCount);
+
+            // make sure we didn't modify old originak
+            var newTypeTableSelectorCount = typeTable.CountSelectors(typeof(int));
+            Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
+        }
+
+        [Test]
+        public void TypeTable_changes_to_original_should_not_modify_clone()
+        {
+            var typeTable = new TypeTable();
+            var typeTableIntSelectorCount = typeTable.CountSelectors(typeof(int));
+            var clone = typeTable.Clone();
+            var oldCloneTableIntSelectorCount = clone.CountSelectors(typeof(int));
+
+
+            typeTable.AddSelector(new IntSelector());
+            var newTypeTableSelectorCount = typeTable.CountSelectors(typeof(int));
+
+            // sanity check to make sure we added the new type selector
+            Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
+            Assert.AreNotEqual(typeTableIntSelectorCount, newTypeTableSelectorCount);
+            Assert.True(newTypeTableSelectorCount > typeTableIntSelectorCount);
+
+            // make sure we didn't modify old originak
+            var newCloneSelectorCount = clone.CountSelectors(typeof(int));
+            Assert.AreEqual(oldCloneTableIntSelectorCount, newCloneSelectorCount);
         }
 
         #endregion
