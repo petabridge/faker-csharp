@@ -156,7 +156,6 @@ module Nuget =
      // add NBench dependency for other projects
     let getDependencies project =
         match project with
-        | "NBench.PerformanceCounters" -> ["NBench", release.NugetVersion]
         | _ -> []
 
      // used to add -pre suffix to pre-release packages
@@ -322,7 +321,6 @@ Target "Help" <| fun _ ->
       " * Build      Builds"
       " * Nuget      Create and optionally publish nugets packages"
       " * RunTests   Runs tests"
-      " * MultiNodeTests  Runs the slower multiple node specifications"
       " * All        Builds, run tests, creates and optionally publish nuget packages"
       ""
       " Other Targets"
