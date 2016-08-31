@@ -2,13 +2,19 @@
 <package>
   <metadata>
     <id>faker-csharp</id>
-    <version>1.2.0</version>
-    <authors>Aaron Stannard</authors>
-    <owners>Aaron Stannard</owners>
-    <description>Library-level Fakes for your favorite POCO classes.</description>
+    <title>@project@@title@</title>
+    <version>@build.number@</version>
+    <authors>@authors@</authors>
+    <owners>@authors@</owners>
+    <description>@description@</description>
     <language>en-US</language>
     <projectUrl>https://github.com/Aaronontheweb/faker-csharp</projectUrl>
     <licenseUrl>https://github.com/Aaronontheweb/faker-csharp/blob/master/license.txt</licenseUrl>
-    <tags>Fake Faker Fakes Mocks</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>@releaseNotes@</releaseNotes>
+    <copyright>@copyright@</copyright>
+    <tags>@tags@</tags>
+    @dependencies@
+    @references@
   </metadata>
 </package>
