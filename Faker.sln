@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker", "Faker\Faker.csproj", "{72036A83-7633-436B-AF42-0424D236CD6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker", "src\Faker\Faker.csproj", "{72036A83-7633-436B-AF42-0424D236CD6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Tests", "Faker.Tests\Faker.Tests.csproj", "{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Tests", "tests\Faker.Tests\Faker.Tests.csproj", "{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{67BBB802-673F-4E22-89EF-69A16F5C89B6}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Models.Tests", "Faker.Models.Tests\Faker.Models.Tests.csproj", "{546699A6-3886-4B17-A552-1DAFD7C619BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Models.Tests", "tests\Faker.Models.Tests\Faker.Models.Tests.csproj", "{546699A6-3886-4B17-A552-1DAFD7C619BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
