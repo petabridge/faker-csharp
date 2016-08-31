@@ -20,9 +20,8 @@ copy %CACHED_NUGET% .nuget\nuget.exe > nul
 .nuget\NuGet.exe update -self
 
 .nuget\NuGet.exe install FAKE -OutputDirectory packages -Version 4.38.3 -ExcludeVersion
-.nuget\NuGet.exe install NBench.Runner -OutputDirectory src\packages -ExcludeVersion -Version 0.3.1
-.nuget\NuGet.exe install NUnit.Console -OutputDirectory packages\FAKE -ExcludeVersion -Version 2.6.4
-.nuget\NuGet.exe install docfx.msbuild -OutputDirectory packages\FAKE\docfx -ExcludeVersion -Version 1.9.4
+.nuget\NuGet.exe install NUnit.Runners -OutputDirectory packages\FAKE -ExcludeVersion -Version 2.6.4
+.nuget\NuGet.exe install docfx.msbuild -OutputDirectory packages\FAKE\docfx -ExcludeVersion -Version 2.4.0
 
 if not exist packages\SourceLink.Fake\tools\SourceLink.fsx ( 
   .nuget\nuget.exe install SourceLink.Fake -OutputDirectory packages -ExcludeVersion
