@@ -1,0 +1,1444 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Faker
+  name: Faker
+  href: api/Faker.html#Faker
+  commentId: N:Faker
+  fullName: Faker
+- uid: Faker.ExpressionValidator
+  name: ExpressionValidator
+  href: api/Faker.ExpressionValidator.html#Faker_ExpressionValidator
+  commentId: T:Faker.ExpressionValidator
+  fullName: Faker.ExpressionValidator
+- uid: Faker.ExpressionValidator.IsNotNull(Faker.Selectors.ITypeSelector)
+  name: IsNotNull(ITypeSelector)
+  href: api/Faker.ExpressionValidator.html#Faker_ExpressionValidator_IsNotNull_Faker_Selectors_ITypeSelector_
+  commentId: M:Faker.ExpressionValidator.IsNotNull(Faker.Selectors.ITypeSelector)
+  fullName: Faker.ExpressionValidator.IsNotNull(Faker.Selectors.ITypeSelector)
+- uid: Faker.ExpressionValidator.IsNotNull``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)
+  name: IsNotNull<T>(Expression<Func<T>>, T)
+  href: api/Faker.ExpressionValidator.html#Faker_ExpressionValidator_IsNotNull__1_System_Linq_Expressions_Expression_System_Func___0_____0_
+  commentId: M:Faker.ExpressionValidator.IsNotNull``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)
+  name.vb: IsNotNull(Of T)(Expression(Of Func(Of T)), T)
+  fullName: Faker.ExpressionValidator.IsNotNull<T>(System.Linq.Expressions.Expression<System.Func<T>>, T)
+  fullName.vb: Faker.ExpressionValidator.IsNotNull(Of T)(System.Linq.Expressions.Expression(Of System.Func(Of T)), T)
+- uid: Faker.ExpressionValidator.ToPropertyInfo(System.Linq.Expressions.LambdaExpression)
+  name: ToPropertyInfo(LambdaExpression)
+  href: api/Faker.ExpressionValidator.html#Faker_ExpressionValidator_ToPropertyInfo_System_Linq_Expressions_LambdaExpression_
+  commentId: M:Faker.ExpressionValidator.ToPropertyInfo(System.Linq.Expressions.LambdaExpression)
+  fullName: Faker.ExpressionValidator.ToPropertyInfo(System.Linq.Expressions.LambdaExpression)
+- uid: Faker.Fake
+  name: Fake
+  href: api/Faker.Fake.html#Faker_Fake
+  commentId: T:Faker.Fake
+  fullName: Faker.Fake
+- uid: Faker.Fake.Create``1
+  name: Create<T>()
+  href: api/Faker.Fake.html#Faker_Fake_Create__1
+  commentId: M:Faker.Fake.Create``1
+  name.vb: Create(Of T)()
+  fullName: Faker.Fake.Create<T>()
+  fullName.vb: Faker.Fake.Create(Of T)()
+- uid: Faker.Fake.Create``1(Faker.IFake[])
+  name: Create<T>(IFake[])
+  href: api/Faker.Fake.html#Faker_Fake_Create__1_Faker_IFake___
+  commentId: M:Faker.Fake.Create``1(Faker.IFake[])
+  name.vb: Create(Of T)(IFake())
+  fullName: Faker.Fake.Create<T>(Faker.IFake[])
+  fullName.vb: Faker.Fake.Create(Of T)(Faker.IFake())
+- uid: Faker.Fake`1
+  name: Fake<T>
+  href: api/Faker.Fake-1.html#Faker_Fake_1
+  commentId: T:Faker.Fake`1
+  name.vb: Fake(Of T)
+  fullName: Faker.Fake<T>
+  fullName.vb: Faker.Fake(Of T)
+- uid: Faker.Fake`1.#ctor
+  name: Fake()
+  href: api/Faker.Fake-1.html#Faker_Fake_1__ctor
+  commentId: M:Faker.Fake`1.#ctor
+  fullName: Faker.Fake<T>.Fake()
+  fullName.vb: Faker.Fake(Of T).Fake()
+- uid: Faker.Fake`1.#ctor(Faker.IFake[])
+  name: Fake(IFake[])
+  href: api/Faker.Fake-1.html#Faker_Fake_1__ctor_Faker_IFake___
+  commentId: M:Faker.Fake`1.#ctor(Faker.IFake[])
+  name.vb: Fake(IFake())
+  fullName: Faker.Fake<T>.Fake(Faker.IFake[])
+  fullName.vb: Faker.Fake(Of T).Fake(Faker.IFake())
+- uid: Faker.Fake`1.AddSelector(Faker.IFake)
+  name: AddSelector(IFake)
+  href: api/Faker.Fake-1.html#Faker_Fake_1_AddSelector_Faker_IFake_
+  commentId: M:Faker.Fake`1.AddSelector(Faker.IFake)
+  fullName: Faker.Fake<T>.AddSelector(Faker.IFake)
+  fullName.vb: Faker.Fake(Of T).AddSelector(Faker.IFake)
+- uid: Faker.Fake`1.AddSelector(Faker.Selectors.ITypeSelector)
+  name: AddSelector(ITypeSelector)
+  href: api/Faker.Fake-1.html#Faker_Fake_1_AddSelector_Faker_Selectors_ITypeSelector_
+  commentId: M:Faker.Fake`1.AddSelector(Faker.Selectors.ITypeSelector)
+  fullName: Faker.Fake<T>.AddSelector(Faker.Selectors.ITypeSelector)
+  fullName.vb: Faker.Fake(Of T).AddSelector(Faker.Selectors.ITypeSelector)
+- uid: Faker.Fake`1.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0})
+  name: AddSelector<TS>(TypeSelectorBase<TS>)
+  href: api/Faker.Fake-1.html#Faker_Fake_1_AddSelector__1_Faker_Selectors_TypeSelectorBase___0__
+  commentId: M:Faker.Fake`1.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0})
+  name.vb: AddSelector(Of TS)(TypeSelectorBase(Of TS))
+  fullName: Faker.Fake<T>.AddSelector<TS>(Faker.Selectors.TypeSelectorBase<TS>)
+  fullName.vb: Faker.Fake(Of T).AddSelector(Of TS)(Faker.Selectors.TypeSelectorBase(Of TS))
+- uid: Faker.Fake`1.Create
+  name: Create()
+  href: api/Faker.Fake-1.html#Faker_Fake_1_Create
+  commentId: M:Faker.Fake`1.Create
+  fullName: Faker.Fake<T>.Create()
+  fullName.vb: Faker.Fake(Of T).Create()
+- uid: Faker.Fake`1.Faker#IFake#Generate
+  name: IFake.Generate()
+  href: api/Faker.Fake-1.html#Faker_Fake_1_Faker_IFake_Generate
+  commentId: M:Faker.Fake`1.Faker#IFake#Generate
+  name.vb: Faker.IFake.Generate()
+  fullName: Faker.Fake<T>.Faker.IFake.Generate()
+  fullName.vb: Faker.Fake(Of T).Faker.IFake.Generate()
+- uid: Faker.Fake`1.Faker#IFake#Generate(System.Int32)
+  name: IFake.Generate(Int32)
+  href: api/Faker.Fake-1.html#Faker_Fake_1_Faker_IFake_Generate_System_Int32_
+  commentId: M:Faker.Fake`1.Faker#IFake#Generate(System.Int32)
+  name.vb: Faker.IFake.Generate(Int32)
+  fullName: Faker.Fake<T>.Faker.IFake.Generate(System.Int32)
+  fullName.vb: Faker.Fake(Of T).Faker.IFake.Generate(System.Int32)
+- uid: Faker.Fake`1.Generate
+  name: Generate()
+  href: api/Faker.Fake-1.html#Faker_Fake_1_Generate
+  commentId: M:Faker.Fake`1.Generate
+  fullName: Faker.Fake<T>.Generate()
+  fullName.vb: Faker.Fake(Of T).Generate()
+- uid: Faker.Fake`1.Generate(System.Int32)
+  name: Generate(Int32)
+  href: api/Faker.Fake-1.html#Faker_Fake_1_Generate_System_Int32_
+  commentId: M:Faker.Fake`1.Generate(System.Int32)
+  fullName: Faker.Fake<T>.Generate(System.Int32)
+  fullName.vb: Faker.Fake(Of T).Generate(System.Int32)
+- uid: Faker.Fake`1.SupportedType
+  name: SupportedType
+  href: api/Faker.Fake-1.html#Faker_Fake_1_SupportedType
+  commentId: P:Faker.Fake`1.SupportedType
+  fullName: Faker.Fake<T>.SupportedType
+  fullName.vb: Faker.Fake(Of T).SupportedType
+- uid: Faker.FakeExtensions
+  name: FakeExtensions
+  href: api/Faker.FakeExtensions.html#Faker_FakeExtensions
+  commentId: T:Faker.FakeExtensions
+  fullName: Faker.FakeExtensions
+- uid: Faker.FakeExtensions.SetProperty``2(Faker.Fake{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``1}})
+  name: SetProperty<T, TProperty>(Fake<T>, Expression<Func<T, TProperty>>, Expression<Func<TProperty>>)
+  href: api/Faker.FakeExtensions.html#Faker_FakeExtensions_SetProperty__2_Faker_Fake___0__System_Linq_Expressions_Expression_System_Func___0___1___System_Linq_Expressions_Expression_System_Func___1___
+  commentId: M:Faker.FakeExtensions.SetProperty``2(Faker.Fake{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``1}})
+  name.vb: SetProperty(Of T, TProperty)(Fake(Of T), Expression(Of Func(Of T, TProperty)), Expression(Of Func(Of TProperty)))
+  fullName: Faker.FakeExtensions.SetProperty<T, TProperty>(Faker.Fake<T>, System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Linq.Expressions.Expression<System.Func<TProperty>>)
+  fullName.vb: Faker.FakeExtensions.SetProperty(Of T, TProperty)(Faker.Fake(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Linq.Expressions.Expression(Of System.Func(Of TProperty)))
+- uid: Faker.FakeExtensions.SetType``2(Faker.Fake{``0},System.Linq.Expressions.Expression{System.Func{``1}})
+  name: SetType<T, TS>(Fake<T>, Expression<Func<TS>>)
+  href: api/Faker.FakeExtensions.html#Faker_FakeExtensions_SetType__2_Faker_Fake___0__System_Linq_Expressions_Expression_System_Func___1___
+  commentId: M:Faker.FakeExtensions.SetType``2(Faker.Fake{``0},System.Linq.Expressions.Expression{System.Func{``1}})
+  name.vb: SetType(Of T, TS)(Fake(Of T), Expression(Of Func(Of TS)))
+  fullName: Faker.FakeExtensions.SetType<T, TS>(Faker.Fake<T>, System.Linq.Expressions.Expression<System.Func<TS>>)
+  fullName.vb: Faker.FakeExtensions.SetType(Of T, TS)(Faker.Fake(Of T), System.Linq.Expressions.Expression(Of System.Func(Of TS)))
+- uid: Faker.Generators
+  name: Faker.Generators
+  href: api/Faker.Generators.html#Faker_Generators
+  commentId: N:Faker.Generators
+  fullName: Faker.Generators
+- uid: Faker.Generators.Booleans
+  name: Booleans
+  href: api/Faker.Generators.Booleans.html#Faker_Generators_Booleans
+  commentId: T:Faker.Generators.Booleans
+  fullName: Faker.Generators.Booleans
+- uid: Faker.Generators.Booleans.Bool
+  name: Bool()
+  href: api/Faker.Generators.Booleans.html#Faker_Generators_Booleans_Bool
+  commentId: M:Faker.Generators.Booleans.Bool
+  fullName: Faker.Generators.Booleans.Bool()
+- uid: Faker.Generators.DateTimes
+  name: DateTimes
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes
+  commentId: T:Faker.Generators.DateTimes
+  fullName: Faker.Generators.DateTimes
+- uid: Faker.Generators.DateTimes.GetDateTime
+  name: GetDateTime()
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetDateTime
+  commentId: M:Faker.Generators.DateTimes.GetDateTime
+  fullName: Faker.Generators.DateTimes.GetDateTime()
+- uid: Faker.Generators.DateTimes.GetDateTime(System.DateTime,System.DateTime)
+  name: GetDateTime(DateTime, DateTime)
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetDateTime_System_DateTime_System_DateTime_
+  commentId: M:Faker.Generators.DateTimes.GetDateTime(System.DateTime,System.DateTime)
+  fullName: Faker.Generators.DateTimes.GetDateTime(System.DateTime, System.DateTime)
+- uid: Faker.Generators.DateTimes.GetDateTimeOffset(System.DateTimeOffset,System.DateTimeOffset)
+  name: GetDateTimeOffset(DateTimeOffset, DateTimeOffset)
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetDateTimeOffset_System_DateTimeOffset_System_DateTimeOffset_
+  commentId: M:Faker.Generators.DateTimes.GetDateTimeOffset(System.DateTimeOffset,System.DateTimeOffset)
+  fullName: Faker.Generators.DateTimes.GetDateTimeOffset(System.DateTimeOffset, System.DateTimeOffset)
+- uid: Faker.Generators.DateTimes.GetTimeStamp
+  name: GetTimeStamp()
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetTimeStamp
+  commentId: M:Faker.Generators.DateTimes.GetTimeStamp
+  fullName: Faker.Generators.DateTimes.GetTimeStamp()
+- uid: Faker.Generators.DateTimes.GetTimeStamp(System.DateTime)
+  name: GetTimeStamp(DateTime)
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetTimeStamp_System_DateTime_
+  commentId: M:Faker.Generators.DateTimes.GetTimeStamp(System.DateTime)
+  fullName: Faker.Generators.DateTimes.GetTimeStamp(System.DateTime)
+- uid: Faker.Generators.DateTimes.GetTimeStamp(System.DateTime,System.DateTime)
+  name: GetTimeStamp(DateTime, DateTime)
+  href: api/Faker.Generators.DateTimes.html#Faker_Generators_DateTimes_GetTimeStamp_System_DateTime_System_DateTime_
+  commentId: M:Faker.Generators.DateTimes.GetTimeStamp(System.DateTime,System.DateTime)
+  fullName: Faker.Generators.DateTimes.GetTimeStamp(System.DateTime, System.DateTime)
+- uid: Faker.Generators.EmailAddresses
+  name: EmailAddresses
+  href: api/Faker.Generators.EmailAddresses.html#Faker_Generators_EmailAddresses
+  commentId: T:Faker.Generators.EmailAddresses
+  fullName: Faker.Generators.EmailAddresses
+- uid: Faker.Generators.EmailAddresses.Generate(System.Boolean,System.Int32,System.Int32)
+  name: Generate(Boolean, Int32, Int32)
+  href: api/Faker.Generators.EmailAddresses.html#Faker_Generators_EmailAddresses_Generate_System_Boolean_System_Int32_System_Int32_
+  commentId: M:Faker.Generators.EmailAddresses.Generate(System.Boolean,System.Int32,System.Int32)
+  fullName: Faker.Generators.EmailAddresses.Generate(System.Boolean, System.Int32, System.Int32)
+- uid: Faker.Generators.EmailAddresses.Human(System.Boolean)
+  name: Human(Boolean)
+  href: api/Faker.Generators.EmailAddresses.html#Faker_Generators_EmailAddresses_Human_System_Boolean_
+  commentId: M:Faker.Generators.EmailAddresses.Human(System.Boolean)
+  fullName: Faker.Generators.EmailAddresses.Human(System.Boolean)
+- uid: Faker.Generators.Guids
+  name: Guids
+  href: api/Faker.Generators.Guids.html#Faker_Generators_Guids
+  commentId: T:Faker.Generators.Guids
+  fullName: Faker.Generators.Guids
+- uid: Faker.Generators.Guids.GetGuid
+  name: GetGuid()
+  href: api/Faker.Generators.Guids.html#Faker_Generators_Guids_GetGuid
+  commentId: M:Faker.Generators.Guids.GetGuid
+  fullName: Faker.Generators.Guids.GetGuid()
+- uid: Faker.Generators.Lists`1
+  name: Lists<T>
+  href: api/Faker.Generators.Lists-1.html#Faker_Generators_Lists_1
+  commentId: T:Faker.Generators.Lists`1
+  name.vb: Lists(Of T)
+  fullName: Faker.Generators.Lists<T>
+  fullName.vb: Faker.Generators.Lists(Of T)
+- uid: Faker.Generators.Names
+  name: Names
+  href: api/Faker.Generators.Names.html#Faker_Generators_Names
+  commentId: T:Faker.Generators.Names
+  fullName: Faker.Generators.Names
+- uid: Faker.Generators.Names.First
+  name: First()
+  href: api/Faker.Generators.Names.html#Faker_Generators_Names_First
+  commentId: M:Faker.Generators.Names.First
+  fullName: Faker.Generators.Names.First()
+- uid: Faker.Generators.Names.FullName
+  name: FullName()
+  href: api/Faker.Generators.Names.html#Faker_Generators_Names_FullName
+  commentId: M:Faker.Generators.Names.FullName
+  fullName: Faker.Generators.Names.FullName()
+- uid: Faker.Generators.Names.Last
+  name: Last()
+  href: api/Faker.Generators.Names.html#Faker_Generators_Names_Last
+  commentId: M:Faker.Generators.Names.Last
+  fullName: Faker.Generators.Names.Last()
+- uid: Faker.Generators.Numbers
+  name: Numbers
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers
+  commentId: T:Faker.Generators.Numbers
+  fullName: Faker.Generators.Numbers
+- uid: Faker.Generators.Numbers.Decimal(System.Decimal,System.Decimal)
+  name: Decimal(Decimal, Decimal)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Decimal_System_Decimal_System_Decimal_
+  commentId: M:Faker.Generators.Numbers.Decimal(System.Decimal,System.Decimal)
+  fullName: Faker.Generators.Numbers.Decimal(System.Decimal, System.Decimal)
+- uid: Faker.Generators.Numbers.Double(System.Double,System.Double)
+  name: Double(Double, Double)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Double_System_Double_System_Double_
+  commentId: M:Faker.Generators.Numbers.Double(System.Double,System.Double)
+  fullName: Faker.Generators.Numbers.Double(System.Double, System.Double)
+- uid: Faker.Generators.Numbers.Float(System.Single,System.Single)
+  name: Float(Single, Single)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Float_System_Single_System_Single_
+  commentId: M:Faker.Generators.Numbers.Float(System.Single,System.Single)
+  fullName: Faker.Generators.Numbers.Float(System.Single, System.Single)
+- uid: Faker.Generators.Numbers.Int(System.Int32,System.Int32)
+  name: Int(Int32, Int32)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Int_System_Int32_System_Int32_
+  commentId: M:Faker.Generators.Numbers.Int(System.Int32,System.Int32)
+  fullName: Faker.Generators.Numbers.Int(System.Int32, System.Int32)
+- uid: Faker.Generators.Numbers.Long(System.Int64,System.Int64)
+  name: Long(Int64, Int64)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Long_System_Int64_System_Int64_
+  commentId: M:Faker.Generators.Numbers.Long(System.Int64,System.Int64)
+  fullName: Faker.Generators.Numbers.Long(System.Int64, System.Int64)
+- uid: Faker.Generators.Numbers.SByte(System.SByte,System.SByte)
+  name: SByte(SByte, SByte)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_SByte_System_SByte_System_SByte_
+  commentId: M:Faker.Generators.Numbers.SByte(System.SByte,System.SByte)
+  fullName: Faker.Generators.Numbers.SByte(System.SByte, System.SByte)
+- uid: Faker.Generators.Numbers.Short(System.Int16,System.Int16)
+  name: Short(Int16, Int16)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Short_System_Int16_System_Int16_
+  commentId: M:Faker.Generators.Numbers.Short(System.Int16,System.Int16)
+  fullName: Faker.Generators.Numbers.Short(System.Int16, System.Int16)
+- uid: Faker.Generators.Numbers.Short(System.UInt16,System.UInt16)
+  name: Short(UInt16, UInt16)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_Short_System_UInt16_System_UInt16_
+  commentId: M:Faker.Generators.Numbers.Short(System.UInt16,System.UInt16)
+  fullName: Faker.Generators.Numbers.Short(System.UInt16, System.UInt16)
+- uid: Faker.Generators.Numbers.UInt(System.UInt32,System.UInt32)
+  name: UInt(UInt32, UInt32)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_UInt_System_UInt32_System_UInt32_
+  commentId: M:Faker.Generators.Numbers.UInt(System.UInt32,System.UInt32)
+  fullName: Faker.Generators.Numbers.UInt(System.UInt32, System.UInt32)
+- uid: Faker.Generators.Numbers.ULong(System.UInt64,System.UInt64)
+  name: ULong(UInt64, UInt64)
+  href: api/Faker.Generators.Numbers.html#Faker_Generators_Numbers_ULong_System_UInt64_System_UInt64_
+  commentId: M:Faker.Generators.Numbers.ULong(System.UInt64,System.UInt64)
+  fullName: Faker.Generators.Numbers.ULong(System.UInt64, System.UInt64)
+- uid: Faker.Generators.Strings
+  name: Strings
+  href: api/Faker.Generators.Strings.html#Faker_Generators_Strings
+  commentId: T:Faker.Generators.Strings
+  fullName: Faker.Generators.Strings
+- uid: Faker.Generators.Strings.GenerateAlphaNumericString(System.Int32,System.Int32)
+  name: GenerateAlphaNumericString(Int32, Int32)
+  href: api/Faker.Generators.Strings.html#Faker_Generators_Strings_GenerateAlphaNumericString_System_Int32_System_Int32_
+  commentId: M:Faker.Generators.Strings.GenerateAlphaNumericString(System.Int32,System.Int32)
+  fullName: Faker.Generators.Strings.GenerateAlphaNumericString(System.Int32, System.Int32)
+- uid: Faker.Generators.Strings.GenerateEmailFriendlyString(System.Int32,System.Int32)
+  name: GenerateEmailFriendlyString(Int32, Int32)
+  href: api/Faker.Generators.Strings.html#Faker_Generators_Strings_GenerateEmailFriendlyString_System_Int32_System_Int32_
+  commentId: M:Faker.Generators.Strings.GenerateEmailFriendlyString(System.Int32,System.Int32)
+  fullName: Faker.Generators.Strings.GenerateEmailFriendlyString(System.Int32, System.Int32)
+- uid: Faker.Helpers
+  name: Faker.Helpers
+  href: api/Faker.Helpers.html#Faker_Helpers
+  commentId: N:Faker.Helpers
+  fullName: Faker.Helpers
+- uid: Faker.Helpers.ArrayHelpers
+  name: ArrayHelpers
+  href: api/Faker.Helpers.ArrayHelpers.html#Faker_Helpers_ArrayHelpers
+  commentId: T:Faker.Helpers.ArrayHelpers
+  fullName: Faker.Helpers.ArrayHelpers
+- uid: Faker.Helpers.ArrayHelpers.GetRandom``1(System.Collections.Generic.IEnumerable{``0})
+  name: GetRandom<T>(IEnumerable<T>)
+  href: api/Faker.Helpers.ArrayHelpers.html#Faker_Helpers_ArrayHelpers_GetRandom__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:Faker.Helpers.ArrayHelpers.GetRandom``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: GetRandom(Of T)(IEnumerable(Of T))
+  fullName: Faker.Helpers.ArrayHelpers.GetRandom<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Faker.Helpers.ArrayHelpers.GetRandom(Of T)(System.Collections.Generic.IEnumerable(Of T))
+- uid: Faker.Helpers.ArrayHelpers.GetRandomSelection``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name: GetRandomSelection<T>(IEnumerable<T>, Int32)
+  href: api/Faker.Helpers.ArrayHelpers.html#Faker_Helpers_ArrayHelpers_GetRandomSelection__1_System_Collections_Generic_IEnumerable___0__System_Int32_
+  commentId: M:Faker.Helpers.ArrayHelpers.GetRandomSelection``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name.vb: GetRandomSelection(Of T)(IEnumerable(Of T), Int32)
+  fullName: Faker.Helpers.ArrayHelpers.GetRandomSelection<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  fullName.vb: Faker.Helpers.ArrayHelpers.GetRandomSelection(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+- uid: Faker.Helpers.ArrayHelpers.GetRandomSubSelection``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)
+  name: GetRandomSubSelection<T>(IEnumerable<T>, Int32, Int32)
+  href: api/Faker.Helpers.ArrayHelpers.html#Faker_Helpers_ArrayHelpers_GetRandomSubSelection__1_System_Collections_Generic_IEnumerable___0__System_Int32_System_Int32_
+  commentId: M:Faker.Helpers.ArrayHelpers.GetRandomSubSelection``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)
+  name.vb: GetRandomSubSelection(Of T)(IEnumerable(Of T), Int32, Int32)
+  fullName: Faker.Helpers.ArrayHelpers.GetRandomSubSelection<T>(System.Collections.Generic.IEnumerable<T>, System.Int32, System.Int32)
+  fullName.vb: Faker.Helpers.ArrayHelpers.GetRandomSubSelection(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32, System.Int32)
+- uid: Faker.Helpers.ArrayHelpers.Shuffle``1(System.Collections.Generic.IEnumerable{``0})
+  name: Shuffle<T>(IEnumerable<T>)
+  href: api/Faker.Helpers.ArrayHelpers.html#Faker_Helpers_ArrayHelpers_Shuffle__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:Faker.Helpers.ArrayHelpers.Shuffle``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: Shuffle(Of T)(IEnumerable(Of T))
+  fullName: Faker.Helpers.ArrayHelpers.Shuffle<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Faker.Helpers.ArrayHelpers.Shuffle(Of T)(System.Collections.Generic.IEnumerable(Of T))
+- uid: Faker.Helpers.GenericHelper
+  name: GenericHelper
+  href: api/Faker.Helpers.GenericHelper.html#Faker_Helpers_GenericHelper
+  commentId: T:Faker.Helpers.GenericHelper
+  fullName: Faker.Helpers.GenericHelper
+- uid: Faker.Helpers.GenericHelper.CreateGeneric(System.Type,System.Type,System.Object[])
+  name: CreateGeneric(Type, Type, Object[])
+  href: api/Faker.Helpers.GenericHelper.html#Faker_Helpers_GenericHelper_CreateGeneric_System_Type_System_Type_System_Object___
+  commentId: M:Faker.Helpers.GenericHelper.CreateGeneric(System.Type,System.Type,System.Object[])
+  name.vb: CreateGeneric(Type, Type, Object())
+  fullName: Faker.Helpers.GenericHelper.CreateGeneric(System.Type, System.Type, System.Object[])
+  fullName.vb: Faker.Helpers.GenericHelper.CreateGeneric(System.Type, System.Type, System.Object())
+- uid: Faker.Helpers.GenericHelper.GetGenericType(System.Type,System.Type)
+  name: GetGenericType(Type, Type)
+  href: api/Faker.Helpers.GenericHelper.html#Faker_Helpers_GenericHelper_GetGenericType_System_Type_System_Type_
+  commentId: M:Faker.Helpers.GenericHelper.GetGenericType(System.Type,System.Type)
+  fullName: Faker.Helpers.GenericHelper.GetGenericType(System.Type, System.Type)
+- uid: Faker.Helpers.RandomHelper
+  name: RandomHelper
+  href: api/Faker.Helpers.RandomHelper.html#Faker_Helpers_RandomHelper
+  commentId: T:Faker.Helpers.RandomHelper
+  fullName: Faker.Helpers.RandomHelper
+- uid: Faker.Helpers.RandomHelper.NextDecimal(System.Random)
+  name: NextDecimal(Random)
+  href: api/Faker.Helpers.RandomHelper.html#Faker_Helpers_RandomHelper_NextDecimal_System_Random_
+  commentId: M:Faker.Helpers.RandomHelper.NextDecimal(System.Random)
+  fullName: Faker.Helpers.RandomHelper.NextDecimal(System.Random)
+- uid: Faker.Helpers.RandomHelper.NextDecimal(System.Random,System.Decimal,System.Decimal)
+  name: NextDecimal(Random, Decimal, Decimal)
+  href: api/Faker.Helpers.RandomHelper.html#Faker_Helpers_RandomHelper_NextDecimal_System_Random_System_Decimal_System_Decimal_
+  commentId: M:Faker.Helpers.RandomHelper.NextDecimal(System.Random,System.Decimal,System.Decimal)
+  fullName: Faker.Helpers.RandomHelper.NextDecimal(System.Random, System.Decimal, System.Decimal)
+- uid: Faker.Helpers.RandomHelper.NextInt32(System.Random)
+  name: NextInt32(Random)
+  href: api/Faker.Helpers.RandomHelper.html#Faker_Helpers_RandomHelper_NextInt32_System_Random_
+  commentId: M:Faker.Helpers.RandomHelper.NextInt32(System.Random)
+  fullName: Faker.Helpers.RandomHelper.NextInt32(System.Random)
+- uid: Faker.IFake
+  name: IFake
+  href: api/Faker.IFake.html#Faker_IFake
+  commentId: T:Faker.IFake
+  fullName: Faker.IFake
+- uid: Faker.IFake.Generate
+  name: Generate()
+  href: api/Faker.IFake.html#Faker_IFake_Generate
+  commentId: M:Faker.IFake.Generate
+  fullName: Faker.IFake.Generate()
+- uid: Faker.IFake.Generate(System.Int32)
+  name: Generate(Int32)
+  href: api/Faker.IFake.html#Faker_IFake_Generate_System_Int32_
+  commentId: M:Faker.IFake.Generate(System.Int32)
+  fullName: Faker.IFake.Generate(System.Int32)
+- uid: Faker.IFake.SupportedType
+  name: SupportedType
+  href: api/Faker.IFake.html#Faker_IFake_SupportedType
+  commentId: P:Faker.IFake.SupportedType
+  fullName: Faker.IFake.SupportedType
+- uid: Faker.IFake`1
+  name: IFake<T>
+  href: api/Faker.IFake-1.html#Faker_IFake_1
+  commentId: T:Faker.IFake`1
+  name.vb: IFake(Of T)
+  fullName: Faker.IFake<T>
+  fullName.vb: Faker.IFake(Of T)
+- uid: Faker.IFake`1.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0})
+  name: AddSelector<TS>(TypeSelectorBase<TS>)
+  href: api/Faker.IFake-1.html#Faker_IFake_1_AddSelector__1_Faker_Selectors_TypeSelectorBase___0__
+  commentId: M:Faker.IFake`1.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0})
+  name.vb: AddSelector(Of TS)(TypeSelectorBase(Of TS))
+  fullName: Faker.IFake<T>.AddSelector<TS>(Faker.Selectors.TypeSelectorBase<TS>)
+  fullName.vb: Faker.IFake(Of T).AddSelector(Of TS)(Faker.Selectors.TypeSelectorBase(Of TS))
+- uid: Faker.IFake`1.Generate
+  name: Generate()
+  href: api/Faker.IFake-1.html#Faker_IFake_1_Generate
+  commentId: M:Faker.IFake`1.Generate
+  fullName: Faker.IFake<T>.Generate()
+  fullName.vb: Faker.IFake(Of T).Generate()
+- uid: Faker.IFake`1.Generate(System.Int32)
+  name: Generate(Int32)
+  href: api/Faker.IFake-1.html#Faker_IFake_1_Generate_System_Int32_
+  commentId: M:Faker.IFake`1.Generate(System.Int32)
+  fullName: Faker.IFake<T>.Generate(System.Int32)
+  fullName.vb: Faker.IFake(Of T).Generate(System.Int32)
+- uid: Faker.Matcher
+  name: Matcher
+  href: api/Faker.Matcher.html#Faker_Matcher
+  commentId: T:Faker.Matcher
+  fullName: Faker.Matcher
+- uid: Faker.Matcher.#ctor
+  name: Matcher()
+  href: api/Faker.Matcher.html#Faker_Matcher__ctor
+  commentId: M:Faker.Matcher.#ctor
+  fullName: Faker.Matcher.Matcher()
+- uid: Faker.Matcher.#ctor(Faker.TypeTable)
+  name: Matcher(TypeTable)
+  href: api/Faker.Matcher.html#Faker_Matcher__ctor_Faker_TypeTable_
+  commentId: M:Faker.Matcher.#ctor(Faker.TypeTable)
+  fullName: Faker.Matcher.Matcher(Faker.TypeTable)
+- uid: Faker.Matcher.IsArray(System.Type)
+  name: IsArray(Type)
+  href: api/Faker.Matcher.html#Faker_Matcher_IsArray_System_Type_
+  commentId: M:Faker.Matcher.IsArray(System.Type)
+  fullName: Faker.Matcher.IsArray(System.Type)
+- uid: Faker.Matcher.MapFromSelector(System.Object,System.Type,System.Boolean@)
+  name: MapFromSelector(Object, Type, out Boolean)
+  href: api/Faker.Matcher.html#Faker_Matcher_MapFromSelector_System_Object_System_Type_System_Boolean__
+  commentId: M:Faker.Matcher.MapFromSelector(System.Object,System.Type,System.Boolean@)
+  name.vb: MapFromSelector(Object, Type, ByRef Boolean)
+  fullName: Faker.Matcher.MapFromSelector(System.Object, System.Type, out System.Boolean)
+  fullName.vb: Faker.Matcher.MapFromSelector(System.Object, System.Type, ByRef System.Boolean)
+- uid: Faker.Matcher.MapFromSelector(System.Reflection.PropertyInfo,System.Object,System.Type)
+  name: MapFromSelector(PropertyInfo, Object, Type)
+  href: api/Faker.Matcher.html#Faker_Matcher_MapFromSelector_System_Reflection_PropertyInfo_System_Object_System_Type_
+  commentId: M:Faker.Matcher.MapFromSelector(System.Reflection.PropertyInfo,System.Object,System.Type)
+  fullName: Faker.Matcher.MapFromSelector(System.Reflection.PropertyInfo, System.Object, System.Type)
+- uid: Faker.Matcher.Match``1(``0)
+  name: Match<T>(T)
+  href: api/Faker.Matcher.html#Faker_Matcher_Match__1___0_
+  commentId: M:Faker.Matcher.Match``1(``0)
+  name.vb: Match(Of T)(T)
+  fullName: Faker.Matcher.Match<T>(T)
+  fullName.vb: Faker.Matcher.Match(Of T)(T)
+- uid: Faker.Matcher.MatchStruct``1(``0@)
+  name: MatchStruct<S>(ref S)
+  href: api/Faker.Matcher.html#Faker_Matcher_MatchStruct__1___0__
+  commentId: M:Faker.Matcher.MatchStruct``1(``0@)
+  name.vb: MatchStruct(Of S)(ByRef S)
+  fullName: Faker.Matcher.MatchStruct<S>(ref S)
+  fullName.vb: Faker.Matcher.MatchStruct(Of S)(ByRef S)
+- uid: Faker.Matcher.ProcessProperties(System.Reflection.PropertyInfo[],System.Object)
+  name: ProcessProperties(PropertyInfo[], Object)
+  href: api/Faker.Matcher.html#Faker_Matcher_ProcessProperties_System_Reflection_PropertyInfo___System_Object_
+  commentId: M:Faker.Matcher.ProcessProperties(System.Reflection.PropertyInfo[],System.Object)
+  name.vb: ProcessProperties(PropertyInfo(), Object)
+  fullName: Faker.Matcher.ProcessProperties(System.Reflection.PropertyInfo[], System.Object)
+  fullName.vb: Faker.Matcher.ProcessProperties(System.Reflection.PropertyInfo(), System.Object)
+- uid: Faker.Matcher.ProcessProperty(System.Reflection.PropertyInfo,System.Object)
+  name: ProcessProperty(PropertyInfo, Object)
+  href: api/Faker.Matcher.html#Faker_Matcher_ProcessProperty_System_Reflection_PropertyInfo_System_Object_
+  commentId: M:Faker.Matcher.ProcessProperty(System.Reflection.PropertyInfo,System.Object)
+  fullName: Faker.Matcher.ProcessProperty(System.Reflection.PropertyInfo, System.Object)
+- uid: Faker.Matcher.SafeObjectCreate(System.Type)
+  name: SafeObjectCreate(Type)
+  href: api/Faker.Matcher.html#Faker_Matcher_SafeObjectCreate_System_Type_
+  commentId: M:Faker.Matcher.SafeObjectCreate(System.Type)
+  fullName: Faker.Matcher.SafeObjectCreate(System.Type)
+- uid: Faker.Matcher.TypeMap
+  name: TypeMap
+  href: api/Faker.Matcher.html#Faker_Matcher_TypeMap
+  commentId: P:Faker.Matcher.TypeMap
+  fullName: Faker.Matcher.TypeMap
+- uid: Faker.SelectorPosition
+  name: SelectorPosition
+  href: api/Faker.SelectorPosition.html#Faker_SelectorPosition
+  commentId: T:Faker.SelectorPosition
+  fullName: Faker.SelectorPosition
+- uid: Faker.SelectorPosition.First
+  name: First
+  href: api/Faker.SelectorPosition.html#Faker_SelectorPosition_First
+  commentId: F:Faker.SelectorPosition.First
+  fullName: Faker.SelectorPosition.First
+- uid: Faker.SelectorPosition.Last
+  name: Last
+  href: api/Faker.SelectorPosition.html#Faker_SelectorPosition_Last
+  commentId: F:Faker.SelectorPosition.Last
+  fullName: Faker.SelectorPosition.Last
+- uid: Faker.Selectors
+  name: Faker.Selectors
+  href: api/Faker.Selectors.html#Faker_Selectors
+  commentId: N:Faker.Selectors
+  fullName: Faker.Selectors
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1
+  name: CustomDerivedPropertySelector<T>
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1
+  commentId: T:Faker.Selectors.CustomDerivedPropertySelector`1
+  name.vb: CustomDerivedPropertySelector(Of T)
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T)
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.#ctor(Faker.Selectors.TypeSelectorBase{`0},System.Reflection.PropertyInfo)
+  name: CustomDerivedPropertySelector(TypeSelectorBase<T>, PropertyInfo)
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1__ctor_Faker_Selectors_TypeSelectorBase__0__System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.CustomDerivedPropertySelector`1.#ctor(Faker.Selectors.TypeSelectorBase{`0},System.Reflection.PropertyInfo)
+  name.vb: CustomDerivedPropertySelector(TypeSelectorBase(Of T), PropertyInfo)
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.CustomDerivedPropertySelector(Faker.Selectors.TypeSelectorBase<T>, System.Reflection.PropertyInfo)
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).CustomDerivedPropertySelector(Faker.Selectors.TypeSelectorBase(Of T), System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.CustomDerivedPropertySelector`1.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.CanBind(System.Reflection.PropertyInfo)
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.CustomProperty
+  name: CustomProperty
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1_CustomProperty
+  commentId: F:Faker.Selectors.CustomDerivedPropertySelector`1.CustomProperty
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.CustomProperty
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).CustomProperty
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.Generate
+  name: Generate()
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1_Generate
+  commentId: M:Faker.Selectors.CustomDerivedPropertySelector`1.Generate
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.Generate()
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).Generate()
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.InternalSelector
+  name: InternalSelector
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1_InternalSelector
+  commentId: F:Faker.Selectors.CustomDerivedPropertySelector`1.InternalSelector
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.InternalSelector
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).InternalSelector
+- uid: Faker.Selectors.CustomDerivedPropertySelector`1.Setter
+  name: Setter
+  href: api/Faker.Selectors.CustomDerivedPropertySelector-1.html#Faker_Selectors_CustomDerivedPropertySelector_1_Setter
+  commentId: P:Faker.Selectors.CustomDerivedPropertySelector`1.Setter
+  fullName: Faker.Selectors.CustomDerivedPropertySelector<T>.Setter
+  fullName.vb: Faker.Selectors.CustomDerivedPropertySelector(Of T).Setter
+- uid: Faker.Selectors.CustomPropertySelector`1
+  name: CustomPropertySelector<T>
+  href: api/Faker.Selectors.CustomPropertySelector-1.html#Faker_Selectors_CustomPropertySelector_1
+  commentId: T:Faker.Selectors.CustomPropertySelector`1
+  name.vb: CustomPropertySelector(Of T)
+  fullName: Faker.Selectors.CustomPropertySelector<T>
+  fullName.vb: Faker.Selectors.CustomPropertySelector(Of T)
+- uid: Faker.Selectors.CustomPropertySelector`1.#ctor(System.Reflection.PropertyInfo,System.Func{`0})
+  name: CustomPropertySelector(PropertyInfo, Func<T>)
+  href: api/Faker.Selectors.CustomPropertySelector-1.html#Faker_Selectors_CustomPropertySelector_1__ctor_System_Reflection_PropertyInfo_System_Func__0__
+  commentId: M:Faker.Selectors.CustomPropertySelector`1.#ctor(System.Reflection.PropertyInfo,System.Func{`0})
+  name.vb: CustomPropertySelector(PropertyInfo, Func(Of T))
+  fullName: Faker.Selectors.CustomPropertySelector<T>.CustomPropertySelector(System.Reflection.PropertyInfo, System.Func<T>)
+  fullName.vb: Faker.Selectors.CustomPropertySelector(Of T).CustomPropertySelector(System.Reflection.PropertyInfo, System.Func(Of T))
+- uid: Faker.Selectors.CustomPropertySelector`1.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.CustomPropertySelector-1.html#Faker_Selectors_CustomPropertySelector_1_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.CustomPropertySelector`1.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.CustomPropertySelector<T>.CanBind(System.Reflection.PropertyInfo)
+  fullName.vb: Faker.Selectors.CustomPropertySelector(Of T).CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.CustomPropertySelector`1.CustomProperty
+  name: CustomProperty
+  href: api/Faker.Selectors.CustomPropertySelector-1.html#Faker_Selectors_CustomPropertySelector_1_CustomProperty
+  commentId: F:Faker.Selectors.CustomPropertySelector`1.CustomProperty
+  fullName: Faker.Selectors.CustomPropertySelector<T>.CustomProperty
+  fullName.vb: Faker.Selectors.CustomPropertySelector(Of T).CustomProperty
+- uid: Faker.Selectors.CustomPropertySelector`1.Generate
+  name: Generate()
+  href: api/Faker.Selectors.CustomPropertySelector-1.html#Faker_Selectors_CustomPropertySelector_1_Generate
+  commentId: M:Faker.Selectors.CustomPropertySelector`1.Generate
+  fullName: Faker.Selectors.CustomPropertySelector<T>.Generate()
+  fullName.vb: Faker.Selectors.CustomPropertySelector(Of T).Generate()
+- uid: Faker.Selectors.CustomTypeSelector`1
+  name: CustomTypeSelector<T>
+  href: api/Faker.Selectors.CustomTypeSelector-1.html#Faker_Selectors_CustomTypeSelector_1
+  commentId: T:Faker.Selectors.CustomTypeSelector`1
+  name.vb: CustomTypeSelector(Of T)
+  fullName: Faker.Selectors.CustomTypeSelector<T>
+  fullName.vb: Faker.Selectors.CustomTypeSelector(Of T)
+- uid: Faker.Selectors.CustomTypeSelector`1.#ctor(System.Func{`0})
+  name: CustomTypeSelector(Func<T>)
+  href: api/Faker.Selectors.CustomTypeSelector-1.html#Faker_Selectors_CustomTypeSelector_1__ctor_System_Func__0__
+  commentId: M:Faker.Selectors.CustomTypeSelector`1.#ctor(System.Func{`0})
+  name.vb: CustomTypeSelector(Func(Of T))
+  fullName: Faker.Selectors.CustomTypeSelector<T>.CustomTypeSelector(System.Func<T>)
+  fullName.vb: Faker.Selectors.CustomTypeSelector(Of T).CustomTypeSelector(System.Func(Of T))
+- uid: Faker.Selectors.CustomTypeSelector`1.Generate
+  name: Generate()
+  href: api/Faker.Selectors.CustomTypeSelector-1.html#Faker_Selectors_CustomTypeSelector_1_Generate
+  commentId: M:Faker.Selectors.CustomTypeSelector`1.Generate
+  fullName: Faker.Selectors.CustomTypeSelector<T>.Generate()
+  fullName.vb: Faker.Selectors.CustomTypeSelector(Of T).Generate()
+- uid: Faker.Selectors.DateTimeOffsetSelector
+  name: DateTimeOffsetSelector
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector
+  commentId: T:Faker.Selectors.DateTimeOffsetSelector
+  fullName: Faker.Selectors.DateTimeOffsetSelector
+- uid: Faker.Selectors.DateTimeOffsetSelector.#ctor
+  name: DateTimeOffsetSelector()
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector__ctor
+  commentId: M:Faker.Selectors.DateTimeOffsetSelector.#ctor
+  fullName: Faker.Selectors.DateTimeOffsetSelector.DateTimeOffsetSelector()
+- uid: Faker.Selectors.DateTimeOffsetSelector.From
+  name: From
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector_From
+  commentId: P:Faker.Selectors.DateTimeOffsetSelector.From
+  fullName: Faker.Selectors.DateTimeOffsetSelector.From
+- uid: Faker.Selectors.DateTimeOffsetSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector_Generate
+  commentId: M:Faker.Selectors.DateTimeOffsetSelector.Generate
+  fullName: Faker.Selectors.DateTimeOffsetSelector.Generate()
+- uid: Faker.Selectors.DateTimeOffsetSelector.Max
+  name: Max
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector_Max
+  commentId: P:Faker.Selectors.DateTimeOffsetSelector.Max
+  fullName: Faker.Selectors.DateTimeOffsetSelector.Max
+- uid: Faker.Selectors.DateTimeOffsetSelector.Min
+  name: Min
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector_Min
+  commentId: P:Faker.Selectors.DateTimeOffsetSelector.Min
+  fullName: Faker.Selectors.DateTimeOffsetSelector.Min
+- uid: Faker.Selectors.DateTimeOffsetSelector.To
+  name: To
+  href: api/Faker.Selectors.DateTimeOffsetSelector.html#Faker_Selectors_DateTimeOffsetSelector_To
+  commentId: P:Faker.Selectors.DateTimeOffsetSelector.To
+  fullName: Faker.Selectors.DateTimeOffsetSelector.To
+- uid: Faker.Selectors.DateTimeSelector
+  name: DateTimeSelector
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector
+  commentId: T:Faker.Selectors.DateTimeSelector
+  fullName: Faker.Selectors.DateTimeSelector
+- uid: Faker.Selectors.DateTimeSelector.#ctor
+  name: DateTimeSelector()
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector__ctor
+  commentId: M:Faker.Selectors.DateTimeSelector.#ctor
+  fullName: Faker.Selectors.DateTimeSelector.DateTimeSelector()
+- uid: Faker.Selectors.DateTimeSelector.From
+  name: From
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector_From
+  commentId: P:Faker.Selectors.DateTimeSelector.From
+  fullName: Faker.Selectors.DateTimeSelector.From
+- uid: Faker.Selectors.DateTimeSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector_Generate
+  commentId: M:Faker.Selectors.DateTimeSelector.Generate
+  fullName: Faker.Selectors.DateTimeSelector.Generate()
+- uid: Faker.Selectors.DateTimeSelector.Max
+  name: Max
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector_Max
+  commentId: P:Faker.Selectors.DateTimeSelector.Max
+  fullName: Faker.Selectors.DateTimeSelector.Max
+- uid: Faker.Selectors.DateTimeSelector.Min
+  name: Min
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector_Min
+  commentId: P:Faker.Selectors.DateTimeSelector.Min
+  fullName: Faker.Selectors.DateTimeSelector.Min
+- uid: Faker.Selectors.DateTimeSelector.To
+  name: To
+  href: api/Faker.Selectors.DateTimeSelector.html#Faker_Selectors_DateTimeSelector_To
+  commentId: P:Faker.Selectors.DateTimeSelector.To
+  fullName: Faker.Selectors.DateTimeSelector.To
+- uid: Faker.Selectors.DecimalSelector
+  name: DecimalSelector
+  href: api/Faker.Selectors.DecimalSelector.html#Faker_Selectors_DecimalSelector
+  commentId: T:Faker.Selectors.DecimalSelector
+  fullName: Faker.Selectors.DecimalSelector
+- uid: Faker.Selectors.DecimalSelector.#ctor
+  name: DecimalSelector()
+  href: api/Faker.Selectors.DecimalSelector.html#Faker_Selectors_DecimalSelector__ctor
+  commentId: M:Faker.Selectors.DecimalSelector.#ctor
+  fullName: Faker.Selectors.DecimalSelector.DecimalSelector()
+- uid: Faker.Selectors.DecimalSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.DecimalSelector.html#Faker_Selectors_DecimalSelector_Generate
+  commentId: M:Faker.Selectors.DecimalSelector.Generate
+  fullName: Faker.Selectors.DecimalSelector.Generate()
+- uid: Faker.Selectors.DoubleSelector
+  name: DoubleSelector
+  href: api/Faker.Selectors.DoubleSelector.html#Faker_Selectors_DoubleSelector
+  commentId: T:Faker.Selectors.DoubleSelector
+  fullName: Faker.Selectors.DoubleSelector
+- uid: Faker.Selectors.DoubleSelector.#ctor
+  name: DoubleSelector()
+  href: api/Faker.Selectors.DoubleSelector.html#Faker_Selectors_DoubleSelector__ctor
+  commentId: M:Faker.Selectors.DoubleSelector.#ctor
+  fullName: Faker.Selectors.DoubleSelector.DoubleSelector()
+- uid: Faker.Selectors.DoubleSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.DoubleSelector.html#Faker_Selectors_DoubleSelector_Generate
+  commentId: M:Faker.Selectors.DoubleSelector.Generate
+  fullName: Faker.Selectors.DoubleSelector.Generate()
+- uid: Faker.Selectors.EmailSelector
+  name: EmailSelector
+  href: api/Faker.Selectors.EmailSelector.html#Faker_Selectors_EmailSelector
+  commentId: T:Faker.Selectors.EmailSelector
+  fullName: Faker.Selectors.EmailSelector
+- uid: Faker.Selectors.EmailSelector.#ctor
+  name: EmailSelector()
+  href: api/Faker.Selectors.EmailSelector.html#Faker_Selectors_EmailSelector__ctor
+  commentId: M:Faker.Selectors.EmailSelector.#ctor
+  fullName: Faker.Selectors.EmailSelector.EmailSelector()
+- uid: Faker.Selectors.EmailSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.EmailSelector.html#Faker_Selectors_EmailSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.EmailSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.EmailSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.EmailSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.EmailSelector.html#Faker_Selectors_EmailSelector_Generate
+  commentId: M:Faker.Selectors.EmailSelector.Generate
+  fullName: Faker.Selectors.EmailSelector.Generate()
+- uid: Faker.Selectors.FakeSelector
+  name: FakeSelector
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector
+  commentId: T:Faker.Selectors.FakeSelector
+  fullName: Faker.Selectors.FakeSelector
+- uid: Faker.Selectors.FakeSelector.#ctor(Faker.IFake)
+  name: FakeSelector(IFake)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector__ctor_Faker_IFake_
+  commentId: M:Faker.Selectors.FakeSelector.#ctor(Faker.IFake)
+  fullName: Faker.Selectors.FakeSelector.FakeSelector(Faker.IFake)
+- uid: Faker.Selectors.FakeSelector.BeNull(System.Boolean)
+  name: BeNull(Boolean)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_BeNull_System_Boolean_
+  commentId: M:Faker.Selectors.FakeSelector.BeNull(System.Boolean)
+  fullName: Faker.Selectors.FakeSelector.BeNull(System.Boolean)
+- uid: Faker.Selectors.FakeSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.FakeSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.FakeSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.FakeSelector.CanBind(System.Type)
+  name: CanBind(Type)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_CanBind_System_Type_
+  commentId: M:Faker.Selectors.FakeSelector.CanBind(System.Type)
+  fullName: Faker.Selectors.FakeSelector.CanBind(System.Type)
+- uid: Faker.Selectors.FakeSelector.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_Equals_System_Object_
+  commentId: M:Faker.Selectors.FakeSelector.Equals(System.Object)
+  fullName: Faker.Selectors.FakeSelector.Equals(System.Object)
+- uid: Faker.Selectors.FakeSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  name: Generate(Object, PropertyInfo)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_Generate_System_Object_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.FakeSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.FakeSelector.Generate(System.Object, System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.FakeSelector.Generate(System.Object@)
+  name: Generate(ref Object)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_Generate_System_Object__
+  commentId: M:Faker.Selectors.FakeSelector.Generate(System.Object@)
+  name.vb: Generate(ByRef Object)
+  fullName: Faker.Selectors.FakeSelector.Generate(ref System.Object)
+  fullName.vb: Faker.Selectors.FakeSelector.Generate(ByRef System.Object)
+- uid: Faker.Selectors.FakeSelector.GenerateInstance
+  name: GenerateInstance()
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_GenerateInstance
+  commentId: M:Faker.Selectors.FakeSelector.GenerateInstance
+  fullName: Faker.Selectors.FakeSelector.GenerateInstance()
+- uid: Faker.Selectors.FakeSelector.GetHashCode
+  name: GetHashCode()
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_GetHashCode
+  commentId: M:Faker.Selectors.FakeSelector.GetHashCode
+  fullName: Faker.Selectors.FakeSelector.GetHashCode()
+- uid: Faker.Selectors.FakeSelector.op_Equality(Faker.Selectors.FakeSelector,Faker.Selectors.FakeSelector)
+  name: Equality(FakeSelector, FakeSelector)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_op_Equality_Faker_Selectors_FakeSelector_Faker_Selectors_FakeSelector_
+  commentId: M:Faker.Selectors.FakeSelector.op_Equality(Faker.Selectors.FakeSelector,Faker.Selectors.FakeSelector)
+  fullName: Faker.Selectors.FakeSelector.Equality(Faker.Selectors.FakeSelector, Faker.Selectors.FakeSelector)
+- uid: Faker.Selectors.FakeSelector.op_Inequality(Faker.Selectors.FakeSelector,Faker.Selectors.FakeSelector)
+  name: Inequality(FakeSelector, FakeSelector)
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_op_Inequality_Faker_Selectors_FakeSelector_Faker_Selectors_FakeSelector_
+  commentId: M:Faker.Selectors.FakeSelector.op_Inequality(Faker.Selectors.FakeSelector,Faker.Selectors.FakeSelector)
+  fullName: Faker.Selectors.FakeSelector.Inequality(Faker.Selectors.FakeSelector, Faker.Selectors.FakeSelector)
+- uid: Faker.Selectors.FakeSelector.Priority
+  name: Priority
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_Priority
+  commentId: P:Faker.Selectors.FakeSelector.Priority
+  fullName: Faker.Selectors.FakeSelector.Priority
+- uid: Faker.Selectors.FakeSelector.TargetType
+  name: TargetType
+  href: api/Faker.Selectors.FakeSelector.html#Faker_Selectors_FakeSelector_TargetType
+  commentId: P:Faker.Selectors.FakeSelector.TargetType
+  fullName: Faker.Selectors.FakeSelector.TargetType
+- uid: Faker.Selectors.FirstNameSelector
+  name: FirstNameSelector
+  href: api/Faker.Selectors.FirstNameSelector.html#Faker_Selectors_FirstNameSelector
+  commentId: T:Faker.Selectors.FirstNameSelector
+  fullName: Faker.Selectors.FirstNameSelector
+- uid: Faker.Selectors.FirstNameSelector.#ctor
+  name: FirstNameSelector()
+  href: api/Faker.Selectors.FirstNameSelector.html#Faker_Selectors_FirstNameSelector__ctor
+  commentId: M:Faker.Selectors.FirstNameSelector.#ctor
+  fullName: Faker.Selectors.FirstNameSelector.FirstNameSelector()
+- uid: Faker.Selectors.FirstNameSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.FirstNameSelector.html#Faker_Selectors_FirstNameSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.FirstNameSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.FirstNameSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.FirstNameSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.FirstNameSelector.html#Faker_Selectors_FirstNameSelector_Generate
+  commentId: M:Faker.Selectors.FirstNameSelector.Generate
+  fullName: Faker.Selectors.FirstNameSelector.Generate()
+- uid: Faker.Selectors.FloatSelector
+  name: FloatSelector
+  href: api/Faker.Selectors.FloatSelector.html#Faker_Selectors_FloatSelector
+  commentId: T:Faker.Selectors.FloatSelector
+  fullName: Faker.Selectors.FloatSelector
+- uid: Faker.Selectors.FloatSelector.#ctor
+  name: FloatSelector()
+  href: api/Faker.Selectors.FloatSelector.html#Faker_Selectors_FloatSelector__ctor
+  commentId: M:Faker.Selectors.FloatSelector.#ctor
+  fullName: Faker.Selectors.FloatSelector.FloatSelector()
+- uid: Faker.Selectors.FloatSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.FloatSelector.html#Faker_Selectors_FloatSelector_Generate
+  commentId: M:Faker.Selectors.FloatSelector.Generate
+  fullName: Faker.Selectors.FloatSelector.Generate()
+- uid: Faker.Selectors.FullNameSelector
+  name: FullNameSelector
+  href: api/Faker.Selectors.FullNameSelector.html#Faker_Selectors_FullNameSelector
+  commentId: T:Faker.Selectors.FullNameSelector
+  fullName: Faker.Selectors.FullNameSelector
+- uid: Faker.Selectors.FullNameSelector.#ctor
+  name: FullNameSelector()
+  href: api/Faker.Selectors.FullNameSelector.html#Faker_Selectors_FullNameSelector__ctor
+  commentId: M:Faker.Selectors.FullNameSelector.#ctor
+  fullName: Faker.Selectors.FullNameSelector.FullNameSelector()
+- uid: Faker.Selectors.FullNameSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.FullNameSelector.html#Faker_Selectors_FullNameSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.FullNameSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.FullNameSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.FullNameSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.FullNameSelector.html#Faker_Selectors_FullNameSelector_Generate
+  commentId: M:Faker.Selectors.FullNameSelector.Generate
+  fullName: Faker.Selectors.FullNameSelector.Generate()
+- uid: Faker.Selectors.GuidSelector
+  name: GuidSelector
+  href: api/Faker.Selectors.GuidSelector.html#Faker_Selectors_GuidSelector
+  commentId: T:Faker.Selectors.GuidSelector
+  fullName: Faker.Selectors.GuidSelector
+- uid: Faker.Selectors.GuidSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.GuidSelector.html#Faker_Selectors_GuidSelector_Generate
+  commentId: M:Faker.Selectors.GuidSelector.Generate
+  fullName: Faker.Selectors.GuidSelector.Generate()
+- uid: Faker.Selectors.IntSelector
+  name: IntSelector
+  href: api/Faker.Selectors.IntSelector.html#Faker_Selectors_IntSelector
+  commentId: T:Faker.Selectors.IntSelector
+  fullName: Faker.Selectors.IntSelector
+- uid: Faker.Selectors.IntSelector.#ctor
+  name: IntSelector()
+  href: api/Faker.Selectors.IntSelector.html#Faker_Selectors_IntSelector__ctor
+  commentId: M:Faker.Selectors.IntSelector.#ctor
+  fullName: Faker.Selectors.IntSelector.IntSelector()
+- uid: Faker.Selectors.IntSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.IntSelector.html#Faker_Selectors_IntSelector_Generate
+  commentId: M:Faker.Selectors.IntSelector.Generate
+  fullName: Faker.Selectors.IntSelector.Generate()
+- uid: Faker.Selectors.IRangeSelector`1
+  name: IRangeSelector<T>
+  href: api/Faker.Selectors.IRangeSelector-1.html#Faker_Selectors_IRangeSelector_1
+  commentId: T:Faker.Selectors.IRangeSelector`1
+  name.vb: IRangeSelector(Of T)
+  fullName: Faker.Selectors.IRangeSelector<T>
+  fullName.vb: Faker.Selectors.IRangeSelector(Of T)
+- uid: Faker.Selectors.IRangeSelector`1.Max
+  name: Max
+  href: api/Faker.Selectors.IRangeSelector-1.html#Faker_Selectors_IRangeSelector_1_Max
+  commentId: P:Faker.Selectors.IRangeSelector`1.Max
+  fullName: Faker.Selectors.IRangeSelector<T>.Max
+  fullName.vb: Faker.Selectors.IRangeSelector(Of T).Max
+- uid: Faker.Selectors.IRangeSelector`1.Min
+  name: Min
+  href: api/Faker.Selectors.IRangeSelector-1.html#Faker_Selectors_IRangeSelector_1_Min
+  commentId: P:Faker.Selectors.IRangeSelector`1.Min
+  fullName: Faker.Selectors.IRangeSelector<T>.Min
+  fullName.vb: Faker.Selectors.IRangeSelector(Of T).Min
+- uid: Faker.Selectors.ITypeSelector
+  name: ITypeSelector
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector
+  commentId: T:Faker.Selectors.ITypeSelector
+  fullName: Faker.Selectors.ITypeSelector
+- uid: Faker.Selectors.ITypeSelector.BeNull(System.Boolean)
+  name: BeNull(Boolean)
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_BeNull_System_Boolean_
+  commentId: M:Faker.Selectors.ITypeSelector.BeNull(System.Boolean)
+  fullName: Faker.Selectors.ITypeSelector.BeNull(System.Boolean)
+- uid: Faker.Selectors.ITypeSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.ITypeSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.ITypeSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.ITypeSelector.CanBind(System.Type)
+  name: CanBind(Type)
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_CanBind_System_Type_
+  commentId: M:Faker.Selectors.ITypeSelector.CanBind(System.Type)
+  fullName: Faker.Selectors.ITypeSelector.CanBind(System.Type)
+- uid: Faker.Selectors.ITypeSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  name: Generate(Object, PropertyInfo)
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_Generate_System_Object_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.ITypeSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.ITypeSelector.Generate(System.Object, System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.ITypeSelector.Generate(System.Object@)
+  name: Generate(ref Object)
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_Generate_System_Object__
+  commentId: M:Faker.Selectors.ITypeSelector.Generate(System.Object@)
+  name.vb: Generate(ByRef Object)
+  fullName: Faker.Selectors.ITypeSelector.Generate(ref System.Object)
+  fullName.vb: Faker.Selectors.ITypeSelector.Generate(ByRef System.Object)
+- uid: Faker.Selectors.ITypeSelector.GenerateInstance
+  name: GenerateInstance()
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_GenerateInstance
+  commentId: M:Faker.Selectors.ITypeSelector.GenerateInstance
+  fullName: Faker.Selectors.ITypeSelector.GenerateInstance()
+- uid: Faker.Selectors.ITypeSelector.Priority
+  name: Priority
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_Priority
+  commentId: P:Faker.Selectors.ITypeSelector.Priority
+  fullName: Faker.Selectors.ITypeSelector.Priority
+- uid: Faker.Selectors.ITypeSelector.TargetType
+  name: TargetType
+  href: api/Faker.Selectors.ITypeSelector.html#Faker_Selectors_ITypeSelector_TargetType
+  commentId: P:Faker.Selectors.ITypeSelector.TargetType
+  fullName: Faker.Selectors.ITypeSelector.TargetType
+- uid: Faker.Selectors.LastNameSelector
+  name: LastNameSelector
+  href: api/Faker.Selectors.LastNameSelector.html#Faker_Selectors_LastNameSelector
+  commentId: T:Faker.Selectors.LastNameSelector
+  fullName: Faker.Selectors.LastNameSelector
+- uid: Faker.Selectors.LastNameSelector.#ctor
+  name: LastNameSelector()
+  href: api/Faker.Selectors.LastNameSelector.html#Faker_Selectors_LastNameSelector__ctor
+  commentId: M:Faker.Selectors.LastNameSelector.#ctor
+  fullName: Faker.Selectors.LastNameSelector.LastNameSelector()
+- uid: Faker.Selectors.LastNameSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.LastNameSelector.html#Faker_Selectors_LastNameSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.LastNameSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.LastNameSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.LastNameSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.LastNameSelector.html#Faker_Selectors_LastNameSelector_Generate
+  commentId: M:Faker.Selectors.LastNameSelector.Generate
+  fullName: Faker.Selectors.LastNameSelector.Generate()
+- uid: Faker.Selectors.LongSelector
+  name: LongSelector
+  href: api/Faker.Selectors.LongSelector.html#Faker_Selectors_LongSelector
+  commentId: T:Faker.Selectors.LongSelector
+  fullName: Faker.Selectors.LongSelector
+- uid: Faker.Selectors.LongSelector.#ctor
+  name: LongSelector()
+  href: api/Faker.Selectors.LongSelector.html#Faker_Selectors_LongSelector__ctor
+  commentId: M:Faker.Selectors.LongSelector.#ctor
+  fullName: Faker.Selectors.LongSelector.LongSelector()
+- uid: Faker.Selectors.LongSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.LongSelector.html#Faker_Selectors_LongSelector_Generate
+  commentId: M:Faker.Selectors.LongSelector.Generate
+  fullName: Faker.Selectors.LongSelector.Generate()
+- uid: Faker.Selectors.MissingSelector
+  name: MissingSelector
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector
+  commentId: T:Faker.Selectors.MissingSelector
+  fullName: Faker.Selectors.MissingSelector
+- uid: Faker.Selectors.MissingSelector.BeNull(System.Boolean)
+  name: BeNull(Boolean)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_BeNull_System_Boolean_
+  commentId: M:Faker.Selectors.MissingSelector.BeNull(System.Boolean)
+  fullName: Faker.Selectors.MissingSelector.BeNull(System.Boolean)
+- uid: Faker.Selectors.MissingSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.MissingSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.MissingSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.MissingSelector.CanBind(System.Type)
+  name: CanBind(Type)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_CanBind_System_Type_
+  commentId: M:Faker.Selectors.MissingSelector.CanBind(System.Type)
+  fullName: Faker.Selectors.MissingSelector.CanBind(System.Type)
+- uid: Faker.Selectors.MissingSelector.Equals(Faker.Selectors.MissingSelector)
+  name: Equals(MissingSelector)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_Equals_Faker_Selectors_MissingSelector_
+  commentId: M:Faker.Selectors.MissingSelector.Equals(Faker.Selectors.MissingSelector)
+  fullName: Faker.Selectors.MissingSelector.Equals(Faker.Selectors.MissingSelector)
+- uid: Faker.Selectors.MissingSelector.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_Equals_System_Object_
+  commentId: M:Faker.Selectors.MissingSelector.Equals(System.Object)
+  fullName: Faker.Selectors.MissingSelector.Equals(System.Object)
+- uid: Faker.Selectors.MissingSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  name: Generate(Object, PropertyInfo)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_Generate_System_Object_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.MissingSelector.Generate(System.Object,System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.MissingSelector.Generate(System.Object, System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.MissingSelector.Generate(System.Object@)
+  name: Generate(ref Object)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_Generate_System_Object__
+  commentId: M:Faker.Selectors.MissingSelector.Generate(System.Object@)
+  name.vb: Generate(ByRef Object)
+  fullName: Faker.Selectors.MissingSelector.Generate(ref System.Object)
+  fullName.vb: Faker.Selectors.MissingSelector.Generate(ByRef System.Object)
+- uid: Faker.Selectors.MissingSelector.GenerateInstance
+  name: GenerateInstance()
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_GenerateInstance
+  commentId: M:Faker.Selectors.MissingSelector.GenerateInstance
+  fullName: Faker.Selectors.MissingSelector.GenerateInstance()
+- uid: Faker.Selectors.MissingSelector.GetHashCode
+  name: GetHashCode()
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_GetHashCode
+  commentId: M:Faker.Selectors.MissingSelector.GetHashCode
+  fullName: Faker.Selectors.MissingSelector.GetHashCode()
+- uid: Faker.Selectors.MissingSelector.op_Equality(Faker.Selectors.MissingSelector,Faker.Selectors.MissingSelector)
+  name: Equality(MissingSelector, MissingSelector)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_op_Equality_Faker_Selectors_MissingSelector_Faker_Selectors_MissingSelector_
+  commentId: M:Faker.Selectors.MissingSelector.op_Equality(Faker.Selectors.MissingSelector,Faker.Selectors.MissingSelector)
+  fullName: Faker.Selectors.MissingSelector.Equality(Faker.Selectors.MissingSelector, Faker.Selectors.MissingSelector)
+- uid: Faker.Selectors.MissingSelector.op_Inequality(Faker.Selectors.MissingSelector,Faker.Selectors.MissingSelector)
+  name: Inequality(MissingSelector, MissingSelector)
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_op_Inequality_Faker_Selectors_MissingSelector_Faker_Selectors_MissingSelector_
+  commentId: M:Faker.Selectors.MissingSelector.op_Inequality(Faker.Selectors.MissingSelector,Faker.Selectors.MissingSelector)
+  fullName: Faker.Selectors.MissingSelector.Inequality(Faker.Selectors.MissingSelector, Faker.Selectors.MissingSelector)
+- uid: Faker.Selectors.MissingSelector.Priority
+  name: Priority
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_Priority
+  commentId: P:Faker.Selectors.MissingSelector.Priority
+  fullName: Faker.Selectors.MissingSelector.Priority
+- uid: Faker.Selectors.MissingSelector.TargetType
+  name: TargetType
+  href: api/Faker.Selectors.MissingSelector.html#Faker_Selectors_MissingSelector_TargetType
+  commentId: P:Faker.Selectors.MissingSelector.TargetType
+  fullName: Faker.Selectors.MissingSelector.TargetType
+- uid: Faker.Selectors.NumberSelectorBaseBase`1
+  name: NumberSelectorBaseBase<T>
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1
+  commentId: T:Faker.Selectors.NumberSelectorBaseBase`1
+  name.vb: NumberSelectorBaseBase(Of T)
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T)
+- uid: Faker.Selectors.NumberSelectorBaseBase`1.#ctor
+  name: NumberSelectorBaseBase()
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1__ctor
+  commentId: M:Faker.Selectors.NumberSelectorBaseBase`1.#ctor
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>.NumberSelectorBaseBase()
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T).NumberSelectorBaseBase()
+- uid: Faker.Selectors.NumberSelectorBaseBase`1.Max
+  name: Max
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1_Max
+  commentId: P:Faker.Selectors.NumberSelectorBaseBase`1.Max
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>.Max
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T).Max
+- uid: Faker.Selectors.NumberSelectorBaseBase`1.MaxSize
+  name: MaxSize
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1_MaxSize
+  commentId: P:Faker.Selectors.NumberSelectorBaseBase`1.MaxSize
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>.MaxSize
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T).MaxSize
+- uid: Faker.Selectors.NumberSelectorBaseBase`1.Min
+  name: Min
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1_Min
+  commentId: P:Faker.Selectors.NumberSelectorBaseBase`1.Min
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>.Min
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T).Min
+- uid: Faker.Selectors.NumberSelectorBaseBase`1.MinSize
+  name: MinSize
+  href: api/Faker.Selectors.NumberSelectorBaseBase-1.html#Faker_Selectors_NumberSelectorBaseBase_1_MinSize
+  commentId: P:Faker.Selectors.NumberSelectorBaseBase`1.MinSize
+  fullName: Faker.Selectors.NumberSelectorBaseBase<T>.MinSize
+  fullName.vb: Faker.Selectors.NumberSelectorBaseBase(Of T).MinSize
+- uid: Faker.Selectors.PrimitiveSelectorBase`1
+  name: PrimitiveSelectorBase<T>
+  href: api/Faker.Selectors.PrimitiveSelectorBase-1.html#Faker_Selectors_PrimitiveSelectorBase_1
+  commentId: T:Faker.Selectors.PrimitiveSelectorBase`1
+  name.vb: PrimitiveSelectorBase(Of T)
+  fullName: Faker.Selectors.PrimitiveSelectorBase<T>
+  fullName.vb: Faker.Selectors.PrimitiveSelectorBase(Of T)
+- uid: Faker.Selectors.SelectorPriorityConstants
+  name: SelectorPriorityConstants
+  href: api/Faker.Selectors.SelectorPriorityConstants.html#Faker_Selectors_SelectorPriorityConstants
+  commentId: T:Faker.Selectors.SelectorPriorityConstants
+  fullName: Faker.Selectors.SelectorPriorityConstants
+- uid: Faker.Selectors.SelectorPriorityConstants.CustomSelectorPriorty
+  name: CustomSelectorPriorty
+  href: api/Faker.Selectors.SelectorPriorityConstants.html#Faker_Selectors_SelectorPriorityConstants_CustomSelectorPriorty
+  commentId: F:Faker.Selectors.SelectorPriorityConstants.CustomSelectorPriorty
+  fullName: Faker.Selectors.SelectorPriorityConstants.CustomSelectorPriorty
+- uid: Faker.Selectors.SelectorPriorityConstants.PrimitiveSelectorPriority
+  name: PrimitiveSelectorPriority
+  href: api/Faker.Selectors.SelectorPriorityConstants.html#Faker_Selectors_SelectorPriorityConstants_PrimitiveSelectorPriority
+  commentId: F:Faker.Selectors.SelectorPriorityConstants.PrimitiveSelectorPriority
+  fullName: Faker.Selectors.SelectorPriorityConstants.PrimitiveSelectorPriority
+- uid: Faker.Selectors.SelectorPriorityConstants.SpecialSelectorPriority
+  name: SpecialSelectorPriority
+  href: api/Faker.Selectors.SelectorPriorityConstants.html#Faker_Selectors_SelectorPriorityConstants_SpecialSelectorPriority
+  commentId: F:Faker.Selectors.SelectorPriorityConstants.SpecialSelectorPriority
+  fullName: Faker.Selectors.SelectorPriorityConstants.SpecialSelectorPriority
+- uid: Faker.Selectors.SpecialFieldsRegex
+  name: SpecialFieldsRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex
+  commentId: T:Faker.Selectors.SpecialFieldsRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex
+- uid: Faker.Selectors.SpecialFieldsRegex.EmailRegex
+  name: EmailRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex_EmailRegex
+  commentId: F:Faker.Selectors.SpecialFieldsRegex.EmailRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex.EmailRegex
+- uid: Faker.Selectors.SpecialFieldsRegex.FirstNameRegex
+  name: FirstNameRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex_FirstNameRegex
+  commentId: F:Faker.Selectors.SpecialFieldsRegex.FirstNameRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex.FirstNameRegex
+- uid: Faker.Selectors.SpecialFieldsRegex.FullNameRegex
+  name: FullNameRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex_FullNameRegex
+  commentId: F:Faker.Selectors.SpecialFieldsRegex.FullNameRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex.FullNameRegex
+- uid: Faker.Selectors.SpecialFieldsRegex.LastNameRegex
+  name: LastNameRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex_LastNameRegex
+  commentId: F:Faker.Selectors.SpecialFieldsRegex.LastNameRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex.LastNameRegex
+- uid: Faker.Selectors.SpecialFieldsRegex.TimeStampRegex
+  name: TimeStampRegex
+  href: api/Faker.Selectors.SpecialFieldsRegex.html#Faker_Selectors_SpecialFieldsRegex_TimeStampRegex
+  commentId: F:Faker.Selectors.SpecialFieldsRegex.TimeStampRegex
+  fullName: Faker.Selectors.SpecialFieldsRegex.TimeStampRegex
+- uid: Faker.Selectors.StringSelector
+  name: StringSelector
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector
+  commentId: T:Faker.Selectors.StringSelector
+  fullName: Faker.Selectors.StringSelector
+- uid: Faker.Selectors.StringSelector.#ctor
+  name: StringSelector()
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector__ctor
+  commentId: M:Faker.Selectors.StringSelector.#ctor
+  fullName: Faker.Selectors.StringSelector.StringSelector()
+- uid: Faker.Selectors.StringSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector_Generate
+  commentId: M:Faker.Selectors.StringSelector.Generate
+  fullName: Faker.Selectors.StringSelector.Generate()
+- uid: Faker.Selectors.StringSelector.Max
+  name: Max
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector_Max
+  commentId: P:Faker.Selectors.StringSelector.Max
+  fullName: Faker.Selectors.StringSelector.Max
+- uid: Faker.Selectors.StringSelector.MaxSize
+  name: MaxSize
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector_MaxSize
+  commentId: P:Faker.Selectors.StringSelector.MaxSize
+  fullName: Faker.Selectors.StringSelector.MaxSize
+- uid: Faker.Selectors.StringSelector.Min
+  name: Min
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector_Min
+  commentId: P:Faker.Selectors.StringSelector.Min
+  fullName: Faker.Selectors.StringSelector.Min
+- uid: Faker.Selectors.StringSelector.MinSize
+  name: MinSize
+  href: api/Faker.Selectors.StringSelector.html#Faker_Selectors_StringSelector_MinSize
+  commentId: P:Faker.Selectors.StringSelector.MinSize
+  fullName: Faker.Selectors.StringSelector.MinSize
+- uid: Faker.Selectors.TimeStampSelector
+  name: TimeStampSelector
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector
+  commentId: T:Faker.Selectors.TimeStampSelector
+  fullName: Faker.Selectors.TimeStampSelector
+- uid: Faker.Selectors.TimeStampSelector.#ctor
+  name: TimeStampSelector()
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector__ctor
+  commentId: M:Faker.Selectors.TimeStampSelector.#ctor
+  fullName: Faker.Selectors.TimeStampSelector.TimeStampSelector()
+- uid: Faker.Selectors.TimeStampSelector.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.TimeStampSelector.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.TimeStampSelector.CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.TimeStampSelector.From
+  name: From
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_From
+  commentId: P:Faker.Selectors.TimeStampSelector.From
+  fullName: Faker.Selectors.TimeStampSelector.From
+- uid: Faker.Selectors.TimeStampSelector.Generate
+  name: Generate()
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_Generate
+  commentId: M:Faker.Selectors.TimeStampSelector.Generate
+  fullName: Faker.Selectors.TimeStampSelector.Generate()
+- uid: Faker.Selectors.TimeStampSelector.Max
+  name: Max
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_Max
+  commentId: P:Faker.Selectors.TimeStampSelector.Max
+  fullName: Faker.Selectors.TimeStampSelector.Max
+- uid: Faker.Selectors.TimeStampSelector.Min
+  name: Min
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_Min
+  commentId: P:Faker.Selectors.TimeStampSelector.Min
+  fullName: Faker.Selectors.TimeStampSelector.Min
+- uid: Faker.Selectors.TimeStampSelector.To
+  name: To
+  href: api/Faker.Selectors.TimeStampSelector.html#Faker_Selectors_TimeStampSelector_To
+  commentId: P:Faker.Selectors.TimeStampSelector.To
+  fullName: Faker.Selectors.TimeStampSelector.To
+- uid: Faker.Selectors.TypeSelectorBase`1
+  name: TypeSelectorBase<T>
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1
+  commentId: T:Faker.Selectors.TypeSelectorBase`1
+  name.vb: TypeSelectorBase(Of T)
+  fullName: Faker.Selectors.TypeSelectorBase<T>
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T)
+- uid: Faker.Selectors.TypeSelectorBase`1.#ctor
+  name: TypeSelectorBase()
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1__ctor
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.#ctor
+  fullName: Faker.Selectors.TypeSelectorBase<T>.TypeSelectorBase()
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).TypeSelectorBase()
+- uid: Faker.Selectors.TypeSelectorBase`1._can_be_null
+  name: _can_be_null
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1__can_be_null
+  commentId: F:Faker.Selectors.TypeSelectorBase`1._can_be_null
+  fullName: Faker.Selectors.TypeSelectorBase<T>._can_be_null
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T)._can_be_null
+- uid: Faker.Selectors.TypeSelectorBase`1._setter
+  name: _setter
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1__setter
+  commentId: F:Faker.Selectors.TypeSelectorBase`1._setter
+  fullName: Faker.Selectors.TypeSelectorBase<T>._setter
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T)._setter
+- uid: Faker.Selectors.TypeSelectorBase`1.BeNull(System.Boolean)
+  name: BeNull(Boolean)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_BeNull_System_Boolean_
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.BeNull(System.Boolean)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.BeNull(System.Boolean)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).BeNull(System.Boolean)
+- uid: Faker.Selectors.TypeSelectorBase`1.CanBind(System.Reflection.PropertyInfo)
+  name: CanBind(PropertyInfo)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_CanBind_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.CanBind(System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.CanBind(System.Reflection.PropertyInfo)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).CanBind(System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.TypeSelectorBase`1.CanBind(System.Type)
+  name: CanBind(Type)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_CanBind_System_Type_
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.CanBind(System.Type)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.CanBind(System.Type)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).CanBind(System.Type)
+- uid: Faker.Selectors.TypeSelectorBase`1.Equals(Faker.Selectors.TypeSelectorBase{`0})
+  name: Equals(TypeSelectorBase<T>)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Equals_Faker_Selectors_TypeSelectorBase__0__
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.Equals(Faker.Selectors.TypeSelectorBase{`0})
+  name.vb: Equals(TypeSelectorBase(Of T))
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Equals(Faker.Selectors.TypeSelectorBase<T>)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Equals(Faker.Selectors.TypeSelectorBase(Of T))
+- uid: Faker.Selectors.TypeSelectorBase`1.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Equals_System_Object_
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.Equals(System.Object)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Equals(System.Object)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Equals(System.Object)
+- uid: Faker.Selectors.TypeSelectorBase`1.Generate
+  name: Generate()
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Generate
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.Generate
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Generate()
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Generate()
+- uid: Faker.Selectors.TypeSelectorBase`1.Generate(System.Object,System.Reflection.PropertyInfo)
+  name: Generate(Object, PropertyInfo)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Generate_System_Object_System_Reflection_PropertyInfo_
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.Generate(System.Object,System.Reflection.PropertyInfo)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Generate(System.Object, System.Reflection.PropertyInfo)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Generate(System.Object, System.Reflection.PropertyInfo)
+- uid: Faker.Selectors.TypeSelectorBase`1.Generate(System.Object@)
+  name: Generate(ref Object)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Generate_System_Object__
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.Generate(System.Object@)
+  name.vb: Generate(ByRef Object)
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Generate(ref System.Object)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Generate(ByRef System.Object)
+- uid: Faker.Selectors.TypeSelectorBase`1.GenerateInstance
+  name: GenerateInstance()
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_GenerateInstance
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.GenerateInstance
+  fullName: Faker.Selectors.TypeSelectorBase<T>.GenerateInstance()
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).GenerateInstance()
+- uid: Faker.Selectors.TypeSelectorBase`1.GetHashCode
+  name: GetHashCode()
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_GetHashCode
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.GetHashCode
+  fullName: Faker.Selectors.TypeSelectorBase<T>.GetHashCode()
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).GetHashCode()
+- uid: Faker.Selectors.TypeSelectorBase`1.op_Equality(Faker.Selectors.TypeSelectorBase{`0},Faker.Selectors.TypeSelectorBase{`0})
+  name: Equality(TypeSelectorBase<T>, TypeSelectorBase<T>)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_op_Equality_Faker_Selectors_TypeSelectorBase__0__Faker_Selectors_TypeSelectorBase__0__
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.op_Equality(Faker.Selectors.TypeSelectorBase{`0},Faker.Selectors.TypeSelectorBase{`0})
+  name.vb: Equality(TypeSelectorBase(Of T), TypeSelectorBase(Of T))
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Equality(Faker.Selectors.TypeSelectorBase<T>, Faker.Selectors.TypeSelectorBase<T>)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Equality(Faker.Selectors.TypeSelectorBase(Of T), Faker.Selectors.TypeSelectorBase(Of T))
+- uid: Faker.Selectors.TypeSelectorBase`1.op_Inequality(Faker.Selectors.TypeSelectorBase{`0},Faker.Selectors.TypeSelectorBase{`0})
+  name: Inequality(TypeSelectorBase<T>, TypeSelectorBase<T>)
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_op_Inequality_Faker_Selectors_TypeSelectorBase__0__Faker_Selectors_TypeSelectorBase__0__
+  commentId: M:Faker.Selectors.TypeSelectorBase`1.op_Inequality(Faker.Selectors.TypeSelectorBase{`0},Faker.Selectors.TypeSelectorBase{`0})
+  name.vb: Inequality(TypeSelectorBase(Of T), TypeSelectorBase(Of T))
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Inequality(Faker.Selectors.TypeSelectorBase<T>, Faker.Selectors.TypeSelectorBase<T>)
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Inequality(Faker.Selectors.TypeSelectorBase(Of T), Faker.Selectors.TypeSelectorBase(Of T))
+- uid: Faker.Selectors.TypeSelectorBase`1.Priority
+  name: Priority
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Priority
+  commentId: P:Faker.Selectors.TypeSelectorBase`1.Priority
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Priority
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Priority
+- uid: Faker.Selectors.TypeSelectorBase`1.Setter
+  name: Setter
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_Setter
+  commentId: P:Faker.Selectors.TypeSelectorBase`1.Setter
+  fullName: Faker.Selectors.TypeSelectorBase<T>.Setter
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).Setter
+- uid: Faker.Selectors.TypeSelectorBase`1.TargetType
+  name: TargetType
+  href: api/Faker.Selectors.TypeSelectorBase-1.html#Faker_Selectors_TypeSelectorBase_1_TargetType
+  commentId: P:Faker.Selectors.TypeSelectorBase`1.TargetType
+  fullName: Faker.Selectors.TypeSelectorBase<T>.TargetType
+  fullName.vb: Faker.Selectors.TypeSelectorBase(Of T).TargetType
+- uid: Faker.TypeSelectorExtensions
+  name: TypeSelectorExtensions
+  href: api/Faker.TypeSelectorExtensions.html#Faker_TypeSelectorExtensions
+  commentId: T:Faker.TypeSelectorExtensions
+  fullName: Faker.TypeSelectorExtensions
+- uid: Faker.TypeSelectorExtensions.Set``1(Faker.Selectors.TypeSelectorBase{``0},System.Func{``0})
+  name: Set<T>(TypeSelectorBase<T>, Func<T>)
+  href: api/Faker.TypeSelectorExtensions.html#Faker_TypeSelectorExtensions_Set__1_Faker_Selectors_TypeSelectorBase___0__System_Func___0__
+  commentId: M:Faker.TypeSelectorExtensions.Set``1(Faker.Selectors.TypeSelectorBase{``0},System.Func{``0})
+  name.vb: Set(Of T)(TypeSelectorBase(Of T), Func(Of T))
+  fullName: Faker.TypeSelectorExtensions.Set<T>(Faker.Selectors.TypeSelectorBase<T>, System.Func<T>)
+  fullName.vb: Faker.TypeSelectorExtensions.Set(Of T)(Faker.Selectors.TypeSelectorBase(Of T), System.Func(Of T))
+- uid: Faker.TypeSelectorExtensions.SetMax``1(Faker.Selectors.IRangeSelector{``0},System.Func{``0})
+  name: SetMax<T>(IRangeSelector<T>, Func<T>)
+  href: api/Faker.TypeSelectorExtensions.html#Faker_TypeSelectorExtensions_SetMax__1_Faker_Selectors_IRangeSelector___0__System_Func___0__
+  commentId: M:Faker.TypeSelectorExtensions.SetMax``1(Faker.Selectors.IRangeSelector{``0},System.Func{``0})
+  name.vb: SetMax(Of T)(IRangeSelector(Of T), Func(Of T))
+  fullName: Faker.TypeSelectorExtensions.SetMax<T>(Faker.Selectors.IRangeSelector<T>, System.Func<T>)
+  fullName.vb: Faker.TypeSelectorExtensions.SetMax(Of T)(Faker.Selectors.IRangeSelector(Of T), System.Func(Of T))
+- uid: Faker.TypeSelectorExtensions.SetMin``1(Faker.Selectors.IRangeSelector{``0},System.Func{``0})
+  name: SetMin<T>(IRangeSelector<T>, Func<T>)
+  href: api/Faker.TypeSelectorExtensions.html#Faker_TypeSelectorExtensions_SetMin__1_Faker_Selectors_IRangeSelector___0__System_Func___0__
+  commentId: M:Faker.TypeSelectorExtensions.SetMin``1(Faker.Selectors.IRangeSelector{``0},System.Func{``0})
+  name.vb: SetMin(Of T)(IRangeSelector(Of T), Func(Of T))
+  fullName: Faker.TypeSelectorExtensions.SetMin<T>(Faker.Selectors.IRangeSelector<T>, System.Func<T>)
+  fullName.vb: Faker.TypeSelectorExtensions.SetMin(Of T)(Faker.Selectors.IRangeSelector(Of T), System.Func(Of T))
+- uid: Faker.TypeTable
+  name: TypeTable
+  href: api/Faker.TypeTable.html#Faker_TypeTable
+  commentId: T:Faker.TypeTable
+  fullName: Faker.TypeTable
+- uid: Faker.TypeTable.#ctor(System.Boolean)
+  name: TypeTable(Boolean)
+  href: api/Faker.TypeTable.html#Faker_TypeTable__ctor_System_Boolean_
+  commentId: M:Faker.TypeTable.#ctor(System.Boolean)
+  fullName: Faker.TypeTable.TypeTable(System.Boolean)
+- uid: Faker.TypeTable.AddSelector(Faker.Selectors.ITypeSelector,Faker.SelectorPosition)
+  name: AddSelector(ITypeSelector, SelectorPosition)
+  href: api/Faker.TypeTable.html#Faker_TypeTable_AddSelector_Faker_Selectors_ITypeSelector_Faker_SelectorPosition_
+  commentId: M:Faker.TypeTable.AddSelector(Faker.Selectors.ITypeSelector,Faker.SelectorPosition)
+  fullName: Faker.TypeTable.AddSelector(Faker.Selectors.ITypeSelector, Faker.SelectorPosition)
+- uid: Faker.TypeTable.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0},Faker.SelectorPosition)
+  name: AddSelector<T>(TypeSelectorBase<T>, SelectorPosition)
+  href: api/Faker.TypeTable.html#Faker_TypeTable_AddSelector__1_Faker_Selectors_TypeSelectorBase___0__Faker_SelectorPosition_
+  commentId: M:Faker.TypeTable.AddSelector``1(Faker.Selectors.TypeSelectorBase{``0},Faker.SelectorPosition)
+  name.vb: AddSelector(Of T)(TypeSelectorBase(Of T), SelectorPosition)
+  fullName: Faker.TypeTable.AddSelector<T>(Faker.Selectors.TypeSelectorBase<T>, Faker.SelectorPosition)
+  fullName.vb: Faker.TypeTable.AddSelector(Of T)(Faker.Selectors.TypeSelectorBase(Of T), Faker.SelectorPosition)
+- uid: Faker.TypeTable.ClearSelectors``1
+  name: ClearSelectors<T>()
+  href: api/Faker.TypeTable.html#Faker_TypeTable_ClearSelectors__1
+  commentId: M:Faker.TypeTable.ClearSelectors``1
+  name.vb: ClearSelectors(Of T)()
+  fullName: Faker.TypeTable.ClearSelectors<T>()
+  fullName.vb: Faker.TypeTable.ClearSelectors(Of T)()
+- uid: Faker.TypeTable.Clone
+  name: Clone()
+  href: api/Faker.TypeTable.html#Faker_TypeTable_Clone
+  commentId: M:Faker.TypeTable.Clone
+  fullName: Faker.TypeTable.Clone()
+- uid: Faker.TypeTable.CountSelectors(System.Type)
+  name: CountSelectors(Type)
+  href: api/Faker.TypeTable.html#Faker_TypeTable_CountSelectors_System_Type_
+  commentId: M:Faker.TypeTable.CountSelectors(System.Type)
+  fullName: Faker.TypeTable.CountSelectors(System.Type)
+- uid: Faker.TypeTable.CountSelectors``1
+  name: CountSelectors<T>()
+  href: api/Faker.TypeTable.html#Faker_TypeTable_CountSelectors__1
+  commentId: M:Faker.TypeTable.CountSelectors``1
+  name.vb: CountSelectors(Of T)()
+  fullName: Faker.TypeTable.CountSelectors<T>()
+  fullName.vb: Faker.TypeTable.CountSelectors(Of T)()
+- uid: Faker.TypeTable.GetBaseSelector(System.Type)
+  name: GetBaseSelector(Type)
+  href: api/Faker.TypeTable.html#Faker_TypeTable_GetBaseSelector_System_Type_
+  commentId: M:Faker.TypeTable.GetBaseSelector(System.Type)
+  fullName: Faker.TypeTable.GetBaseSelector(System.Type)
+- uid: Faker.TypeTable.GetSelectors(System.Type)
+  name: GetSelectors(Type)
+  href: api/Faker.TypeTable.html#Faker_TypeTable_GetSelectors_System_Type_
+  commentId: M:Faker.TypeTable.GetSelectors(System.Type)
+  fullName: Faker.TypeTable.GetSelectors(System.Type)
+- uid: Faker.TypeTable.GetSelectors``1
+  name: GetSelectors<T>()
+  href: api/Faker.TypeTable.html#Faker_TypeTable_GetSelectors__1
+  commentId: M:Faker.TypeTable.GetSelectors``1
+  name.vb: GetSelectors(Of T)()
+  fullName: Faker.TypeTable.GetSelectors<T>()
+  fullName.vb: Faker.TypeTable.GetSelectors(Of T)()
