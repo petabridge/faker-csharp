@@ -116,7 +116,8 @@ Target "CleanDocs" (fun _ ->
 )
 
 Target "DocFx" (fun _ ->
-    DocFx (fun p -> { p with Timeout = TimeSpan.FromMinutes 5.0; WorkingDirectory  = currentDirectory; DocFxJson = currentDirectory @@ "docfx.json"})
+    let serve = hasBuildParam "serve"
+    DocFx (fun p -> { p with Timeout = TimeSpan.FromMinutes 5.0; WorkingDirectory  = currentDirectory; DocFxJson = currentDirectory @@ "docfx.json"; Serve = serve})
 )
 
 //--------------------------------------------------------------------------------
