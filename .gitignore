@@ -35,3 +35,7 @@ Download/
 # FAKE
 .nuget/
 .fake/
+
+# DocFx files
+_site/
+api/
