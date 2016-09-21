@@ -30,3 +30,12 @@ _ReSharper*/
 
 #Nuget-specific
 Download/
+[pP]ackages*/
+
+# FAKE
+.nuget/
+.fake/
+
+# DocFx files
+_site/
+api/
