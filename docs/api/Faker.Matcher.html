@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Matcher
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Matcher
+   ">
+    <meta name="generator" content="docfx 2.4.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="logo" src="../petabridge_logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L15" class="btn btn-primary pull-right mobile-hide">View Source</a>
+              <h1 id="Faker_Matcher" data-uid="Faker.Matcher">Class Matcher
+              </h1>
+              <div class="markdown level0 summary"><pre><code>Class used to match a type selector from the TypeTable with the properties of an object
+</code></pre></div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="inheritance">
+                <h5>Inheritance</h5>
+                  <div class="level0"><span class="xref">System.Object</span></div>
+                  <div class="level1"><span class="xref">Matcher</span></div>
+              </div>
+              <h6><strong>Namespace</strong>:Faker</h6>
+              <h6><strong>Assembly</strong>:Faker.dll</h6>
+              <h5 id="Faker_Matcher_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public class Matcher</code></pre>
+              </div>
+              <h3 id="constructors">Constructors
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L20">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher__ctor" data-uid="Faker.Matcher.#ctor">Matcher()</h4>
+              <div class="markdown level1 summary"><pre><code>Default constructor - uses the default TypeTable
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Matcher()</code></pre>
+              </div>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L28">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher__ctor_Faker_TypeTable_" data-uid="Faker.Matcher.#ctor(Faker.TypeTable)">Matcher(TypeTable)</h4>
+              <div class="markdown level1 summary"><pre><code>Constructor which accepts a TypeTable as an argument
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Matcher(TypeTable table)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Faker.TypeTable.html#Faker_TypeTable">TypeTable</a></td>
+                    <td><em>table</em></td>
+                    <td><p>an instantiated type table that can be accessed via the TypeMap property later</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="properties">Properties
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L33">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_TypeMap" data-uid="Faker.Matcher.TypeMap">TypeMap</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public TypeTable TypeMap { get; protected set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Faker.TypeTable.html#Faker_TypeTable">TypeTable</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="methods">Methods
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L283">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_IsArray_System_Type_" data-uid="Faker.Matcher.IsArray(System.Type)">IsArray(Type)</h4>
+              <div class="markdown level1 summary"><pre><code>Returns true if the targeted type is an array of some sort
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual bool IsArray(Type targetType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>targetType</em></td>
+                    <td><p>the type we want to test</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><p>true if it&#39;s an array, false otherwise</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L255">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_MapFromSelector_System_Object_System_Type_System_Boolean__" data-uid="Faker.Matcher.MapFromSelector(System.Object,System.Type,System.Boolean@)">MapFromSelector(Object, Type, out Boolean)</h4>
+              <div class="markdown level1 summary"><pre><code>Selector-based mapping for when we need to apply it directly to objects wholesale
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual object MapFromSelector(object targetObject, Type propertyType, out bool isMached)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>targetObject</em></td>
+                    <td><p>The target object who&#39;s value will be replaced</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>propertyType</em></td>
+                    <td><p>The type of the object</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><em>isMached</em></td>
+                    <td><p>true if a match was made and bound successfully; false otherwise</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>The instance whose value has replaced.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L227">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_MapFromSelector_System_Reflection_PropertyInfo_System_Object_System_Type_" data-uid="Faker.Matcher.MapFromSelector(System.Reflection.PropertyInfo,System.Object,System.Type)">MapFromSelector(PropertyInfo, Object, Type)</h4>
+              <div class="markdown level1 summary"><pre><code>Attempt to map the object directly based on the availability of selectors
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual bool MapFromSelector(PropertyInfo property, object targetObject, Type propertyType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Reflection.PropertyInfo</span></td>
+                    <td><em>property</em></td>
+                    <td><p>The property that needs a match</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>targetObject</em></td>
+                    <td><p>The object to which the property belongs</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>propertyType</em></td>
+                    <td><p>The type of the property</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><p>True if a match was found and made; false otherwise</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L41">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_Match__1___0_" data-uid="Faker.Matcher.Match``1(``0)">Match&lt;T&gt;(T)</h4>
+              <div class="markdown level1 summary"><pre><code>Method matches all properties on a given class with a
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual T Match&lt;T&gt;(T targetObject)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><em>targetObject</em></td>
+                    <td><p>an instance of the class</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><p>The instance whose value has replaced.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><em>T</em></td>
+                    <td>a class with a parameterless constructor (POCO class)</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L64">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_MatchStruct__1___0__" data-uid="Faker.Matcher.MatchStruct``1(``0@)">MatchStruct&lt;S&gt;(ref S)</h4>
+              <div class="markdown level1 summary"><pre><code>Used for matching value types
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual void MatchStruct&lt;S&gt;(ref S targetStruct)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">S</span></td>
+                    <td><em>targetStruct</em></td>
+                    <td><p>The value type instance</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><em>S</em></td>
+                    <td>A value type parameter</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L90">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_ProcessProperties_System_Reflection_PropertyInfo___System_Object_" data-uid="Faker.Matcher.ProcessProperties(System.Reflection.PropertyInfo[],System.Object)">ProcessProperties(PropertyInfo[], Object)</h4>
+              <div class="markdown level1 summary"><pre><code>Method for iterating over all of the indivdual properties in for a given object
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual object ProcessProperties(PropertyInfo[] properties, object targetObject)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Reflection.PropertyInfo</span>[]</td>
+                    <td><em>properties</em></td>
+                    <td><p>The set of properties available to an object instance</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>targetObject</em></td>
+                    <td><p>The object against which type selectors will inject values</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L124">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_ProcessProperty_System_Reflection_PropertyInfo_System_Object_" data-uid="Faker.Matcher.ProcessProperty(System.Reflection.PropertyInfo,System.Object)">ProcessProperty(PropertyInfo, Object)</h4>
+              <div class="markdown level1 summary"><pre><code>Protected method used to implement our selector-matching strategy. Uses a greedy approach.
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void ProcessProperty(PropertyInfo property, object targetObject)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Reflection.PropertyInfo</span></td>
+                    <td><em>property</em></td>
+                    <td><p>The meta-data about the property for which we will be finding a match</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>targetObject</em></td>
+                    <td><p>The object which will receive the property injection</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/Aaronontheweb/faker-csharp/blob/v2.0/src/Faker/Matcher.cs/#L302">View Source</a>
+              </span>
+              <h4 id="Faker_Matcher_SafeObjectCreate_System_Type_" data-uid="Faker.Matcher.SafeObjectCreate(System.Type)">SafeObjectCreate(Type)</h4>
+              <div class="markdown level1 summary"><pre><code>Method used for safely creating new instances of type objects; handles a few special cases
+where activation has to be done carefully.
+</code></pre></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public object SafeObjectCreate(Type t)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>t</em></td>
+                    <td><p>The target type we want to instantiate</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>an instance of the specified type</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2015-2016 <a href="https://petabridge.com/">Petabridge, LLC</a><br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
