@@ -16,7 +16,7 @@ fi
 
 mono $SCRIPT_PATH/.nuget/nuget.exe update -self
 
-mono $SCRIPT_PATH/.nuget/nuget.exe install FAKE -OutputDirectory $SCRIPT_PATH/packages -ExcludeVersion -Version 4.9.1 
+mono $SCRIPT_PATH/.nuget/nuget.exe install FAKE -OutputDirectory $SCRIPT_PATH/packages -ExcludeVersion -Version 4.38.3 
 mono $SCRIPT_PATH/.nuget/nuget.exe install NUnit.Runners -OutputDirectory packages\FAKE -ExcludeVersion -Version 2.6.4
 mono $SCRIPT_PATH/.nuget/nuget.exe install docfx.msbuild -OutputDirectory packages\FAKE\docfx -ExcludeVersion -Version 2.4.0
 
