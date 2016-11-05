@@ -58,7 +58,10 @@ namespace Faker.End2End.Tests
         [Test]
         public void Faker_should_populate_class_via_constructor_and_properties()
         {
+<<<<<<< HEAD
             var fake = Fake.Create<MyPoorlyDesignedClass>().SetType(() => 1.0D).SetProperty(x => x.MyOtherDouble, () => -0.1d).Generate();
+=======
+>>>>>>> working on ensuring that named property settings override named type settings
             Assert.NotNull(fake);
             Assert.NotNull(fake.MyStr);
             Assert.NotNull(fake.MyOtherStr);
