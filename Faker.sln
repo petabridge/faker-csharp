@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{33EB8843
 		build.fsx = build.fsx
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.End2End.Tests", "tests\Faker.End2End.Tests\Faker.End2End.Tests.csproj", "{FB672D5E-A886-4DF4-A96C-C0EE649A1296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

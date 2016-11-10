@@ -132,6 +132,10 @@ let filterPlatformSpecificAssemblies (assembly:string) =
 
 Target "RunTests" <| fun _ ->
     let unitTestAssemblies = Seq.filter filterPlatformSpecificAssemblies (!! "tests/**/bin/Release/*.Tests.dll" ++ "tests/**/bin/Release/*.Tests.End2End.dll")
+    printfn "All assemblies"
+    for assembly in (!! "tests/**/bin/Release/*.dll") do
+        printfn "Found: %s" assembly
+
     printfn "Are we running on Mono? %b" isMono
     for assembly in unitTestAssemblies do
          printfn "Executing: %s" assembly
@@ -141,7 +145,6 @@ Target "RunTests" <| fun _ ->
     printfn "Using NUnit runner: %s" nunitToolPath
     NUnit
         (fun p -> { p with OutputFile = (testOutput @@ @"UnitTestResults.xml"); ToolPath = nunitToolPath; })
-
         unitTestAssemblies
 
 //--------------------------------------------------------------------------------

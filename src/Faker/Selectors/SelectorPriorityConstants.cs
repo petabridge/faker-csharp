@@ -7,6 +7,7 @@
     {
         public const int PrimitiveSelectorPriority = 1;
         public const int SpecialSelectorPriority = 10;
-        public const int CustomSelectorPriorty = 100;
+        public const int CustomTypePriority = 25;
+        public const int CustomNamedPropertyPriorty = 100;
     }
 }

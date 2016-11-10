@@ -9,7 +9,7 @@ namespace Faker
     /// <summary>
     ///     Static class used to assist developers in defining their own custom Type selectors via LINQ expressions
     /// </summary>
-    public static class FakeExtensions
+    public static class FakeDsl
     {
         /// <summary>
         ///     Creates a custom Faker rule for a specific property on an object
@@ -28,19 +28,8 @@ namespace Faker
             var prop = expression.ToPropertyInfo();
             ThrowIfCantWrite(prop);
 
-            var matchingSelector = fake.GetBaseSelector(prop.PropertyType);
-            if (matchingSelector is MissingSelector || !(matchingSelector is TypeSelectorBase<TProperty>))
-            {
-                var customSelector = new CustomPropertySelector<TProperty>(prop, setter.Compile());
-                fake.AddSelector(customSelector);
-                return fake;
-            }
-
-            var baseSelector = Activator.CreateInstance(matchingSelector.GetType()) as TypeSelectorBase<TProperty>;
-            var customDerivedSelector = new CustomDerivedPropertySelector<TProperty>(
-                baseSelector.Set(setter.Compile()), prop);
-            fake.AddSelector(customDerivedSelector);
-
+            var customSelector = new CustomPropertySelector<TProperty>(prop, setter.Compile());
+            fake.AddSelector(customSelector);
             return fake;
         }
 
@@ -55,7 +44,7 @@ namespace Faker
         public static Fake<T> SetType<T, TS>(this Fake<T> fake, Expression<Func<TS>> setter)
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
-            var targetType = typeof (TS);
+            var targetType = typeof(TS);
 
             var selector = new CustomTypeSelector<TS>(setter.Compile());
             fake.AddSelector(selector);
