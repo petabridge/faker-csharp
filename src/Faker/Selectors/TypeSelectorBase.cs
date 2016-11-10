@@ -22,7 +22,7 @@ namespace Faker.Selectors
         {
             //Set the targetType to the value of the type selector
             TargetType = typeof (T);
-            Priority = SelectorPriorityConstants.PrimitiveSelectorPriority;
+            Priority = SelectorConstants.PrimitiveSelectorPriority;
             _setter = Generate;
         }
 

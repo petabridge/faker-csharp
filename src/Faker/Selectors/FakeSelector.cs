@@ -20,7 +20,7 @@ namespace Faker.Selectors
         }
 
         /// <summary>
-        /// Always <see cref="SelectorPriorityConstants.CustomNamedPropertyPriorty"/> by default.
+        /// Always <see cref="SelectorConstants.CustomNamedPropertyPriorty"/> by default.
         /// </summary>
         public int Priority { get; set; }
 

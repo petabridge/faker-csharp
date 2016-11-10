@@ -15,7 +15,7 @@ namespace Faker.Selectors
         {
             CustomProperty = property;
             Setter = setter;
-            Priority = SelectorPriorityConstants.CustomNamedPropertyPriorty;
+            Priority = SelectorConstants.CustomNamedPropertyPriorty;
         }
 
         public override bool CanBind(PropertyInfo field)

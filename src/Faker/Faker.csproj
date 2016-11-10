@@ -46,6 +46,7 @@
     <Compile Include="FakeDsl.cs" />
     <Compile Include="IFake.cs" />
     <Compile Include="Selectors\FakeSelector.cs" />
+    <Compile Include="Selectors\NullableTypeSelector.cs" />
     <Compile Include="TypeSelectorExtensions.cs" />
     <Compile Include="Fake.cs" />
     <Compile Include="Generators\Booleans.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Selectors\MissingSelector.cs" />
     <Compile Include="Selectors\NumberSelectorBase.cs" />
     <Compile Include="Selectors\NumberSelectors.cs" />
-    <Compile Include="Selectors\SelectorPriorityConstants.cs" />
+    <Compile Include="Selectors\SelectorConstants.cs" />
     <Compile Include="Selectors\SpecialFieldsRegex.cs" />
     <Compile Include="Selectors\StringSelectors.cs" />
     <Compile Include="Selectors\TypeSelectorBase.cs" />

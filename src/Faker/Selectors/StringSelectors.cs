@@ -47,7 +47,7 @@ namespace Faker.Selectors
 
         public LastNameSelector()
         {
-            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+            Priority = SelectorConstants.SpecialSelectorPriority;
         }
 
         #region Overrides of TypeSelectorBase<string>
@@ -74,7 +74,7 @@ namespace Faker.Selectors
 
         public FirstNameSelector()
         {
-            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+            Priority = SelectorConstants.SpecialSelectorPriority;
         }
 
         #region Overrides of TypeSelectorBase<string>
@@ -101,7 +101,7 @@ namespace Faker.Selectors
 
         public FullNameSelector()
         {
-            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+            Priority = SelectorConstants.SpecialSelectorPriority;
         }
 
         public override bool CanBind(PropertyInfo field)
@@ -121,7 +121,7 @@ namespace Faker.Selectors
 
         public EmailSelector()
         {
-            Priority = SelectorPriorityConstants.SpecialSelectorPriority;
+            Priority = SelectorConstants.SpecialSelectorPriority;
         }
 
         #region Overrides of TypeSelectorBase<string>

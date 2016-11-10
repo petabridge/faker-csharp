@@ -7,7 +7,7 @@ namespace Faker.Selectors
         public CustomTypeSelector(Func<T> setter)
         {
             Setter = setter;
-            Priority = SelectorPriorityConstants.CustomTypePriority;
+            Priority = SelectorConstants.CustomTypePriority;
         }
 
         public override T Generate()
