@@ -67,6 +67,7 @@
     <Compile Include="SelectorTests\CustomSelectorTests.cs" />
     <Compile Include="SelectorTests\DateTimeSelectorTests.cs" />
     <Compile Include="SelectorTests\FakeSelectorTests.cs" />
+    <Compile Include="SelectorTests\NullableSelectorTests.cs" />
     <Compile Include="SelectorTests\NumberSelectorTests.cs" />
     <Compile Include="SelectorTests\RangeSelectorTests.cs" />
     <Compile Include="SelectorTests\StringSelectorTests.cs" />
