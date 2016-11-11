@@ -25,10 +25,10 @@ namespace Faker.Selectors
         public int Priority { get; set; }
 
         public Type TargetType => _internalFake.SupportedType;
-        private bool _can_be_null;
-        public void BeNull(bool canBeNull = false)
+
+        public ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability)
         {
-            _can_be_null = canBeNull;
+            return NullableSelectorHelper.CreateNullableTypeSelector(nullProbability, TargetType, this);
         }
 
         public bool CanBind(PropertyInfo field)

@@ -21,6 +21,11 @@ namespace Faker.Selectors
             throw new NotImplementedException();
         }
 
+        public ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CanBind(PropertyInfo field)
         {
             throw new NotImplementedException();

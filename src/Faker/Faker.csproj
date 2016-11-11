@@ -46,6 +46,7 @@
     <Compile Include="FakeDsl.cs" />
     <Compile Include="IFake.cs" />
     <Compile Include="Selectors\FakeSelector.cs" />
+    <Compile Include="Selectors\NullableSelectorHelper.cs" />
     <Compile Include="Selectors\NullableTypeSelector.cs" />
     <Compile Include="TypeSelectorExtensions.cs" />
     <Compile Include="Fake.cs" />
