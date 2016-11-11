@@ -17,7 +17,7 @@ namespace Faker
         /// <summary>
         ///     Default constructor - uses the default TypeTable
         /// </summary>
-        public Matcher() : this(new TypeTable())
+        public Matcher(double nullProbability = SelectorConstants.NoNullProbability) : this(new TypeTable(nullProbability: nullProbability))
         {
         }
 

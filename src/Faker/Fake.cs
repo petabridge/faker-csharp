@@ -31,11 +31,23 @@ namespace Faker
         /// <summary>
         ///     Engine used to power our fakes
         /// </summary>
-        private readonly Matcher _matcher;
+        internal readonly Matcher Matcher;
 
-        public Fake()
+        /// <summary>
+        /// Creates a new <see cref="Fake{T}"/> instance.
+        /// </summary>
+        /// <param name="allowNull">OPTIONAL. When set to <c>true</c>, allow for the possibility of nulls
+        /// to be inserted for all built-in nullable types. <c>false</c> by default.</param>
+        /// <param name="nullProbability">OPTIONAL. When <see cref="allowNull"/> is <c>true</c>,
+        /// determines how often a <c>null</c> will be used instead of a concrete value.</param>
+        /// <remarks>
+        /// Any custom Fake settings attached to this object via <see cref="FakeDsl.SetProperty{T, TProperty}"/>
+        /// or <see cref="FakeDsl.SetType{T, Type}"/> will need to have those null probabilities set directly
+        /// on that method.
+        /// </remarks>
+        public Fake(bool allowNull = false, double nullProbability = SelectorConstants.DefaultNullProbability)
         {
-            _matcher = new Matcher();
+            Matcher = new Matcher(allowNull ? nullProbability : SelectorConstants.NoNullProbability);
         }
 
         /// <summary>
@@ -56,16 +68,16 @@ namespace Faker
         public T Generate()
         {
             //create a new instance of the type we want to Fake
-            var instance = (T) _matcher.SafeObjectCreate(typeof (T));
+            var instance = (T) Matcher.SafeObjectCreate(typeof (T));
 
             if (typeof(T).IsValueType)
             {
-                _matcher.MatchStruct(ref instance);
+                Matcher.MatchStruct(ref instance);
             }
             else
             {
                 //Match all of the properties of the object and come up with the most reasonable guess we can as to the type of data needed
-                instance = _matcher.Match(instance);
+                instance = Matcher.Match(instance);
             }
 
             //Return the instance once matching is complete
@@ -117,7 +129,7 @@ namespace Faker
         /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
         public void AddSelector(ITypeSelector selector)
         {
-            _matcher.TypeMap.AddSelector(selector, SelectorPosition.First);
+            Matcher.TypeMap.AddSelector(selector, SelectorPosition.First);
         }
 
         /// <summary>
@@ -147,7 +159,7 @@ namespace Faker
         /// <returns>A selector for the appropriate matching type</returns>
         internal ITypeSelector GetSelector(Type ts)
         {
-            return _matcher.EvaluateSelectors(ts, _matcher.TypeMap.GetSelectors(ts));
+            return Matcher.EvaluateSelectors(ts, Matcher.TypeMap.GetSelectors(ts));
         }
 
         /// <summary>
@@ -156,7 +168,7 @@ namespace Faker
         /// <returns>A selector for the appropriate matching type</returns>
         internal ITypeSelector GetSelector(PropertyInfo propertyInfo)
         {
-            return _matcher.EvaluateSelectors(propertyInfo, _matcher.TypeMap.GetSelectors(propertyInfo.PropertyType));
+            return Matcher.EvaluateSelectors(propertyInfo, Matcher.TypeMap.GetSelectors(propertyInfo.PropertyType));
         }
 
         /// <summary>
@@ -166,7 +178,7 @@ namespace Faker
         /// <returns>The base-level selector that can bind to type TS</returns>
         internal ITypeSelector GetBaseSelector(Type ts)
         {
-            return _matcher.TypeMap.GetBaseSelector(ts);
+            return Matcher.TypeMap.GetBaseSelector(ts);
         }
 
         #region Static members

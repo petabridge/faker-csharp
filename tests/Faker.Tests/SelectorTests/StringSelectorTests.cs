@@ -248,5 +248,14 @@ namespace Faker.Tests.SelectorTests
                 Assert.That(fieldValue.Length > 0);
             }
         }
+
+        [Test(Description = "Test to ensure that a string selector can become nullable but still match to strings")]
+        public void String_Selectors_must_be_able_to_become_nullable()
+        {
+            var stringSelector = new StringSelector();
+            var nullable = stringSelector.Nullable();
+            Assert.True(nullable.CanBind(typeof(string)));
+            Assert.True(nullable.TargetType == typeof(string));
+        }
     }
 }

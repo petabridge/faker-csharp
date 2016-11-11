@@ -10,11 +10,14 @@ namespace Faker.Selectors
     /// </summary>
     public sealed class StringSelector : PrimitiveSelectorBase<string>, IRangeSelector<int>
     {
+        private readonly double _nullProbability;
+
         /// <summary>
         ///     By default, we constrain the length of the string to be between 10 and 40 characters
         /// </summary>
-        public StringSelector()
+        public StringSelector(double nullProbability = SelectorConstants.NoNullProbability)
         {
+            _nullProbability = nullProbability;
             MaxSize = 40;
             MinSize = 10;
             Min = () => MinSize;
@@ -24,6 +27,10 @@ namespace Faker.Selectors
         public int MaxSize { get; set; }
         public int MinSize { get; set; }
 
+        public override ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
+        {
+            return new StringSelector(nullProbability);
+        }
 
         public Func<int> Max { get; set; }
         public Func<int> Min { get; set; }
@@ -32,7 +39,7 @@ namespace Faker.Selectors
 
         public override string Generate()
         {
-            return Strings.GenerateAlphaNumericString(Min(), Max());
+            return Booleans.BoolWithProbability(_nullProbability) ? null : Strings.GenerateAlphaNumericString(Min(), Max());
         }
 
         #endregion
