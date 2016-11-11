@@ -34,7 +34,7 @@ namespace Faker.Selectors
 
         public int Priority { get; set; }
 
-        public virtual ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability)
+        public virtual ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
         {
             return NullableSelectorHelper.CreateNullableTypeSelector(nullProbability, TargetType, this);
         }

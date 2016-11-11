@@ -37,5 +37,10 @@ namespace Faker.Selectors
                 return default(T);
             return (T)output;
         }
+
+        public override ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
+        {
+            return new NullableTypeSelector<T>(_generatorFunc, nullProbability);
+        }
     }
 }

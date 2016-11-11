@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Faker.Selectors;
 using NUnit.Framework;
 
@@ -122,6 +123,15 @@ namespace Faker.Tests.SelectorTests
                 Assert.IsAssignableFrom<long>(fieldValue, "Should be type of long...");
                 Assert.AreNotEqual(fieldValue, default(long));
             }
+        }
+
+        [Test(Description = "Must be able to convert a TimeStampSelector into a nullable type")]
+        public void TimeStamp_Select_Must_be_Nullable()
+        {
+            var timeStampSelector = new TimeStampSelector().Nullable(); // 10% certainty
+            var instances = Enumerable.Range(0, 100).Select(x => (long?) timeStampSelector.GenerateInstance()).ToList();
+            Assert.True(instances.Any(x => x == null));
+            Assert.True(instances.Any(x => x != null));
         }
 
         #endregion

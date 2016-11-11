@@ -37,11 +37,37 @@ namespace Faker.Tests.SelectorTests
                 {
                     intSelector.Generate(c, property);
                     ints.Add(c.TestOne);
-                    if (i % 10 == 0)
-                        Thread.Sleep(20);
                 }
             }
             
+            Assert.True(ints.Any(x => x == null));
+            Assert.True(ints.Any(x => x != null));
+        }
+
+        [Test]
+        public void NullableTypeSelector_can_still_be_nullable()
+        {
+            var c = new MyNullablePrimitiveTypeClass();
+            var original = new NullableTypeSelector<int?>(new IntSelector());
+            var final = original.Nullable().Nullable(0.3d);
+
+            Assert.IsInstanceOf<NullableTypeSelector<int?>>(original);
+            Assert.IsInstanceOf<NullableTypeSelector<int?>>(final);
+            Assert.AreNotSame(original, final);
+
+            var ints = new List<int?>();
+
+            // The distribution of nulls over a large period of time should roughly
+            // be 1 in 10 by default, but the RNG may not distribute them evenly.
+            foreach (var property in c.GetType().GetProperties())
+            {
+                for (var i = 0; i < 100; i++)
+                {
+                    final.Generate(c, property);
+                    ints.Add(c.TestOne);
+                }
+            }
+
             Assert.True(ints.Any(x => x == null));
             Assert.True(ints.Any(x => x != null));
         }

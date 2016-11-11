@@ -44,7 +44,6 @@ namespace Faker
         public static Fake<T> SetType<T, TS>(this Fake<T> fake, Expression<Func<TS>> setter)
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
-            var targetType = typeof(TS);
 
             var selector = new CustomTypeSelector<TS>(setter.Compile());
             fake.AddSelector(selector);

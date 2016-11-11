@@ -20,8 +20,8 @@ namespace Faker.Selectors
         /// <summary>
         ///     Determines if we can allow nulls for a given type
         /// </summary>
-        /// <param name="nullProbability"></param>
-        ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability);
+        /// <param name="nullProbability">The probability that this value will be null.</param>
+        ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability);
 
         /// <summary>
         ///     Determines if this strategy can be successfully executed for this field.

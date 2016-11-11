@@ -26,7 +26,7 @@ namespace Faker.Selectors
 
         public Type TargetType => _internalFake.SupportedType;
 
-        public ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability)
+        public ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
         {
             return NullableSelectorHelper.CreateNullableTypeSelector(nullProbability, TargetType, this);
         }
