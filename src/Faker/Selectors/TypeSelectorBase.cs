@@ -1,5 +1,7 @@
 using System;
+using System.Diagnostics.Contracts;
 using System.Reflection;
+using Faker.Helpers;
 
 namespace Faker.Selectors
 {
@@ -14,15 +16,13 @@ namespace Faker.Selectors
     /// <typeparam name="T">The type that this selector works for</typeparam>
     public abstract class TypeSelectorBase<T> : ITypeSelector
     {
-        protected bool _can_be_null;
-
         protected Func<T> _setter;
 
         protected TypeSelectorBase()
         {
             //Set the targetType to the value of the type selector
             TargetType = typeof (T);
-            Priority = SelectorPriorityConstants.PrimitiveSelectorPriority;
+            Priority = SelectorConstants.PrimitiveSelectorPriority;
             _setter = Generate;
         }
 
@@ -34,9 +34,9 @@ namespace Faker.Selectors
 
         public int Priority { get; set; }
 
-        public void BeNull(bool canBeNull = false)
+        public virtual ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
         {
-            _can_be_null = canBeNull;
+            return NullableSelectorHelper.CreateNullableTypeSelector(nullProbability, TargetType, this);
         }
 
         public virtual bool CanBind(PropertyInfo field)
@@ -51,12 +51,12 @@ namespace Faker.Selectors
 
         public void Generate(object targetObject, PropertyInfo property)
         {
-            property.SetValue(targetObject, Setter(), null);
+            property.SetValue(targetObject, Generate(), null);
         }
 
         public object Generate(ref object targetObject)
         {
-            targetObject = Setter();
+            targetObject = Generate();
             return targetObject;
         }
 

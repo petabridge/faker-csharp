@@ -20,15 +20,15 @@ namespace Faker.Selectors
         }
 
         /// <summary>
-        /// Always <see cref="SelectorPriorityConstants.CustomNamedPropertyPriorty"/> by default.
+        /// Always <see cref="SelectorConstants.CustomNamedPropertyPriorty"/> by default.
         /// </summary>
         public int Priority { get; set; }
 
         public Type TargetType => _internalFake.SupportedType;
-        private bool _can_be_null;
-        public void BeNull(bool canBeNull = false)
+
+        public ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability)
         {
-            _can_be_null = canBeNull;
+            return NullableSelectorHelper.CreateNullableTypeSelector(nullProbability, TargetType, this);
         }
 
         public bool CanBind(PropertyInfo field)

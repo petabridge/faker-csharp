@@ -17,7 +17,7 @@ namespace Faker
         /// <summary>
         ///     Default constructor - uses the default TypeTable
         /// </summary>
-        public Matcher() : this(new TypeTable())
+        public Matcher(double nullProbability = SelectorConstants.NoNullProbability) : this(new TypeTable(nullProbability: nullProbability))
         {
         }
 
@@ -149,14 +149,14 @@ namespace Faker
             //Check to see if the type is an array or any other sort of collection
             if (IsArray(propertyType))
             {
-                var arrayInstance = CreateaArrayInstance(propertyType, targetObject.GetType());
+                var arrayInstance = CreateArrayInstance(propertyType, targetObject.GetType());
 
                 //Bind the sub-class back onto the original target object
                 property.SetValue(targetObject, arrayInstance, null);
             }
         }
 
-        private IList CreateaArrayInstance(Type propertyType, Type targetType = null)
+        private IList CreateArrayInstance(Type propertyType, Type targetType = null)
         {
             //Get the underlying type used int he array
             //var elementType = propertyType.GetElementType(); //Works only for arrays
@@ -250,9 +250,9 @@ namespace Faker
         /// </summary>
         /// <param name="targetObject">The target object who's value will be replaced</param>
         /// <param name="propertyType">The type of the object</param>
-        /// <param name="isMached">true if a match was made and bound successfully; false otherwise</param>
+        /// <param name="isMatched">true if a match was made and bound successfully; false otherwise</param>
         /// <returns>The instance whose value has replaced.</returns>
-        protected virtual object MapFromSelector(object targetObject, Type propertyType, out bool isMached)
+        protected virtual object MapFromSelector(object targetObject, Type propertyType, out bool isMatched)
         {
             //Determine if we have a selector-on-hand for this data type
             var selectorCount = TypeMap.CountSelectors(propertyType);
@@ -267,11 +267,11 @@ namespace Faker
                 if (!(selector is MissingSelector))
                 {
                     selector.Generate(ref targetObject); //Bind the object's value directly
-                    isMached = true;
+                    isMatched = true;
                     return targetObject;
                 }
             }
-            isMached = false;
+            isMatched = false;
             return targetObject;
         }
 
@@ -317,7 +317,7 @@ namespace Faker
 
             if (IsArray(t))
             {
-                return CreateaArrayInstance(t);
+                return CreateArrayInstance(t);
             }
 
             object instance = null;

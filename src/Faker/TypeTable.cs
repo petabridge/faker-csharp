@@ -25,10 +25,13 @@ namespace Faker
         /// </summary>
         internal IDictionary<Type, LinkedList<ITypeSelector>> TypeMap => _typeMap;
 
+        private readonly double _nullProbability;
+
         /// <summary>
         ///     Default constructor
         /// </summary>
-        public TypeTable(bool useDefaults = true) : this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>())
+        public TypeTable(bool useDefaults = true, double nullProbability = SelectorConstants.NoNullProbability) 
+            : this(useDefaults, new Dictionary<Type, LinkedList<ITypeSelector>>(), nullProbability)
         {
         }
 
@@ -37,39 +40,50 @@ namespace Faker
         /// </summary>
         /// <param name="useDefaults">Determines if we should load all of our default selectors or not</param>
         /// <param name="typeMap">A typemap instance</param>
-        private TypeTable(bool useDefaults, Dictionary<Type, LinkedList<ITypeSelector>> typeMap)
+        /// <param name="nullProbability">The probability of generating a <c>null</c> value for any built-in, nullable type</param>
+        private TypeTable(bool useDefaults, Dictionary<Type, LinkedList<ITypeSelector>> typeMap, double nullProbability)
         {
             _typeMap = typeMap;
+            _nullProbability = nullProbability;
             if (useDefaults) //Load defaults if the user requested it
-                LoadDefaults();
+                LoadDefaults(nullProbability);
         }
 
         /// <summary>
         ///     Private internal method for loading all of the default TypeSelectors into the TypeTable
         /// </summary>
-        private void LoadDefaults()
+        private void LoadDefaults(double nullProbability)
         {
             /* NUMERIC DEFAULT SELECTORS */
             AddSelector(new IntSelector());
+            AddSelector(new IntSelector().Nullable(nullProbability));
             AddSelector(new LongSelector());
+            AddSelector(new LongSelector().Nullable(nullProbability));
             AddSelector(new TimeStampSelector()); //TimeStamp selector should get used before the long selector
+            AddSelector(new TimeStampSelector().Nullable(nullProbability));
             AddSelector(new DoubleSelector());
+            AddSelector(new DoubleSelector().Nullable(nullProbability));
             AddSelector(new FloatSelector());
+            AddSelector(new FloatSelector().Nullable(nullProbability));
             AddSelector(new DecimalSelector());
+            AddSelector(new DecimalSelector().Nullable(nullProbability));
 
             /* DATETIME SELECTORS */
             AddSelector(new DateTimeSelector());
+            AddSelector(new DateTimeSelector().Nullable(nullProbability));
             AddSelector(new DateTimeOffsetSelector());
+            AddSelector(new DateTimeOffsetSelector().Nullable(nullProbability));
 
             /* STRING SELECTORS */
-            AddSelector(new StringSelector()); //String selector is the very last one we want to try and use
-            AddSelector(new FirstNameSelector());
-            AddSelector(new LastNameSelector());
-            AddSelector(new FullNameSelector());
-            AddSelector(new EmailSelector());
+            AddSelector(new StringSelector().Nullable(nullProbability)); //String selector is the very last one we want to try and use
+            AddSelector(new FirstNameSelector().Nullable(nullProbability));
+            AddSelector(new LastNameSelector().Nullable(nullProbability));
+            AddSelector(new FullNameSelector().Nullable(nullProbability));
+            AddSelector(new EmailSelector().Nullable(nullProbability));
 
             /* GUID SELECTORS */
             AddSelector(new GuidSelector());
+            AddSelector(new GuidSelector().Nullable());
         }
 
         /// <summary>
@@ -203,7 +217,7 @@ namespace Faker
                 pair.Value.CopyTo(newList, 0);
                 newTypeMap.Add(pair.Key, new LinkedList<ITypeSelector>(newList));
             }
-            return new TypeTable(false, newTypeMap);
+            return new TypeTable(false, newTypeMap, _nullProbability);
         }
     }
 }

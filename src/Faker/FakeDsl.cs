@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Faker.Selectors;
@@ -19,17 +20,29 @@ namespace Faker
         /// <param name="fake">The Fake object for which we're creating this rule</param>
         /// <param name="expression">The expression for retreiving the property</param>
         /// <param name="setter">The expression for setting the value of the property</param>
+        /// <param name="nullProbability">OPTIONAL. The likelihood of a null value
+        /// being generated for this property.</param>
         /// <returns>An updated Fake</returns>
         public static Fake<T> SetProperty<T, TProperty>(this Fake<T> fake, Expression<Func<T, TProperty>> expression,
-            Expression<Func<TProperty>> setter)
+            Expression<Func<TProperty>> setter, double nullProbability = SelectorConstants.NoNullProbability)
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
 
             var prop = expression.ToPropertyInfo();
             ThrowIfCantWrite(prop);
 
-            var customSelector = new CustomPropertySelector<TProperty>(prop, setter.Compile());
-            fake.AddSelector(customSelector);
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
+            if (nullProbability == SelectorConstants.NoNullProbability)
+            {
+                var customSelector = new CustomPropertySelector<TProperty>(prop, setter.Compile());
+                fake.AddSelector(customSelector);
+            }
+            else
+            {
+                var nullableSelector = new NullableTypeSelector<TProperty>(new CustomPropertySelector<TProperty>(prop, setter.Compile()), nullProbability);
+                fake.AddSelector(nullableSelector);
+            }
+            
             return fake;
         }
 
@@ -44,7 +57,6 @@ namespace Faker
         public static Fake<T> SetType<T, TS>(this Fake<T> fake, Expression<Func<TS>> setter)
         {
             ExpressionValidator.IsNotNull(() => setter, setter);
-            var targetType = typeof(TS);
 
             var selector = new CustomTypeSelector<TS>(setter.Compile());
             fake.AddSelector(selector);
