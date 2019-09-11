@@ -1,0 +1,22 @@
+<Project>
+  <PropertyGroup>
+    <Copyright>Copyright © 2011-2019 Aaron Stannard</Copyright>
+    <Authors>Aaron Stannard</Authors>
+    <VersionPrefix>1.2.0</VersionPrefix>
+    <PackageProjectUrl>https://github.com/petabridge/faker-csharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Aaronontheweb/faker-csharp/blob/master/license.txt</PackageLicenseUrl>
+    <NoWarn>$(NoWarn);CS1591;xUnit1013</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <XunitVersion>2.4.1</XunitVersion>
+    <TestSdkVersion>16.0.0</TestSdkVersion>
+    <NetCoreTestVersion>netcoreapp2.1</NetCoreTestVersion>
+    <NetFrameworkTestVersion>net461</NetFrameworkTestVersion>
+    <NetStandardLibVersion>netstandard2.0</NetStandardLibVersion>
+    <FluentAssertionsVersion>4.14.0</FluentAssertionsVersion>
+    <FsCheckVersion>2.9.0</FsCheckVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageReleaseNotes>Placeholder for nightlies.</PackageReleaseNotes>
+  </PropertyGroup>
+</Project>

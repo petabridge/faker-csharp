@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Faker.Selectors;
-using NUnit.Framework;
+using FluentAssertions;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture]
+    
     public class NullableSelectorTests
     {
         #region Test classes
@@ -21,7 +22,7 @@ namespace Faker.Tests.SelectorTests
 
         #endregion
 
-        [Test]
+        [Fact]
         public void NullableTypeSelector_supports_all_nullable_primivites()
         {
             var intSelector = new NullableTypeSelector<int?>(new IntSelector());
@@ -40,20 +41,20 @@ namespace Faker.Tests.SelectorTests
                 }
             }
             
-            Assert.True(ints.Any(x => x == null));
-            Assert.True(ints.Any(x => x != null));
+            Assert.Contains(ints, x => x == null);
+            Assert.Contains(ints, x => x != null);
         }
 
-        [Test]
+        [Fact]
         public void NullableTypeSelector_can_still_be_nullable()
         {
             var c = new MyNullablePrimitiveTypeClass();
             var original = new NullableTypeSelector<int?>(new IntSelector());
             var final = original.Nullable().Nullable(0.3d);
 
-            Assert.IsInstanceOf<NullableTypeSelector<int?>>(original);
-            Assert.IsInstanceOf<NullableTypeSelector<int?>>(final);
-            Assert.AreNotSame(original, final);
+            original.Should().BeOfType<NullableTypeSelector<int?>>();
+            final.Should().BeOfType<NullableTypeSelector<int?>>();
+            original.Should().NotBeSameAs(final);
 
             var ints = new List<int?>();
 
@@ -68,8 +69,8 @@ namespace Faker.Tests.SelectorTests
                 }
             }
 
-            Assert.True(ints.Any(x => x == null));
-            Assert.True(ints.Any(x => x != null));
+            Assert.Contains(ints, x => x == null);
+            Assert.Contains(ints, x => x != null);
         }
     }
 }

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
-    [TestFixture(Description = "Tests to ensure that Faker can create new Structs as the base type")]
     public class StructMatcherTests
     {
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Custom structs
 
@@ -22,19 +21,9 @@ namespace Faker.Tests.MatcherTests
 
         #endregion
 
-        #region Setup / Teardown
-
-        [SetUp]
-        public void SetUp()
-        {
-            _matcher = new Matcher();
-        }
-
-        #endregion
-
         #region Tests
 
-        [Test(Description = "Matcher should be able to match simple DateTime structs if needed")]
+        [Fact(DisplayName = "Matcher should be able to match simple DateTime structs if needed")]
         public void Should_Bind_DateTime()
         {
             var dateTimeTest = new DateTime();
@@ -42,11 +31,11 @@ namespace Faker.Tests.MatcherTests
             _matcher.MatchStruct<DateTime>(ref dateTimeTest);
 
             /* Assert that we populated all of the fields of the DateTime object */
-            Assert.AreNotEqual(DateTime.MinValue, dateTimeTest);
-            Assert.AreNotEqual(DateTime.MaxValue, dateTimeTest);
+            Assert.NotEqual(DateTime.MinValue, dateTimeTest);
+            Assert.NotEqual(DateTime.MaxValue, dateTimeTest);
         }
 
-        [Test(Description = "Matcher should be able to match user-defined structs if needed")]
+        [Fact(DisplayName = "Matcher should be able to match user-defined structs if needed")]
         public void Should_Bind_CustomStruct()
         {
             var dateTimeTest = new TestStruct();
@@ -54,7 +43,7 @@ namespace Faker.Tests.MatcherTests
             _matcher.MatchStruct<TestStruct>(ref dateTimeTest);
 
             /* Assert that we populated all of the fields of the DateTime object */
-           Assert.IsNotNull(((TestStruct)dateTimeTest).Name);
+           Assert.NotNull(((TestStruct)dateTimeTest).Name);
         }
 
         #endregion

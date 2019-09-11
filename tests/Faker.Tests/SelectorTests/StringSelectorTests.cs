@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Selectors;
-using NUnit.Framework;
+using FluentAssertions;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Ensures that our string selectors inject valid results")]
     public class StringSelectorTests
     {
         #region Test classes for use against our string selectors...
@@ -73,7 +73,7 @@ namespace Faker.Tests.SelectorTests
 
         #endregion
 
-        [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
+        [Fact(DisplayName = "Tests to see if our regex can match all of the variations of the FullName field")]
         public void Full_Name_Variations_All_Match()
         {
             var nameSelector = new FullNameSelector();
@@ -83,11 +83,11 @@ namespace Faker.Tests.SelectorTests
             foreach(var property in fullNameClass.GetType().GetProperties())
             {
                 var nameSelectorResult = nameSelector.CanBind(property);
-                Assert.IsTrue(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+                Assert.True(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void Full_Name_Variations_All_Injected()
         {
             var nameSelector = new FullNameSelector();
@@ -105,13 +105,12 @@ namespace Faker.Tests.SelectorTests
             {
                 var fieldValue = property.GetValue(fullNameClass, null) as string;
 
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                Assert.NotNull(fieldValue);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
-        [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
+        [Fact(DisplayName = "Tests to see if our regex can match all of the variations of the FullName field")]
         public void First_Name_Variations_All_Match()
         {
             var nameSelector = new FirstNameSelector();
@@ -121,11 +120,11 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in firstNameTestClass.GetType().GetProperties())
             {
                 var nameSelectorResult = nameSelector.CanBind(property);
-                Assert.IsTrue(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+                Assert.True(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void First_Name_Variations_All_Injected()
         {
             var nameSelector = new FirstNameSelector();
@@ -143,13 +142,12 @@ namespace Faker.Tests.SelectorTests
             {
                 var fieldValue = property.GetValue(firstNameTestClass, null) as string;
 
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                Assert.NotNull(fieldValue);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
-        [Test(Description = "Tests to see if our regex can match all of the variations of the FullName field")]
+        [Fact(DisplayName = "Tests to see if our regex can match all of the variations of the FullName field")]
         public void Last_Name_Variations_All_Match()
         {
             var nameSelector = new LastNameSelector();
@@ -159,11 +157,11 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in lastNameTestClass.GetType().GetProperties())
             {
                 var nameSelectorResult = nameSelector.CanBind(property);
-                Assert.IsTrue(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+                Assert.True(nameSelectorResult, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void Last_Name_Variations_All_Injected()
         {
             var nameSelector = new LastNameSelector();
@@ -181,13 +179,12 @@ namespace Faker.Tests.SelectorTests
             {
                 var fieldValue = property.GetValue(lastNameTestClass, null) as string;
 
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                Assert.NotNull(fieldValue);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
-        [Test(Description = "Tests to see if our regex can match all of the variations of the EmailAddress field")]
+        [Fact(DisplayName = "Tests to see if our regex can match all of the variations of the EmailAddress field")]
         public void Email_Address_Variations_All_Match()
         {
             var emailSelector = new EmailSelector();
@@ -197,11 +194,11 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in emailTestClass.GetType().GetProperties())
             {
                 var emailSelectorResult = emailSelector.CanBind(property);
-                Assert.IsTrue(emailSelectorResult, string.Format("{0} should have been a valid match", property.Name));
+                Assert.True(emailSelectorResult, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void Email_Address_Variations_All_Injected()
         {
             var emailSelector = new EmailSelector();
@@ -219,13 +216,12 @@ namespace Faker.Tests.SelectorTests
             {
                 var fieldValue = property.GetValue(emailTestClass, null) as string;
 
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                Assert.NotNull(fieldValue);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void String_Selector_Injects_All_Strings()
         {
             var stringSelector = new StringSelector();
@@ -243,13 +239,12 @@ namespace Faker.Tests.SelectorTests
             {
                 var fieldValue = property.GetValue(randomStringsClass, null) as string;
 
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                Assert.NotNull(fieldValue);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
-        [Test(Description = "Test to ensure that a string selector can become nullable but still match to strings")]
+        [Fact(DisplayName = "Test to ensure that a string selector can become nullable but still match to strings")]
         public void String_Selectors_must_be_able_to_become_nullable()
         {
             var stringSelector = new StringSelector();
