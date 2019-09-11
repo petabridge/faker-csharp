@@ -1,44 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker", "src\Faker\Faker.csproj", "{72036A83-7633-436B-AF42-0424D236CD6A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Tests", "tests\Faker.Tests\Faker.Tests.csproj", "{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Models.Tests", "tests\Faker.Models.Tests\Faker.Models.Tests.csproj", "{546699A6-3886-4B17-A552-1DAFD7C619BF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{33EB8843-582C-436B-B3E4-928BAF8BF9AA}"
-	ProjectSection(SolutionItems) = preProject
-		build.cmd = build.cmd
-		build.fsx = build.fsx
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.End2End.Tests", "tests\Faker.End2End.Tests\Faker.End2End.Tests.csproj", "{FB672D5E-A886-4DF4-A96C-C0EE649A1296}"
-EndProject
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{72036A83-7633-436B-AF42-0424D236CD6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72036A83-7633-436B-AF42-0424D236CD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72036A83-7633-436B-AF42-0424D236CD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72036A83-7633-436B-AF42-0424D236CD6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{546699A6-3886-4B17-A552-1DAFD7C619BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB672D5E-A886-4DF4-A96C-C0EE649A1296}.Release|Any CPU.Build.0 = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
