@@ -55,7 +55,7 @@ namespace Faker.Tests.MatcherTests
 
         #region Tests
 
-        [Test(Description = "Should bind the default (basetype) values to all of the properties on our DefaultValueTestClass")]
+        [Fact(DisplayName = "Should bind the default (basetype) values to all of the properties on our DefaultValueTestClass")]
         public void Should_Bind_All_Properties_with_Default_Values()
         {
             //Create a new instance of our test class
@@ -65,27 +65,27 @@ namespace Faker.Tests.MatcherTests
             _matcher.Match(testInstance);
 
             //Test to see that proper values have been assigned to the DateTime properties
-            Assert.AreNotEqual(testInstance.DateTime1, default(DateTime));
-            Assert.AreNotEqual(testInstance.DateTime2, default(DateTime));
+            Assert.NotEqual(testInstance.DateTime1, default(DateTime));
+            Assert.NotEqual(testInstance.DateTime2, default(DateTime));
 
             //Test to see that the proper values have been assigned to the float properties
-            Assert.AreNotEqual(testInstance.TestFloat, default(float));
-            Assert.AreNotEqual(testInstance.TestFloat2, default(float));
+            Assert.NotEqual(testInstance.TestFloat, default(float));
+            Assert.NotEqual(testInstance.TestFloat2, default(float));
 
             //Test to see that proper values have been assigned to the integer properties
-            Assert.AreNotEqual(testInstance.TestInt, default(int));
+            Assert.NotEqual(testInstance.TestInt, default(int));
 
             //Test to see that proper values have been assigned to the long properties
-            Assert.AreNotEqual(testInstance.TestLong, default(long));
+            Assert.NotEqual(testInstance.TestLong, default(long));
 
             //Test to see that proper values have been assigned to the Guid properties
-            Assert.AreNotEqual(testInstance.TestGuid, default(Guid));
+            Assert.NotEqual(testInstance.TestGuid, default(Guid));
 
             //Test to see that proper values have been assigned ot the string properties
-            Assert.IsNotNullOrEmpty(testInstance.RandomString);
+            Assert.NotNull(testInstance.RandomString);
         }
 
-        [Test(Description = "For types without matching selectors, we should simply skip those.")]
+        [Fact(DisplayName = "For types without matching selectors, we should simply skip those.")]
         public void Should_Skip_Types_Without_Selectors()
         {
             //Create a new TypTable that doesn't use any of the default types
@@ -107,16 +107,16 @@ namespace Faker.Tests.MatcherTests
             /* ASSERT THAT THE PROPERTIES FOR WHICH WE HAVE INJECTORS ARE ALL SET */
 
             //Test to see that proper values have been assigned to the DateTime properties
-            Assert.AreNotEqual(testInstance.DateTime1, default(DateTime));
-            Assert.AreNotEqual(testInstance.DateTime2, default(DateTime));
+            Assert.NotEqual(testInstance.DateTime1, default(DateTime));
+            Assert.NotEqual(testInstance.DateTime2, default(DateTime));
 
             //Test to see that the proper values have been assigned to the float properties
-            Assert.AreNotEqual(testInstance.TestFloat, default(float));
-            Assert.AreNotEqual(testInstance.TestFloat, float.PositiveInfinity);
-            Assert.AreNotEqual(testInstance.TestFloat, float.NegativeInfinity);
-            Assert.AreNotEqual(testInstance.TestFloat2, default(float));
-            Assert.AreNotEqual(testInstance.TestFloat2, float.PositiveInfinity);
-            Assert.AreNotEqual(testInstance.TestFloat2, float.NegativeInfinity);
+            Assert.NotEqual(testInstance.TestFloat, default(float));
+            Assert.NotEqual(testInstance.TestFloat, float.PositiveInfinity);
+            Assert.NotEqual(testInstance.TestFloat, float.NegativeInfinity);
+            Assert.NotEqual(testInstance.TestFloat2, default(float));
+            Assert.NotEqual(testInstance.TestFloat2, float.PositiveInfinity);
+            Assert.NotEqual(testInstance.TestFloat2, float.NegativeInfinity);
 
             /* ASSERT THAT THE PROPERTIES THAT DON'T HAVE ANY SELECTORS ARE NOT SET */
 
@@ -126,7 +126,7 @@ namespace Faker.Tests.MatcherTests
             Assert.IsNullOrEmpty(testInstance.RandomString);
         }
 
-        [Test(Description = "Should bind and populate special fields on our test class")]
+        [Fact(DisplayName = "Should bind and populate special fields on our test class")]
         public void Should_Populate_Special_Fields()
         {
             //Create a new instance of our test class
@@ -136,13 +136,13 @@ namespace Faker.Tests.MatcherTests
             _matcher.Match(testInstance);
 
             /* Assert to see that we have populated all of the fields on our test instance */
-            Assert.AreNotEqual(testInstance.UserID, default(int));
-            Assert.AreNotEqual(testInstance.Timestamp, default(long));
-            Assert.AreNotEqual(testInstance.DateRegistered, default(DateTime));
+            Assert.NotEqual(testInstance.UserID, default(int));
+            Assert.NotEqual(testInstance.Timestamp, default(long));
+            Assert.NotEqual(testInstance.DateRegistered, default(DateTime));
 
-            Assert.IsNotNullOrEmpty(testInstance.Name);
-            Assert.IsNotNullOrEmpty(testInstance.Email);
-            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.Email));
+            Assert.NotNull(testInstance.Name);
+            Assert.NotNull(testInstance.Email);
+            Assert.True(_valid_email_regex.IsMatch(testInstance.Email));
         }
 
         #endregion

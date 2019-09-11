@@ -22,7 +22,7 @@ namespace Faker.Tests.SelectorTests
 
         #region Tests
 
-        [Test(Description = "Should be able to bind and inject all decimals")]
+        [Fact(DisplayName = "Should be able to bind and inject all decimals")]
         public void Should_Match_And_Inject_Demicals()
         {
             //Create an instance of our test class
@@ -34,7 +34,7 @@ namespace Faker.Tests.SelectorTests
             //Iterate over the test object's properties
             foreach(var property in testInstance.GetType().GetProperties())
             {
-                Assert.IsTrue(selector.CanBind(property),
+                Assert.True(selector.CanBind(property),
                               string.Format("should have been able to bind to property {0}", property.Name));
 
                 //Inject the value into this property on our test instance class
@@ -42,8 +42,8 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (decimal)property.GetValue(testInstance, null);
-                Assert.IsNotNull(fieldValue);
-                Assert.AreNotEqual(fieldValue, default(decimal));
+                Assert.NotNull(fieldValue);
+                Assert.NotEqual(fieldValue, default(decimal));
             }
         }
 

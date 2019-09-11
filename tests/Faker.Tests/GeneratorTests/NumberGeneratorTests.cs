@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Generators;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.GeneratorTests
 {
-    [TestFixture(Description = "Used to ensure that our number generators behave as expected")]
     public class NumberGeneratorTests
     {
-        [Test(Description = "Does our integer generator behave as expected?")]
+        [Fact(DisplayName = "Does our integer generator behave as expected?")]
         public void Can_Generate_Ints_Within_Range()
         {
             var ints = new List<int>();
@@ -20,16 +19,16 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Should not have any integers below zero
-            Assert.IsFalse(ints.Any(x => x < 0));
+            Assert.DoesNotContain(ints, x => x < 0);
 
             //All integers should be greater than or equal to zero
-            Assert.IsTrue(ints.All(x => x >= 0));
+            Assert.True(ints.All(x => x >= 0));
 
             //All integers should not be the same
-            Assert.IsFalse(ints.All(x => x == ints[0]));
+            Assert.False(ints.All(x => x == ints[0]));
         }
 
-        [Test(Description = "Does our double generator behave as expected?")]
+        [Fact(DisplayName = "Does our double generator behave as expected?")]
         public void Can_Generate_Doubles_Within_Range()
         {
             var doubles = new List<double>();
@@ -39,16 +38,16 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Should not have any integers below zero
-            Assert.IsFalse(doubles.Any(x => x < 0));
+            Assert.DoesNotContain(doubles, x => x < 0);
 
             //All integers should be greater than or equal to zero
-            Assert.IsTrue(doubles.All(x => x >= 0));
+            Assert.True(doubles.All(x => x >= 0));
 
             //All integers should not be the same
-            Assert.IsFalse(doubles.All(x => Math.Abs(x - doubles[0]) < 0.0d));
+            Assert.False(doubles.All(x => Math.Abs(x - doubles[0]) < 0.0d));
         }
         
-        [Test(Description = "Can we generate doubles in a negative range?")]
+        [Fact(DisplayName = "Can we generate doubles in a negative range?")]
         public void Can_Generate_Negative_Doubles()
         {
             var coordinates = new List<double>();
@@ -58,13 +57,13 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Verify that we have some negative coordinates
-            Assert.IsTrue(coordinates.Any(x => x < 0.0d));
+            Assert.Contains(coordinates, x => x < 0.0d);
 
             //Verify that we have some positive coordinates
-            Assert.IsTrue(coordinates.Any(x => x > 0.0d));
+            Assert.Contains(coordinates, x => x > 0.0d);
         }
 
-        [Test(Description = "Does our long generator behave as expected?")]
+        [Fact(DisplayName = "Does our long generator behave as expected?")]
         public void Can_Generate_Longs_Within_Range()
         {
             var longs = new List<long>();
@@ -74,16 +73,16 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Should not have any integers below zero
-            Assert.IsFalse(longs.Any(x => x < 0));
+            Assert.DoesNotContain(longs, x => x < 0);
 
             //All integers should be greater than or equal to zero
-            Assert.IsTrue(longs.All(x => x >= 0));
+            Assert.True(longs.All(x => x >= 0));
 
             //All integers should not be the same
-            Assert.IsFalse(longs.All(x => x == longs[0]));
+            Assert.False(longs.All(x => x == longs[0]));
         }
 
-        [Test(Description = "Does our float generator create floats within a valid range?")]
+        [Fact(DisplayName = "Does our float generator create floats within a valid range?")]
         public void Should_Generate_Valid_Floats_Within_Range()
         {
             var floats = new List<float>();
@@ -93,8 +92,8 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //All floats should be greater than or equal to zero
-            Assert.IsTrue(floats.All(x => !float.IsNegativeInfinity(x)));
-            Assert.IsTrue(floats.All(x => !float.IsPositiveInfinity(x)));
+            Assert.True(floats.All(x => !float.IsNegativeInfinity(x)));
+            Assert.True(floats.All(x => !float.IsPositiveInfinity(x)));
         }
     }
 }

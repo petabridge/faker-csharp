@@ -3,38 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Generators;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.GeneratorTests
 {
-    [TestFixture(Description = "Used to ensure that our name generation methods work properly")]
     public class NameGeneratorTests
     {
-        [Test(Description = "Simple test to verify that we can extract a first name without error")]
+        [Fact(DisplayName = "Simple test to verify that we can extract a first name without error")]
         public void Can_Get_First_Name()
         {
             var firstName = Names.First();
-            Assert.IsNotNullOrEmpty(firstName);
+            Assert.NotNull(firstName);
         }
 
-        [Test(Description = "Simple test to verify that we can extract a last name without error")]
+        [Fact(DisplayName = "Simple test to verify that we can extract a last name without error")]
         public void Can_Get_Last_Name()
         {
             var lastName = Names.Last();
-            Assert.IsNotNullOrEmpty(lastName);
+            Assert.NotNull(lastName);
         }
         
-        [Test(Description = "Test to verify that we can get a lexically correct full name")]
+        [Fact(DisplayName = "Test to verify that we can get a lexically correct full name")]
         public void Can_Get_Full_Name()
         {
             var fullName = Names.FullName();
-            Assert.IsNotNullOrEmpty(fullName);
+            Assert.NotNull(fullName);
 
             //Should be able to break a full name apart into two components separated by a space
-            Assert.IsTrue(fullName.Split(' ').Count() == 2);
+            Assert.True(fullName.Split(' ').Count() == 2);
         }
 
-        [Test(Description = "Ensures that we have some variety in our naming conventions")]
+        [Fact(DisplayName = "Ensures that we have some variety in our naming conventions")]
         public void Names_Have_Variety()
         {
             var names = new List<string>();
@@ -45,7 +44,7 @@ namespace Faker.Tests.GeneratorTests
             }
 
             //Make sure not all of the names are equal (there is SOME variety)
-            Assert.IsFalse(names.All(x => x.Equals(names[0])));
+            Assert.False(names.All(x => x.Equals(names[0])));
         }
     }
 }

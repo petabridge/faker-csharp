@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.End2End.Tests
 {
@@ -11,7 +11,7 @@ namespace Faker.End2End.Tests
     /// Test to see if Faker can correctly generate instances of a sealed class
     /// with no public setters.
     /// </summary>
-    [TestFixture]
+    
     public class SealedClassesSpec
     {
         public sealed class MyClass
@@ -44,7 +44,7 @@ namespace Faker.End2End.Tests
             public double MyOtherDouble { get; set; }
         }
 
-        [Test]
+        [Fact]
         public void Faker_should_populate_class_via_constructor()
         {
             // DSL for properties won't do anything since the property isn't directly settable
@@ -52,18 +52,18 @@ namespace Faker.End2End.Tests
             var fake = Fake.Create<MyClass>().SetProperty(x => x.MyBool, () => true).SetType(() => 1.0D).Generate();
             Assert.NotNull(fake);
             Assert.NotNull(fake.MyStr);
-            Assert.AreEqual(1.0D, fake.MyDouble);
+            Assert.Equal(1.0D, fake.MyDouble);
         }
 
-        [Test]
+        [Fact]
         public void Faker_should_populate_class_via_constructor_and_properties()
         {
             var fake = Fake.Create<MyPoorlyDesignedClass>().SetType(() => 1.0D).SetProperty(x => x.MyOtherDouble, () => -0.1d).Generate();
             Assert.NotNull(fake);
             Assert.NotNull(fake.MyStr);
             Assert.NotNull(fake.MyOtherStr);
-            Assert.AreEqual(1.0D, fake.MyDouble);
-            Assert.AreEqual(-0.1d, fake.MyOtherDouble); // error - property setting is more specific than an individual type. That should override.
+            Assert.Equal(1.0D, fake.MyDouble);
+            Assert.Equal(-0.1d, fake.MyOtherDouble); // error - property setting is more specific than an individual type. That should override.
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Faker.Tests
 
         #region Tests
 
-        [Test(Description = "Should be able to add new typeselectors to a fresh type table")]
+        [Fact(DisplayName = "Should be able to add new typeselectors to a fresh type table")]
         public void Should_Add_Type_Selectors_For_Single_Type_To_TypeTable()
         {
             //Create a new TypeTable
@@ -52,7 +52,7 @@ namespace Faker.Tests
             Assert.IsInstanceOf<EmailSelector>(firstselector); //Oh snap, the new front of the line should be our full name selector!
         }
 
-        [Test(Description = "Should be able to add type selectors for multiple types to the table")]
+        [Fact(DisplayName = "Should be able to add type selectors for multiple types to the table")]
         public void Should_Add_Type_Selectors_For_Multiple_Types_To_TypeTable()
         {
             //Create a new TypeTable
@@ -102,7 +102,7 @@ namespace Faker.Tests
             Assert.IsInstanceOf<TimeStampSelector>(currentLongSelector);
         }
 
-        [Test(Description = "If a user wants to explicitly add a new type selector to the back of the processing order, they should be able to do it.")]
+        [Fact(DisplayName = "If a user wants to explicitly add a new type selector to the back of the processing order, they should be able to do it.")]
         public void Should_Add_Selector_To_Back_Of_List()
         {
             //Create a new TypeTable
@@ -132,7 +132,7 @@ namespace Faker.Tests
             Assert.IsInstanceOf<FullNameSelector>(lastselector);
         }
 
-        [Test(Description = "A user should be able to clear a list of typeselectors for a given type if they wish")]
+        [Fact(DisplayName = "A user should be able to clear a list of typeselectors for a given type if they wish")]
         public void Should_Clear_TypeSelector_List()
         {
             //Create a new TypeTable
@@ -158,7 +158,7 @@ namespace Faker.Tests
             Assert.AreEqual(0, table.CountSelectors<string>());
         }
 
-        [Test(Description = "We should be able to get ahold of the base selector for primitive types we're working with")]
+        [Fact(DisplayName = "We should be able to get ahold of the base selector for primitive types we're working with")]
         public void Should_Get_Base_Selector_For_Primitive_Types()
         {
             //Create a new type table which uses all of the system defaults
@@ -189,7 +189,7 @@ namespace Faker.Tests
             Assert.IsInstanceOf<GuidSelector>(guidSelector);
         }
 
-        [Test]
+        [Fact]
         public void TypeTable_changes_to_clone_should_not_modify_original()
         {
             var typeTable = new TypeTable();
@@ -201,7 +201,7 @@ namespace Faker.Tests
 
             // sanity check to make sure we added the new type selector
             Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
-            Assert.AreNotEqual(oldCloneTableIntSelectorCount, newCloneTableSelectorCount);
+            Assert.NotEqual(oldCloneTableIntSelectorCount, newCloneTableSelectorCount);
             Assert.True(newCloneTableSelectorCount > oldCloneTableIntSelectorCount);
 
             // make sure we didn't modify old originak
@@ -209,7 +209,7 @@ namespace Faker.Tests
             Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
         }
 
-        [Test]
+        [Fact]
         public void TypeTable_changes_to_original_should_not_modify_clone()
         {
             var typeTable = new TypeTable();
@@ -223,7 +223,7 @@ namespace Faker.Tests
 
             // sanity check to make sure we added the new type selector
             Assert.AreEqual(typeTableIntSelectorCount, oldCloneTableIntSelectorCount);
-            Assert.AreNotEqual(typeTableIntSelectorCount, newTypeTableSelectorCount);
+            Assert.NotEqual(typeTableIntSelectorCount, newTypeTableSelectorCount);
             Assert.True(newTypeTableSelectorCount > typeTableIntSelectorCount);
 
             // make sure we didn't modify old originak

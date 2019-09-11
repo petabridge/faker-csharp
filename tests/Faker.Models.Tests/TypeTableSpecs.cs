@@ -5,7 +5,7 @@ using Faker.Helpers;
 using Faker.Selectors;
 using FsCheck;
 using FsCheck.Experimental;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Models.Tests
 {
@@ -44,16 +44,15 @@ namespace Faker.Models.Tests
         }
     }
 
-    [TestFixture]
+    
     public class TypeTableSpecs
     {
-        [TestFixtureSetUp]
-        public void SetUp()
+        public TypeTableSpecs()
         {
             Arb.Register<FakerGenerators>();
         }
 
-        [Test]
+        [Fact]
         public void IdenticalTypeSelector_list_should_be_equivalent_in_any_order()
         {
             Prop.ForAll<ITypeSelector[]>(selectors =>
@@ -63,7 +62,7 @@ namespace Faker.Models.Tests
             }).QuickCheckThrowOnFailure();
         }
 
-        [Test]
+        [Fact]
         public void TypeTable_unmodified_clones_should_be_equivalent()
         {
             Prop.ForAll<TypeTable>(
@@ -75,7 +74,7 @@ namespace Faker.Models.Tests
         }
 
 
-        [Test(Description = "TypeTable.Clone() should produce an immutable object")]
+        [Fact(DisplayName = "TypeTable.Clone() should produce an immutable object")]
         public void TypeTable_clones_should_be_immutable()
         {
             Prop.ForAll<TypeTable, ITypeSelector[], ITypeSelector[]>(

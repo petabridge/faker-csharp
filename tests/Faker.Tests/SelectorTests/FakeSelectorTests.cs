@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture]
+    
     public class FakeSelectorTests
     {
         public struct MyFoo
@@ -23,7 +23,7 @@ namespace Faker.Tests.SelectorTests
             public string SomeName { get; set; }
         }
 
-        [Test]
+        [Fact]
         public void Should_use_internal_Fake_for_property()
         {
             var fake1 = Fake.Create<MyFoo>().SetProperty(x => x.NumberOfBeers, () => 0).SetProperty(x => x.Sqrt, () => -1.0d);

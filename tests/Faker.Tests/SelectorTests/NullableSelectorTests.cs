@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture]
+    
     public class NullableSelectorTests
     {
         #region Test classes
@@ -21,7 +21,7 @@ namespace Faker.Tests.SelectorTests
 
         #endregion
 
-        [Test]
+        [Fact]
         public void NullableTypeSelector_supports_all_nullable_primivites()
         {
             var intSelector = new NullableTypeSelector<int?>(new IntSelector());
@@ -44,7 +44,7 @@ namespace Faker.Tests.SelectorTests
             Assert.True(ints.Any(x => x != null));
         }
 
-        [Test]
+        [Fact]
         public void NullableTypeSelector_can_still_be_nullable()
         {
             var c = new MyNullablePrimitiveTypeClass();

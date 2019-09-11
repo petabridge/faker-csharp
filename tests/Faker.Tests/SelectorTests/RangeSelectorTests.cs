@@ -39,7 +39,7 @@ namespace Faker.Tests.SelectorTests
         #region Tests
 
 
-        [Test(Description = "Tests to see if our functions for IRangeSelectors work for simple numerical types as expected")]
+        [Fact(DisplayName = "Tests to see if our functions for IRangeSelectors work for simple numerical types as expected")]
         public void Should_Use_Custom_Boundaries_for_Integer_Value_Injection()
         {
             //Create an instance of our test class
@@ -56,7 +56,7 @@ namespace Faker.Tests.SelectorTests
             //Iterate over the test object's properties
             foreach (var property in testInstance.GetType().GetProperties())
             {
-                Assert.IsTrue(selector.CanBind(property),
+                Assert.True(selector.CanBind(property),
                               string.Format("should have been able to bind to property {0}", property.Name));
 
                 //Inject the value into this property on our test instance class
@@ -64,13 +64,13 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (int)property.GetValue(testInstance, null);
-                Assert.IsNotNull(fieldValue);
-                Assert.AreNotEqual(fieldValue, default(int));
-                Assert.IsTrue(fieldValue <= intMax && fieldValue >= intMin, "Custom range should have worked");
+                Assert.NotNull(fieldValue);
+                Assert.NotEqual(fieldValue, default(int));
+                Assert.True(fieldValue <= intMax && fieldValue >= intMin, "Custom range should have worked");
             }
         }
 
-        [Test(Description = "Tests to see if our functions for IRangeSelectors work for DateTime types as expected")]
+        [Fact(DisplayName = "Tests to see if our functions for IRangeSelectors work for DateTime types as expected")]
         public void Should_Use_Custom_Boundaries_for_DateTime_Value_Injection()
         {
             //Create an instance of our test class
@@ -87,7 +87,7 @@ namespace Faker.Tests.SelectorTests
             //Iterate over the test object's properties
             foreach (var property in testInstance.GetType().GetProperties())
             {
-                Assert.IsTrue(selector.CanBind(property),
+                Assert.True(selector.CanBind(property),
                               string.Format("should have been able to bind to property {0}", property.Name));
 
                 //Inject the value into this property on our test instance class
@@ -95,13 +95,13 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (DateTime)property.GetValue(testInstance, null);
-                Assert.IsNotNull(fieldValue);
-                Assert.AreNotEqual(fieldValue, default(DateTime));
-                Assert.IsTrue(fieldValue <= dateTimeMax && fieldValue >= dateTimeMin, "Custom range should have worked");
+                Assert.NotNull(fieldValue);
+                Assert.NotEqual(fieldValue, default(DateTime));
+                Assert.True(fieldValue <= dateTimeMax && fieldValue >= dateTimeMin, "Custom range should have worked");
             }
         }
 
-        [Test(Description = "Tests to see if our functions for IRangeSelectors work for the lengths of Strings as expected")]
+        [Fact(DisplayName = "Tests to see if our functions for IRangeSelectors work for the lengths of Strings as expected")]
         public void Should_Use_Custom_StringLength_Boundaries_for_String_Value_Injection()
         {
             //Create an instance of our test class
@@ -118,7 +118,7 @@ namespace Faker.Tests.SelectorTests
             //Iterate over the test object's properties
             foreach (var property in testInstance.GetType().GetProperties())
             {
-                Assert.IsTrue(selector.CanBind(property),
+                Assert.True(selector.CanBind(property),
                               string.Format("should have been able to bind to property {0}", property.Name));
 
                 //Inject the value into this property on our test instance class
@@ -126,8 +126,8 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (string)property.GetValue(testInstance, null);
-                Assert.IsNotNullOrEmpty(fieldValue);
-                Assert.IsTrue(fieldValue.Length <= stringLengthMax && fieldValue.Length >= stringLengthMin, "Custom range should have worked");
+                Assert.NotNull(fieldValue);
+                Assert.True(fieldValue.Length <= stringLengthMax && fieldValue.Length >= stringLengthMin, "Custom range should have worked");
             }
         }
 

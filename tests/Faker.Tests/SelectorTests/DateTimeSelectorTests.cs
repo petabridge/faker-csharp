@@ -42,7 +42,7 @@ namespace Faker.Tests.SelectorTests
 
         #region Tests
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void DateTime_Selector_Injects_All_DateTime_Values()
         {
             var dateTimeSelector = new DateTimeSelector();
@@ -61,11 +61,11 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = (DateTime)property.GetValue(dateTimeTestClass, null);
 
                 Assert.IsAssignableFrom<DateTime>(fieldValue, "Should be type of DateTime...");
-                Assert.AreNotEqual(fieldValue, default(DateTime));
+                Assert.NotEqual(fieldValue, default(DateTime));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void DateTimeOffset_Selector_Injects_All_DateTime_Values()
         {
             var timeSelector = new DateTimeOffsetSelector();
@@ -84,11 +84,11 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = (DateTimeOffset)property.GetValue(dateTimeTestClass, null);
 
                 Assert.IsAssignableFrom<DateTimeOffset>(fieldValue, "Should be type of DateTime...");
-                Assert.AreNotEqual(fieldValue, default(DateTimeOffset));
+                Assert.NotEqual(fieldValue, default(DateTimeOffset));
             }
         }
 
-        [Test(Description = "Does our timestamp selector match fields with valid names?")]
+        [Fact(DisplayName = "Does our timestamp selector match fields with valid names?")]
         public void TimeStamp_Selector_Matches_Valid_Names()
         {
             var timeStampSelector = new TimeStampSelector();
@@ -98,11 +98,11 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in timeStampTestClass.GetType().GetProperties())
             {
                 var canBind = timeStampSelector.CanBind(property);
-                Assert.IsTrue(canBind, string.Format("{0} should have been a valid match", property.Name));
+                Assert.True(canBind, string.Format("{0} should have been a valid match", property.Name));
             }
         }
 
-        [Test(Description = "Tests to see if all of our field values are properly injected...")]
+        [Fact(DisplayName = "Tests to see if all of our field values are properly injected...")]
         public void TimeStamp_Selector_Injects_All_TimeStamp_Values()
         {
             var timeStampSelector = new TimeStampSelector();
@@ -121,11 +121,11 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = (long)property.GetValue(timeStampTestClass, null);
 
                 Assert.IsAssignableFrom<long>(fieldValue, "Should be type of long...");
-                Assert.AreNotEqual(fieldValue, default(long));
+                Assert.NotEqual(fieldValue, default(long));
             }
         }
 
-        [Test(Description = "Must be able to convert a TimeStampSelector into a nullable type")]
+        [Fact(DisplayName = "Must be able to convert a TimeStampSelector into a nullable type")]
         public void TimeStamp_Select_Must_be_Nullable()
         {
             var timeStampSelector = new TimeStampSelector().Nullable(); // 10% certainty
