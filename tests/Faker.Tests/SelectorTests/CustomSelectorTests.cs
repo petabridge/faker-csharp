@@ -1,9 +1,8 @@
 ﻿using Faker.Selectors;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Tests for enusring that all of the custom selectors we support work as expected")]
     public class CustomSelectorTests
     {
         #region Test Classes
@@ -21,9 +20,6 @@ namespace Faker.Tests.SelectorTests
             public string OtherName { get; set; }
         }
 
-        #endregion
-
-        #region Setup / Teardown
         #endregion
 
         #region Tests
@@ -54,8 +50,8 @@ namespace Faker.Tests.SelectorTests
             //Generate a new fake with the custom selector implemented
             var customFakeInstance = fake.Generate();
 
-            Assert.AreEqual(measureConst, customFakeInstance.Member.Measure);
-            Assert.AreEqual(nameConst, customFakeInstance.Member.Name);
+            Assert.Equal(measureConst, customFakeInstance.Member.Measure);
+            Assert.Equal(nameConst, customFakeInstance.Member.Name);
         }
 
         [Fact(DisplayName = "Should be able to match a simple built-in property using a custom selector")]
@@ -81,7 +77,7 @@ namespace Faker.Tests.SelectorTests
             //Generate a new fake with the custom selector implemented
             var customFakeInstance = fake.Generate();
 
-            Assert.AreEqual(nameConst, customFakeInstance.Name);
+            Assert.Equal(nameConst, customFakeInstance.Name);
             Assert.NotEqual(nameConst, customFakeInstance.OtherName);
         }
 
@@ -108,9 +104,9 @@ namespace Faker.Tests.SelectorTests
             //Generate a new fake with the custom selector implemented
             var customFakeInstance = fake.Generate();
 
-            Assert.AreEqual(nameConst, customFakeInstance.Name);
-            Assert.AreEqual(nameConst, customFakeInstance.OtherName);
-            Assert.AreEqual(nameConst, customFakeInstance.Member.Name);
+            Assert.Equal(nameConst, customFakeInstance.Name);
+            Assert.Equal(nameConst, customFakeInstance.OtherName);
+            Assert.Equal(nameConst, customFakeInstance.Member.Name);
         }
 
         #endregion

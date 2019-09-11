@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
-    [TestFixture(Description = "Tests to ensure that Faker can create new Structs as the base type")]
     public class StructMatcherTests
     {
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Custom structs
 
@@ -18,16 +17,6 @@ namespace Faker.Tests.MatcherTests
             public int Id { get; set; }
             public string Name { get; set; }
             public DateTime When { get; set; }
-        }
-
-        #endregion
-
-        #region Setup / Teardown
-
-        [SetUp]
-        public void SetUp()
-        {
-            _matcher = new Matcher();
         }
 
         #endregion

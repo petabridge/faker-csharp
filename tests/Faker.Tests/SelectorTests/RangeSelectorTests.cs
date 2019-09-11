@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Selectors;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Used to determine if Faker's range extension methods and custom setters work as expected")]
     public class RangeSelectorTests
     {
         #region Custom Test Classes
@@ -31,9 +30,6 @@ namespace Faker.Tests.SelectorTests
             public string String2 { get; set; }
         }
 
-        #endregion
-
-        #region Setup / Teardown
         #endregion
 
         #region Tests
@@ -64,8 +60,7 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (int)property.GetValue(testInstance, null);
-                Assert.NotNull(fieldValue);
-                Assert.NotEqual(fieldValue, default(int));
+                Assert.NotEqual(default(int), fieldValue);
                 Assert.True(fieldValue <= intMax && fieldValue >= intMin, "Custom range should have worked");
             }
         }
@@ -95,7 +90,6 @@ namespace Faker.Tests.SelectorTests
 
                 //Get the value out of the property
                 var fieldValue = (DateTime)property.GetValue(testInstance, null);
-                Assert.NotNull(fieldValue);
                 Assert.NotEqual(fieldValue, default(DateTime));
                 Assert.True(fieldValue <= dateTimeMax && fieldValue >= dateTimeMin, "Custom range should have worked");
             }

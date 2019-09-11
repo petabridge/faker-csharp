@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
@@ -12,7 +13,7 @@ namespace Faker.Tests.MatcherTests
 
         public Regex _valid_email_regex = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
 
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Nested POCO Test Classes...
 
@@ -85,15 +86,6 @@ namespace Faker.Tests.MatcherTests
 
         #endregion
 
-        #region Setup / Teardown
-
-        [SetUp]
-        public void SetUp()
-        {
-            _matcher = new Matcher();
-        }
-        #endregion
-
         #region Tests
 
         [Fact(DisplayName = "Matcher should inject the values of a subclass in addition to those of the parent class")]
@@ -108,11 +100,11 @@ namespace Faker.Tests.MatcherTests
             /* ASSERTIONS */
 
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.NotEqual(testInstance.Double1, default(double));
-            Assert.NotEqual(testInstance.Float1, default(float));
-            Assert.NotEqual(testInstance.Float2, default(float));
-            Assert.NotEqual(testInstance.Long1, default(long));
-            Assert.NotEqual(testInstance.Guid1, default(Guid));
+            Assert.NotEqual(default(double), testInstance.Double1);
+            Assert.NotEqual(default(float), testInstance.Float1);
+            Assert.NotEqual(default(float), testInstance.Float2);
+            Assert.NotEqual(default(long), testInstance.Long1);
+            Assert.NotEqual(default(Guid), testInstance.Guid1);
             Assert.NotNull(testInstance.SampleString);
         }
 
@@ -129,19 +121,19 @@ namespace Faker.Tests.MatcherTests
 
             //Assert that all of the fields on the sub-class have been injected and instantiated
             Assert.NotNull(testInstance.SpecialClass);
-            Assert.NotEqual(testInstance.SpecialClass.DateRegistered, default(DateTime));
-            Assert.NotEqual(testInstance.SpecialClass.UserID, default(int));
-            Assert.NotEqual(testInstance.SpecialClass.Timestamp, default(long));
+            Assert.NotEqual(default(DateTime), testInstance.SpecialClass.DateRegistered);
+            Assert.NotEqual(default, testInstance.SpecialClass.UserID);
+            Assert.NotEqual(default(long), testInstance.SpecialClass.Timestamp);
             Assert.NotNull(testInstance.SpecialClass.Name);
             Assert.NotNull(testInstance.SpecialClass.Email);
-            Assert.True(_valid_email_regex.IsMatch(testInstance.SpecialClass.Email));
+            Assert.Matches(_valid_email_regex, testInstance.SpecialClass.Email);
 
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.NotEqual(testInstance.Double1, default(double));
-            Assert.NotEqual(testInstance.Float1, default(float));
-            Assert.NotEqual(testInstance.Float2, default(float));
-            Assert.NotEqual(testInstance.Long1, default(long));
-            Assert.NotEqual(testInstance.Guid1, default(Guid));
+            Assert.NotEqual(default(double), testInstance.Double1);
+            Assert.NotEqual(default(float), testInstance.Float1);
+            Assert.NotEqual(default(float), testInstance.Float2);
+            Assert.NotEqual(default(long), testInstance.Long1);
+            Assert.NotEqual(default(Guid), testInstance.Guid1);
             Assert.NotNull(testInstance.SampleString);
         }
 
@@ -158,10 +150,10 @@ namespace Faker.Tests.MatcherTests
 
             //Assert that all of the fields on the sub-class have been injected and instantiated
             Assert.NotNull(testInstance.NestedClassInstance);
-            Assert.NotEqual(testInstance.NestedClassInstance.DateRegistered, default(DateTime));
-            Assert.NotEqual(testInstance.NestedClassInstance.Timestamp, default(long));
+            Assert.NotEqual(default(DateTime), testInstance.NestedClassInstance.DateRegistered);
+            Assert.NotEqual(default(long), testInstance.NestedClassInstance.Timestamp);
             Assert.NotNull(testInstance.NestedClassInstance.Email);
-            Assert.True(_valid_email_regex.IsMatch(testInstance.NestedClassInstance.Email));
+            Assert.Matches(_valid_email_regex, testInstance.NestedClassInstance.Email);
 
             //Assert that all of the fields on the main class have been injected and instantiated
             Assert.NotEqual(testInstance.Double1, default(double));

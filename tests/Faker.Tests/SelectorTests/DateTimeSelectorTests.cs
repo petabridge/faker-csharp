@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Faker.Selectors;
-using NUnit.Framework;
+using Xunit;
+using FluentAssertions;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Tests to ensure that our typeselectors for datetimes work as expected")]
     public class DateTimeSelectorTests
     {
         #region Test classes for use against our DateTime and timestamp selectors...
@@ -59,8 +59,6 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in dateTimeTestClass.GetType().GetProperties())
             {
                 var fieldValue = (DateTime)property.GetValue(dateTimeTestClass, null);
-
-                Assert.IsAssignableFrom<DateTime>(fieldValue, "Should be type of DateTime...");
                 Assert.NotEqual(fieldValue, default(DateTime));
             }
         }
@@ -82,8 +80,6 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in dateTimeTestClass.GetType().GetProperties())
             {
                 var fieldValue = (DateTimeOffset)property.GetValue(dateTimeTestClass, null);
-
-                Assert.IsAssignableFrom<DateTimeOffset>(fieldValue, "Should be type of DateTime...");
                 Assert.NotEqual(fieldValue, default(DateTimeOffset));
             }
         }
@@ -119,8 +115,6 @@ namespace Faker.Tests.SelectorTests
             foreach (var property in timeStampTestClass.GetType().GetProperties())
             {
                 var fieldValue = (long)property.GetValue(timeStampTestClass, null);
-
-                Assert.IsAssignableFrom<long>(fieldValue, "Should be type of long...");
                 Assert.NotEqual(fieldValue, default(long));
             }
         }

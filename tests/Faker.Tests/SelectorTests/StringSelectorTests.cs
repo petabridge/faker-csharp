@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Selectors;
-using NUnit.Framework;
+using FluentAssertions;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Ensures that our string selectors inject valid results")]
     public class StringSelectorTests
     {
         #region Test classes for use against our string selectors...
@@ -106,8 +106,7 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = property.GetValue(fullNameClass, null) as string;
 
                 Assert.NotNull(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
@@ -144,8 +143,7 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = property.GetValue(firstNameTestClass, null) as string;
 
                 Assert.NotNull(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
@@ -182,8 +180,7 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = property.GetValue(lastNameTestClass, null) as string;
 
                 Assert.NotNull(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
@@ -220,8 +217,7 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = property.GetValue(emailTestClass, null) as string;
 
                 Assert.NotNull(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 
@@ -244,8 +240,7 @@ namespace Faker.Tests.SelectorTests
                 var fieldValue = property.GetValue(randomStringsClass, null) as string;
 
                 Assert.NotNull(fieldValue);
-                Assert.IsAssignableFrom<string>(fieldValue, "Should be type of string...");
-                Assert.That(fieldValue.Length > 0);
+                fieldValue.Length.Should().BeGreaterThan(0);
             }
         }
 

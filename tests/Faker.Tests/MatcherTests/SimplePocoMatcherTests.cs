@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Faker.Selectors;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
-    [TestFixture(Description = "The matcher should be able to process simple POCO classes that don't have any arrays, IEnumerables, or or nested classes")]
     public class SimplePocoMatcherTests
     {
         public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)";
 
         public Regex _valid_email_regex = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
 
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Simple POCO test classes...
 
@@ -43,15 +42,6 @@ namespace Faker.Tests.MatcherTests
 
         #endregion
 
-        #region Setup / Teardown
-
-        [SetUp]
-        public void SetUp()
-        {
-            _matcher = new Matcher();
-        }
-
-        #endregion
 
         #region Tests
 
@@ -120,9 +110,9 @@ namespace Faker.Tests.MatcherTests
 
             /* ASSERT THAT THE PROPERTIES THAT DON'T HAVE ANY SELECTORS ARE NOT SET */
 
-            Assert.AreEqual(testInstance.TestInt, default(int));
-            Assert.AreEqual(testInstance.TestLong, default(long));
-            Assert.AreEqual(testInstance.TestGuid, default(Guid));
+            Assert.Equal(testInstance.TestInt, default(int));
+            Assert.Equal(testInstance.TestLong, default(long));
+            Assert.Equal(testInstance.TestGuid, default(Guid));
             Assert.IsNullOrEmpty(testInstance.RandomString);
         }
 

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
-    [TestFixture(Description = "Tests to verify that Faker's behavior when working with tree structures doesn't cause problems")]
     public class TreeMatcherTests
     {
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Tree test classes
 
@@ -26,17 +25,6 @@ namespace Faker.Tests.MatcherTests
             public string Name { get; set; }
             public ObjectTreeWithMultipleChildren Parent { get; set; }
             public List<ObjectTreeWithMultipleChildren> Children { get; set; } 
-        }
-
-        #endregion
-
-        #region Setup / Teardown
-
-        [TestFixtureSetUp]
-        public void TestFixtureSetUp()
-        {
-            //Create a new matcher using the default type table
-            _matcher = new Matcher();
         }
 
         #endregion
@@ -64,9 +52,9 @@ namespace Faker.Tests.MatcherTests
 
             Assert.NotNull(objectTreeWithMultipleChildren.Id);
             Assert.NotNull(objectTreeWithMultipleChildren.Name);
-            Assert.IsNull(objectTreeWithMultipleChildren.Parent, "Should only create one node (the root) in a tree structure");
-            Assert.NotNull(objectTreeWithMultipleChildren.Children, "Should have the child element array instantiated");
-            Assert.AreEqual(0, objectTreeWithMultipleChildren.Children.Count, "Should not have any children in the array");
+            Assert.Null(objectTreeWithMultipleChildren.Parent); // "Should only create one node (the root) in a tree structure"
+            Assert.NotNull(objectTreeWithMultipleChildren.Children); // "Should have the child element array instantiated"
+            Assert.Empty(objectTreeWithMultipleChildren.Children); //  "Should not have any children in the array"
         }
 
         #endregion

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Faker.Selectors;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.SelectorTests
 {
-    [TestFixture(Description = "Test fixture for validating that all of our type selectors for numbers behave as expected")]
     public class NumberSelectorTests
     {
         #region Test classes for our number selector tests
