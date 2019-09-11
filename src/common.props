@@ -6,6 +6,7 @@
     <PackageProjectUrl>https://github.com/petabridge/faker-csharp</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Aaronontheweb/faker-csharp/blob/master/license.txt</PackageLicenseUrl>
     <NoWarn>$(NoWarn);CS1591;xUnit1013</NoWarn>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <XunitVersion>2.4.1</XunitVersion>
