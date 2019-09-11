@@ -40,7 +40,7 @@ namespace Faker.Tests.MatcherTests
 
             Assert.NotNull(flatObjectTree.Id);
             Assert.NotNull(flatObjectTree.Name);
-            Assert.IsNull(flatObjectTree.Parent, "Should only create one node (the root) in a tree structure");
+            Assert.Null(flatObjectTree.Parent); // "Should only create one node (the root) in a tree structure"
         }
 
         [Fact(DisplayName = "In an enviromment where a tree can support a list of child nodes, make sure the list gets created but don't populate it")]

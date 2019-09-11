@@ -113,7 +113,7 @@ namespace Faker.Tests.MatcherTests
             Assert.Equal(testInstance.TestInt, default(int));
             Assert.Equal(testInstance.TestLong, default(long));
             Assert.Equal(testInstance.TestGuid, default(Guid));
-            Assert.IsNullOrEmpty(testInstance.RandomString);
+            Assert.Null(testInstance.RandomString);
         }
 
         [Fact(DisplayName = "Should bind and populate special fields on our test class")]

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Faker.Helpers;
 using Faker.Selectors;
-using NUnit.Framework;
+using FluentAssertions;
+using Xunit;
 
 namespace Faker.Tests
 {
-    [TestFixture(Description = "Ensures that our type table behaves as expected")]
     public class TypeTableTests
     {
         #region Setup / Teardown
@@ -28,28 +28,28 @@ namespace Faker.Tests
             var stringSelector2 = new FullNameSelector();
             var stringSelector3 = new EmailSelector();
 
-            Assert.Equal(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
+            Assert.Equal(0, table.CountSelectors<string>()); // "should have ZERO type selectors for type 'string' since we haven't added any yet"
 
             //Add the first selector (our default string selector)
             table.AddSelector<string>(stringSelector1);
-            Assert.Equal(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
+            Assert.Equal(1, table.CountSelectors<string>()); // "should have ONE type selectors for type 'string'"
 
             var firstselector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstselector);
+            firstselector.Should().BeOfType<StringSelector>();
 
             //Add the second selector (the full name selector)
             table.AddSelector<string>(stringSelector2);
-            Assert.Equal(2, table.CountSelectors<string>(), "should have TWO type selectors for type 'string'");
+            Assert.Equal(2, table.CountSelectors<string>()); // "should have TWO type selectors for type 'string'"
 
             firstselector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<FullNameSelector>(firstselector); //Oh snap, the new front of the line should be our full name selector!
+            firstselector.Should().BeOfType<FullNameSelector>();  //Oh snap, the new front of the line should be our full name selector!
 
             //Add the thrid selector (the email address selector)
             table.AddSelector<string>(stringSelector3);
-            Assert.Equal(3, table.CountSelectors<string>(), "should have THREE type selectors for type 'string'");
+            Assert.Equal(3, table.CountSelectors<string>()); // "should have THREE type selectors for type 'string'"
 
             firstselector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<EmailSelector>(firstselector); //Oh snap, the new front of the line should be our full name selector!
+            firstselector.Should().BeOfType<EmailSelector>(); //Oh snap, the new front of the line should be our full name selector!
         }
 
         [Fact(DisplayName = "Should be able to add type selectors for multiple types to the table")]
@@ -65,41 +65,43 @@ namespace Faker.Tests
             var longSelector1 = new LongSelector();
             var longSelector2 = new TimeStampSelector();
 
-            Assert.Equal(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
-            Assert.Equal(0, table.CountSelectors<long>(), "should have ZERO type selectors for type 'long' since we haven't added any yet");
+            Assert.Equal(0, table.CountSelectors<string>()); // "should have ZERO type selectors for type 'string' since we haven't added any yet"
+            Assert.Equal(0, table.CountSelectors<long>()); // "should have ZERO type selectors for type 'long' since we haven't added any yet"
 
             //Add the first and only string selector (our default string selector)
             table.AddSelector<string>(stringSelector1);
-            Assert.Equal(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
-            Assert.Equal(0, table.CountSelectors<long>(), "should have ZERO type selectors for type 'long' since we haven't added any yet"); //Assert that we haven't added any long selectors yet
+            Assert.Equal(1, table.CountSelectors<string>()); //  "should have ONE type selectors for type 'string'"
+
+            // "should have ZERO type selectors for type 'long' since we haven't added any yet"
+            Assert.Equal(0, table.CountSelectors<long>()); //Assert that we haven't added any long selectors yet
 
             var firstStringSelector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstStringSelector);
+            firstStringSelector.Should().BeOfType<StringSelector>();
 
             var currentLongSelector = table.GetSelectors<long>().FirstOrDefault();
-            Assert.IsNull(currentLongSelector); //Since we haven't added any long selectors yet, this should return null
+            Assert.Null(currentLongSelector); //Since we haven't added any long selectors yet, this should return null
 
             //Add the first long selector (our default long selector)
             table.AddSelector<long>(longSelector1);
-            Assert.Equal(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
-            Assert.Equal(1, table.CountSelectors<long>(), "should have ONE type selectors for type 'long'");
+            Assert.Equal(1, table.CountSelectors<string>()); // "should have ONE type selectors for type 'string'"
+            Assert.Equal(1, table.CountSelectors<long>()); // "should have ONE type selectors for type 'long'"
 
             firstStringSelector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstStringSelector);
+            firstStringSelector.Should().BeOfType<StringSelector>();
 
             currentLongSelector = table.GetSelectors<long>().FirstOrDefault();
-            Assert.IsInstanceOf<LongSelector>(currentLongSelector);
+            currentLongSelector.Should().BeOfType<LongSelector>();
 
             //Add the final long selector (our timestamp selector)
             table.AddSelector<long>(longSelector2);
-            Assert.Equal(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
-            Assert.Equal(2, table.CountSelectors<long>(), "should have TWO type selectors for type 'long'");
+            Assert.Equal(1, table.CountSelectors<string>()); //  "should have ONE type selectors for type 'string'"
+            Assert.Equal(2, table.CountSelectors<long>()); // "should have TWO type selectors for type 'long'"
 
             firstStringSelector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstStringSelector);
+            firstStringSelector.Should().BeOfType<StringSelector>();
 
             currentLongSelector = table.GetSelectors<long>().FirstOrDefault();
-            Assert.IsInstanceOf<TimeStampSelector>(currentLongSelector);
+            currentLongSelector.Should().BeOfType<TimeStampSelector>();
         }
 
         [Fact(DisplayName = "If a user wants to explicitly add a new type selector to the back of the processing order, they should be able to do it.")]
@@ -112,24 +114,24 @@ namespace Faker.Tests
             var stringSelector1 = new StringSelector();
             var stringSelector2 = new FullNameSelector();
 
-            Assert.Equal(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
+            Assert.Equal(0, table.CountSelectors<string>()); // "should have ZERO type selectors for type 'string' since we haven't added any yet"
 
             //Add the first selector (our default string selector)
             table.AddSelector<string>(stringSelector1);
-            Assert.Equal(1, table.CountSelectors<string>(), "should have ONE type selectors for type 'string'");
+            Assert.Equal(1, table.CountSelectors<string>()); // "should have ONE type selectors for type 'string'"
 
             var firstselector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstselector);
+            firstselector.Should().BeOfType<StringSelector>();
 
             //Add the second selector (FullNameSelector) to the back of the processing queue
             table.AddSelector(stringSelector2, SelectorPosition.Last);
-            Assert.Equal(2, table.CountSelectors<string>(), "should have TWO type selectors for type 'string'");
+            Assert.Equal(2, table.CountSelectors<string>()); //  "should have TWO type selectors for type 'string'"
 
             firstselector = table.GetSelectors<string>().First();
-            Assert.IsInstanceOf<StringSelector>(firstselector);
+            firstselector.Should().BeOfType<StringSelector>();
 
             var lastselector = table.GetSelectors<string>().Last();
-            Assert.IsInstanceOf<FullNameSelector>(lastselector);
+            lastselector.Should().BeOfType<FullNameSelector>();
         }
 
         [Fact(DisplayName = "A user should be able to clear a list of typeselectors for a given type if they wish")]
@@ -142,14 +144,14 @@ namespace Faker.Tests
             var stringSelector1 = new StringSelector();
             var stringSelector2 = new FullNameSelector();
 
-            Assert.Equal(0, table.CountSelectors<string>(), "should have ZERO type selectors for type 'string' since we haven't added any yet");
+            Assert.Equal(0, table.CountSelectors<string>()); // "should have ZERO type selectors for type 'string' since we haven't added any yet"
 
             //Add some type selectors to our typetable
             table.AddSelector(stringSelector1);
             table.AddSelector(stringSelector2);
 
             //Check to see that our table contains at least two items...
-            Assert.Equal(2, table.CountSelectors<string>(), "should have TWO type selectors for type 'string'");
+            Assert.Equal(2, table.CountSelectors<string>()); // "should have TWO type selectors for type 'string'"
 
             //Clear all of the string selectors
             table.ClearSelectors<string>(); 
@@ -166,27 +168,27 @@ namespace Faker.Tests
 
             //Try to grab the integer selector...
             var intSelector = table.GetBaseSelector(typeof (int));
-            Assert.IsInstanceOf<IntSelector>(intSelector);
+            intSelector.Should().BeOfType<IntSelector>();
 
             //Try to grab the float selector
             var floatSelector = table.GetBaseSelector(typeof (float));
-            Assert.IsInstanceOf<FloatSelector>(floatSelector);
+            floatSelector.Should().BeOfType<FloatSelector>();
 
             //Try to grab the double selector
             var doubleSelector = table.GetBaseSelector(typeof(double));
-            Assert.IsInstanceOf<DoubleSelector>(doubleSelector);
+            doubleSelector.Should().BeOfType<DoubleSelector>();
 
             //Try to grab the string selector
             var stringSelector = table.GetBaseSelector(typeof(string));
-            Assert.IsInstanceOf<StringSelector>(stringSelector);
+            stringSelector.Should().BeOfType<StringSelector>();
 
             //Try to grab the DateTime selector
             var dateTimeSelector = table.GetBaseSelector(typeof(DateTime));
-            Assert.IsInstanceOf<DateTimeSelector>(dateTimeSelector);
+            dateTimeSelector.Should().BeOfType<DateTimeSelector>();
 
             //Try to grab the Guid selector
             var guidSelector = table.GetBaseSelector(typeof(Guid));
-            Assert.IsInstanceOf<GuidSelector>(guidSelector);
+            guidSelector.Should().BeOfType<GuidSelector>();
         }
 
         [Fact]
