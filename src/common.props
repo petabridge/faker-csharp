@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Copyright>Copyright © 2011-2019 Aaron Stannard</Copyright>
     <Authors>Aaron Stannard</Authors>
-    <VersionPrefix>1.2.0</VersionPrefix>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <PackageProjectUrl>https://github.com/petabridge/faker-csharp</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Aaronontheweb/faker-csharp/blob/master/license.txt</PackageLicenseUrl>
     <NoWarn>$(NoWarn);CS1591;xUnit1013</NoWarn>
@@ -17,6 +17,6 @@
     <FsCheckVersion>2.9.0</FsCheckVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <PackageReleaseNotes>Placeholder for nightlies.</PackageReleaseNotes>
+    <PackageReleaseNotes>Placeholder</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
