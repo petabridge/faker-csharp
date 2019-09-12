@@ -9,11 +9,11 @@ namespace Faker.Selectors
     ///     to generate instances of type <see cref="T" />. Designed to allow composition
     ///     of fakes for complex classes.
     /// </summary>
-    public sealed class FakeSelector : ITypeSelector
+    public sealed class FakeSelector<T> : ITypeSelector<T>
     {
-        private readonly IFake _internalFake;
+        private readonly IFake<T> _internalFake;
 
-        public FakeSelector(IFake internalFake)
+        public FakeSelector(IFake<T> internalFake)
         {
             Contract.Requires(internalFake != null);
             _internalFake = internalFake;
@@ -57,7 +57,7 @@ namespace Faker.Selectors
             return _internalFake.Generate();
         }
 
-        private bool Equals(FakeSelector other)
+        private bool Equals(FakeSelector<T> other)
         {
             return Priority == other.Priority && TargetType == other.TargetType;
         }
@@ -66,7 +66,7 @@ namespace Faker.Selectors
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj is FakeSelector && Equals((FakeSelector) obj);
+            return obj is FakeSelector<T> && Equals((FakeSelector<T>) obj);
         }
 
         public override int GetHashCode()
@@ -77,14 +77,9 @@ namespace Faker.Selectors
             }
         }
 
-        public static bool operator ==(FakeSelector left, FakeSelector right)
+        public T Generate()
         {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(FakeSelector left, FakeSelector right)
-        {
-            return !Equals(left, right);
+            return _internalFake.Generate();
         }
     }
 }

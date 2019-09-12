@@ -64,6 +64,23 @@ namespace Faker
         }
 
         /// <summary>
+        ///     Creates a custom Faker rule for all properties of a single type on an object
+        /// </summary>
+        /// <typeparam name="T">The type of the parent object</typeparam>
+        /// <typeparam name="TS">The type for which this rule will be applied</typeparam>
+        /// <param name="fake">The Faker instance to be modified</param>
+        /// <param name="setter">The expression for which we should be setting a value to</param>
+        /// <returns>An updated Fake</returns>
+        public static Fake<T> SetType<T, TS>(this Fake<T> fake, IFake<TS> setter)
+        {
+            ExpressionValidator.IsNotNull(() => setter, setter);
+
+            var selector = new FakeSelector<TS>(setter);
+            fake.AddSelector(selector);
+            return fake;
+        }
+
+        /// <summary>
         ///     Throws an exception if a developer tries to create a TypeSelector for a property to which we can't write
         /// </summary>
         /// <param name="prop">The Property we're testing</param>

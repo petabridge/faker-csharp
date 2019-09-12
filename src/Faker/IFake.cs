@@ -27,7 +27,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="TS">The type that matches the selector</typeparam>
         /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
-        void AddSelector<TS>(TypeSelectorBase<TS> selector);
+        void AddSelector<TS>(ITypeSelector<TS> selector);
     }
 
     /// <summary>

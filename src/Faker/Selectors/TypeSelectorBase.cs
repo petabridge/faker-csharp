@@ -14,7 +14,7 @@ namespace Faker.Selectors
     ///     Abstract base class used to enforce some constraints on how we manage TypeSelectors
     /// </summary>
     /// <typeparam name="T">The type that this selector works for</typeparam>
-    public abstract class TypeSelectorBase<T> : ITypeSelector
+    public abstract class TypeSelectorBase<T> : ITypeSelector<T>
     {
         protected Func<T> _setter;
 

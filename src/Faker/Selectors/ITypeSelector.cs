@@ -3,6 +3,11 @@ using System.Reflection;
 
 namespace Faker.Selectors
 {
+    /// <summary>
+    /// INTERNAL API.
+    /// 
+    /// Interface used for generating values for matching types.
+    /// </summary>
     public interface ITypeSelector
     {
         /// <summary>
@@ -55,5 +60,14 @@ namespace Faker.Selectors
         /// </summary>
         /// <returns>An object instance.</returns>
         object GenerateInstance();
+    }
+
+    public interface ITypeSelector<T> : ITypeSelector
+    {
+        /// <summary>
+        /// Generate an instace of the underlying selector.
+        /// </summary>
+        /// <returns>An object instance.</returns>
+        T Generate();
     }
 }
