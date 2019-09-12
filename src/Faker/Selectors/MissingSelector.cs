@@ -86,4 +86,16 @@ namespace Faker.Selectors
             return !Equals(left, right);
         }
     }
+
+    /// <summary>
+    /// Generic version of <see cref="MissingSelector"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class MissingSelector<T> : MissingSelector, ITypeSelector<T>
+    {
+        public T Generate()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

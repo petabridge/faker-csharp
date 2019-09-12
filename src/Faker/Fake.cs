@@ -16,11 +16,6 @@ namespace Faker
         {
             return new Fake<T>();
         }
-
-        public static Fake<T> Create<T>(params IFake[] otherFakes)
-        {
-            return new Fake<T>(otherFakes);
-        }
     }
 
     /// <summary>
@@ -48,17 +43,6 @@ namespace Faker
         public Fake(bool allowNull = false, double nullProbability = SelectorConstants.DefaultNullProbability)
         {
             Matcher = new Matcher(allowNull ? nullProbability : SelectorConstants.NoNullProbability);
-        }
-
-        /// <summary>
-        /// Constructor that takes multiple internal fakes to use for internal properties.
-        /// </summary>
-        /// <param name="fakes">A list of one or more fakes to use</param>
-        public Fake(params IFake[] fakes) : this()
-        {
-            Contract.Requires(fakes != null);
-            foreach(var fake in fakes)
-                AddSelector(fake);
         }
 
         /// <summary>
@@ -118,7 +102,7 @@ namespace Faker
         /// </summary>
         /// <typeparam name="TS">The type that matches the selector</typeparam>
         /// <param name="selector">A TypeSelectorBase instance for all instances of a TS type</param>
-        public void AddSelector<TS>(TypeSelectorBase<TS> selector)
+        public void AddSelector<TS>(ITypeSelector<TS> selector)
         {
             AddSelector((ITypeSelector)selector);
         }
@@ -136,11 +120,11 @@ namespace Faker
         /// Adds another <see cref="IFake"/> instance to use as an internal selector for a type.
         /// </summary>
         /// <param name="fake">Another fake instance</param>
-        public void AddSelector(IFake fake)
+        public void AddSelector<TS>(IFake<TS> fake)
         {
             Contract.Requires(fake != null);
             Contract.Assert(fake.SupportedType != this.SupportedType);
-            AddSelector(new FakeSelector(fake));
+            AddSelector(new FakeSelector<TS>(fake));
         }
 
         /// <summary>
