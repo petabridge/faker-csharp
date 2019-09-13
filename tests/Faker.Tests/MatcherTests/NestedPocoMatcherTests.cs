@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.MatcherTests
 {
-    [TestFixture(Description = "Tests to ensure that Matcher can work with nested POCO classes")]
     public class NestedPocoMatcherTests
     {
         public const string ValidEmailRegex = @"(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)";
 
         public Regex _valid_email_regex = new Regex(ValidEmailRegex, RegexOptions.IgnoreCase);
 
-        private Matcher _matcher;
+        private Matcher _matcher = new Matcher();
 
         #region Nested POCO Test Classes...
 
@@ -87,18 +86,9 @@ namespace Faker.Tests.MatcherTests
 
         #endregion
 
-        #region Setup / Teardown
-
-        [SetUp]
-        public void SetUp()
-        {
-            _matcher = new Matcher();
-        }
-        #endregion
-
         #region Tests
 
-        [Test(Description = "Matcher should inject the values of a subclass in addition to those of the parent class")]
+        [Fact(DisplayName = "Matcher should inject the values of a subclass in addition to those of the parent class")]
         public void Should_Populate_Fields_Of_SubClass()
         {
             //Create a new instance of our test class
@@ -110,15 +100,15 @@ namespace Faker.Tests.MatcherTests
             /* ASSERTIONS */
 
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.AreNotEqual(testInstance.Double1, default(double));
-            Assert.AreNotEqual(testInstance.Float1, default(float));
-            Assert.AreNotEqual(testInstance.Float2, default(float));
-            Assert.AreNotEqual(testInstance.Long1, default(long));
-            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
-            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+            Assert.NotEqual(default(double), testInstance.Double1);
+            Assert.NotEqual(default(float), testInstance.Float1);
+            Assert.NotEqual(default(float), testInstance.Float2);
+            Assert.NotEqual(default(long), testInstance.Long1);
+            Assert.NotEqual(default(Guid), testInstance.Guid1);
+            Assert.NotNull(testInstance.SampleString);
         }
 
-        [Test(Description = "Matcher shouldn't throw any errors by trying to access a private member")]
+        [Fact(DisplayName = "Matcher shouldn't throw any errors by trying to access a private member")]
         public void Should_Not_Populate_Fields_Of_Private_SubClass()
         {
             //Create a new instance of our test class
@@ -130,24 +120,24 @@ namespace Faker.Tests.MatcherTests
             /* ASSERTIONS */
 
             //Assert that all of the fields on the sub-class have been injected and instantiated
-            Assert.IsNotNull(testInstance.SpecialClass);
-            Assert.AreNotEqual(testInstance.SpecialClass.DateRegistered, default(DateTime));
-            Assert.AreNotEqual(testInstance.SpecialClass.UserID, default(int));
-            Assert.AreNotEqual(testInstance.SpecialClass.Timestamp, default(long));
-            Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Name);
-            Assert.IsNotNullOrEmpty(testInstance.SpecialClass.Email);
-            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.SpecialClass.Email));
+            Assert.NotNull(testInstance.SpecialClass);
+            Assert.NotEqual(default(DateTime), testInstance.SpecialClass.DateRegistered);
+            Assert.NotEqual(default, testInstance.SpecialClass.UserID);
+            Assert.NotEqual(default(long), testInstance.SpecialClass.Timestamp);
+            Assert.NotNull(testInstance.SpecialClass.Name);
+            Assert.NotNull(testInstance.SpecialClass.Email);
+            Assert.Matches(_valid_email_regex, testInstance.SpecialClass.Email);
 
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.AreNotEqual(testInstance.Double1, default(double));
-            Assert.AreNotEqual(testInstance.Float1, default(float));
-            Assert.AreNotEqual(testInstance.Float2, default(float));
-            Assert.AreNotEqual(testInstance.Long1, default(long));
-            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
-            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+            Assert.NotEqual(default(double), testInstance.Double1);
+            Assert.NotEqual(default(float), testInstance.Float1);
+            Assert.NotEqual(default(float), testInstance.Float2);
+            Assert.NotEqual(default(long), testInstance.Long1);
+            Assert.NotEqual(default(Guid), testInstance.Guid1);
+            Assert.NotNull(testInstance.SampleString);
         }
 
-        [Test(Description = "Should be able to populate the fields of a class defined within another class and included as an instance member")]
+        [Fact(DisplayName = "Should be able to populate the fields of a class defined within another class and included as an instance member")]
         public void Should_Populate_Fields_Of_Nested_Subclass()
         {
             //Create a new instance of our test class
@@ -159,22 +149,22 @@ namespace Faker.Tests.MatcherTests
             /* ASSERTIONS */
 
             //Assert that all of the fields on the sub-class have been injected and instantiated
-            Assert.IsNotNull(testInstance.NestedClassInstance);
-            Assert.AreNotEqual(testInstance.NestedClassInstance.DateRegistered, default(DateTime));
-            Assert.AreNotEqual(testInstance.NestedClassInstance.Timestamp, default(long));
-            Assert.IsNotNullOrEmpty(testInstance.NestedClassInstance.Email);
-            Assert.IsTrue(_valid_email_regex.IsMatch(testInstance.NestedClassInstance.Email));
+            Assert.NotNull(testInstance.NestedClassInstance);
+            Assert.NotEqual(default(DateTime), testInstance.NestedClassInstance.DateRegistered);
+            Assert.NotEqual(default(long), testInstance.NestedClassInstance.Timestamp);
+            Assert.NotNull(testInstance.NestedClassInstance.Email);
+            Assert.Matches(_valid_email_regex, testInstance.NestedClassInstance.Email);
 
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.AreNotEqual(testInstance.Double1, default(double));
-            Assert.AreNotEqual(testInstance.Float1, default(float));
-            Assert.AreNotEqual(testInstance.Float2, default(float));
-            Assert.AreNotEqual(testInstance.Long1, default(long));
-            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
-            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+            Assert.NotEqual(testInstance.Double1, default(double));
+            Assert.NotEqual(testInstance.Float1, default(float));
+            Assert.NotEqual(testInstance.Float2, default(float));
+            Assert.NotEqual(testInstance.Long1, default(long));
+            Assert.NotEqual(testInstance.Guid1, default(Guid));
+            Assert.NotNull(testInstance.SampleString);
         }
 
-        [Test(Description = "Matcher shouldn't throw any errors by trying to access a private member (nested subclass)")]
+        [Fact(DisplayName = "Matcher shouldn't throw any errors by trying to access a private member (nested subclass)")]
         public void Should_Not_Populate_Fields_Of_Private_Nested_SubClass()
         {
             //Create a new instance of our test class
@@ -185,12 +175,12 @@ namespace Faker.Tests.MatcherTests
 
             /* ASSERTIONS */
             //Assert that all of the fields on the main class have been injected and instantiated
-            Assert.AreNotEqual(testInstance.Double1, default(double));
-            Assert.AreNotEqual(testInstance.Float1, default(float));
-            Assert.AreNotEqual(testInstance.Float2, default(float));
-            Assert.AreNotEqual(testInstance.Long1, default(long));
-            Assert.AreNotEqual(testInstance.Guid1, default(Guid));
-            Assert.IsNotNullOrEmpty(testInstance.SampleString);
+            Assert.NotEqual(testInstance.Double1, default(double));
+            Assert.NotEqual(testInstance.Float1, default(float));
+            Assert.NotEqual(testInstance.Float2, default(float));
+            Assert.NotEqual(testInstance.Long1, default(long));
+            Assert.NotEqual(testInstance.Guid1, default(Guid));
+            Assert.NotNull(testInstance.SampleString);
         }
 
         #endregion

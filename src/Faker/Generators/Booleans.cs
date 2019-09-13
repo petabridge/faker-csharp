@@ -20,5 +20,15 @@ namespace Faker.Generators
             //in C any integer value other than 0 is true.
             return num != 0;
         }
+
+        /// <summary>
+        /// Randomly generates a <c>true</c> value within a certain probability.
+        /// </summary>
+        /// <param name="probability">A double between 0.0 and 1.0</param>
+        /// <returns>true or false</returns>
+        public static bool BoolWithProbability(double probability)
+        {
+            return R.NextDouble() <= probability;
+        }
     }
 }

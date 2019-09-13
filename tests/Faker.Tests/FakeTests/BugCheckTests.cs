@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+using Xunit;
 
 namespace Faker.Tests.FakeTests
 {
     /// <summary>
     /// Tests used for resolving real-world bugs that have been found in the course of using Faker
     /// </summary>
-    [TestFixture]
+    
     public class BugCheckTests
     {
         #region TrafficSimulator LoggedHttpRequest bug
@@ -83,8 +83,7 @@ namespace Faker.Tests.FakeTests
         /// TODO: this test fails because of the Headers dictionary property that Faker handles. Need to add support for generic dictionaries
         /// or at least circumvent this bug
         /// </summary>
-        [Test]
-        [Ignore("Currently not implemented")]
+        [Fact(Skip = "Currently not implemented")]
         public void BugFix_Should_fake_LoggedHttpRequest()
         {
             //arrange
@@ -94,7 +93,7 @@ namespace Faker.Tests.FakeTests
             var instances = fake.Generate(1);
 
             //assert
-            Assert.AreEqual(1, instances.Count);
+            Assert.Equal(1, instances.Count);
         }
 
         #endregion

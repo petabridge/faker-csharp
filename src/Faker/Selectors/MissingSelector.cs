@@ -21,6 +21,11 @@ namespace Faker.Selectors
             throw new NotImplementedException();
         }
 
+        public ITypeSelector Nullable(double nullProbability = SelectorConstants.NoNullProbability)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CanBind(PropertyInfo field)
         {
             throw new NotImplementedException();
@@ -79,6 +84,18 @@ namespace Faker.Selectors
         public static bool operator !=(MissingSelector left, MissingSelector right)
         {
             return !Equals(left, right);
+        }
+    }
+
+    /// <summary>
+    /// Generic version of <see cref="MissingSelector"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class MissingSelector<T> : MissingSelector, ITypeSelector<T>
+    {
+        public T Generate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

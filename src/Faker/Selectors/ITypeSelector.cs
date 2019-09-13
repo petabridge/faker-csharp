@@ -3,6 +3,11 @@ using System.Reflection;
 
 namespace Faker.Selectors
 {
+    /// <summary>
+    /// INTERNAL API.
+    /// 
+    /// Interface used for generating values for matching types.
+    /// </summary>
     public interface ITypeSelector
     {
         /// <summary>
@@ -20,8 +25,8 @@ namespace Faker.Selectors
         /// <summary>
         ///     Determines if we can allow nulls for a given type
         /// </summary>
-        /// <param name="canBeNull">If true, we can set nulls - false by default</param>
-        void BeNull(bool canBeNull = false);
+        /// <param name="nullProbability">The probability that this value will be null.</param>
+        ITypeSelector Nullable(double nullProbability = SelectorConstants.DefaultNullProbability);
 
         /// <summary>
         ///     Determines if this strategy can be successfully executed for this field.
@@ -55,5 +60,14 @@ namespace Faker.Selectors
         /// </summary>
         /// <returns>An object instance.</returns>
         object GenerateInstance();
+    }
+
+    public interface ITypeSelector<T> : ITypeSelector
+    {
+        /// <summary>
+        /// Generate an instace of the underlying selector.
+        /// </summary>
+        /// <returns>An object instance.</returns>
+        T Generate();
     }
 }

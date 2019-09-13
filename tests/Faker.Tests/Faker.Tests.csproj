@@ -1,92 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\src\common.props" />
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3C337CBF-59E8-43A6-AFA9-5E8D2402CB22}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Faker.Tests</RootNamespace>
-    <AssemblyName>Faker.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
+    <AssemblyTitle>Faker.Tests</AssemblyTitle>
+    <TargetFrameworks>$(NetFrameworkTestVersion);$(NetCoreTestVersion)</TargetFrameworks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\..\src\Faker\Faker.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="ArrayHelperTests.cs" />
-    <Compile Include="FakeTests\BugCheckTests.cs" />
-    <Compile Include="FakeTests\FakeTests.cs" />
-    <Compile Include="GeneratorTests\DateTimeGeneratorTests.cs" />
-    <Compile Include="GeneratorTests\EmailAddressGeneratorTests.cs" />
-    <Compile Include="GeneratorTests\NameGeneratorTests.cs" />
-    <Compile Include="GeneratorTests\NumberGeneratorTests.cs" />
-    <Compile Include="GeneratorTests\StringsGeneratorTests.cs" />
-    <Compile Include="MatcherTests\ClassesWithoutDefaultConstructorsMatchTests.cs" />
-    <Compile Include="MatcherTests\ListMatcherTests.cs" />
-    <Compile Include="MatcherTests\NestedPocoMatcherTests.cs" />
-    <Compile Include="MatcherTests\SimplePocoMatcherTests.cs" />
-    <Compile Include="MatcherTests\StructMatcherTests.cs" />
-    <Compile Include="MatcherTests\TreeMatcherTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectorTests\CustomSelectorTests.cs" />
-    <Compile Include="SelectorTests\DateTimeSelectorTests.cs" />
-    <Compile Include="SelectorTests\FakeSelectorTests.cs" />
-    <Compile Include="SelectorTests\NumberSelectorTests.cs" />
-    <Compile Include="SelectorTests\RangeSelectorTests.cs" />
-    <Compile Include="SelectorTests\StringSelectorTests.cs" />
-    <Compile Include="TypeTableTests.cs" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(TestSdkVersion)" />
+    <PackageReference Include="xunit" Version="$(XunitVersion)" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitVersion)" />
+    <PackageReference Include="FsCheck.Xunit" Version="$(FsCheckVersion)" />
+    <PackageReference Include="FluentAssertions" Version="$(FluentAssertionsVersion)" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Faker\Faker.csproj">
-      <Project>{72036A83-7633-436B-AF42-0424D236CD6A}</Project>
-      <Name>Faker</Name>
-    </ProjectReference>
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
