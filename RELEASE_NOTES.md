@@ -1,18 +1,9 @@
-#### 2.0.0 August 30 2016
-Placeholder
+#### 2.0.0 September 12 2019
+Faker 2.0.0 is a major new release that includes the following changes:
 
-#### 1.2.0 May 02 2014
-More work on fluent interface for fakes.
+- Targets .NET Standard 2.0 and up
+- Allows for the creation of complex objects via constructors and nested types
+- Supports a fully typed, extensible graph for creating complex objects
+- And more.
 
-#### 1.1.0 November 23 2012
-Added fluent interface for creating ad-hoc rules for Fakes.
-
-#### 1.0.6 November 22 2012
-
-#### 1.0.4-alpha August 30 2012
-
-#### 1.0.3-alpha July 13 2012
-
-#### 1.0.2-alpha July 12 2012
-
-#### 1.0.0-alpha March 18 2012
+Learn more about Faker at https://github.com/petabridge/faker-csharp
